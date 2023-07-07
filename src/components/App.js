@@ -1,5 +1,5 @@
 import {
-  WellcomPage,
+  WelcomePage,
   CategoriesPage,
   MainPage,
   AddRecipePage,
@@ -18,7 +18,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<WellcomPage />} />
+          <Route index element={<WelcomePage />} />
           <Route path="/main" element={<MainPage />} />
           <Route
             path="/categories/:categoryName"
