@@ -1,5 +1,21 @@
-import React from 'react';
+import Header from 'components/Header/Header';
+import Loader from 'components/Loader/Loader';
+import React, { Suspense } from 'react';
+import { Outlet } from 'react-router';
 
 export const SharedLayout = () => {
-  return <div>SharedLayout</div>;
+  return (
+    <>
+      <Header />
+      <main>
+        <section>
+          <div>
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 };

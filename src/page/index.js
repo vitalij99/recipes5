@@ -6,6 +6,7 @@ import MyRecipesPage from './MyRecipesPage/MyRecipesPage';
 import RecipePage from './RecipePage/RecipePage';
 import SearchPage from './SearchPage/SearchPage';
 import ShoppingListPage from './ShoppingListPage/ShoppingListPage';
+import WellcomPage from './WellcomPage/WellcomPage';
 
 export {
   AddRecipePage,
@@ -16,4 +17,5 @@ export {
   RecipePage,
   SearchPage,
   ShoppingListPage,
+  WellcomPage,
 };
