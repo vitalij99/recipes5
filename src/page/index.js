@@ -7,6 +7,7 @@ import RecipePage from './RecipePage/RecipePage';
 import SearchPage from './SearchPage/SearchPage';
 import ShoppingListPage from './ShoppingListPage/ShoppingListPage';
 import WelcomePage from './WelcomePage/WelcomePage';
+import AuthPage from './AuthPage/AuthPage';
 
 export {
   AddRecipePage,
@@ -18,4 +19,5 @@ export {
   SearchPage,
   ShoppingListPage,
   WelcomePage,
+  AuthPage,
 };
