@@ -18,7 +18,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={WellcomPage} />
+          <Route index element={<WellcomPage />} />
           <Route path="/main" element={<MainPage />} />
           <Route
             path="/categories/:categoryName"
