@@ -12,8 +12,12 @@ import {
 import * as yup from 'yup';
 
 import { NavLink } from 'react-router-dom';
+import { registerThunk } from 'redux/auth/authOperation';
+import { useDispatch } from 'react-redux';
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
     name: '',
     email: '',
@@ -34,7 +38,7 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      console.log(values);
+      await dispatch(registerThunk(values));
     } catch (error) {
       console.log(error);
     }
@@ -74,9 +78,7 @@ const RegistrationForm = () => {
         </FormAuth>
       </Formik>
       <Link>
-       
-          <NavLink to="/auth/signin">Sign In</NavLink>
-        
+        <NavLink to="/auth/signin">Sign In</NavLink>
       </Link>
     </>
   );

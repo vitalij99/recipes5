@@ -12,8 +12,12 @@ import {
 import * as yup from 'yup';
 
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { signinThunk } from 'redux/auth/authOperation';
 
 const SigninPageForm = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
     email: '',
     password: '',
@@ -32,7 +36,7 @@ const SigninPageForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      console.log(values);
+      await dispatch(signinThunk(values));
     } catch (error) {
       console.log(error);
     }
