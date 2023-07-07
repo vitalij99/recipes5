@@ -1,13 +1,22 @@
 {
   "files": {
-    "main.css": "/recipes5/static/css/main.57772cd3.css",
-    "main.js": "/recipes5/static/js/main.56306634.js",
+    "main.css": "/recipes5/static/css/main.58462fbc.css",
+    "main.js": "/recipes5/static/js/main.d4f58c87.js",
+    "static/media/Poppins-Thin.ttf": "/recipes5/static/media/Poppins-Thin.59ff6a729e30c99b478e.ttf",
+    "static/media/Poppins-ExtraLight.ttf": "/recipes5/static/media/Poppins-ExtraLight.333cb30c20e31999802a.ttf",
+    "static/media/Poppins-Light.ttf": "/recipes5/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/Poppins-Regular.ttf": "/recipes5/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/recipes5/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/recipes5/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/Poppins-Bold.ttf": "/recipes5/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/Poppins-ExtraBold.ttf": "/recipes5/static/media/Poppins-ExtraBold.01849ee091e1762a5dd5.ttf",
+    "static/media/Poppins-Black.ttf": "/recipes5/static/media/Poppins-Black.d8b850b920a5ef49d752.ttf",
     "index.html": "/recipes5/index.html",
-    "main.57772cd3.css.map": "/recipes5/static/css/main.57772cd3.css.map",
-    "main.56306634.js.map": "/recipes5/static/js/main.56306634.js.map"
+    "main.58462fbc.css.map": "/recipes5/static/css/main.58462fbc.css.map",
+    "main.d4f58c87.js.map": "/recipes5/static/js/main.d4f58c87.js.map"
   },
   "entrypoints": [
-    "static/css/main.57772cd3.css",
-    "static/js/main.56306634.js"
+    "static/css/main.58462fbc.css",
+    "static/js/main.d4f58c87.js"
   ]
 }
