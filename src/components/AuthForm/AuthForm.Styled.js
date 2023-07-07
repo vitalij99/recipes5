@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
-export const FormRegistration = styled(Form)`
+export const FormAuth = styled(Form)`
   padding: 32px 28px 40px 28px;
   width: 335px;
   background-color: #1e1f28;
@@ -29,7 +29,8 @@ export const InputForm = styled(Field)`
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.28px;
-  border: solid 1px #1e1f28;
+  border: solid 1px #fafafa;
+  border-radius: 6px;
   opacity: 0.8;
   background-color: transparent;
 `;

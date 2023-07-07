@@ -13,14 +13,12 @@ import * as yup from 'yup';
 
 import { NavLink } from 'react-router-dom';
 
-const RegistrationForm = () => {
+const SigninPageForm = () => {
   const initialValues = {
-    name: '',
     email: '',
     password: '',
   };
   const schema = yup.object().shape({
-    name: yup.string().min(4).max(20).required(),
     email: yup
       .string()
       .email('Invalid email')
@@ -51,12 +49,6 @@ const RegistrationForm = () => {
       >
         <FormAuth>
           <FeedbackFormGroup>
-            <InputForm type="text" name="name" placeholder="Name" />
-            <StyleErrorMessage name="name">
-              {msg => <Error>{msg}</Error>}
-            </StyleErrorMessage>
-          </FeedbackFormGroup>
-          <FeedbackFormGroup>
             <InputForm type="email" name="email" placeholder="Email" />
             <StyleErrorMessage name="email">
               {msg => <Error>{msg}</Error>}
@@ -74,12 +66,10 @@ const RegistrationForm = () => {
         </FormAuth>
       </Formik>
       <Link>
-       
-          <NavLink to="/auth/signin">Sign In</NavLink>
-        
+        <NavLink to="/auth/register">Sign Up</NavLink>
       </Link>
     </>
   );
 };
 
-export default RegistrationForm;
+export default SigninPageForm;
