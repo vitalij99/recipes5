@@ -1,7 +1,10 @@
+import AddRecipeForm from 'components/AddRecipe/AddRecipeForm';
 import React from 'react';
 
 const AddRecipePage = () => {
-  return <div>AddRecipePage</div>;
+  return <>
+   <AddRecipeForm />
+  </>;
 };
 
 export default AddRecipePage;
