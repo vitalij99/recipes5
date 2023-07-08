@@ -2,19 +2,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Form, Field, ErrorMessage } from 'formik';
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: var(--small-screen);
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    max-width: var(--medium-screen);
-  }
-
-  @media (min-width: 1440px) {
-    max-width: var(--large-screen);
-  }
-`;
 export const FormAuth = styled(Form)`
   margin: 0 auto;
   padding: 32px 28px 40px 28px;

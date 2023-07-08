@@ -47,38 +47,32 @@ const SigninPageForm = () => {
 
   return (
     <>
-      <Container>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={schema}
-          onSubmit={handleSubmit}
-        >
-          <FormAuth>
-            <FeedbackFormGroup>
-              <InputForm type="email" name="email" placeholder="Email" />
-              <StyleErrorMessage name="email">
-                {msg => <Error>{msg}</Error>}
-              </StyleErrorMessage>
-            </FeedbackFormGroup>
-            <FeedbackFormGroup>
-              <InputForm
-                type="password"
-                name="password"
-                placeholder="Password"
-              />
-              <StyleErrorMessage name="password">
-                {msg => <Error>{msg}</Error>}
-              </StyleErrorMessage>
-            </FeedbackFormGroup>
-            <Btnwrapper>
-              <BtnRegister type="submit">Sign up</BtnRegister>
-            </Btnwrapper>
-          </FormAuth>
-        </Formik>
-        <Link>
-          <StyledNavLink to="/auth/register">Sign Up</StyledNavLink>
-        </Link>
-      </Container>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        <FormAuth>
+          <FeedbackFormGroup>
+            <InputForm type="email" name="email" placeholder="Email" />
+            <StyleErrorMessage name="email">
+              {msg => <Error>{msg}</Error>}
+            </StyleErrorMessage>
+          </FeedbackFormGroup>
+          <FeedbackFormGroup>
+            <InputForm type="password" name="password" placeholder="Password" />
+            <StyleErrorMessage name="password">
+              {msg => <Error>{msg}</Error>}
+            </StyleErrorMessage>
+          </FeedbackFormGroup>
+          <Btnwrapper>
+            <BtnRegister type="submit">Sign up</BtnRegister>
+          </Btnwrapper>
+        </FormAuth>
+      </Formik>
+      <Link>
+        <StyledNavLink to="/auth/register">Sign Up</StyledNavLink>
+      </Link>
     </>
   );
 };
