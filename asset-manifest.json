@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/recipes5/static/css/main.58462fbc.css",
-    "main.js": "/recipes5/static/js/main.f7ca964e.js",
+    "main.js": "/recipes5/static/js/main.28e2c6c1.js",
     "static/media/Poppins-Thin.ttf": "/recipes5/static/media/Poppins-Thin.59ff6a729e30c99b478e.ttf",
     "static/media/Poppins-ExtraLight.ttf": "/recipes5/static/media/Poppins-ExtraLight.333cb30c20e31999802a.ttf",
     "static/media/Poppins-Light.ttf": "/recipes5/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
@@ -11,12 +11,14 @@
     "static/media/Poppins-Bold.ttf": "/recipes5/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "static/media/Poppins-ExtraBold.ttf": "/recipes5/static/media/Poppins-ExtraBold.01849ee091e1762a5dd5.ttf",
     "static/media/Poppins-Black.ttf": "/recipes5/static/media/Poppins-Black.d8b850b920a5ef49d752.ttf",
+    "static/media/spinach@2x.png": "/recipes5/static/media/spinach@2x.0f72911d54873ffaf0f0.png",
+    "static/media/spinach.png": "/recipes5/static/media/spinach.4d437f3f129bb5d4b8f4.png",
     "index.html": "/recipes5/index.html",
     "main.58462fbc.css.map": "/recipes5/static/css/main.58462fbc.css.map",
-    "main.f7ca964e.js.map": "/recipes5/static/js/main.f7ca964e.js.map"
+    "main.28e2c6c1.js.map": "/recipes5/static/js/main.28e2c6c1.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.f7ca964e.js"
+    "static/js/main.28e2c6c1.js"
   ]
 }
