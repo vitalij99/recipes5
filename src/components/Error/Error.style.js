@@ -35,7 +35,7 @@ const BoldText = styled.p`
   font-weight: 600;
   line-height: 1.111;
   letter-spacing: -0.0225em;
-  color: ${lightTheme.mobile.addRecipePage.listOfItems.text2};
+  color: ${lightTheme.addRecipePage.listOfItems.text2};
   text-align: center;
   margin-bottom: 8px;
 
@@ -55,7 +55,7 @@ const BoldText = styled.p`
 const Text = styled.p`
   font-family: 'Poppins';
   text-align: center;
-  color: ${lightTheme.mobile.addRecipePage.listOfItems.text2};
+  color: ${lightTheme.addRecipePage.listOfItems.text2};
   opacity: 0.5;
   font-size: 0.875rem;
   font-weight: 400;
