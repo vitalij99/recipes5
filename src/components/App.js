@@ -8,6 +8,7 @@ import {
   MyRecipesPage,
   SearchPage,
   ShoppingListPage,
+  AuthPage,
 } from 'page';
 
 import { Route, Routes } from 'react-router';
@@ -20,8 +21,10 @@ function App() {
     <>
       <ThemeProvider theme={lightTheme}>
         <Routes>
+          <Route index element={<WelcomePage />} />
+          <Route path="/auth/:id" element={<AuthPage />} />
+
           <Route path="/" element={<SharedLayout />}>
-            <Route index element={<WelcomePage />} />
             <Route path="/main" element={<MainPage />} />
             <Route
               path="/categories/:categoryName"
