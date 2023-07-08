@@ -8,6 +8,7 @@ import {
   InputForm,
   StyleErrorMessage,
   Link,
+  StyledNavLink,
 } from './AuthForm.Styled';
 import * as yup from 'yup';
 
@@ -78,7 +79,7 @@ const RegistrationForm = () => {
         </FormAuth>
       </Formik>
       <Link>
-        <NavLink to="/auth/signin">Sign In</NavLink>
+        <StyledNavLink to="/auth/signin">Sign In</StyledNavLink>
       </Link>
     </>
   );

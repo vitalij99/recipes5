@@ -2,6 +2,18 @@ import styled from 'styled-components';
 import bgMobile from '../../images/authPage/bg_mobile.jpg';
 import bgMobile2x from '../../images/authPage/bg_mobile2x.jpg';
 import bgMobile3x from '../../images/authPage/bg_mobile3x.jpg';
+import bgBlack from '../../images/authPage/bg_black.svg';
+
+export const Section = styled.div`
+  width: 100%;
+  background-image: url(${bgBlack});
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 69%;
+
+  height: 100vh;
+  overflow: hidden;
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -23,11 +35,14 @@ export const ImgWrapper = styled.div`
   background-size: contain;
   background-position: center 33px;
 
-  /* Перевизначаємо шлях до 2x зображення,
-    якщо щільність екрану мінімум 2 */
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: url(${bgMobile2x});
+  }
+  @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    background-image: url(${bgMobile3x});
   }
 `;
