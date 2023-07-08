@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Select from 'react-select';
 
 const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,27 +12,22 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     setIngredients(updatedIngredients);
   };
 
-  const handleSearchTermChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-  };
-
-  const handleSelectIngredient = (index, selectedValue) => {
+  const handleSelectIngredient = (index, selectedOption) => {
     const updatedIngredients = [...ingredients];
-    updatedIngredients[index].name = selectedValue;
+    updatedIngredients[index].name = selectedOption.value;
     setIngredients(updatedIngredients);
   };
 
   useEffect(() => {
-    // Запрос на бекенд
+    // Backend request
     const backendIngredients = [
       { id: 1, name: 'Cucumber' },
       { id: 2, name: 'Apple' },
       { id: 3, name: 'Lime' },
     ];
 
-    // Фильтрация ингредиентов по поисковому запросу
-    const filteredIngredients = backendIngredients.filter((ingredient) =>
+    // Filter ingredients based on search term
+    const filteredIngredients = backendIngredients.filter(ingredient =>
       ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -60,44 +56,49 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     if (ingredients.length === 0) {
       setIngredients([{ name: '', amount: '', unit: '' }]);
     }
-  }, [ingredients.length,setIngredients ]);
+  }, [ingredients.length, setIngredients]);
 
   return (
     <div>
       <h3>Ingredients</h3>
-      <button type="button" onClick={removeIngredientField}>-</button>
+      <button type="button" onClick={removeIngredientField}>
+        -
+      </button>
       <span>{count}</span>
-      <button type="button" onClick={addIngredientField}>+</button>
+      <button type="button" onClick={addIngredientField}>
+        +
+      </button>
       {ingredients.map((ingredient, index) => (
         <div key={index}>
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleSearchTermChange}
-            placeholder="Search or Enter Ingredient"
+          <Select
+            value={
+              ingredient.name
+                ? { value: ingredient.name, label: ingredient.name }
+                : null
+            }
+            options={[
+              { value: '', label: 'Select ingredient', isDisabled: true },
+              ...ingredientOptions.map(option => ({
+                value: option.name,
+                label: option.name,
+              })),
+            ]}
+            onChange={selectedOption =>
+              handleSelectIngredient(index, selectedOption)
+            }
+            placeholder="Select ingredient"
           />
-          <select
-            value={ingredient.name}
-            onChange={(e) => handleSelectIngredient(index, e.target.value)}
-          >
-            <option value=""></option>
-            {ingredientOptions.map((option) => (
-              <option key={option.id} value={option.name}>
-                {option.name}
-              </option>
-            ))}
-          </select>
           <input
             type="text"
             value={ingredient.amount}
-            onChange={(e) =>
+            onChange={e =>
               handleIngredientChange(index, 'amount', e.target.value)
             }
             placeholder="Amount"
           />
           <select
             value={ingredient.unit}
-            onChange={(e) =>
+            onChange={e =>
               handleIngredientChange(index, 'unit', e.target.value)
             }
           >
