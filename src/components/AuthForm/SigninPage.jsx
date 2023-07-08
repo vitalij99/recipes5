@@ -8,10 +8,11 @@ import {
   InputForm,
   StyleErrorMessage,
   Link,
+  Container,
+  StyledNavLink,
 } from './AuthForm.Styled';
 import * as yup from 'yup';
 
-import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signinThunk } from 'redux/auth/authOperation';
 
@@ -46,32 +47,38 @@ const SigninPageForm = () => {
 
   return (
     <>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={schema}
-        onSubmit={handleSubmit}
-      >
-        <FormAuth>
-          <FeedbackFormGroup>
-            <InputForm type="email" name="email" placeholder="Email" />
-            <StyleErrorMessage name="email">
-              {msg => <Error>{msg}</Error>}
-            </StyleErrorMessage>
-          </FeedbackFormGroup>
-          <FeedbackFormGroup>
-            <InputForm type="password" name="password" placeholder="Password" />
-            <StyleErrorMessage name="password">
-              {msg => <Error>{msg}</Error>}
-            </StyleErrorMessage>
-          </FeedbackFormGroup>
-          <Btnwrapper>
-            <BtnRegister type="submit">Sign up</BtnRegister>
-          </Btnwrapper>
-        </FormAuth>
-      </Formik>
-      <Link>
-        <NavLink to="/auth/register">Sign Up</NavLink>
-      </Link>
+      <Container>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={handleSubmit}
+        >
+          <FormAuth>
+            <FeedbackFormGroup>
+              <InputForm type="email" name="email" placeholder="Email" />
+              <StyleErrorMessage name="email">
+                {msg => <Error>{msg}</Error>}
+              </StyleErrorMessage>
+            </FeedbackFormGroup>
+            <FeedbackFormGroup>
+              <InputForm
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+              <StyleErrorMessage name="password">
+                {msg => <Error>{msg}</Error>}
+              </StyleErrorMessage>
+            </FeedbackFormGroup>
+            <Btnwrapper>
+              <BtnRegister type="submit">Sign up</BtnRegister>
+            </Btnwrapper>
+          </FormAuth>
+        </Formik>
+        <Link>
+          <StyledNavLink to="/auth/register">Sign Up</StyledNavLink>
+        </Link>
+      </Container>
     </>
   );
 };

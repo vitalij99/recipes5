@@ -1,15 +1,30 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { Form, Field, ErrorMessage } from 'formik';
 
+export const Container = styled.div`
+  width: 100%;
+  max-width: var(--small-screen);
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: var(--medium-screen);
+  }
+
+  @media (min-width: 1440px) {
+    max-width: var(--large-screen);
+  }
+`;
 export const FormAuth = styled(Form)`
+  margin: 0 auto;
   padding: 32px 28px 40px 28px;
   width: 335px;
   background-color: #1e1f28;
   border-radius: 30px;
 
-  @media screen and (min-width: 375px) {
+  @media screen and (var(--small-screen)) {
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (var(--medium-screen)) {
   }
 `;
 export const FeedbackFormGroup = styled.div`
@@ -23,7 +38,6 @@ export const InputForm = styled(Field)`
   padding: 12px;
   padding-left: 40px;
   color: #fafafa;
-  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -49,6 +63,24 @@ export const BtnRegister = styled.button`
   width: 100%;
   padding: 14px 110px;
   background-color: #8baa36;
+  color: #fafafa;
   border-radius: 6px;
+  white-space: nowrap;
 `;
-export const Link = styled.div``;
+export const Link = styled.div`
+  text-align: center;
+  margin-top: 18px;
+`;
+export const StyledNavLink = styled(NavLink)`
+  color: #fafafa;
+  font-size: 14px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+`;
