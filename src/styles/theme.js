@@ -19,6 +19,12 @@ export const lightTheme = {
           background: '#8BAA36',
           icon: '#FAFAFA',
         },
+        nav: {
+          text: '#23262A',
+        },
+        searchIcon: {
+          fill: '#22252A',
+        },
         user: {
           text: '#22252A',
           iconBurger: '#22252A',
@@ -123,9 +129,7 @@ export const lightTheme = {
     },
     addRecipePage: {
       background: '#FAFAFA',
-      title: {
-        text: '#001833',
-      },
+      title: '#001833',
       listOfItems: {
         text1: '#7E7E7E',
         text2: '#000000',
@@ -153,7 +157,187 @@ export const lightTheme = {
       },
       recipePreparation: {
         background: '#D9D9D9',
+        outline: '#D9D9D9',
         text1: '#7E7E7E',
+        text2: '#000000',
+        button: {
+          fill: '#22252A',
+          text: '#FAFAFA',
+        },
+      },
+      popularRecipe: {
+        title: '#3E4462',
+        text: '#7E7E7E',
+        underline: '#707070',
+      },
+      followUs: {
+        title: '#001833',
+        icon: '#8BAA36',
+      },
+    },
+    favoritePage: {
+      background: '#FAFAFA',
+      title: '#001833',
+      list: {
+        background: '#FFFFFF',
+        title: '#3E4462',
+        text: '#23262A',
+      },
+      button: {
+        fill: '#22252A',
+        text: '#FAFAFA',
+      },
+      icon: {
+        background: '#EBF3D4',
+        color: '#22252A',
+      },
+      pagination: {
+        background: '#FAFAFA',
+        arrows: '#A9A9A9BA',
+        numbers: '#656565',
+        focus: {
+          circle: '#EBF3D4',
+          text: '#22252A',
+        },
+      },
+    },
+    recipePage: {
+      hero: {
+        title: '#8BAA36',
+        text: '#22252A',
+        button: {
+          outline: '#8BAA36',
+          text: '#22252A',
+        },
+      },
+      ingredients: {
+        background: '#FAFAFA',
+        titles: {
+          background: '#8BAA36',
+          text: '#FAFAFA',
+        },
+        list: {
+          background: '#EBF3D4',
+          text: '#3E4462',
+          number: {
+            background: '#8BAA36',
+            text: '#FAFAFA',
+          },
+          checkbox: {
+            outline: '#7E7E7E80',
+            icon: '#8BAA36',
+          },
+        },
+      },
+    },
+    myRecipesPage: {
+      background: '#FAFAFA',
+      title: '#001833',
+      list: {
+        background: '#FFFFFF',
+        title: '#3E4462',
+        text: '#23262A',
+      },
+      button: {
+        fill: '#22252A',
+        text: '#FAFAFA',
+      },
+      icon: {
+        background: '#EBF3D4',
+        color: '#22252A',
+      },
+      pagination: {
+        background: '#FAFAFA',
+        arrows: '#A9A9A9BA',
+        numbers: '#656565',
+        focus: {
+          circle: '#EBF3D4',
+          text: '#22252A',
+        },
+      },
+    },
+    searchPage: {
+      background: '#FAFAFA',
+      title: '#001833',
+      text: {
+        color: '#000000',
+        opacity: '0.5',
+      },
+      searchBar: {
+        background: '#FFFFFF',
+        outline: '#F0F0F0',
+        text: '#3E4462',
+        button: {
+          fill: '#8BAA36',
+          text: '#FAFAFA',
+        },
+      },
+      searchBy: {
+        text1: '#001833',
+        text2: {
+          color: '#000000',
+          opacity: '0.5',
+        },
+        icon: '#8BAA36',
+      },
+    },
+    shoppingListPage: {
+      background: '#FAFAFA',
+      title: '#001833',
+      product: {
+        titles: {
+          background: '#8BAA36',
+          text: '#FAFAFA',
+        },
+        list: {
+          pictureBackground: '#EBF3D4',
+          text: '#3E4462',
+        },
+        number: {
+          background: '#8BAA36',
+          text: '#FAFAFA',
+        },
+        icon: '#333333',
+      },
+    },
+    errorPage: {
+      background: '#FAFAFA',
+      title: '#000000',
+      text: {
+        color: '#000000',
+        opacity: '0.5',
+      },
+    },
+    userProfile: {
+      background: '#FAFAFA',
+      closeIcon: '#333333',
+      userPhoto: {
+        circleBackground: '#D9D9D9',
+        icon: '#C4C4C4',
+        plusBackground: '#8BAA36',
+        plusIcon: '#FAFAFA',
+      },
+      input: {
+        outline: '#23262A',
+        text: '#23262A',
+        icon: '#23262A',
+      },
+      button: {
+        background: '#8BAA36',
+        text: '#FAFAFA',
+      },
+    },
+    logout: {
+      background: '#FAFAFA',
+      closeIcon: '#333333',
+      text: '#23262A',
+      button1: {
+        background: '#8BAA36',
+        text: '#FAFAFA',
+      },
+      button2: {
+        background: '#D9D9D9',
+        text: '#23262A',
       },
     },
   },
