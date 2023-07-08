@@ -226,6 +226,7 @@ export const lightTheme = {
         outline: '#8BAA36',
         text: '#22252A',
         hoverFill: '#8BAA36',
+        hoverText: '#FAFAFA',
       },
     },
     ingredients: {
