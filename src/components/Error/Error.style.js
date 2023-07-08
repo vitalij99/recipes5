@@ -8,6 +8,11 @@ const Img = styled.img`
   margin-bottom: 14px;
 `;
 
+const TextContainer = styled.div`
+  margin: auto;
+  width: 268px;
+`;
+
 const BoldText = styled.p`
   font-family: 'Poppins';
   font-weight: 900;
@@ -20,7 +25,6 @@ const Text = styled.p`
   font-family: 'Poppins';
   text-align: center;
   color: gray;
-  width: 268px;
 `;
 
-export { Img, BoldText, Text };
+export { Img, TextContainer, BoldText, Text };
