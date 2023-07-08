@@ -78,6 +78,9 @@ const GlobalStyles = createGlobalStyle`
     src: url(${PoppinsThin}) format('truetype');
   }
 
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
   
   /* Reset CSS */
 
@@ -145,13 +148,34 @@ const GlobalStyles = createGlobalStyle`
   select {
     font: inherit;
   }
+
+   /* Global Breakpoints */
+  :root {
+    --small-screen: 375px;
+    --medium-screen: 768px;
+    --large-screen: 1440px;
+  }
 `;
 
 export default GlobalStyles;
 
-//NOTE - how to use fonts
+//NOTE - Fonts use case
 // const Paragraph = styled.p`
 //   font-family: 'Poppins', sans-serif;
 //   font-weight: 400;
 //   /* Rest of your styles */
+// `;
+
+//NOTE - Breakpoints use case
+// const Container = styled.div`
+//   width: 100%;
+//   max-width: var(--small-screen);
+
+//   @media (min-width: 768px) {
+//     max-width: var(--medium-screen);
+//   }
+
+//   @media (min-width: 1440px) {
+//     max-width: var(--large-screen);
+//   }
 // `;
