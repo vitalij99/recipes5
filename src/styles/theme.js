@@ -1,20 +1,9 @@
-// export const lightTheme = {
-//   background: '#FAFAFA',
-//   textMain: '#22252A', //REVIEW - #23262A
-//   //NOTE - MainPage search
-//   buttonColorMP: '#22252A',
-//   //NOTE - MainPage list
-//   textBackgroundColorMP: '#FFFFFF',
-//   //NOTE - MainPage footer button
-// }
-// export const darkTheme = {
-//   background: '#1E1F28',
-//   textMain: '#FAFAFA',
-//   //NOTE - MainPage search
-//   buttonColorMP: '#8BAA36',
-//   //NOTE - MainPage footer button
-//   textBackgroundColorMP: '#2A2C36',
-// };
+//NOTE - use case
+// const MenuModal = styled.div`
+//   background-color: ${props =>
+//     props.theme.mobile.mainPage.menuModal.background};
+//   /* Other styles for the menu modal */
+// `;
 
 export const lightTheme = {
   mobile: {
@@ -146,8 +135,9 @@ export const lightTheme = {
       listOfIngredients: {
         text1: '#7E7E7E',
         text2: '#000000',
+        icon1: '#000000',
+        icon2: '#8BAA36',
         selectionBackground: '#D9D9D9',
-        icon: '#000000',
         dropDownMenu: {
           background: '#FFFFFF',
           text1: '#000000',
@@ -157,7 +147,13 @@ export const lightTheme = {
           fill: '#FAFAFA',
           text: '#333333',
           outline: '#7E7E7E',
+          icon1: '#8BAA36',
+          icon2: '#7E7E7E',
         },
+      },
+      recipePreparation: {
+        background: '#D9D9D9',
+        text1: '#7E7E7E',
       },
     },
   },
