@@ -51,10 +51,10 @@ export const IconStyled = styled.svg`
   height: 18px;
   top: 14px;
   left: 14px;
-  &.error {
+  .error & {
     stroke: #e74a3b;
   }
-  &.valid {
+  .valid & {
     stroke: #3cbc81;
   }
 `;
