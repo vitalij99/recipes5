@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
 const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm] = useState('');
   const [ingredientOptions, setIngredientOptions] = useState([]);
   const [count, setCount] = useState(1);
 
