@@ -68,12 +68,10 @@ export const UserName = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
-  @media screen and (min-width: 768px) {
-    margin-right: 111px;
-  }
 
   @media screen and (min-width: 1440px) {
     font-size: 14px;
+    margin-right: 111px;
   }
 `;
 export const SiteNav = styled.nav`

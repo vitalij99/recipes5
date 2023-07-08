@@ -21,49 +21,64 @@ import {
 const Header = () => {
   const screenWidth = window.screen.width;
 
-  const [togleMenu, setTogleMenu] = useState(() => {
+  const [toggleMenu, setTogleMenu] = useState(() => {
     if (screenWidth >= 1440) {
       return true;
     }
     return false;
   });
-  console.log('🚀 ~ screenWidth:', screenWidth);
+
   const imgSrc =
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png';
+
+  const handleToggleMenu = () => {
+    setTogleMenu(!toggleMenu);
+  };
 
   return (
     <HeaderContainer
       style={{
         backgroundColor:
-          togleMenu && screenWidth <= 1440 ? '#EBF3D4' : '#FAFAFA',
+          toggleMenu && screenWidth <= 1440 ? '#EBF3D4' : '#FAFAFA',
       }}
     >
       <LinkStyle to="/">
         <HeaderLogo />
       </LinkStyle>
 
-      {togleMenu && (
+      {toggleMenu && (
         <SiteNav>
           <NavListList>
             <NavListItem>
-              <NavLinkStyle to={'/categories/:categoryName'}>
+              <NavLinkStyle
+                onClick={handleToggleMenu}
+                to={'/categories/:categoryName'}
+              >
                 Categories
               </NavLinkStyle>
             </NavListItem>
             <NavListItem>
-              <NavLinkStyle to={'/add'}>Add recipes</NavLinkStyle>
+              <NavLinkStyle onClick={handleToggleMenu} to={'/add'}>
+                Add recipes
+              </NavLinkStyle>
             </NavListItem>
             <NavListItem>
-              <NavLinkStyle to={'/recipe/:recipeId'}>My recipes</NavLinkStyle>
+              <NavLinkStyle onClick={handleToggleMenu} to={'/recipe/:recipeId'}>
+                My recipes
+              </NavLinkStyle>
             </NavListItem>
             <NavListItem>
-              <NavLinkStyle to={'/favorite'}>Favorites</NavLinkStyle>
+              <NavLinkStyle onClick={handleToggleMenu} to={'/favorite'}>
+                Favorites
+              </NavLinkStyle>
             </NavListItem>
             <NavListItem>
-              <NavLinkStyle to={'/shopping-list'}>Shopping list</NavLinkStyle>
+              <NavLinkStyle onClick={handleToggleMenu} to={'/shopping-list'}>
+                Shopping list
+              </NavLinkStyle>
             </NavListItem>
             <NavListItem>
-              <NavLinkStyle to={'/search'}>
+              <NavLinkStyle onClick={handleToggleMenu} to={'/search'}>
                 <SearchIcon />
                 {screenWidth <= 1440 && 'Search'}
               </NavLinkStyle>
@@ -75,18 +90,14 @@ const Header = () => {
         </SiteNav>
       )}
       <MobileHeaderBlock>
-        {!togleMenu || screenWidth > 1440 ? (
+        {!toggleMenu || screenWidth > 1440 ? (
           <>
             <UserAvatar src={imgSrc} alt="User avatar" />
             <UserName>UserName</UserName>
           </>
         ) : null}
-        <MenuButton
-          onClick={() => {
-            setTogleMenu(!togleMenu);
-          }}
-        >
-          {togleMenu ? <CloseIcon /> : <MenuIcon />}
+        <MenuButton onClick={handleToggleMenu}>
+          {toggleMenu ? <CloseIcon /> : <MenuIcon />}
         </MenuButton>
       </MobileHeaderBlock>
     </HeaderContainer>
