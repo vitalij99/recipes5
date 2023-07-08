@@ -6,20 +6,44 @@ export const FormAuth = styled(Form)`
   margin: 0 auto;
   padding: 32px 28px 40px 28px;
   width: 335px;
-  background-color: #1e1f28;
+  background-color: #2a2c36;
   border-radius: 30px;
 
-  @media screen and (var(--small-screen)) {
+  @media screen and (min-width: 768px) {
+    width: 500px;
+
+    padding: 32px 40px 44px;
   }
-  @media screen and (var(--medium-screen)) {
+  @media screen and (min-width: 1440px) {
+  }
+`;
+export const Title = styled.h1`
+  color: #fafafa;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.48px;
+  margin-bottom: 18px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1440px) {
   }
 `;
 export const FeedbackFormGroup = styled.div`
   width: 100%;
   margin-bottom: 12px;
   position: relative;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
-export const StyleErrorMessage = styled(ErrorMessage)``;
+
 export const InputForm = styled(Field)`
   width: 100%;
   padding: 12px;
@@ -34,6 +58,11 @@ export const InputForm = styled(Field)`
   border-radius: 6px;
   opacity: 0.8;
   background-color: transparent;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 export const Error = styled.div`
   position: absolute;
@@ -42,9 +71,14 @@ export const Error = styled.div`
   font-size: 10px;
   margin-top: 1px;
 `;
-
+export const StyleErrorMessage = styled(ErrorMessage)``;
 export const Btnwrapper = styled.div`
   margin-top: 28px;
+  @media screen and (min-width: 768px) {
+    margin-top: 50px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 export const BtnRegister = styled.button`
   width: 100%;
@@ -63,10 +97,6 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
   font-weight: 400;
   text-decoration: underline;
-
-  &:hover {
-    background-color: #ddd;
-  }
 
   &.active {
     font-weight: bold;

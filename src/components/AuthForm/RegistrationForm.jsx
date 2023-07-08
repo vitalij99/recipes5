@@ -9,10 +9,10 @@ import {
   StyleErrorMessage,
   Link,
   StyledNavLink,
+  Title,
 } from './AuthForm.Styled';
 import * as yup from 'yup';
 
-import { NavLink } from 'react-router-dom';
 import { registerThunk } from 'redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
 
@@ -48,13 +48,14 @@ const RegistrationForm = () => {
   };
 
   return (
-    <>
+    <div>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
         <FormAuth>
+          <Title>Registration</Title>
           <FeedbackFormGroup>
             <InputForm type="text" name="name" placeholder="Name" />
             <StyleErrorMessage name="name">
@@ -81,7 +82,7 @@ const RegistrationForm = () => {
       <Link>
         <StyledNavLink to="/auth/signin">Sign In</StyledNavLink>
       </Link>
-    </>
+    </div>
   );
 };
 

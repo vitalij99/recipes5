@@ -8,8 +8,8 @@ import {
   InputForm,
   StyleErrorMessage,
   Link,
-  Container,
   StyledNavLink,
+  Title,
 } from './AuthForm.Styled';
 import * as yup from 'yup';
 
@@ -46,13 +46,14 @@ const SigninPageForm = () => {
   };
 
   return (
-    <>
+    <div>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
         <FormAuth>
+          <Title>Registration</Title>
           <FeedbackFormGroup>
             <InputForm type="email" name="email" placeholder="Email" />
             <StyleErrorMessage name="email">
@@ -73,7 +74,7 @@ const SigninPageForm = () => {
       <Link>
         <StyledNavLink to="/auth/register">Sign Up</StyledNavLink>
       </Link>
-    </>
+    </div>
   );
 };
 
