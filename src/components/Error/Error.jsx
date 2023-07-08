@@ -1,5 +1,5 @@
 import Container from 'components/Container/Container';
-import errorImage from 'images/error-404.png';
+import errorImage from 'images/error-404.svg';
 import { Img, TextContainer, BoldText, Text } from './Error.style';
 
 const Error = () => (
