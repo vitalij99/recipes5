@@ -11,6 +11,27 @@ import PoppinsRegular from './fonts/Poppins-Regular.ttf';
 import PoppinsSemiBold from './fonts/Poppins-SemiBold.ttf';
 import PoppinsThin from './fonts/Poppins-Thin.ttf';
 
+//NOTE - Fonts use case
+// const Paragraph = styled.p`
+//   font-family: 'Poppins', sans-serif;
+//   font-weight: 400;
+//   /* Rest of your styles */
+// `;
+
+//NOTE - Breakpoints use case
+// const Container = styled.div`
+//   width: 100%;
+//   max-width: var(--small-screen);
+
+//   @media (min-width: 768px) {
+//     max-width: var(--medium-screen);
+//   }
+
+//   @media (min-width: 1440px) {
+//     max-width: var(--large-screen);
+//   }
+// `;
+
 const GlobalStyles = createGlobalStyle`
   ${normalize}
 
@@ -158,24 +179,3 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
-
-//NOTE - Fonts use case
-// const Paragraph = styled.p`
-//   font-family: 'Poppins', sans-serif;
-//   font-weight: 400;
-//   /* Rest of your styles */
-// `;
-
-//NOTE - Breakpoints use case
-// const Container = styled.div`
-//   width: 100%;
-//   max-width: var(--small-screen);
-
-//   @media (min-width: 768px) {
-//     max-width: var(--medium-screen);
-//   }
-
-//   @media (min-width: 1440px) {
-//     max-width: var(--large-screen);
-//   }
-// `;
