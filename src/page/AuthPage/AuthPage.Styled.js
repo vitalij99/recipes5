@@ -1,8 +1,13 @@
 import styled from 'styled-components';
-import bgMobile from '../../images/authPage/bg_mobile.jpg';
-import bgMobile2x from '../../images/authPage/bg_mobile2x.jpg';
-import bgMobile3x from '../../images/authPage/bg_mobile3x.jpg';
-import bgDesktop from '../../images/authPage/bg_desktop.png';
+import bgMobile1x from '../../images/authPage/bg_mobile@1x.jpg';
+import bgMobile2x from '../../images/authPage/bg_mobile@2x.jpg';
+import bgMobile3x from '../../images/authPage/bg_mobile@3x.jpg';
+import bgTablet1x from '../../images/authPage/bg_mobile@1x.jpg';
+import bgTablet2x from '../../images/authPage/bg_tablet@2x.jpg';
+import bgTablet3x from '../../images/authPage/bg_tablet@3x.jpg';
+import bgDesktop1x from '../../images/authPage/bg_desktop@1x.png';
+import bgDesktop2x from '../../images/authPage/bg_desktop@2x.png';
+import bgDesktop3x from '../../images/authPage/bg_desktop@3x.png';
 import bgBlack from '../../images/authPage/bg_black_mobile.svg';
 import bgBlackTab from '../../images/authPage/bg_black_tablet.svg';
 import bgBlackDes from '../../images/authPage/bg_black_desktop.svg';
@@ -18,7 +23,7 @@ export const Section = styled.div`
   @media (min-width: 768px) {
     background-image: url(${bgBlackTab}),
       linear-gradient(to bottom, transparent 50%, #1e1f28 50%);
-    background-position: center 280px;
+    background-position: center 290px;
   }
 
   @media (min-width: 1440px) {
@@ -50,27 +55,29 @@ export const Container = styled.div`
 export const ImgWrapper = styled.div`
   height: 250px;
   background-repeat: no-repeat;
-  background-image: url(${bgMobile});
+  background-image: image-set(
+    url(${bgMobile1x}) 1x,
+    url(${bgMobile2x}) 2x,
+    url(${bgMobile3x}) 3x
+  );
   background-size: contain;
   background-position: center 33px;
 
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url(${bgMobile2x});
-  }
-  @media (min-device-pixel-ratio: 3),
-    (min-resolution: 288dpi),
-    (min-resolution: 3dppx) {
-    background-image: url(${bgMobile3x});
-  }
-
   @media (min-width: 768px) {
+    background-image: image-set(
+      url(${bgTablet1x}) 1x,
+      url(${bgTablet2x}) 2x,
+      url(${bgTablet3x}) 3x
+    );
     height: 359px;
   }
 
   @media (min-width: 1440px) {
-    background-image: url(${bgDesktop});
+    background-image: image-set(
+      url(${bgDesktop1x}) 1x,
+      url(${bgDesktop2x}) 2x,
+      url(${bgDesktop3x}) 3x
+    );
     width: 409px;
     height: 359px;
   }
