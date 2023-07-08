@@ -11,35 +11,24 @@ import {
   StyledNavLink,
   Title,
 } from './AuthForm.Styled';
-import * as yup from 'yup';
 
-import { registerThunk } from 'redux/auth/authOperation';
+import { registerThunk, signinThunk } from 'redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
+import {
+  initialValuesRegister,
+  initialValuesSignIn,
+  schemaRegister,
+  schemaSignIn,
+} from './schema';
 
-const RegistrationForm = () => {
+const AuthForm = ({ isRegistration }) => {
   const dispatch = useDispatch();
-
-  const initialValues = {
-    name: '',
-    email: '',
-    password: '',
-  };
-  const schema = yup.object().shape({
-    name: yup.string().min(4).max(20).required(),
-    email: yup
-      .string()
-      .email('Invalid email')
-      .test('email-format', 'Invalid email format', value => {
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return emailRegex.test(value);
-      })
-      .required(),
-    password: yup.string().min(8).max(64).required(),
-  });
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      await dispatch(registerThunk(values));
+      isRegistration
+        ? await dispatch(registerThunk(values))
+        : await dispatch(signinThunk(values));
     } catch (error) {
       console.log(error);
     }
@@ -50,17 +39,23 @@ const RegistrationForm = () => {
   return (
     <div>
       <Formik
-        initialValues={initialValues}
-        validationSchema={schema}
+        initialValues={
+          isRegistration ? initialValuesRegister : initialValuesSignIn
+        }
+        validationSchema={isRegistration ? schemaRegister : schemaSignIn}
         onSubmit={handleSubmit}
       >
         <FormAuth>
-          <Title>Registration</Title>
+          <Title>{isRegistration ? 'Registration' : 'Sign In'}</Title>
           <FeedbackFormGroup>
-            <InputForm type="text" name="name" placeholder="Name" />
-            <StyleErrorMessage name="name">
-              {msg => <Error>{msg}</Error>}
-            </StyleErrorMessage>
+            {isRegistration && (
+              <>
+                <InputForm type="text" name="name" placeholder="Name" />
+                <StyleErrorMessage name="name">
+                  {msg => <Error>{msg}</Error>}
+                </StyleErrorMessage>
+              </>
+            )}
           </FeedbackFormGroup>
           <FeedbackFormGroup>
             <InputForm type="email" name="email" placeholder="Email" />
@@ -75,15 +70,21 @@ const RegistrationForm = () => {
             </StyleErrorMessage>
           </FeedbackFormGroup>
           <Btnwrapper>
-            <BtnRegister type="submit">Sign up</BtnRegister>
+            <BtnRegister type="submit">
+              {isRegistration ? 'Sign Up' : 'Sign In'}
+            </BtnRegister>
           </Btnwrapper>
         </FormAuth>
       </Formik>
       <Link>
-        <StyledNavLink to="/auth/signin">Sign In</StyledNavLink>
+        {isRegistration ? (
+          <StyledNavLink to="/auth/signin">Sign In</StyledNavLink>
+        ) : (
+          <StyledNavLink to="/auth/register">Register</StyledNavLink>
+        )}
       </Link>
     </div>
   );
 };
 
-export default RegistrationForm;
+export default AuthForm;
