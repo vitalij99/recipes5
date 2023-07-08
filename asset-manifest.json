@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/recipes5/static/css/main.58462fbc.css",
-    "main.js": "/recipes5/static/js/main.8b6f72a5.js",
+    "main.js": "/recipes5/static/js/main.17794bcc.js",
     "static/media/full_desc_ratio_2.webp": "/recipes5/static/media/full_desc_ratio_2.cf22bbb2c8cfd520f63e.webp",
     "static/media/full_desc_ratio_1.webp": "/recipes5/static/media/full_desc_ratio_1.341cfa020013100cc7e5.webp",
     "static/media/Poppins-Thin.ttf": "/recipes5/static/media/Poppins-Thin.59ff6a729e30c99b478e.ttf",
@@ -32,10 +32,10 @@
     "static/media/bg_black_tablet.svg": "/recipes5/static/media/bg_black_tablet.3e035c53720932e6d95337bf72e5cd12.svg",
     "static/media/bg_black_desktop.svg": "/recipes5/static/media/bg_black_desktop.32fce8664a1d8050776c7fd298d54f19.svg",
     "main.58462fbc.css.map": "/recipes5/static/css/main.58462fbc.css.map",
-    "main.8b6f72a5.js.map": "/recipes5/static/js/main.8b6f72a5.js.map"
+    "main.17794bcc.js.map": "/recipes5/static/js/main.17794bcc.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.8b6f72a5.js"
+    "static/js/main.17794bcc.js"
   ]
 }
