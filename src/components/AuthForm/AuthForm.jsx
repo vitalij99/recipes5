@@ -10,6 +10,7 @@ import {
   Link,
   StyledNavLink,
   Title,
+  IconStyled,
 } from './AuthForm.Styled';
 
 import { registerThunk, signinThunk } from 'redux/auth/authOperation';
@@ -20,6 +21,8 @@ import {
   schemaRegister,
   schemaSignIn,
 } from './schema';
+
+import svgSprit from '../../images/authPage/symbol-defs.svg';
 
 const AuthForm = ({ isRegistration }) => {
   const dispatch = useDispatch();
@@ -33,7 +36,7 @@ const AuthForm = ({ isRegistration }) => {
       console.log(error);
     }
 
-    // resetForm();
+    resetForm();
   };
 
   return (
@@ -45,36 +48,70 @@ const AuthForm = ({ isRegistration }) => {
         validationSchema={isRegistration ? schemaRegister : schemaSignIn}
         onSubmit={handleSubmit}
       >
-        <FormAuth>
-          <Title>{isRegistration ? 'Registration' : 'Sign In'}</Title>
-          <FeedbackFormGroup>
+        {({ errors, touched }) => (
+          <FormAuth>
+            <Title>{isRegistration ? 'Registration' : 'Sign In'}</Title>
             {isRegistration && (
-              <>
-                <InputForm type="text" name="name" placeholder="Name" />
-                <StyleErrorMessage name="name">
-                  {msg => <Error>{msg}</Error>}
-                </StyleErrorMessage>
-              </>
+              <FeedbackFormGroup
+                className={
+                  errors.name && touched.name
+                    ? 'error'
+                    : touched.name && 'valid'
+                }
+              >
+                <>
+                  <InputForm type="text" name="name" placeholder="Name" />
+
+                  <IconStyled>
+                    <use xlinkHref={`${svgSprit}#icon-user`} />
+                  </IconStyled>
+                  <StyleErrorMessage name="name">
+                    {msg => <Error>{msg}</Error>}
+                  </StyleErrorMessage>
+                </>
+              </FeedbackFormGroup>
             )}
-          </FeedbackFormGroup>
-          <FeedbackFormGroup>
-            <InputForm type="email" name="email" placeholder="Email" />
-            <StyleErrorMessage name="email">
-              {msg => <Error>{msg}</Error>}
-            </StyleErrorMessage>
-          </FeedbackFormGroup>
-          <FeedbackFormGroup>
-            <InputForm type="password" name="password" placeholder="Password" />
-            <StyleErrorMessage name="password">
-              {msg => <Error>{msg}</Error>}
-            </StyleErrorMessage>
-          </FeedbackFormGroup>
-          <Btnwrapper>
-            <BtnRegister type="submit">
-              {isRegistration ? 'Sign Up' : 'Sign In'}
-            </BtnRegister>
-          </Btnwrapper>
-        </FormAuth>
+            <FeedbackFormGroup
+              className={
+                errors.email && touched.email
+                  ? 'error'
+                  : touched.email && 'valid'
+              }
+            >
+              <IconStyled>
+                <use xlinkHref={`${svgSprit}#icon-mail`} />
+              </IconStyled>
+              <InputForm type="email" name="email" placeholder="Email" />
+              <StyleErrorMessage name="email">
+                {msg => <Error>{msg}</Error>}
+              </StyleErrorMessage>
+            </FeedbackFormGroup>
+            <FeedbackFormGroup
+              className={
+                errors.password && touched.password
+                  ? 'error'
+                  : touched.password && 'valid'
+              }
+            >
+              <IconStyled>
+                <use xlinkHref={`${svgSprit}#icon-lock`} />
+              </IconStyled>
+              <InputForm
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+              <StyleErrorMessage name="password">
+                {msg => <Error>{msg}</Error>}
+              </StyleErrorMessage>
+            </FeedbackFormGroup>
+            <Btnwrapper>
+              <BtnRegister type="submit">
+                {isRegistration ? 'Sign Up' : 'Sign In'}
+              </BtnRegister>
+            </Btnwrapper>
+          </FormAuth>
+        )}
       </Formik>
       <Link>
         {isRegistration ? (

@@ -44,6 +44,20 @@ export const FeedbackFormGroup = styled.div`
   }
 `;
 
+export const IconStyled = styled.svg`
+  position: absolute;
+  stroke: #ffffff;
+  width: 18px;
+  height: 18px;
+  top: 14px;
+  left: 14px;
+  &.error {
+    stroke: #e74a3b;
+  }
+  &.valid {
+    stroke: #3cbc81;
+  }
+`;
 export const InputForm = styled(Field)`
   width: 100%;
   padding: 12px;
@@ -58,6 +72,20 @@ export const InputForm = styled(Field)`
   border-radius: 6px;
   opacity: 0.8;
   background-color: transparent;
+  &:hover {
+    border: 1px solid #ffffff;
+    outline: 1px solid #ffffff;
+    color: #ffffff;
+    opacity: 1;
+  }
+  .error & {
+    border: 1px solid #e74a3b;
+    outline: none;
+  }
+  .valid & {
+    border: 1px solid #3cbc81;
+    outline: none;
+  }
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
