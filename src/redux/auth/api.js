@@ -13,7 +13,7 @@ const tokenOperation = {
 
 export const registerApi = async (user, thunkAPI) => {
   try {
-    const { data } = await axios.post('/auth/register', user);
+    const { data } = await axios.post('/users/register', user);
     tokenOperation.setToken(data.token);
 
     return data;
@@ -23,7 +23,7 @@ export const registerApi = async (user, thunkAPI) => {
 };
 export const signinApi = async (user, thunkAPI) => {
   try {
-    const { data } = await axios.post('/auth/signin', user);
+    const { data } = await axios.post('/users/login', user);
     tokenOperation.setToken(data.token);
 
     return data;
@@ -33,7 +33,7 @@ export const signinApi = async (user, thunkAPI) => {
 };
 export const logoutApi = async (_, thunkAPI) => {
   try {
-    const { data } = await axios.post('/auth/logout');
+    const { data } = await axios.post('/users/logout');
 
     return data;
   } catch (error) {
@@ -51,7 +51,7 @@ export const currentApi = async (_, thunkAPI) => {
 
   try {
     tokenOperation.setToken(persistedToken);
-    const { data } = await axios.get('/auth/current');
+    const { data } = await axios.get('/users/current');
 
     return data;
   } catch (error) {

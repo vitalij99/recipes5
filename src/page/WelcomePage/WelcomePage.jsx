@@ -14,7 +14,9 @@ const WelcomePage = () => {
           retrieve your own recipes at any time.
         </PStyled>
         <BtnNav to="auth/register">Register</BtnNav>
-        <BtnNav to="auth/signin">Sign In</BtnNav>
+        <BtnNav to="auth/signin" className="dark">
+          Sign In
+        </BtnNav>
       </Container>
     </DivStyled>
   );

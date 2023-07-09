@@ -18,4 +18,7 @@ export const BtnNavStyl = styled(NavLink)`
     font-size: 16px;
     line-height: 24px;
   }
+  &.dark {
+    background-color: transparent;
+  }
 `;
