@@ -15,8 +15,16 @@ import { Route, Routes } from 'react-router';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from 'styles/theme';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { cuttentThunk } from 'redux/auth/authOperation';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(cuttentThunk());
+  }, [dispatch]);
+
   return (
     <>
       <ThemeProvider theme={lightTheme}>

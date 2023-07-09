@@ -18,6 +18,7 @@ export const Section = styled.div`
   background-position: center 350px;
   background-size: auto auto;
   background-image: url(${bgBlack});
+  min-height: 100vh;
   height: 100%;
   padding: 87px 20px 118px;
 
