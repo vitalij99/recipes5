@@ -55,7 +55,6 @@ export const currentApi = async (_, thunkAPI) => {
 
     return data;
   } catch (error) {
-    console.log(error.message);
     thunkAPI.rejectWithValue(error.message);
   }
 };
