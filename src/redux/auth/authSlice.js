@@ -11,6 +11,9 @@ const initialState = {
   user: {
     name: null,
     email: null,
+    avatar: null,
+    favorite: null,
+    shoppingList: null,
   },
   token: null,
   isLoggedIn: false,
