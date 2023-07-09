@@ -28,10 +28,11 @@ const AuthForm = ({ isRegistration }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = async (values, { resetForm }) => {
+    const { email, password } = values;
     try {
       isRegistration
         ? await dispatch(registerThunk(values))
-        : await dispatch(signinThunk(values));
+        : await dispatch(signinThunk({ email, password }));
     } catch (error) {
       console.log(error);
     }
