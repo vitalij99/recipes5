@@ -50,8 +50,8 @@ export const Container = styled.div`
     display: flex;
     gap: 164px;
     justify-content: center;
-    align-content: center;
-    align-items: center;
+
+    align-items: flex-start;
     max-width: var(--large-screen);
   }
 `;
@@ -81,7 +81,7 @@ export const ImgWrapper = styled.div`
       url(${bgDesktop2x}) 2x,
       url(${bgDesktop3x}) 3x
     );
-    width: 409px;
-    height: 359px;
+    width: 532px;
+    height: 468px;
   }
 `;
