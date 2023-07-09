@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import bgMobile1x from '../../images/authPage/bg_mobile@1x.jpg';
 import bgMobile2x from '../../images/authPage/bg_mobile@2x.jpg';
 import bgMobile3x from '../../images/authPage/bg_mobile@3x.jpg';
-import bgTablet1x from '../../images/authPage/bg_mobile@1x.jpg';
+import bgTablet1x from '../../images/authPage/bg_tablet@1x.jpg';
 import bgTablet2x from '../../images/authPage/bg_tablet@2x.jpg';
 import bgTablet3x from '../../images/authPage/bg_tablet@3x.jpg';
 import bgDesktop1x from '../../images/authPage/bg_desktop@1x.png';
