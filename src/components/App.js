@@ -5,17 +5,18 @@ import { lightTheme } from 'styles/theme';
 import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { currentThunk } from 'redux/auth/authOperation';
+import { WelcomePage, AuthPage } from 'page';
 
-const { WelcomePage } = lazy(() => import('page'));
-const { CategoriesPage } = lazy(() => import('page'));
-const { MainPage } = lazy(() => import('page'));
-const { AddRecipePage } = lazy(() => import('page'));
-const { FavoritePage } = lazy(() => import('page'));
-const { RecipePage } = lazy(() => import('page'));
-const { MyRecipesPage } = lazy(() => import('page'));
-const { SearchPage } = lazy(() => import('page'));
-const { ShoppingListPage } = lazy(() => import('page'));
-const { AuthPage } = lazy(() => import('page'));
+const CategoriesPage = lazy(() => import('page/CategoriesPage/CategoriesPage'));
+const MainPage = lazy(() => import('page/MainPage/MainPage'));
+const AddRecipePage = lazy(() => import('page/AddRecipePage/AddRecipePage'));
+const FavoritePage = lazy(() => import('page/FavoritePage/FavoritePage'));
+const RecipePage = lazy(() => import('page/RecipePage/RecipePage'));
+const MyRecipesPage = lazy(() => import('page/MyRecipesPage/MyRecipesPage'));
+const SearchPage = lazy(() => import('page/SearchPage/SearchPage'));
+const ShoppingListPage = lazy(() =>
+  import('page/ShoppingListPage/ShoppingListPage')
+);
 
 function App() {
   const dispatch = useDispatch();
