@@ -1,22 +1,30 @@
-import {
-  WelcomePage,
-  CategoriesPage,
-  MainPage,
-  AddRecipePage,
-  FavoritePage,
-  RecipePage,
-  MyRecipesPage,
-  SearchPage,
-  ShoppingListPage,
-  AuthPage,
-} from 'page';
-
 import { Route, Routes } from 'react-router';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from 'styles/theme';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { currentThunk } from 'redux/auth/authOperation';
+import { WelcomePage, AuthPage } from 'page';
+
+const CategoriesPage = lazy(() => import('page/CategoriesPage/CategoriesPage'));
+const MainPage = lazy(() => import('page/MainPage/MainPage'));
+const AddRecipePage = lazy(() => import('page/AddRecipePage/AddRecipePage'));
+const FavoritePage = lazy(() => import('page/FavoritePage/FavoritePage'));
+const RecipePage = lazy(() => import('page/RecipePage/RecipePage'));
+const MyRecipesPage = lazy(() => import('page/MyRecipesPage/MyRecipesPage'));
+const SearchPage = lazy(() => import('page/SearchPage/SearchPage'));
+const ShoppingListPage = lazy(() =>
+  import('page/ShoppingListPage/ShoppingListPage')
+);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(currentThunk());
+  }, [dispatch]);
+
   return (
     <>
       <ThemeProvider theme={lightTheme}>

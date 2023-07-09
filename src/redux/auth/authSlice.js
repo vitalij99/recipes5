@@ -1,5 +1,10 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { signinThunk, logoutThunk, registerThunk } from './authOperation';
+import {
+  signinThunk,
+  logoutThunk,
+  registerThunk,
+  currentThunk,
+} from './authOperation';
 
 const STATUS = {
   PENDING: 'pending',
@@ -11,6 +16,9 @@ const initialState = {
   user: {
     name: null,
     email: null,
+    avatar: null,
+    favorite: null,
+    shoppingList: null,
   },
   token: null,
   isLoggedIn: false,
@@ -18,7 +26,8 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-const arrThunks = [registerThunk, signinThunk, logoutThunk];
+
+const arrThunks = [registerThunk, signinThunk, logoutThunk, currentThunk];
 
 const fn = type => arrThunks.map(el => el[type]);
 
@@ -52,6 +61,7 @@ export const authSlice = createSlice({
     builder
       .addCase(registerThunk.fulfilled, handleIsLoggedIn)
       .addCase(signinThunk.fulfilled, handleIsLoggedIn)
+      .addCase(currentThunk.fulfilled, handleIsLoggedIn)
       .addCase(logoutThunk.pending, handleLogout)
       .addMatcher(isAnyOf(...fn(PENDING)), handlePending)
       .addMatcher(isAnyOf(...fn(REJECTED)), handleRejected)
