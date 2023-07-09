@@ -1,12 +1,16 @@
 import Container from 'components/Container/Container';
 import React from 'react';
-import { DivStyled, Title, PStyled } from './WelcomePage.styled';
+import { DivStyled, Title, PStyled, ImgStyled } from './WelcomePage.styled';
 import BtnNav from 'components/BtnNav/BtnNav';
+import svgSprit from 'images/authPage/symbol-defs.svg';
 
 const WelcomePage = () => {
   return (
     <DivStyled>
       <Container>
+        <ImgStyled>
+          <use xlinkHref={`${svgSprit}#icon-logo`} />
+        </ImgStyled>
         <Title>Welcome to the app!</Title>
         <PStyled>
           This app offers more than just a collection of recipes - it is

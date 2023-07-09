@@ -22,7 +22,7 @@ import {
   schemaSignIn,
 } from './schema';
 
-import svgSprit from '../../images/authPage/symbol-defs.svg';
+import svgSprit from 'images/authPage/symbol-defs.svg';
 
 const AuthForm = ({ isRegistration }) => {
   const dispatch = useDispatch();

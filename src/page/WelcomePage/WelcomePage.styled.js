@@ -71,3 +71,17 @@ export const PStyled = styled.p`
     max-width: 540px;
   }
 `;
+export const ImgStyled = styled.svg`
+  width: 54px;
+  height: 54px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #8baa36;
+  margin-bottom: 28px;
+  stroke: #fafafa;
+  @media (min-width: 768px) {
+    margin-bottom: 44px;
+    width: 68px;
+    height: 68px;
+  }
+`;
