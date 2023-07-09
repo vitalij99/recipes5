@@ -1,7 +1,8 @@
+import ContainerMedia from 'components/Container/Container.style';
 import React, { useState } from 'react';
-import RecipeDescriptionFields from '../AddRecipe/RecipeDescriptionFields';
-import RecipeIngredientsFields from '../AddRecipe/RecipeIngredientsFields';
-import RecipePreparationFields from '../AddRecipe/RecipePreparationFields';
+import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
+import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
+import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
 
 const AddRecipeForm = () => {
   const initialRecipeData = {
@@ -32,7 +33,9 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div>
+    
+      <ContainerMedia>
+        <div>
       <h2>Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <RecipeDescriptionFields
@@ -57,9 +60,12 @@ const AddRecipeForm = () => {
             }))
           }
         />
+        
         <button type="submit">Add</button>
+        
       </form>
     </div>
+    </ContainerMedia>
   );
 };
 
