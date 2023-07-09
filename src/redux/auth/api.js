@@ -43,16 +43,19 @@ export const logoutApi = async (_, thunkAPI) => {
 export const currentApi = async (_, thunkAPI) => {
   const state = thunkAPI.getState();
 
-  const persistedToken = state.authReducer.token;
+  const persistedToken = state.auth.token;
+
   if (persistedToken === null) {
     return thunkAPI.rejectWithValue('Unable to fetch user');
   }
 
   try {
+    tokenOperation.setToken(persistedToken);
     const { data } = await axios.get('/auth/current');
 
     return data;
   } catch (error) {
+    console.log(error.message);
     thunkAPI.rejectWithValue(error.message);
   }
 };

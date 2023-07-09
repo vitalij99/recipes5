@@ -10,6 +10,6 @@ export const signinThunk = createAsyncThunk('auth/signin', id => {
 export const logoutThunk = createAsyncThunk('auth/logout', () => {
   return logoutApi();
 });
-export const cuttentThunk = createAsyncThunk('auth/current', () => {
-  return currentApi();
+export const currentThunk = createAsyncThunk('auth/current', (...arr) => {
+  return currentApi(...arr);
 });

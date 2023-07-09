@@ -17,12 +17,13 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme } from 'styles/theme';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { cuttentThunk } from 'redux/auth/authOperation';
+import { currentThunk } from 'redux/auth/authOperation';
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(cuttentThunk());
+    dispatch(currentThunk());
   }, [dispatch]);
 
   return (

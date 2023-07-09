@@ -3,7 +3,7 @@ import {
   signinThunk,
   logoutThunk,
   registerThunk,
-  cuttentThunk,
+  currentThunk,
 } from './authOperation';
 
 const STATUS = {
@@ -26,7 +26,8 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-const arrThunks = [registerThunk, signinThunk, logoutThunk, cuttentThunk];
+
+const arrThunks = [registerThunk, signinThunk, logoutThunk, currentThunk];
 
 const fn = type => arrThunks.map(el => el[type]);
 
@@ -60,7 +61,7 @@ export const authSlice = createSlice({
     builder
       .addCase(registerThunk.fulfilled, handleIsLoggedIn)
       .addCase(signinThunk.fulfilled, handleIsLoggedIn)
-      .addCase(cuttentThunk.fulfilled, handleIsLoggedIn)
+      .addCase(currentThunk.fulfilled, handleIsLoggedIn)
       .addCase(logoutThunk.pending, handleLogout)
       .addMatcher(isAnyOf(...fn(PENDING)), handlePending)
       .addMatcher(isAnyOf(...fn(REJECTED)), handleRejected)
