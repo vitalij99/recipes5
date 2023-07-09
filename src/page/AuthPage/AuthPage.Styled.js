@@ -15,15 +15,17 @@ import bgBlackDes from '../../images/authPage/bg_black_desktop.svg';
 export const Section = styled.div`
   width: 100%;
   background-repeat: no-repeat;
-  background-position: center 280px;
+  background-position: center 350px;
   background-size: auto auto;
   background-image: url(${bgBlack});
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  padding: 87px 20px 118px;
+
   @media (min-width: 768px) {
     background-image: url(${bgBlackTab}),
       linear-gradient(to bottom, transparent 50%, #1e1f28 50%);
-    background-position: center 290px;
+    background-position: center 410px;
+    padding: 96px 20px 120px;
   }
 
   @media (min-width: 1440px) {

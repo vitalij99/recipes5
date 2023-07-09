@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://';
+axios.defaults.baseURL = 'http://localhost:3000/';
 
 const tokenOperation = {
   setToken: token => {
@@ -13,7 +13,7 @@ const tokenOperation = {
 
 export const registerApi = async (user, thunkAPI) => {
   try {
-    const { data } = await axios.post('/users/register', user);
+    const { data } = await axios.post('/auth/register', user);
     tokenOperation.setToken(data.token);
 
     return data;
@@ -23,7 +23,7 @@ export const registerApi = async (user, thunkAPI) => {
 };
 export const signinApi = async (user, thunkAPI) => {
   try {
-    const { data } = await axios.post('/users/signin', user);
+    const { data } = await axios.post('/auth/signin', user);
     tokenOperation.setToken(data.token);
 
     return data;
@@ -33,7 +33,7 @@ export const signinApi = async (user, thunkAPI) => {
 };
 export const logoutApi = async (_, thunkAPI) => {
   try {
-    const { data } = await axios.post('/users/logout');
+    const { data } = await axios.post('/auth/logout');
 
     return data;
   } catch (error) {
