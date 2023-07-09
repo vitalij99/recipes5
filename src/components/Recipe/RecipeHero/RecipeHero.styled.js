@@ -29,7 +29,7 @@ export const RecipeHeroWrapper = styled.div`
     background-image: url(${mob_ratio_2});
   }
 
-  @media (min-width: 375px) {
+  @media (min-width: 375.1px) {
     background-image: url(${tab_ratio_1});
 
     @media (min-device-pixel-ratio: 2),
@@ -55,7 +55,7 @@ export const RecipeHeroWrapper = styled.div`
     padding-top: 164px;
   }
 
-  @media (min-width: 1280px) {
+  /* @media (min-width: 1440px) {
     background-image: url(${full_desc_ratio_1});
 
     @media (min-device-pixel-ratio: 2),
@@ -63,12 +63,12 @@ export const RecipeHeroWrapper = styled.div`
       (min-resolution: 2dppx) {
       background-image: url(${full_desc_ratio_2});
     }
-  }
+  } */
 `;
 
 export const HeroTitle = styled.h1`
-  font-family: 'Poppins';
-  color: #8baa36;
+  font-family: 'Poppins', sans-serif;
+  color: ${props => props.theme.recipePage.hero.title};
   font-weight: 600;
   font-size: 24px;
   max-width: 360px;
@@ -87,7 +87,7 @@ export const HeroDescr = styled.p`
   margin-bottom: 24px;
   font-size: 12px;
   line-height: 1.33;
-  color: #22252a;
+  color: ${props => props.theme.recipePage.hero.text};
 
   @media (min-width: 768px) {
     max-width: 506px;
@@ -100,9 +100,9 @@ export const HeroDescr = styled.p`
 `;
 export const HeroBtn = styled.button`
   background-color: transparent;
-  color: #22252a;
+  color: ${props => props.theme.recipePage.hero.button.text};
   border-radius: 24px 44px;
-  border: 1px solid #8baa36;
+  border: 1px solid ${props => props.theme.recipePage.hero.button.outline};
   padding: 10px 18px;
   font-weight: 400;
   font-size: 10px;
@@ -112,7 +112,7 @@ export const HeroBtn = styled.button`
   transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
   &:hover,
   &:focus {
-    background-color: #8baa36;
+    background-color: ${props => props.theme.recipePage.hero.button.hoverFill};
     color: #fafafa;
   }
 
@@ -137,6 +137,7 @@ export const HeroTime = styled.span`
   font-size: 10px;
   line-height: 1.4;
   color: #23262a;
+  margin-left: 8px;
   @media (min-width: 768px) {
     font-size: 14px;
     margin-left: 8px;
