@@ -16,7 +16,7 @@ export const TextArea = styled.textarea`
   padding: 10px 16px;
   outline: none;
   background-color: ${props =>
-    props.theme.addRecipePage.recipePreparation.background};
+    props.theme.addRecipePage.listOfIngredients.selectionBackground};
   border: none;
   border-radius: 6px;
   margin-bottom: 18px;

@@ -172,7 +172,7 @@ export const lightTheme = {
       hoverIcon1: '#8BAA36',
       icon2: '#8BAA36',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
-      selectionBackground: '#D9D9D9',
+      selectionBackground: '#f5f5f5',
       dropDownMenu: {
         background: '#FFF',
         text1: '#000',

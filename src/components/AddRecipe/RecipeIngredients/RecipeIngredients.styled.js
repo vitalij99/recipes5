@@ -67,7 +67,7 @@ export const Count = styled.span`
   line-height: 18px;
 `;
 
-export const ItemIngredient = styled.ul`
+export const ListIngredients = styled.ul`
   display: flex;
   flex-direction: column;
   background-color: transparent;
@@ -81,7 +81,7 @@ export const ItemIngredient = styled.ul`
   }
 `;
 
-export const ListIngredients = styled.li`
+export const ItemIngredient = styled.li`
   position: relative;
   margin-bottom: 18px;
   display: flex;
@@ -98,16 +98,18 @@ export const SelectStyled = styled(Select)`
       props.theme.addRecipePage.listOfIngredients.selectionBackground};
   }
 
+  & .css-1xc3v61-indicatorContainer {
+    color: ${props => props.theme.addRecipePage.listOfItems.icon};
+  }
+
+  width: 194px;
+
   @media screen and (min-width: 768px) {
     width: 398px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 617px;
-  }
-
-  & .css-1xc3v61-indicatorContainer {
-    color: ${props => props.theme.addRecipePage.listOfItems.icon};
   }
 `;
 
@@ -130,6 +132,6 @@ export const InputBox = styled.div`
 export const SelectAdd = styled.select`
   border: none;
   background-color: ${props =>
-    props.theme.addRecipePage.recipePreparation.background};
+    props.theme.addRecipePage.listOfIngredients.selectionBackground};
   color: ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
 `;

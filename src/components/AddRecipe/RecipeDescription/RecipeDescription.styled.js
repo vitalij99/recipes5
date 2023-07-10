@@ -104,7 +104,9 @@ export const StyledSelect = styled(Select)`
 
   & .css-13cymwt-control {
     border: none;
+    background-color: transparent;
   }
+
   & .css-1xc3v61-indicatorContainer {
     color: ${props => props.theme.addRecipePage.listOfItems.icon};
   }
