@@ -54,8 +54,8 @@ export const ParticleMobile1 = styled.div`
   z-index: 1;
   top: 56%;
   left: 68%;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 
   svg {
     fill: ${props => props.theme.mainPageTitle.particle};
@@ -71,8 +71,8 @@ export const ParticleMobile2 = styled.div`
   z-index: 1;
   top: 30%;
   left: 90%;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -84,8 +84,8 @@ export const ParticleMobile3 = styled.div`
   z-index: 1;
   top: 6%;
   left: 33%;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -98,8 +98,8 @@ export const ParticleTablet1 = styled.div`
   z-index: 1;
   top: 57%;
   left: 57%;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 
   svg {
     fill: ${props => props.theme.mainPageTitle.particle};
@@ -120,8 +120,8 @@ export const ParticleTablet2 = styled.div`
   z-index: 1;
   top: 23%;
   left: 95%;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 
   @media (min-width: 768px) {
     display: block;
@@ -139,8 +139,8 @@ export const ParticleTablet3 = styled.div`
   z-index: 1;
   top: 11%;
   left: 29%;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 
   @media screen and (min-width: 768px) {
     display: block;

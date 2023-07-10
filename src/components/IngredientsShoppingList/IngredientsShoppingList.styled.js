@@ -21,6 +21,11 @@ export const Titles = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
+  @media screen and (min-width: 768px) {
+    line-height: 26px;
+    font-size: 18px;
+    padding: 20px;
+  }
 `;
 
 export const TitlesContainer = styled.div`

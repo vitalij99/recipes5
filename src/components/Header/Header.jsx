@@ -22,10 +22,10 @@ const Header = () => {
   const screenWidth = window.screen.width;
 
   const [toggleMenu, setToggleMenu] = useState(() => {
-    if (screenWidth >= 1440) {
-      return true;
-    }
-    return false;
+    // if (screenWidth >= 1440) {
+    //   return true;
+    // }
+    // return false;
   });
 
   const imgSrc =
