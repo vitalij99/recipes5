@@ -59,7 +59,6 @@ const AuthForm = ({ isRegistration }) => {
                 />
               </>
             )}
-
             <ImputAuth
               type="email"
               name="email"
@@ -68,7 +67,6 @@ const AuthForm = ({ isRegistration }) => {
               touched={touched.email}
               iconName="#icon-mail"
             />
-
             <ImputAuth
               type="password"
               name="password"
@@ -77,7 +75,6 @@ const AuthForm = ({ isRegistration }) => {
               touched={touched.password}
               iconName="#icon-lock"
             />
-
             <Btnwrapper>
               <BtnRegister type="submit">
                 {isRegistration ? 'Sign Up' : 'Sign In'}
