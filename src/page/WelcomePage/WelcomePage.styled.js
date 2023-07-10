@@ -6,7 +6,7 @@ import bgTablet2 from 'images/welcomePage/bg_tablet@2x.jpg';
 import bgDesktop1 from 'images/welcomePage/bg_desktop@1x.jpg';
 import bgDesktop2 from 'images/welcomePage/bg_desktop@2x.jpg';
 
-export const DivStyled = styled.div`
+export const SectionStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
