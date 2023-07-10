@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
-// import { GlobalStyles } from '../../styles/GlobalStyles';
-
 import bgImg from '../../images/Header/spinach.png';
 import bgImgTablet from '../../images/Header/spinach@2x.png';
+// import SwitchImg from '../../images/Header/Switch.png';
+// import SwitchBodyImg from '../../images/Header/switch-body.png';
 
 export const HeaderContainer = styled.header`
   width: var(--small-screen);
@@ -16,13 +16,17 @@ export const HeaderContainer = styled.header`
   padding: 18px 16px;
   position: relative;
   font-family: 'Poppins', sans-serif;
-
+  background-color: ${props =>
+    props.toggle === 'true'
+      ? props.theme.mainPage.menuMobileModal.background
+      : props.theme.mainPage.background};
   @media screen and (min-width: 768px) {
     width: var(--medium-screen);
   }
   @media screen and (min-width: 1440px) {
     width: var(--large-screen);
     padding: 18px 100px;
+    background-color: ${props => props.theme.mainPage.background};
   }
 `;
 
@@ -65,6 +69,15 @@ export const UserName = styled.p`
   line-height: 20.4px;
   font-weight: 600;
   margin-left: 14px;
+  cursor: pointer;
+  color: ${props => {
+    if (props.pathname === '/my') {
+      console.log('🚀 ~ props.pathname:', props.pathname);
+      return props.theme.mainPage.header.user.textRecipePage;
+    }
+    return props.theme.mainPage.header.user.text;
+  }};
+
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
@@ -83,15 +96,17 @@ export const SiteNav = styled.nav`
   display: flex;
   padding-top: 124px;
   justify-content: center;
-  background-color: ${props =>
-    props.theme.mainPage.footer.bottomText.hoverText};
   margin-left: auto;
   margin-right: auto;
   background-image: url(${bgImg});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
-
+  z-index: 99;
+  background-color: ${props =>
+    props.toggle === 'true'
+      ? props.theme.mainPage.menuMobileModal.background
+      : props.theme.mainPage.background};
   @media screen and (min-width: 768px) {
     background-image: url(${bgImgTablet});
   }
@@ -99,7 +114,7 @@ export const SiteNav = styled.nav`
     position: static;
     height: 100%;
     padding-top: 0px;
-    background-color: #fafafa;
+    background-color: ${props => props.theme.mainPage.background};
     background-image: none;
     flex-direction: row;
   }
@@ -139,14 +154,16 @@ export const NavLinkStyle = styled(NavLink)`
   align-items: center;
   font-size: 18px;
   line-height: 18px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   letter-spacing: -0.02em;
   text-decoration: none;
-  color: #22252a;
+  color: ${props => props.theme.mainPage.header.nav.text};
 
   &.active {
-    color: #8baa36;
+    color: ${props => props.theme.mainPage.header.nav.hover};
+  }
+  &:hover {
+    color: ${props => props.theme.mainPage.header.nav.hover};
   }
   @media screen and (min-width: 768px) {
     font-size: 24px;
@@ -170,11 +187,11 @@ export const LinkStyle = styled(Link)`
   }
 `;
 export const ThemeToggle = styled.div`
-  width: 61px;
-  height: 27px;
   position: absolute;
   left: 16px;
   bottom: 18px;
+  display: flex;
+  justify-content: start;
 
   @media screen and (min-width: 768px) {
     left: 32px;
@@ -184,4 +201,11 @@ export const ThemeToggle = styled.div`
     left: 1340px;
     top: 24px;
   }
+`;
+export const SwitchStyled = styled.div`
+  margin-top: -3px;
+  padding: 0;
+
+  cursor: pointer;
+  position: absolute;
 `;

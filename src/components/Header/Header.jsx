@@ -1,8 +1,12 @@
+import SwitchImg from '../../images/Header/Switch.png';
+import SwitchBodyImg from '../../images/Header/switch-body.png';
+
 import { HeaderLogo } from './HeaderIcon/HeaderIcon';
 import { MenuIcon } from './HeaderIcon/HeaderIcon';
 import { CloseIcon } from './HeaderIcon/HeaderIcon';
 import { SearchIcon } from './HeaderIcon/HeaderIcon';
-import { SwitchBody } from './HeaderIcon/HeaderIcon';
+// import { SwitchBody, Switch } from './HeaderIcon/HeaderIcon';
+import ModalHeaderEdit from './ModalHeaderEdit/ModalHeaderEdit';
 import { useState } from 'react';
 import {
   HeaderContainer,
@@ -16,41 +20,50 @@ import {
   NavListList,
   LinkStyle,
   ThemeToggle,
+  SwitchStyled,
 } from './Header.styled';
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
-  const screenWidth = window.screen.width;
+  const onScreenWidth = () => {
+    if (window.screen.width >= 1440) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const { pathname } = useLocation();
 
-  const [toggleMenu, setToggleMenu] = useState(() => {
-    // if (screenWidth >= 1440) {
-    //   return true;
-    // }
-    // return false;
-  });
+
+  const screenWidth = onScreenWidth();
+
+  const [toggle, setToggleMenu] = useState(() => {
+    if (screenWidth) {
+      return true;
+    }
+    return false;
+
+
+  const [toggleModalEdit, setToggleModalEdit] = useState(false);
 
   const imgSrc =
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png';
 
   const handleToggleMenu = () => {
-    if (screenWidth >= 1440) {
+    if (screenWidth) {
       return;
     }
-    setToggleMenu(!toggleMenu);
+    setToggleMenu(!toggle);
   };
 
   return (
-    <HeaderContainer
-      style={{
-        backgroundColor:
-          toggleMenu && screenWidth <= 1440 ? '#EBF3D4' : '#FAFAFA',
-      }}
-    >
+    <HeaderContainer toggle={toggle.toString()}>
       <LinkStyle to="/">
         <HeaderLogo />
       </LinkStyle>
 
-      {toggleMenu && (
-        <SiteNav>
+      {toggle && (
+        <SiteNav toggle={toggle.toString()}>
           <NavListList>
             <NavListItem>
               <NavLinkStyle
@@ -66,7 +79,7 @@ const Header = () => {
               </NavLinkStyle>
             </NavListItem>
             <NavListItem>
-              <NavLinkStyle onClick={handleToggleMenu} to={'/recipe/:recipeId'}>
+              <NavLinkStyle onClick={handleToggleMenu} to={'/my'}>
                 My recipes
               </NavLinkStyle>
             </NavListItem>
@@ -83,26 +96,40 @@ const Header = () => {
             <NavListItem>
               <NavLinkStyle onClick={handleToggleMenu} to={'/search'}>
                 <SearchIcon />
-                {screenWidth <= 1440 && 'Search'}
+                {!screenWidth && 'Search'}
               </NavLinkStyle>
             </NavListItem>
           </NavListList>
           <ThemeToggle>
-            <SwitchBody />
+            {/* <SwitchBody /> */}
+            <img src={SwitchBodyImg} alt="Switch Body" />
+
+            <SwitchStyled>
+              {/* <Switch /> */}
+              <img src={SwitchImg} alt="Switch" />
+            </SwitchStyled>
           </ThemeToggle>
         </SiteNav>
       )}
       <MobileHeaderBlock>
-        {!toggleMenu || screenWidth > 1440 ? (
+        {!toggle || screenWidth ? (
           <>
             <UserAvatar src={imgSrc} alt="User avatar" />
-            <UserName>UserName</UserName>
+            <UserName
+              pathname={pathname}
+              onClick={() => {
+                setToggleModalEdit(!toggleModalEdit);
+              }}
+            >
+              UserName
+            </UserName>
           </>
         ) : null}
         <MenuButton onClick={handleToggleMenu}>
-          {toggleMenu ? <CloseIcon /> : <MenuIcon />}
+          {toggle ? <CloseIcon /> : <MenuIcon />}
         </MenuButton>
       </MobileHeaderBlock>
+      {toggleModalEdit && <ModalHeaderEdit />}
     </HeaderContainer>
   );
 };
