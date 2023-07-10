@@ -1,6 +1,6 @@
 import Container from 'components/Container/Container';
 import errorImage from 'images/error-404.svg';
-import { Img, TextContainer, BoldText, Text } from './Error.style';
+import { Img, TextContainer, BoldText, Text } from './Error.styled';
 
 const Error = () => (
   <Container>

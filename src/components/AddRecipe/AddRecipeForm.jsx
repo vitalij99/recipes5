@@ -1,6 +1,6 @@
-import ContainerMedia from 'components/Container/Container.style';
+import Container from 'components/Container/Container';
 import React, { useState } from 'react';
-import { ContainedAddRecipe } from './AddRecipe.styled';
+import { ContainerAddRecipe, AddRecipeTitle } from './AddRecipe.styled';
 import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
@@ -20,13 +20,13 @@ const AddRecipeForm = () => {
   const [recipeData, setRecipeData] = useState(initialRecipeData);
 
   const handleInputChange = (name, value) => {
-    setRecipeData((prevData) => ({
+    setRecipeData(prevData => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = event => {
     event.preventDefault();
     console.log(recipeData);
     // отправка на бекенд
@@ -35,40 +35,38 @@ const AddRecipeForm = () => {
   };
 
   return (
-    
-      <ContainerMedia>
-        <ContainedAddRecipe>
-      <h2>Add Recipe</h2>
-      <form onSubmit={handleFormSubmit}>
-        <RecipeDescriptionFields
-          recipeData={recipeData}
-          handleInputChange={handleInputChange}
-        />
-        <RecipeIngredientsFields
-          ingredients={recipeData.ingredients}
-          setIngredients={(updatedIngredients) =>
-            setRecipeData((prevData) => ({
-              ...prevData,
-              ingredients: updatedIngredients,
-            }))
-          }
-        />
-        <RecipePreparationFields
-          preparation={recipeData.preparation}
-          setPreparation={(updatedPreparation) =>
-            setRecipeData((prevData) => ({
-              ...prevData,
-              preparation: updatedPreparation,
-            }))
-          }
-        />
-        
-        <button type="submit">Add</button>
-        
-      </form>
-      {/* <PopularRecipe /> */}
-    </ContainedAddRecipe>
-    </ContainerMedia>
+    <Container>
+      <ContainerAddRecipe>
+        <AddRecipeTitle>Add Recipe</AddRecipeTitle>
+        <form onSubmit={handleFormSubmit}>
+          <RecipeDescriptionFields
+            recipeData={recipeData}
+            handleInputChange={handleInputChange}
+          />
+          <RecipeIngredientsFields
+            ingredients={recipeData.ingredients}
+            setIngredients={updatedIngredients =>
+              setRecipeData(prevData => ({
+                ...prevData,
+                ingredients: updatedIngredients,
+              }))
+            }
+          />
+          <RecipePreparationFields
+            preparation={recipeData.preparation}
+            setPreparation={updatedPreparation =>
+              setRecipeData(prevData => ({
+                ...prevData,
+                preparation: updatedPreparation,
+              }))
+            }
+          />
+
+          <button type="submit">Add</button>
+        </form>
+        {/* <PopularRecipe /> */}
+      </ContainerAddRecipe>
+    </Container>
   );
 };
 

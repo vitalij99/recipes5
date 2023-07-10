@@ -14,7 +14,7 @@ import {
   ingredientsList,
 } from './RecipeIngradients.styled';
 
-import IngradientsHeader from 'components/IngradientsHeader/IngradientsHeader';
+import IngradientsHeader from 'components/IngredientsHeader/IngradientsHeader';
 
 function RecipeIngradients({ ingredients }) {
   const ingradientOnRecipe = ingredientsList.filter(
