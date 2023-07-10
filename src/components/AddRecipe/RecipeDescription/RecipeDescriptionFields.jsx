@@ -4,6 +4,7 @@ import { AddFotoIcon } from './AddFotoIcon';
 import {
   AddFotoContainer,
   BoxIcon,
+  DescriptionBox,
   Form,
   InputForm,
   InputFoto,
@@ -41,7 +42,7 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
   }
 
   return (
-    <>
+    <DescriptionBox>
       <AddFotoContainer>
         <label htmlFor="photo">
           {recipeData.photo ? (
@@ -110,7 +111,7 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
           />
         </LabelSelect>
       </Form>
-    </>
+    </DescriptionBox>
   );
 };
 

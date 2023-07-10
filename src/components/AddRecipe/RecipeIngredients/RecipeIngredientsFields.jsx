@@ -20,7 +20,7 @@ import {
 const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const [searchTerm] = useState('');
   const [ingredientOptions, setIngredientOptions] = useState([]);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(ingredients.length);
 
   const handleIngredientChange = (index, field, value) => {
     const updatedIngredients = [...ingredients];
@@ -42,8 +42,8 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
       { id: 3, name: 'Lime' },
     ];
 
-    // Filter ingredients based on search term
-    const filteredIngredients = backendIngredients.filter(ingredient =>
+    // Filter ingredients
+    const filteredIngredients = backendIngredients.filter((ingredient) =>
       ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -55,10 +55,10 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     setCount(count + 1);
   };
 
-  const removeIngredientField = () => {
+  const removeIngredientField = (index) => {
     if (ingredients.length > 1) {
       const updatedIngredients = [...ingredients];
-      updatedIngredients.pop();
+      updatedIngredients.splice(index, 1);
       setIngredients(updatedIngredients);
       setCount(count - 1);
     }
@@ -101,12 +101,12 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                   }
                   options={[
                     { value: '', label: 'Select ingredient', isDisabled: true },
-                    ...ingredientOptions.map(option => ({
+                    ...ingredientOptions.map((option) => ({
                       value: option.name,
                       label: option.name,
                     })),
                   ]}
-                  onChange={selectedOption =>
+                  onChange={(selectedOption) =>
                     handleSelectIngredient(index, selectedOption)
                   }
                   placeholder="Select ingredient"
@@ -115,13 +115,13 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                   <InputAmount
                     type="number"
                     value={ingredient.amount}
-                    onChange={e =>
+                    onChange={(e) =>
                       handleIngredientChange(index, 'amount', e.target.value)
                     }
                   />
                   <SelectAdd
                     value={ingredient.unit}
-                    onChange={e =>
+                    onChange={(e) =>
                       handleIngredientChange(index, 'unit', e.target.value)
                     }
                   >
@@ -130,7 +130,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                     <option value="tsp">tsp</option>
                     <option value="kg">kg</option>
                     <option value="g">g</option>
-                  </SelectAdd>{' '}
+                  </SelectAdd>
                 </InputBox>
               </ListIngredients>
             </ItemIngredient>
