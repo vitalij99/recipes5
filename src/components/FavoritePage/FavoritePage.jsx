@@ -17,8 +17,16 @@ import {
   import Container from 'components/Container/Container';
   import { Link } from "react-router-dom";
   import someJson  from './testarray';
+  import { useEffect } from 'react';
+  import { useSelector, useDispatch } from 'react-redux';
   export const FavoritePage = ({var_title}) => {
-  
+   
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch();
+    }, [dispatch]);
+
   
     const FavoriteCards = someJson.map(
       ({ _id, title, description, preview, time }) => (
