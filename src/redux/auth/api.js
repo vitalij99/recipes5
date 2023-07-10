@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { Notify } from 'notiflix';
 
-axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL = 'https://yummy-service.onrender.com/';
 
 const tokenOperation = {
   setToken: token => {
@@ -12,32 +13,39 @@ const tokenOperation = {
 };
 
 export const registerApi = async (user, thunkAPI) => {
-  try {
-    const { data } = await axios.post('/users/register', user);
-    tokenOperation.setToken(data.token);
+  const { data } = await axios.post('/users/register', user);
 
+  try {
+    tokenOperation.setToken(data.token);
+    Notify.success('Registrated succesfully!');
     return data;
   } catch (error) {
-    thunkAPI.rejectWithValue(error.message);
+    if (error.response && error.response.status === 409) {
+      Notify.failure('Email already registered');
+    } else {
+      Notify.failure('Registration failed!');
+    }
+    return thunkAPI.rejectWithValue(error.message);
   }
 };
 export const signinApi = async (user, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/login', user);
     tokenOperation.setToken(data.token);
-
+    Notify.success('Login sucess!');
     return data;
   } catch (error) {
-    thunkAPI.rejectWithValue(error.message);
+    Notify.failure('Login failed!');
+    return thunkAPI.rejectWithValue(error.message);
   }
 };
 export const logoutApi = async (_, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/logout');
-
+    Notify.info('Logout');
     return data;
   } catch (error) {
-    thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.message);
   }
 };
 export const currentApi = async (_, thunkAPI) => {
@@ -55,6 +63,6 @@ export const currentApi = async (_, thunkAPI) => {
 
     return data;
   } catch (error) {
-    thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.message);
   }
 };
