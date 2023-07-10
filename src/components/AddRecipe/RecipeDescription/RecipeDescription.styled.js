@@ -57,6 +57,11 @@ export const LabelForm = styled.label`
   border-bottom: 1px solid
     ${props => props.theme.addRecipePage.listOfItems.underline};
   height: 40px;
+
+  &:hover {
+    border-bottom: 1px solid
+      ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+  }
 `;
 
 export const InputForm = styled.input`
@@ -109,5 +114,11 @@ export const StyledSelect = styled(Select)`
 
   & .css-1xc3v61-indicatorContainer {
     color: ${props => props.theme.addRecipePage.listOfItems.icon};
+  }
+
+  & .css-1nmdiq5-menu {
+    /* background-color: red; */
+
+    /* TODO */
   }
 `;
