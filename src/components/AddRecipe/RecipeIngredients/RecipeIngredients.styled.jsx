@@ -7,14 +7,20 @@ export const IngredietsContainer = styled.div`
   border: none;
   margin-top:44px;
   margin-bottom:44px;
+  
 `;
 export const IngredietsBox = styled.div`
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   padding: 0px;
   justify-content:space-between;
   margin-bottom: 28px;
+  @media screen and (min-width: 768px) {
+   width: 704px;
+    }
+    @media screen and (min-width: 1440px) {
+      width: 617px;
+    }
 `;
 export const Title = styled.h3`
 color: #3E4462;
@@ -61,21 +67,33 @@ export const ItemIngredient = styled.ul`
   flex-direction: column;
   padding: 0px;
   background-color: transparent;
+  @media screen and (min-width: 768px) {
+    width: 704px;
+     }
+     @media screen and (min-width: 1440px) {
+      width: 617px;
+     }
 `;
 export const ListIngredients = styled.li`
   position: relative;
   margin-bottom:18px;
   display: flex;
   justify-content: space-between;
-  -webkit-box-align: center;
   align-items: center;
   background-color: transparent;
+ 
 `;
 export const SelectStyled = styled(Select)`
   & .css-13cymwt-control {
     border: none;
     background-color: #d9d9d9;
   }
+  @media screen and (min-width: 768px) {
+    width: 398px;
+     }
+     @media screen and (min-width: 1440px) {
+      width: 617px;
+     }
   & .css-1xc3v61-indicatorContainer {
     color: #8baa36;
   }
@@ -86,6 +104,7 @@ export const InputAmount = styled.input`
   height: 38px;
   border: none;
   background-color: #d9d9d9;
+  
 `;
 
 export const InputBox = styled.div`
