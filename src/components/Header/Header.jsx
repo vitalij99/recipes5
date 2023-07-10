@@ -15,13 +15,13 @@ import {
   NavLinkStyle,
   NavListList,
   LinkStyle,
-  ThemeTogle,
+  ThemeToggle,
 } from './Header.styled';
 
 const Header = () => {
   const screenWidth = window.screen.width;
 
-  const [toggleMenu, setTogleMenu] = useState(() => {
+  const [toggleMenu, setToggleMenu] = useState(() => {
     if (screenWidth >= 1440) {
       return true;
     }
@@ -32,7 +32,10 @@ const Header = () => {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png';
 
   const handleToggleMenu = () => {
-    setTogleMenu(!toggleMenu);
+    if (screenWidth >= 1440) {
+      return;
+    }
+    setToggleMenu(!toggleMenu);
   };
 
   return (
@@ -84,9 +87,9 @@ const Header = () => {
               </NavLinkStyle>
             </NavListItem>
           </NavListList>
-          <ThemeTogle>
+          <ThemeToggle>
             <SwitchBody />
-          </ThemeTogle>
+          </ThemeToggle>
         </SiteNav>
       )}
       <MobileHeaderBlock>
