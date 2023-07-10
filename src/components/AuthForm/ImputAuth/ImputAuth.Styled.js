@@ -79,3 +79,13 @@ export const Error = styled.div`
     margin-left: 3px;
   }
 `;
+export const FeedbackFormGroup = styled.div`
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+`;

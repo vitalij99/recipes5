@@ -2,7 +2,6 @@ import { Formik } from 'formik';
 import {
   BtnRegister,
   Btnwrapper,
-  FeedbackFormGroup,
   FormAuth,
   StyledNavLink,
   Title,
@@ -49,57 +48,36 @@ const AuthForm = ({ isRegistration }) => {
           <FormAuth>
             <Title>{isRegistration ? 'Registration' : 'Sign In'}</Title>
             {isRegistration && (
-              <FeedbackFormGroup
-                className={
-                  errors.name && touched.name
-                    ? 'error'
-                    : touched.name && 'valid'
-                }
-              >
-                <>
-                  <ImputAuth
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    errors={errors.name}
-                    touched={touched.name}
-                    iconName="#icon-user"
-                  />
-                </>
-              </FeedbackFormGroup>
+              <>
+                <ImputAuth
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  errors={errors.name}
+                  touched={touched.name}
+                  iconName="#icon-user"
+                />
+              </>
             )}
-            <FeedbackFormGroup
-              className={
-                errors.email && touched.email
-                  ? 'error'
-                  : touched.email && 'valid'
-              }
-            >
-              <ImputAuth
-                type="email"
-                name="email"
-                placeholder="Email"
-                errors={errors.email}
-                touched={touched.email}
-                iconName="#icon-mail"
-              />
-            </FeedbackFormGroup>
-            <FeedbackFormGroup
-              className={
-                errors.password && touched.password
-                  ? 'error'
-                  : touched.password && 'valid'
-              }
-            >
-              <ImputAuth
-                type="password"
-                name="password"
-                placeholder="Password"
-                errors={errors.password}
-                touched={touched.password}
-                iconName="#icon-lock"
-              />
-            </FeedbackFormGroup>
+
+            <ImputAuth
+              type="email"
+              name="email"
+              placeholder="Email"
+              errors={errors.email}
+              touched={touched.email}
+              iconName="#icon-mail"
+            />
+
+            <ImputAuth
+              type="password"
+              name="password"
+              placeholder="Password"
+              errors={errors.password}
+              touched={touched.password}
+              iconName="#icon-lock"
+            />
+
             <Btnwrapper>
               <BtnRegister type="submit">
                 {isRegistration ? 'Sign Up' : 'Sign In'}
