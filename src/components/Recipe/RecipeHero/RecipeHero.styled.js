@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BsClock } from 'react-icons/bs';
 
 import mob_ratio_1 from '../../../images/Recipe/BG_image/mob_ratio_1.webp';
 import mob_ratio_2 from '../../../images/Recipe/BG_image/mob_ratio_2.webp';
@@ -142,4 +143,10 @@ export const HeroTime = styled.span`
     font-size: 14px;
     margin-left: 8px;
   }
+`;
+
+export const HeroSvg = styled(BsClock)`
+  width: 14px;
+  height: 14px;
+  fill: #23262a;
 `;
