@@ -10,7 +10,7 @@ font-weight: 600;
 font-size: 28px;
 line-height: 1;
 padding: 114px 16px 60px 16px;
-color: #001833;
+color: ${props => props.theme.favoritePage.title};
 
 @media screen and (min-width: 768px) {
    font-size: 32px;
@@ -40,7 +40,7 @@ export const CardList = styled.ul`
 export const Card = styled.li`
   height: 152px;
   display: flex;
-  background: #ffffff;
+  background-color: ${props => props.theme.favoritePage.list.background};
   border-radius: 8px;
   padding: 14px;
 
@@ -78,7 +78,7 @@ font-weight: 500;
 font-size: 14px;
 
 margin-bottom: 14px;
-color: #3e4462;
+color: ${props => props.theme.favoritePage.list.title};
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -99,7 +99,7 @@ export const CardDesc = styled.p`
   font-size: 8px;
   line-height: 1.25;
 
-  color: #23262a;
+  color: ${props => props.theme.favoritePage.list.text};
 
   @media (min-width: 768px) {
     font-size: 14px;
@@ -128,7 +128,7 @@ export const Time = styled.div`
   font-size: 10px;
   line-height: 1.4;
 
-  color: #3e4462;
+  color: ${props => props.theme.favoritePage.list.title};
 
   @media (min-width: 768px) {
     font-size: 14px;
@@ -157,7 +157,7 @@ export const DeleteBtn = styled.button`
   outline:none;
   width: 24px;
   height: 24px;
-  background: #ebf3d4;
+  background-color: ${props => props.theme.favoritePage.icon.background};
   border-radius: 4px;
   transition: 125ms 125ms linear;
   display:flex;
@@ -190,8 +190,8 @@ export const SeeRecipeBtn = styled.button`
     line-height: 1.5;
 
     cursor: pointer;
-    color: rgb(255, 255, 255);
-    background-color:#8baa36;
+    color: #ffffff;
+    background-color:${props => props.theme.favoritePage.button.hoverFill};
     border: none;
     font-family: 'Poppins';
     border-radius: 24px 44px;
@@ -204,8 +204,8 @@ export const SeeRecipeBtn = styled.button`
     width: 87px;
     transition: 125ms 125ms linear;
     &:hover {
-        background-color: #22252a;
-        color: #fafafa;
+        background-color: ${props => props.theme.favoritePage.button.fill};
+        color: ${props => props.theme.favoritePage.button.text};
       }
   @media (min-width: 768px) {
         font-size: 14px;
@@ -217,12 +217,12 @@ export const SeeRecipeBtn = styled.button`
     height:54px;
     width: 160px;
 
-    background-color: #22252a;
-    color: #fafafa;
+    background-color:${props => props.theme.favoritePage.button.fill};
+    color: ${props => props.theme.favoritePage.button.text};
 
     &:hover {
-      color: rgb(255, 255, 255);
-      background-color: #8baa36;
+      color: #ffffff;
+      background-color: ${props => props.theme.favoritePage.button.hoverFill};
     }
   }
 `;
