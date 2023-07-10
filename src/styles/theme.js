@@ -356,6 +356,7 @@ export const lightTheme = {
       list: {
         pictureBackground: '#EBF3D4',
         text: '#3E4462',
+        underline: '#E0E0E0',
       },
       number: {
         background: '#8BAA36',
