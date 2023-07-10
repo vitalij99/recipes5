@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Trash } from "images/Favorite/trashBlack.svg"
-import errorPhoto from '../../images/error-404.png';
+import errorPhoto from '../../images/error-404.svg';
 
 
 export const PageTitle = styled.h2`
