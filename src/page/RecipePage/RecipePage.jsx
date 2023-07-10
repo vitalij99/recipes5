@@ -1,6 +1,6 @@
 import RecipeHero from 'components/Recipe/RecipeHero/RecipeHero';
-import RecipeIngradients from 'components/Recipe/RecipeIngradients/RecipeIngradients';
-import { recipeOne } from 'components/Recipe/RecipeIngradients/RecipeIngradients.styled';
+import RecipeIngredients from 'components/Recipe/RecipeIngredients/RecipeIngredients';
+import { recipeOne } from 'components/Recipe/RecipeIngredients/RecipeIngredients.styled';
 import RecipeInstruction from 'components/Recipe/RecipeInstruction/RecipeInstruction';
 // import React, { useEffect, useState } from 'react';
 // import { useDispatch } from 'react-redux';
@@ -24,7 +24,7 @@ const RecipePage = () => {
         description={description}
         id={_id}
       />
-      <RecipeIngradients ingredients={ingredients} />
+      <RecipeIngredients ingredients={ingredients} />
       <RecipeInstruction instructions={instructions} thumb={thumb} />
     </main>
   );
