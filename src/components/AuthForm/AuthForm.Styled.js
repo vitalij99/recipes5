@@ -77,6 +77,10 @@ export const InputForm = styled(Field)`
     outline: 1px solid #ffffff;
     color: #ffffff;
     opacity: 1;
+
+    &::placeholder {
+      color: ffffff;
+    }
   }
   .error & {
     border: 1px solid #e74a3b;
