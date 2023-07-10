@@ -34,6 +34,7 @@ const Header = () => {
   };
   const { pathname } = useLocation();
 
+
   const screenWidth = onScreenWidth();
 
   const [toggle, setToggleMenu] = useState(() => {
@@ -41,7 +42,7 @@ const Header = () => {
       return true;
     }
     return false;
-  });
+
 
   const [toggleModalEdit, setToggleModalEdit] = useState(false);
 

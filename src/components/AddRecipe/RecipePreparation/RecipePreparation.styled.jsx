@@ -23,4 +23,10 @@ border-radius: 6px;
 margin-bottom: 18px;
 box-sizing: border-box;
 color: rgb(0, 0, 0);
+@media screen and (min-width: 768px) {
+    width: 398px;
+     }
+     @media screen and (min-width: 1440px) {
+      width: 617px;
+     }
 `

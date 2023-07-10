@@ -1,12 +1,12 @@
 import Container from 'components/Container/Container';
 import React from 'react';
-import { DivStyled, Title, PStyled, ImgStyled } from './WelcomePage.styled';
+import { SectionStyled, Title, PStyled, ImgStyled } from './WelcomePage.styled';
 import BtnNav from 'components/BtnNav/BtnNav';
 import svgSprit from 'images/authPage/symbol-defs.svg';
 
 const WelcomePage = () => {
   return (
-    <DivStyled>
+    <SectionStyled>
       <Container>
         <ImgStyled>
           <use xlinkHref={`${svgSprit}#icon-logo`} />
@@ -22,7 +22,7 @@ const WelcomePage = () => {
           Sign In
         </BtnNav>
       </Container>
-    </DivStyled>
+    </SectionStyled>
   );
 };
 

@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 import Select from 'react-select';
 
+
+export const DescriptionBox = styled.div`
+display:block;
+@media screen and (min-width: 768px) {
+display:flex;
+align-items: center;
+}
+@media screen and (min-width: 1440px) {
+}
+`
 export const AddFotoContainer = styled.div`
   position: relative;
   width: 279px;
@@ -10,8 +20,12 @@ export const AddFotoContainer = styled.div`
   background: #8baa36;
   margin-bottom: 32px;
   margin-top: 62px;
- margin-left:auto;
+ 
  margin-right:auto;
+ @media screen and (min-width: 768px) {
+  margin-left:0;
+  }
+
 `;
 export const InputFoto = styled.input`
   opacity: 0;

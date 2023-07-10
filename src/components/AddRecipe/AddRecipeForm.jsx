@@ -1,5 +1,7 @@
 import ContainerMedia from 'components/Container/Container.style';
 import React, { useState } from 'react';
+import { ContainedAddRecipe } from './AddRecipe.styled';
+import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
@@ -35,7 +37,7 @@ const AddRecipeForm = () => {
   return (
     
       <ContainerMedia>
-        <div>
+        <ContainedAddRecipe>
       <h2>Add Recipe</h2>
       <form onSubmit={handleFormSubmit}>
         <RecipeDescriptionFields
@@ -64,7 +66,8 @@ const AddRecipeForm = () => {
         <button type="submit">Add</button>
         
       </form>
-    </div>
+      {/* <PopularRecipe /> */}
+    </ContainedAddRecipe>
     </ContainerMedia>
   );
 };

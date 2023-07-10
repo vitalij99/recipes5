@@ -4,6 +4,13 @@ import { FaCheck } from 'react-icons/fa';
 export const ContainerRecipes = styled.section`
   padding: 32px 16px 50px 16px;
   background-color: ${props => props.theme.recipePage.ingredients.background};
+
+  @media (min-width: 768px) {
+    padding: 50px 32px 0 32px;
+  }
+  @media (min-width: 1440px) {
+    padding: 50px 100px 0 100px;
+  }
 `;
 
 export const IngradientsWrapper = styled.ul`
@@ -30,6 +37,13 @@ export const Ingradient = styled.li`
   border-radius: 8px;
   background-color: ${props =>
     props.theme.recipePage.ingredients.list.background};
+
+  @media (min-width: 768px) {
+    padding: 33px 58px 33px 40px;
+  }
+  @media (min-width: 1440px) {
+    padding: 27px 70px 27px 58px;
+  }
 `;
 
 export const WrapperContent = styled.div`
@@ -87,28 +101,22 @@ export const IngedientsMeasure = styled.p`
     font-size: 18px;
     line-height: 1.5;
     padding: 4px 8px;
-    margin-right: 78px;
+    margin-right: 60px;
   }
   @media (min-width: 1440px) {
-    margin-right: 151px;
+    margin-right: 140px;
   }
 `;
 
 export const IngedientsInput = styled.input`
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+  opacity: 0;
+  cursor: pointer;
 `;
 
 export const CheckContainer = styled.div`
-  border: 1px solid rgba(126, 126, 126, 0.5);
+  border: 1px solid
+    ${props => props.theme.recipePage.ingredients.list.checkbox.outline};
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -132,9 +140,11 @@ export const CheckIcon = styled(FaCheck)`
 
 export const IngradientLabel = styled.label`
   display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   ${IngedientsInput}:checked + ${CheckContainer} {
-    color: #8baa36;
+    color: ${props => props.theme.recipePage.ingredients.list.checkbox.icon};
   }
 `;
 
