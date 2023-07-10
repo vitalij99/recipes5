@@ -53,7 +53,7 @@ export const lightTheme = {
         hover: '#8BAA36',
       },
       userMenuEditProfile: {
-        outline: '#8BAA36',
+        outline: '#23262A',
         text: '#22252A',
         icon: '#23262A',
         hover: '#8BAA36',
