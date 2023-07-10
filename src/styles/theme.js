@@ -6,6 +6,10 @@
 // `;
 
 export const lightTheme = {
+  mainPageTitle: {
+    background: '#FAFAFA',
+    particle: '#22252A',
+  },
   mainPage: {
     background: '#FAFAFA',
     menuMobileModal: {
@@ -260,6 +264,14 @@ export const lightTheme = {
         },
       },
     },
+    recipePreparation: {
+      title: '#3E4462',
+      list: {
+        text: 'rgba(0, 0, 0, 0.80)',
+        circle: '#8BAA36',
+        number: '#FAFAFA',
+      },
+    },
   },
   myRecipesPage: {
     background: '#FAFAFA',
@@ -400,6 +412,10 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
+  mainPageTitle: {
+    background: '#FAFAFA',
+    particle: '#22252A',
+  },
   mainPage: {
     background: '#1E1F28',
     menuMobileModal: {
@@ -653,6 +669,14 @@ export const darkTheme = {
           outline: '#7E7E7E80',
           icon: '#8BAA36',
         },
+      },
+    },
+    recipePreparation: {
+      title: '#3E4462',
+      list: {
+        text: 'rgba(0, 0, 0, 0.80)',
+        circle: '#8BAA36',
+        number: '#FAFAFA',
       },
     },
   },
