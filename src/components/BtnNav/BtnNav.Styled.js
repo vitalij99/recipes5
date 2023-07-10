@@ -25,13 +25,15 @@ export const BtnNavStyl = styled(NavLink)`
     border-color: #fafafa;
     background-color: transparent;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #8baa36;
       border-color: transparent;
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: transparent;
     border-color: #fafafa;
   }

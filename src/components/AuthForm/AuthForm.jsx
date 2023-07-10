@@ -2,15 +2,10 @@ import { Formik } from 'formik';
 import {
   BtnRegister,
   Btnwrapper,
-  Error,
-  FeedbackFormGroup,
   FormAuth,
-  InputForm,
-  StyleErrorMessage,
-  Link,
   StyledNavLink,
   Title,
-  IconStyled,
+  Link,
 } from './AuthForm.Styled';
 
 import { registerThunk, signinThunk } from 'redux/auth/authOperation';
@@ -22,7 +17,7 @@ import {
   schemaSignIn,
 } from './schema';
 
-import svgSprit from 'images/authPage/symbol-defs.svg';
+import ImputAuth from './ImputAuth/ImputAuth';
 
 const AuthForm = ({ isRegistration }) => {
   const dispatch = useDispatch();
@@ -53,59 +48,33 @@ const AuthForm = ({ isRegistration }) => {
           <FormAuth>
             <Title>{isRegistration ? 'Registration' : 'Sign In'}</Title>
             {isRegistration && (
-              <FeedbackFormGroup
-                className={
-                  errors.name && touched.name
-                    ? 'error'
-                    : touched.name && 'valid'
-                }
-              >
-                <>
-                  <InputForm type="text" name="name" placeholder="Name" />
-
-                  <IconStyled>
-                    <use xlinkHref={`${svgSprit}#icon-user`} />
-                  </IconStyled>
-                  <StyleErrorMessage name="name">
-                    {msg => <Error>{msg}</Error>}
-                  </StyleErrorMessage>
-                </>
-              </FeedbackFormGroup>
+              <>
+                <ImputAuth
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  errors={errors.name}
+                  touched={touched.name}
+                  iconName="#icon-user"
+                />
+              </>
             )}
-            <FeedbackFormGroup
-              className={
-                errors.email && touched.email
-                  ? 'error'
-                  : touched.email && 'valid'
-              }
-            >
-              <IconStyled>
-                <use xlinkHref={`${svgSprit}#icon-mail`} />
-              </IconStyled>
-              <InputForm type="email" name="email" placeholder="Email" />
-              <StyleErrorMessage name="email">
-                {msg => <Error>{msg}</Error>}
-              </StyleErrorMessage>
-            </FeedbackFormGroup>
-            <FeedbackFormGroup
-              className={
-                errors.password && touched.password
-                  ? 'error'
-                  : touched.password && 'valid'
-              }
-            >
-              <IconStyled>
-                <use xlinkHref={`${svgSprit}#icon-lock`} />
-              </IconStyled>
-              <InputForm
-                type="password"
-                name="password"
-                placeholder="Password"
-              />
-              <StyleErrorMessage name="password">
-                {msg => <Error>{msg}</Error>}
-              </StyleErrorMessage>
-            </FeedbackFormGroup>
+            <ImputAuth
+              type="email"
+              name="email"
+              placeholder="Email"
+              errors={errors.email}
+              touched={touched.email}
+              iconName="#icon-mail"
+            />
+            <ImputAuth
+              type="password"
+              name="password"
+              placeholder="Password"
+              errors={errors.password}
+              touched={touched.password}
+              iconName="#icon-lock"
+            />
             <Btnwrapper>
               <BtnRegister type="submit">
                 {isRegistration ? 'Sign Up' : 'Sign In'}
