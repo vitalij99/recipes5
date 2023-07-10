@@ -79,7 +79,7 @@ export const InputForm = styled(Field)`
     opacity: 1;
 
     &::placeholder {
-      color: ffffff;
+      color: #ffffff;
     }
   }
   .error & {
