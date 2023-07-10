@@ -14,19 +14,38 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 18px 16px;
-  position: relative;
   font-family: 'Poppins', sans-serif;
-  background-color: ${props =>
-    props.toggle === 'true'
-      ? props.theme.mainPage.menuMobileModal.background
-      : props.theme.mainPage.background};
+
+  position: ${props => {
+    if (props.pathname === '/my') {
+      return 'absolute';
+    }
+    return 'relative';
+  }};
+  background-color: ${props => {
+    if (props.pathname === '/my') {
+      if (props.toggle === 'true') {
+        return props.theme.mainPage.menuMobileModal.background;
+      }
+      return 'transparent';
+    }
+    if (props.toggle === 'true') {
+      return props.theme.mainPage.menuMobileModal.background;
+    }
+    return props.theme.mainPage.background;
+  }};
   @media screen and (min-width: 768px) {
     width: var(--medium-screen);
   }
   @media screen and (min-width: 1440px) {
     width: var(--large-screen);
     padding: 18px 100px;
-    background-color: ${props => props.theme.mainPage.background};
+    background-color: ${props => {
+      if (props.pathname === '/my') {
+        return 'transparent';
+      }
+      return props.theme.mainPage.background;
+    }};
   }
 `;
 
