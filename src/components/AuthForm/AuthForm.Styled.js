@@ -72,7 +72,9 @@ export const InputForm = styled(Field)`
   border-radius: 6px;
   opacity: 0.8;
   background-color: transparent;
-  &:hover {
+
+  &:hover,
+  &:focus {
     border: 1px solid #ffffff;
     outline: 1px solid #ffffff;
     color: #ffffff;
@@ -82,6 +84,7 @@ export const InputForm = styled(Field)`
       color: #ffffff;
     }
   }
+
   .error & {
     border: 1px solid #e74a3b;
     outline: none;
@@ -96,14 +99,21 @@ export const InputForm = styled(Field)`
   @media screen and (min-width: 1440px) {
   }
 `;
+export const StyleErrorMessage = styled(ErrorMessage)``;
 export const Error = styled.div`
   position: absolute;
   width: 100%;
   color: red;
   font-size: 10px;
   margin-top: 1px;
+  margin-left: 1px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 3px;
+    margin-left: 3px;
+  }
 `;
-export const StyleErrorMessage = styled(ErrorMessage)``;
+
 export const Btnwrapper = styled.div`
   margin-top: 28px;
   @media screen and (min-width: 768px) {
@@ -129,6 +139,10 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
   font-weight: 400;
   text-decoration: underline;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 
   &.active {
     font-weight: bold;
