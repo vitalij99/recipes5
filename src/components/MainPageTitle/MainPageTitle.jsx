@@ -18,7 +18,7 @@ function MainPageTitle({ title }) {
       <Background>
         <Container>
           <ParticlesContainer>
-            <Title>{title}</Title>
+            {title ? <Title>{title}</Title> : null}
             <ParticleMobile1>
               <svg
                 width="7"
