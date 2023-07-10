@@ -15,6 +15,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 18px 16px;
   position: relative;
+  font-family: 'Poppins', sans-serif;
 
   @media screen and (min-width: 768px) {
     width: var(--medium-screen);
@@ -62,7 +63,6 @@ export const UserAvatar = styled.img`
 export const UserName = styled.p`
   font-size: 12px;
   line-height: 20.4px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   margin-left: 14px;
   @media screen and (min-width: 768px) {
@@ -83,7 +83,8 @@ export const SiteNav = styled.nav`
   display: flex;
   padding-top: 124px;
   justify-content: center;
-  background-color: #ebf3d4;
+  background-color: ${props =>
+    props.theme.mainPage.footer.bottomText.hoverText};
   margin-left: auto;
   margin-right: auto;
   background-image: url(${bgImg});
@@ -168,7 +169,7 @@ export const LinkStyle = styled(Link)`
     height: 44px;
   }
 `;
-export const ThemeTogle = styled.div`
+export const ThemeToggle = styled.div`
   width: 61px;
   height: 27px;
   position: absolute;
