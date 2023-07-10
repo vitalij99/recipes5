@@ -6,6 +6,7 @@ export const Background = styled.div`
 
 export const Title = styled.h1`
   color: ${props => props.theme.shoppingListPage.title};
+  z-index: 1;
   padding-top: 50px;
   padding-bottom: 50px;
   margin-left: 16px;

@@ -5,7 +5,7 @@ import React from 'react';
 const ShoppingListPage = () => {
   return (
     <>
-      <MainPageTitle title={'Shopping List'} />
+      <MainPageTitle title={'Shopping list'} />
       <IngredientsShoppingList />
     </>
   );
