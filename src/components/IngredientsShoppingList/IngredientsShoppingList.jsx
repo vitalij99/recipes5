@@ -7,7 +7,11 @@ import {
   TitlesContainer,
 } from './IngredientsShoppingList.styled';
 
+import data from './ingredients.json';
+
 export const IngredientsShoppingList = () => {
+  console.log(data);
+
   return (
     <>
       <Section>
