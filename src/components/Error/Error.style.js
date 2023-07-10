@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { lightTheme } from 'styles/theme';
+
+const ErrorContainer = styled.div`
+  background-color: ${props => props.theme.errorPage.background};
+`;
 
 const Img = styled.img`
   width: 259px;
@@ -25,17 +28,16 @@ const TextContainer = styled.div`
   width: 225px;
 
   @media screen and (min-width: 768px) {
-    width: 429px;
+    width: 431px;
   }
 `;
 
 const BoldText = styled.p`
-  font-family: 'Poppins';
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.111;
   letter-spacing: -0.0225em;
-  color: ${lightTheme.addRecipePage.listOfItems.text2};
+  color: ${props => props.theme.errorPage.text.color};
   text-align: center;
   margin-bottom: 8px;
 
@@ -53,10 +55,9 @@ const BoldText = styled.p`
 `;
 
 const Text = styled.p`
-  font-family: 'Poppins';
   text-align: center;
-  color: ${lightTheme.addRecipePage.listOfItems.text2};
-  opacity: 0.5;
+  color: ${props => props.theme.errorPage.text.color};
+  opacity: ${props => props.theme.errorPage.text.opacity};
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.2857;
@@ -75,4 +76,4 @@ const Text = styled.p`
   }
 `;
 
-export { Img, TextContainer, BoldText, Text };
+export { ErrorContainer, Img, TextContainer, BoldText, Text };
