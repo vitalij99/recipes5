@@ -34,7 +34,6 @@ const Header = () => {
   };
   const { pathname } = useLocation();
 
-
   const screenWidth = onScreenWidth();
 
   const [toggle, setToggleMenu] = useState(() => {
@@ -42,7 +41,7 @@ const Header = () => {
       return true;
     }
     return false;
-
+  });
 
   const [toggleModalEdit, setToggleModalEdit] = useState(false);
 
@@ -57,7 +56,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer toggle={toggle.toString()}>
+    <HeaderContainer pathname={pathname} toggle={toggle.toString()}>
       <LinkStyle to="/">
         <HeaderLogo />
       </LinkStyle>
