@@ -11,6 +11,7 @@ import {
   StyledNavLink,
   Title,
   IconStyled,
+  IconFeedback,
 } from './AuthForm.Styled';
 
 import { registerThunk, signinThunk } from 'redux/auth/authOperation';
@@ -102,6 +103,15 @@ const AuthForm = ({ isRegistration }) => {
                 name="password"
                 placeholder="Password"
               />
+              <IconFeedback>
+                <use
+                  xlinkHref={
+                    errors.password && touched.password
+                      ? `${svgSprit}#icon-error`
+                      : touched.password && `${svgSprit}#icon-valid`
+                  }
+                />
+              </IconFeedback>
               <StyleErrorMessage name="password">
                 {msg => <Error>{msg}</Error>}
               </StyleErrorMessage>

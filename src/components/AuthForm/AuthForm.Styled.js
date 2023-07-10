@@ -49,7 +49,8 @@ export const IconStyled = styled.svg`
   stroke: #ffffff;
   width: 18px;
   height: 18px;
-  top: 14px;
+  top: 50%;
+  transform: translate(0, -50%);
   left: 14px;
   .error & {
     stroke: #e74a3b;
@@ -58,10 +59,19 @@ export const IconStyled = styled.svg`
     stroke: #3cbc81;
   }
 `;
+export const IconFeedback = styled.svg`
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 14px;
+`;
+
 export const InputForm = styled(Field)`
   width: 100%;
-  padding: 12px;
-  padding-left: 40px;
+  padding: 12px 40px;
   color: #fafafa;
   font-size: 14px;
   font-style: normal;
