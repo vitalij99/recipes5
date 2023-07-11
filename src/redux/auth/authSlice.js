@@ -23,7 +23,7 @@ const initialState = {
     shoppingList: null,
     subscriptionToken: null,
   },
-  token: null,
+  token: 'asd',
 
   isRefreshing: false,
   isLoading: false,

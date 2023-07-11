@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { selectAuth } from 'redux/auth/authSelector';
 
 export const RestrictedRoute = ({
-  redirectTo = '/',
+  redirectTo = '/main',
   component: Component,
   ...routerProps
 }) => {
