@@ -63,6 +63,7 @@ export const currentApi = async (_, thunkAPI) => {
 
     return data;
   } catch (error) {
+    Notify.info('Token is obsolete');
     return thunkAPI.rejectWithValue(error.message);
   }
 };
