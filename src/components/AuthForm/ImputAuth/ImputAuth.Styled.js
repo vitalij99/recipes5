@@ -66,6 +66,7 @@ export const IconStyled = styled.svg`
   }
 `;
 export const StyleErrorMessage = styled(ErrorMessage)``;
+
 export const Error = styled.div`
   position: absolute;
   width: 100%;
@@ -79,6 +80,7 @@ export const Error = styled.div`
     margin-left: 3px;
   }
 `;
+
 export const FeedbackFormGroup = styled.div`
   width: 100%;
   margin-bottom: 12px;

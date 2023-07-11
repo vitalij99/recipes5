@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { AddFotoIcon } from './AddFotoIcon';
+import { AddPhotoIcon } from './AddPhotoIcon';
 import {
-  AddFotoContainer,
+  AddPhotoContainer,
   BoxIcon,
   DescriptionBox,
   Form,
   InputForm,
-  InputFoto,
+  InputPhoto,
   LabelForm,
   LabelSelect,
   StyledSelect,
@@ -43,23 +43,23 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
 
   return (
     <DescriptionBox>
-      <AddFotoContainer>
+      <AddPhotoContainer>
         <label htmlFor="photo">
           {recipeData.photo ? (
             <img src={URL.createObjectURL(recipeData.photo)} alt="Recipe" />
           ) : (
             <BoxIcon>
-              <AddFotoIcon />
+              <AddPhotoIcon />
             </BoxIcon>
           )}
-          <InputFoto
+          <InputPhoto
             type="file"
             id="photo"
             accept="image/*"
             onChange={handleFileInputChange}
           />
         </label>
-      </AddFotoContainer>
+      </AddPhotoContainer>
       <Form>
         <LabelForm htmlFor="name">
           <InputForm
@@ -84,6 +84,7 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
           {' '}
           Category
           <StyledSelect
+            multiply
             id="category"
             name="category"
             options={categoryOptions}

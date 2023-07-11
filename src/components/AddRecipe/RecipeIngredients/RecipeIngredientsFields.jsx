@@ -43,7 +43,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     ];
 
     // Filter ingredients
-    const filteredIngredients = backendIngredients.filter((ingredient) =>
+    const filteredIngredients = backendIngredients.filter(ingredient =>
       ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -55,7 +55,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     setCount(count + 1);
   };
 
-  const removeIngredientField = (index) => {
+  const removeIngredientField = index => {
     if (ingredients.length > 1) {
       const updatedIngredients = [...ingredients];
       updatedIngredients.splice(index, 1);
@@ -90,9 +90,9 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
               </BtnCountPlus>
             </BtnBox>
           </IngredietsBox>
-          {ingredients.map((ingredient, index) => (
-            <ItemIngredient key={index}>
-              <ListIngredients>
+          <ListIngredients>
+            {ingredients.map((ingredient, index) => (
+              <ItemIngredient key={index}>
                 <SelectStyled
                   value={
                     ingredient.name
@@ -101,12 +101,12 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                   }
                   options={[
                     { value: '', label: 'Select ingredient', isDisabled: true },
-                    ...ingredientOptions.map((option) => ({
+                    ...ingredientOptions.map(option => ({
                       value: option.name,
                       label: option.name,
                     })),
                   ]}
-                  onChange={(selectedOption) =>
+                  onChange={selectedOption =>
                     handleSelectIngredient(index, selectedOption)
                   }
                   placeholder="Select ingredient"
@@ -115,13 +115,13 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                   <InputAmount
                     type="number"
                     value={ingredient.amount}
-                    onChange={(e) =>
+                    onChange={e =>
                       handleIngredientChange(index, 'amount', e.target.value)
                     }
                   />
                   <SelectAdd
                     value={ingredient.unit}
-                    onChange={(e) =>
+                    onChange={e =>
                       handleIngredientChange(index, 'unit', e.target.value)
                     }
                   >
@@ -132,9 +132,9 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                     <option value="g">g</option>
                   </SelectAdd>
                 </InputBox>
-              </ListIngredients>
-            </ItemIngredient>
-          ))}
+              </ItemIngredient>
+            ))}
+          </ListIngredients>
         </IngredietsContainer>
       </Form>
     </>

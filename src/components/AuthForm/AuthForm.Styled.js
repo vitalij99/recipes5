@@ -50,10 +50,12 @@ export const BtnRegister = styled.button`
   border-radius: 6px;
   white-space: nowrap;
 `;
+
 export const Link = styled.div`
   text-align: center;
   margin-top: 18px;
 `;
+
 export const StyledNavLink = styled(NavLink)`
   color: #fafafa;
   font-size: 14px;
