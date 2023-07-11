@@ -3,10 +3,13 @@ import Select from 'react-select';
 
 export const DescriptionBox = styled.div`
   display: block;
+  margin-top: 62px;
 
   @media screen and (min-width: 768px) {
+    margin-top: 100px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   @media screen and (min-width: 1440px) {
@@ -19,10 +22,10 @@ export const AddPhotoContainer = styled.div`
   height: 268px;
   border-radius: 8px;
   background: ${props => props.theme.addRecipePage.listOfItems.icon};
-  margin: 62px auto 32px 0;
+  margin-bottom: 32px;
 
   @media screen and (min-width: 768px) {
-    margin-left: 0;
+    margin-bottom: 0;
   }
 `;
 
@@ -50,6 +53,13 @@ export const Form = styled.div`
   flex-direction: column;
   width: 343px;
   gap: 24px;
+  outline: 1px solid green;
+  /* REMOVE */
+
+  @media screen and (min-width: 768px) {
+    width: 394px;
+    gap: 32px;
+  }
 `;
 
 export const LabelForm = styled.label`
@@ -83,20 +93,22 @@ export const InputForm = styled.input`
 `;
 
 export const LabelSelect = styled.label`
-  position: relative;
   display: flex;
   align-items: center;
   -webkit-box-pack: justify;
   justify-content: space-between;
   height: 40px;
-  font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.02em;
   border-bottom: 1px solid
     ${props => props.theme.addRecipePage.listOfItems.underline};
-  color: ${props => props.theme.addRecipePage.listOfItems.text2};
-  opacity: ${props => props.theme.addRecipePage.listOfItems.opacity};
+  color: rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    border-bottom: 1px solid
+      ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+  }
 `;
 
 export const StyledSelect = styled(Select)`
@@ -107,9 +119,24 @@ export const StyledSelect = styled(Select)`
   border: none;
   background-color: transparent;
 
+  & .css-t3ipsp-control {
+    box-shadow: none;
+    border: none;
+    &:hover {
+      border-color: ${props =>
+        props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
+      outline: none;
+    }
+  }
+
   & .css-13cymwt-control {
     border: none;
     background-color: transparent;
+    box-shadow: none;
+
+    & .css-1dimb5e-singleValue {
+      color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    }
   }
 
   & .css-1xc3v61-indicatorContainer {
@@ -117,8 +144,11 @@ export const StyledSelect = styled(Select)`
   }
 
   & .css-1nmdiq5-menu {
-    /* background-color: red; */
-
-    /* TODO */
+    background-color: #fff;
+    padding: 1px;
+    color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
+    &:hover {
+    }
   }
 `;

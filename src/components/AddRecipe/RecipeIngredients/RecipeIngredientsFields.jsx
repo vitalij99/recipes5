@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Form } from '../RecipeDescription/RecipeDescription.styled';
 
 import {
+  Form,
   BtnBox,
   BtnCountMinus,
   BtnCountPlus,
