@@ -35,9 +35,11 @@ const AddRecipeForm = () => {
   };
 
   return (
+
     <Container>
       <ContainerAddRecipe>
         <AddRecipeTitle>Add Recipe</AddRecipeTitle>
+
         <form onSubmit={handleFormSubmit}>
           <RecipeDescriptionFields
             recipeData={recipeData}
@@ -65,6 +67,7 @@ const AddRecipeForm = () => {
         {/* <PopularRecipe /> */}
       </ContainerAddRecipe>
     </Container>
+
   );
 };
 

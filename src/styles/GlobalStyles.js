@@ -32,6 +32,16 @@ import PoppinsThin from './fonts/Poppins-Thin.ttf';
 //   }
 // `;
 
+//NOTE - Animation use case
+// const AnimatedButton = styled.button`
+//   /* Styles for the button */
+
+//   /* Add the animation class on hover */
+//   &:hover {
+//     animation: easeOut 1s ease-in-out infinite;
+//   }
+// `;
+
 const GlobalStyles = createGlobalStyle`
   ${normalize}
 
@@ -175,6 +185,63 @@ const GlobalStyles = createGlobalStyle`
     --small-screen: 375px;
     --medium-screen: 768px;
     --large-screen: 1440px;
+  }
+
+  /* Animation */
+  .ease-in {
+    animation-name: easeIn;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.17,.67,.83,.67)
+  }
+
+  .ease-out {
+    animation-name: easeOut;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.17,.67,.83,.67)
+  }
+
+  button {
+    &:hover {
+      transition: 0.6s;
+      animation:  easeIn;
+    }
+    &:not(:hover){
+      transition: 0.6s;
+      animation:  easeOut;
+    }
+  }
+
+  a {
+    &:hover {
+      transition: 0.6s;
+      animation:  easeIn;
+    }
+    &:not(:hover){
+      transition: 0.6s;
+      animation:  easeOut;
+    }
+  }
+  
+  div {
+    &:hover {
+      transition: 0.6s;
+      animation:  easeIn;
+    }
+    &:not(:hover){
+      transition: 0.6s;
+      animation:  easeOut;
+    }
+  }
+
+  svg {
+    &:hover {
+      transition: 0.6s;
+      animation:  easeIn;
+    }
+    &:not(:hover){
+      transition: 0.6s;
+      animation:  easeOut;
+    }
   }
 `;
 
