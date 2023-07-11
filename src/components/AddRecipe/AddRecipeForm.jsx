@@ -1,7 +1,7 @@
 import Container from 'components/Container/Container';
 import React, { useState } from 'react';
 import { ContainerAddRecipe, AddRecipeTitle, Button } from './AddRecipe.styled';
-import PopularRecipe from './PopularRecipe/PopularRecipe';
+// import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';

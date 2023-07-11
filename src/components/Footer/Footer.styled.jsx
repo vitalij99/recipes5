@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import bgImg from '../../images/Header/spinachFooter.png';
 
 import {
-  FooterLogo,
-  FooterEmailLogo,
+  // FooterLogo,
+  // FooterEmailLogo,
   FooterFacebookLogo,
-  FooterYoutubeLogo,
-  FooterTwitterLogo,
-  FooterInstagramLogo,
+  // FooterYoutubeLogo,
+  // FooterTwitterLogo,
+  // FooterInstagramLogo,
 } from './FooterIcon';
 
 export const BottomFooter = styled.div`
