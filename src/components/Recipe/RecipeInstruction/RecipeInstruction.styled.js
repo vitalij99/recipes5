@@ -24,7 +24,7 @@ export const InstructionTitle = styled.h3`
   font-weight: 600;
   line-height: 1;
   margin-bottom: 30px;
-  color: #3e4462;
+  color: ${props => props.theme.recipePage.recipePreparation.title};
 `;
 
 export const InstructionDescrContainer = styled.div`
