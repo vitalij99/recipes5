@@ -25,8 +25,9 @@ export const InstructionContainer = styled.ul`
     border-radius: 50%;
     width: 22px;
     height: 22px;
-    color: #ffffff;
-    background-color: #8baa36;
+    color: ${props => props.theme.recipePage.recipePreparation.list.number};
+    background-color: ${props =>
+      props.theme.recipePage.recipePreparation.list.circle};
 
     @media (min-width: 768px) {
       font-size: 14px;
@@ -46,7 +47,7 @@ export const InstructionContainer = styled.ul`
     font-weight: 400;
     line-height: 1.16;
     margin-left: 14px;
-    color: #000000;
+    color: ${props => props.theme.recipePage.recipePreparation.list.text};
 
     @media (min-width: 768px) {
       font-size: 14px;

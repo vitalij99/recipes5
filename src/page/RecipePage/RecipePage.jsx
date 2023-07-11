@@ -17,7 +17,7 @@ const RecipePage = () => {
     recipe;
 
   return (
-    <main>
+    <div>
       <RecipeHero
         time={time}
         title={title}
@@ -26,7 +26,7 @@ const RecipePage = () => {
       />
       <RecipeIngradients ingredients={ingredients} />
       <RecipeInstruction instructions={instructions} thumb={thumb} />
-    </main>
+    </div>
   );
 };
 
