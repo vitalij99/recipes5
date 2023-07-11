@@ -21,9 +21,10 @@ const initialState = {
     avatar: null,
     favorite: null,
     shoppingList: null,
+    subscriptionToken: null,
   },
   token: null,
-  isLoggedIn: false,
+
   isRefreshing: false,
   isLoading: false,
   error: null,
@@ -42,13 +43,11 @@ const fn = type => arrThunks.map(el => el[type]);
 
 const handleIsLoggedIn = (state, { payload }) => {
   state.user = payload.user;
-  state.token = payload.token;
-  state.isLoggedIn = true;
+  state.token = payload.user.subscriptionToken;
 };
 const handleLogout = state => {
   state.user = initialState.user;
   state.token = initialState.token;
-  state.isLoggedIn = false;
 };
 
 const handlePending = state => {
