@@ -48,7 +48,8 @@ export const TextArea = styled.textarea`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 617px;
+    width: 505px;
+     
   }
 `;
 
@@ -58,6 +59,7 @@ export const Button = styled.button`
   border-radius: 24px 44px;
   border: none;
   padding: 12px 48px;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     max-width: 161px;
