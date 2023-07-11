@@ -1,5 +1,5 @@
 import RecipeHero from 'components/Recipe/RecipeHero/RecipeHero';
-import RecipeIngradients from 'components/Recipe/RecipeIngredients/RecipeIngredients';
+import RecipeIngredients from 'components/Recipe/RecipeIngredients/RecipeIngredients';
 import RecipeInstruction from 'components/Recipe/RecipeInstruction/RecipeInstruction';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -36,7 +36,7 @@ const RecipePage = () => {
         description={description}
         id={_id}
       />
-      <RecipeIngradients ingredients={ingredients} />
+      <RecipeIngredients ingredients={ingredients} />
       <RecipeInstruction instructions={instructions} thumb={thumb} />
     </div>
   );

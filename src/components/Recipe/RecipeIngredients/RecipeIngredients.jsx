@@ -3,13 +3,13 @@ import {
   CheckContainer,
   CheckIcon,
   ContainerRecipes,
-  ImageIngradient,
+  ImageIngredient,
   IngedientsInput,
   IngedientsMeasure,
-  Ingradient,
-  IngradientLabel,
-  IngradientName,
-  IngradientsWrapper,
+  Ingredient,
+  IngredientLabel,
+  IngredientName,
+  IngredientsWrapper,
   WrapperContent,
 } from './RecipeIngredients.styled';
 
@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchIngradients } from 'redux/recipe/recipeOperetion';
 import { selectIngredients } from 'redux/recipe/recipeSelector';
 
-function RecipeIngradients({ ingredients }) {
+function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
   const allIngradientsList = useSelector(selectIngredients);
 
@@ -43,30 +43,30 @@ function RecipeIngradients({ ingredients }) {
     <ContainerRecipes>
       <Container>
         <IngradientsHeader info="Ingredients" actions="Add to list" />
-        <IngradientsWrapper>
+        <IngredientsWrapper>
           {ingredientsList?.map(({ _id, name, descr, img, measure }) => {
             return (
-              <Ingradient key={_id}>
+              <Ingredient key={_id}>
                 <WrapperContent>
-                  <ImageIngradient src={img} alt="Ingradient" />
-                  <IngradientName>{name}</IngradientName>
+                  <ImageIngredient src={img} alt="Ingradient" />
+                  <IngredientName>{name}</IngredientName>
                 </WrapperContent>
                 <WrapperContent>
                   <IngedientsMeasure>{measure}</IngedientsMeasure>
-                  <IngradientLabel htmlFor={_id}>
+                  <IngredientLabel htmlFor={_id}>
                     <IngedientsInput type="checkbox" id={_id} />
                     <CheckContainer>
                       <CheckIcon />
                     </CheckContainer>
-                  </IngradientLabel>
+                  </IngredientLabel>
                 </WrapperContent>
-              </Ingradient>
+              </Ingredient>
             );
           })}
-        </IngradientsWrapper>
+        </IngredientsWrapper>
       </Container>
     </ContainerRecipes>
   );
 }
 
-export default RecipeIngradients;
+export default RecipeIngredients;
