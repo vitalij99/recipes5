@@ -12,7 +12,7 @@ import {
 export const Categories = () => {
   const CategoriesCard = data.map(({ _id, title, thumb }) => (
     <li key={_id}>
-      <Link to={`/recipe/${'6462a8f74c3d0ddd28897fb8'}`}>
+      <Link to={`/recipe/${_id}`}>
         <CategoriesImg src={thumb} alt="img" />
         <ProductName>{title}</ProductName>
       </Link>
