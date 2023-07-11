@@ -3,10 +3,10 @@ import styled from 'styled-components';
 const ContainerAddRecipe = styled.div`
   padding: 16px;
   background-color: ${props => props.theme.addRecipePage.background};
+
+  @media screen and (min-width: 1440px) {
+    padding: 0 100px;
+  }
 `;
 
-const AddRecipeTitle = styled.h2`
-  color: ${props => props.theme.addRecipePage.title};
-`;
-
-export { ContainerAddRecipe, AddRecipeTitle };
+export { ContainerAddRecipe };

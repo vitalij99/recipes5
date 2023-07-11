@@ -3,10 +3,8 @@ import Select from 'react-select';
 
 export const DescriptionBox = styled.div`
   display: block;
-  margin-top: 62px;
 
   @media screen and (min-width: 768px) {
-    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;

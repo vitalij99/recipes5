@@ -129,6 +129,7 @@ export const CheckContainer = styled.div`
     height: 35px;
   }
 `;
+
 export const CheckIcon = styled(FaCheck)`
   width: 9px;
   height: 9px;
