@@ -11,6 +11,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
 import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
+import { ownerRecipeReducer } from './recipe/recipeSlice';
 
 const persistConfig = {
   key: 'auth',
@@ -21,6 +22,7 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
+    recipes: ownerRecipeReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

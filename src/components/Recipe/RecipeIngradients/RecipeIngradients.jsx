@@ -11,32 +11,50 @@ import {
   IngradientName,
   IngradientsWrapper,
   WrapperContent,
-  ingredientsList,
 } from './RecipeIngradients.styled';
 
 import IngradientsHeader from 'components/IngradientsHeader/IngradientsHeader';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchIngradients } from 'redux/recipe/recipeOperetion';
+import { selectIngredients } from 'redux/recipe/recipeSelector';
 
 function RecipeIngradients({ ingredients }) {
-  const ingradientOnRecipe = ingredientsList.filter(
-    val => val.id !== ingredients.id
-  );
+  const [ingredientsList, setIngredientsList] = useState([]);
+  const allIngradientsList = useSelector(selectIngredients);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchIngradients());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const ingradientsWithSameId = allIngradientsList
+      .filter(val => ingredients?.map(item => item.id).includes(val._id))
+      .map(val => ({
+        ...val,
+        measure: ingredients?.find(item => item.id === val._id).measure,
+      }));
+    setIngredientsList(ingradientsWithSameId);
+  }, [ingredients, allIngradientsList]);
 
   return (
     <ContainerRecipes>
       <Container>
         <IngradientsHeader info="Ingredients" actions="Add to list" />
         <IngradientsWrapper>
-          {ingradientOnRecipe.map(({ id, name, descr, img, measure }) => {
+          {ingredientsList?.map(({ _id, name, descr, img, measure }) => {
             return (
-              <Ingradient key={id}>
+              <Ingradient key={_id}>
                 <WrapperContent>
                   <ImageIngradient src={img} alt="Ingradient" />
                   <IngradientName>{name}</IngradientName>
                 </WrapperContent>
                 <WrapperContent>
                   <IngedientsMeasure>{measure}</IngedientsMeasure>
-                  <IngradientLabel htmlFor={id}>
-                    <IngedientsInput type="checkbox" id={id} />
+                  <IngradientLabel htmlFor={_id}>
+                    <IngedientsInput type="checkbox" id={_id} />
                     <CheckContainer>
                       <CheckIcon />
                     </CheckContainer>
