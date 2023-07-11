@@ -13,7 +13,7 @@ export const ContainerRecipes = styled.section`
   }
 `;
 
-export const IngradientsWrapper = styled.ul`
+export const IngredientsWrapper = styled.ul`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ export const IngradientsWrapper = styled.ul`
   }
 `;
 
-export const Ingradient = styled.li`
+export const Ingredient = styled.li`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -50,7 +50,7 @@ export const WrapperContent = styled.div`
   display: flex;
   align-items: center;
 `;
-export const ImageIngradient = styled.img`
+export const ImageIngredient = styled.img`
   width: 57px;
   height: 57px;
   margin-right: 12px;
@@ -67,7 +67,7 @@ export const ImageIngradient = styled.img`
   }
 `;
 
-export const IngradientName = styled.p`
+export const IngredientName = styled.p`
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -138,7 +138,7 @@ export const CheckIcon = styled(FaCheck)`
   }
 `;
 
-export const IngradientLabel = styled.label`
+export const IngredientLabel = styled.label`
   display: flex;
   align-items: center;
   justify-content: center;

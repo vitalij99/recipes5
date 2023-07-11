@@ -1,22 +1,22 @@
 import {
   HeaderColumn,
   HeadersContainer,
-  IngradientsTitle,
+  IngredientsTitle,
   TitleColumn,
-} from './IngradientsHeader.styled';
+} from './IngredientsHeader.styled';
 
-const IngradientsHeader = ({ info, actions }) => {
+const IngredientsHeader = ({ info, actions }) => {
   return (
     <>
-      <IngradientsTitle>
+      <IngredientsTitle>
         <TitleColumn>{info}</TitleColumn>
         <HeadersContainer>
           <HeaderColumn>Number</HeaderColumn>
           <HeaderColumn>{actions}</HeaderColumn>
         </HeadersContainer>
-      </IngradientsTitle>
+      </IngredientsTitle>
     </>
   );
 };
 
-export default IngradientsHeader;
+export default IngredientsHeader;
