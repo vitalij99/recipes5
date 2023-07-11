@@ -163,6 +163,7 @@ export const lightTheme = {
       text2: '#000000',
       icon: '#8BAA36',
       underline: '#E0E0E0',
+      opacity: '0.5',
     },
     listOfIngredients: {
       text1: '#7E7E7E',
@@ -170,16 +171,17 @@ export const lightTheme = {
       icon1: '#000000',
       hoverIcon1: '#8BAA36',
       icon2: '#8BAA36',
+      counter: 'rgba(51, 51, 51, 0.30)',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
-      selectionBackground: '#D9D9D9',
+      selectionBackground: '#f5f5f5',
       dropDownMenu: {
-        background: '#FFFFFF',
-        text1: '#000000',
+        background: '#FFF',
+        text1: '#000',
         text2: '#8BAA36',
       },
       button: {
         fill: '#FAFAFA',
-        text: '#333333',
+        text: '#333',
         outline: '#7E7E7E',
         icon: '#8BAA36',
         hoverIcon: '#7E7E7E',
@@ -577,6 +579,7 @@ export const darkTheme = {
       icon1: '#FAFAFA',
       hoverIcon1: '#8BAA36',
       icon2: '#8BAA36',
+      counter: '#FAFAFA',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
       selectionBackground: '#1E1F28',
       dropDownMenu: {

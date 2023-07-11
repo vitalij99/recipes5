@@ -1,4 +1,3 @@
-import Container from 'components/Container/Container';
 import errorImage from 'images/error-404.svg';
 import {
   ErrorContainer,
@@ -6,10 +5,9 @@ import {
   TextContainer,
   BoldText,
   Text,
-} from './Error.style';
+} from './Error.styled';
 
 const Error = () => (
-  // <Container>
   <ErrorContainer>
     <Img src={errorImage} alt="error" loading="lazy" />
     <TextContainer>
@@ -17,7 +15,6 @@ const Error = () => (
       <Text>but the page you were looking for can’t be found...</Text>
     </TextContainer>
   </ErrorContainer>
-  // </Container>
 );
 
 export default Error;

@@ -11,6 +11,7 @@ import {
   IngredientName,
   IngredientsWrapper,
   WrapperContent,
+
 } from './RecipeIngredients.styled';
 
 import IngradientsHeader from 'components/IngradientsHeader/IngradientsHeader';
@@ -42,6 +43,7 @@ function RecipeIngredients({ ingredients }) {
   return (
     <ContainerRecipes>
       <Container>
+
         <IngradientsHeader info="Ingredients" actions="Add to list" />
         <IngredientsWrapper>
           {ingredientsList?.map(({ _id, name, descr, img, measure }) => {
@@ -49,12 +51,15 @@ function RecipeIngredients({ ingredients }) {
               <Ingredient key={_id}>
                 <WrapperContent>
                   <ImageIngredient src={img} alt="Ingradient" />
+
                   <IngredientName>{name}</IngredientName>
                 </WrapperContent>
                 <WrapperContent>
                   <IngedientsMeasure>{measure}</IngedientsMeasure>
+
                   <IngredientLabel htmlFor={_id}>
                     <IngedientsInput type="checkbox" id={_id} />
+
                     <CheckContainer>
                       <CheckIcon />
                     </CheckContainer>

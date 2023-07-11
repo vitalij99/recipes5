@@ -28,6 +28,7 @@ export const registerApi = async (user, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 };
+
 export const signinApi = async (user, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/login', user);
@@ -39,6 +40,7 @@ export const signinApi = async (user, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 };
+
 export const logoutApi = async (_, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/logout');
@@ -48,6 +50,7 @@ export const logoutApi = async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 };
+
 export const currentApi = async (_, thunkAPI) => {
   const state = thunkAPI.getState();
 
@@ -63,6 +66,27 @@ export const currentApi = async (_, thunkAPI) => {
 
     return data;
   } catch (error) {
+    Notify.info('Token is obsolete');
+    return thunkAPI.rejectWithValue(error.message);
+  }
+};
+
+export const updateName = async (newName, thunkAPI) => {
+  try {
+    const { data } = await axios.patch('/users/name', { name: newName });
+    return data;
+  } catch (error) {
+    Notify.info('Failed to update the name');
+    return thunkAPI.rejectWithValue(error.message);
+  }
+};
+export const updateAvatar = async (formData, thunkAPI) => {
+  try {
+    const { data } = await axios.post('/users/avatars', formData);
+
+    return data;
+  } catch (error) {
+    Notify.info('failed to update the avatar');
     return thunkAPI.rejectWithValue(error.message);
   }
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const IngradientsTitle = styled.div`
+export const IngredientsTitle = styled.div`
   width: 100%;
   padding: 12px 14px;
   border-radius: 8px;

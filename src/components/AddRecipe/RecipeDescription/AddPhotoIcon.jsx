@@ -1,4 +1,4 @@
-export const AddFotoIcon = () => {
+export const AddPhotoIcon = () => {
   return (
     <svg
       width="64"

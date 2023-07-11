@@ -45,15 +45,22 @@ export const Btnwrapper = styled.div`
 export const BtnRegister = styled.button`
   width: 100%;
   padding: 14px 110px;
-  background-color: #8baa36;
   color: #fafafa;
+  background-color: #8baa36;
   border-radius: 6px;
+  border-color: transparent;
   white-space: nowrap;
+
+  &:hover {
+    color: #22252a;
+  }
 `;
+
 export const Link = styled.div`
   text-align: center;
   margin-top: 18px;
 `;
+
 export const StyledNavLink = styled(NavLink)`
   color: #fafafa;
   font-size: 14px;
