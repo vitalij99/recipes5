@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/recipes5/static/css/main.58462fbc.css",
-    "main.js": "/recipes5/static/js/main.8f411dd3.js",
+    "main.js": "/recipes5/static/js/main.2d38be17.js",
     "static/media/full_desc_ratio_2.webp": "/recipes5/static/media/full_desc_ratio_2.cf22bbb2c8cfd520f63e.webp",
     "static/media/bg_desktop@2x.jpg": "/recipes5/static/media/bg_desktop@2x.4f06b67eab8a7224f77b.jpg",
     "static/media/bg_tablet@2x.jpg": "/recipes5/static/media/bg_tablet@2x.491b38c7fe25969d4cd8.jpg",
@@ -18,7 +18,7 @@
     "static/media/Poppins-ExtraBold.ttf": "/recipes5/static/media/Poppins-ExtraBold.01849ee091e1762a5dd5.ttf",
     "static/media/Poppins-Black.ttf": "/recipes5/static/media/Poppins-Black.d8b850b920a5ef49d752.ttf",
     "static/media/spinach@2x.png": "/recipes5/static/media/spinach@2x.0f72911d54873ffaf0f0.png",
-    "static/media/bg_tablet@1x.jpg": "/recipes5/static/media/bg_tablet@1x.ef7a1aec19d4bf71561d.jpg",
+    "static/media/bg_tablet@1x.jpg": "/recipes5/static/media/bg_tablet@1x.06b38f50cffbd9c7158e.jpg",
     "static/media/desc_ratio_2.webp": "/recipes5/static/media/desc_ratio_2.884ecd1a7e9fa3545a99.webp",
     "static/media/bg_tablet@3x.jpg": "/recipes5/static/media/bg_tablet@3x.5475d11b28f564756d81.jpg",
     "static/media/spinach.png": "/recipes5/static/media/spinach.4d437f3f129bb5d4b8f4.png",
@@ -26,22 +26,25 @@
     "static/media/bg_desktop@1x.png": "/recipes5/static/media/bg_desktop@1x.c3c554c3abc03f72887c.png",
     "static/media/bg_desktop@3x.png": "/recipes5/static/media/bg_desktop@3x.c3c554c3abc03f72887c.png",
     "static/media/bg_mobile@1x.jpg": "/recipes5/static/media/bg_mobile@1x.606f3ea7b457c7adf50e.jpg",
+    "static/media/error-404.svg": "/recipes5/static/media/error-404.599cea6b6efa2dee36affa9bd008cebb.svg",
     "static/media/bg_desktop@2x.png": "/recipes5/static/media/bg_desktop@2x.4e3a1b4e8ca149d2d6c4.png",
     "static/media/tab_ratio_2.webp": "/recipes5/static/media/tab_ratio_2.3006b65409ae5dfbd38a.webp",
     "static/media/desc_ratio_1.webp": "/recipes5/static/media/desc_ratio_1.6705e84388ace92b494e.webp",
     "static/media/mob_ratio_2.webp": "/recipes5/static/media/mob_ratio_2.f7f5d09ac2dd0e26e2db.webp",
+    "static/media/spinachFooter.png": "/recipes5/static/media/spinachFooter.8b9fa48ee74c185bd7c8.png",
     "static/media/tab_ratio_1.webp": "/recipes5/static/media/tab_ratio_1.f524abe054518097e2c4.webp",
     "static/media/mob_ratio_1.webp": "/recipes5/static/media/mob_ratio_1.df8cfab47672cb4a8bb8.webp",
-    "static/media/symbol-defs.svg": "/recipes5/static/media/symbol-defs.210100fd9a14173166cbf15d81e4437e.svg",
+    "static/media/symbol-defs.svg": "/recipes5/static/media/symbol-defs.08988239c7a1b705c66be62ee1870ce7.svg",
     "index.html": "/recipes5/index.html",
+    "static/media/trashBlack.svg": "/recipes5/static/media/trashBlack.f7f432a61cbefd6e62e764f97214ef43.svg",
     "static/media/bg_black_mobile.svg": "/recipes5/static/media/bg_black_mobile.daca53f502ae2c9014f7657884942be8.svg",
     "static/media/bg_black_tablet.svg": "/recipes5/static/media/bg_black_tablet.3e035c53720932e6d95337bf72e5cd12.svg",
     "static/media/bg_black_desktop.svg": "/recipes5/static/media/bg_black_desktop.32fce8664a1d8050776c7fd298d54f19.svg",
     "main.58462fbc.css.map": "/recipes5/static/css/main.58462fbc.css.map",
-    "main.8f411dd3.js.map": "/recipes5/static/js/main.8f411dd3.js.map"
+    "main.2d38be17.js.map": "/recipes5/static/js/main.2d38be17.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.8f411dd3.js"
+    "static/js/main.2d38be17.js"
   ]
 }
