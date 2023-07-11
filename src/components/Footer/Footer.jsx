@@ -20,8 +20,8 @@ import {
 
 import {
   FooterLogo,
-  FooterEmailLogo,
-  FooterFacebookLogo,
+  // FooterEmailLogo,
+  // FooterFacebookLogo,
   FooterYoutubeLogo,
   FooterTwitterLogo,
   FooterInstagramLogo,

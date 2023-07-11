@@ -1,5 +1,6 @@
 import Container from 'components/Container/Container';
 import React, { useState } from 'react';
+
 import { ContainerAddRecipe, AddRecipeTitle, Button } from './AddRecipe.styled';
 // import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
@@ -35,9 +36,11 @@ const AddRecipeForm = () => {
   };
 
   return (
+
     <Container>
       <ContainerAddRecipe>
         <AddRecipeTitle>Add Recipe</AddRecipeTitle>
+
         <form onSubmit={handleFormSubmit}>
           <RecipeDescriptionFields
             recipeData={recipeData}
@@ -61,11 +64,13 @@ const AddRecipeForm = () => {
               }))
             }
           />
+
           <Button type="submit">Add</Button>
         </form>
         {/* <PopularRecipe /> */}
       </ContainerAddRecipe>
     </Container>
+
   );
 };
 
