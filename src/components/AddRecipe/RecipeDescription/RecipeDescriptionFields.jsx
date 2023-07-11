@@ -84,7 +84,6 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
           {' '}
           Category
           <StyledSelect
-            multiply
             id="category"
             name="category"
             options={categoryOptions}

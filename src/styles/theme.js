@@ -171,6 +171,7 @@ export const lightTheme = {
       icon1: '#000000',
       hoverIcon1: '#8BAA36',
       icon2: '#8BAA36',
+      counter: 'rgba(51, 51, 51, 0.30)',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
       selectionBackground: '#f5f5f5',
       dropDownMenu: {
@@ -578,6 +579,7 @@ export const darkTheme = {
       icon1: '#FAFAFA',
       hoverIcon1: '#8BAA36',
       icon2: '#8BAA36',
+      counter: '#FAFAFA',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
       selectionBackground: '#1E1F28',
       dropDownMenu: {

@@ -1,11 +1,32 @@
 import styled from 'styled-components';
 import Select from 'react-select';
 
+export const Form = styled.div`
+  margin-top: 44px;
+  margin-bottom: 44px;
+  outline: 1px solid red;
+  /* REMOVE */
+
+  display: flex;
+  flex-direction: column;
+  width: 343px;
+  gap: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    gap: 32px;
+    margin-top: 104px;
+    margin-bottom: 100px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 609px;
+  }
+`;
+
 export const IngredietsContainer = styled.div`
   width: 100%;
   border: none;
-  margin-top: 44px;
-  margin-bottom: 44px;
 `;
 
 export const IngredietsBox = styled.div`
@@ -20,7 +41,7 @@ export const IngredietsBox = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 617px;
+    width: 100%;
   }
 `;
 
@@ -37,7 +58,7 @@ export const BtnBox = styled.div`
   display: flex;
   border-radius: 18px;
   border: 1px solid
-    ${props => props.theme.addRecipePage.listOfIngredients.button.text};
+    ${props => props.theme.addRecipePage.listOfIngredients.counter};
   width: 92px;
   height: 28px;
   flex-shrink: 0;
@@ -77,7 +98,7 @@ export const ListIngredients = styled.ul`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 617px;
+    width: 100%;
   }
 `;
 
