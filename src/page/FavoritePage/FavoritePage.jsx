@@ -1,7 +1,7 @@
 import React from 'react';
-
+import { FavoritePage as Favorite } from 'components/FavoritePage/FavoritePage';
 const FavoritePage = () => {
-  return <div>FavoritePage</div>;
+  return <Favorite var_title={"Favorites"}></Favorite>;
 };
 
 export default FavoritePage;
