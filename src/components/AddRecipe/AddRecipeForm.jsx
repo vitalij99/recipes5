@@ -39,7 +39,6 @@ const AddRecipeForm = () => {
     <Container>
       <MainPageTitle title={'Add Recipe'} />
       <ContainerAddRecipe>
-        {/* <AddRecipeTitle>Add Recipe</AddRecipeTitle> */}
         <form onSubmit={handleFormSubmit}>
           <RecipeDescriptionFields
             recipeData={recipeData}
