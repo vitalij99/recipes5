@@ -6,7 +6,6 @@ import {
     CardTimeWrap,
     CardTextWrap,
     CardTitle,
-    PageTitle,
     TrashSvg,
     Time,
     DeleteBtn,
@@ -14,12 +13,11 @@ import {
     ErrorPhoto,
     ErrorWrap,
   } from './FavoritePage.styled';
-  import Container from 'components/Container/Container';
   import { Link } from "react-router-dom";
   import someJson  from './testarray';
   // import { useEffect } from 'react';
   // import { useSelector, useDispatch } from 'react-redux';
-  export const FavoritePage = ({var_title}) => {
+  export const FavoritePage = () => {
    
 
     // const dispatch = useDispatch();
@@ -54,8 +52,7 @@ import {
     );
   
     return (
-        <Container>
-        <PageTitle>{var_title}</PageTitle>
+        <>
         {someJson.length !== 0 ? (
             <CardList>
             {FavoriteCards}
@@ -64,6 +61,6 @@ import {
             <ErrorPhoto></ErrorPhoto>
             </ErrorWrap>
             )}
-        </Container>
+        </>
     );
   };
