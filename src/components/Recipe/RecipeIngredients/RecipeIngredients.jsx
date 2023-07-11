@@ -11,7 +11,7 @@ import {
   IngradientName,
   IngradientsWrapper,
   WrapperContent,
-} from './RecipeIngradients.styled';
+} from './RecipeIngredients.styled';
 
 import IngradientsHeader from 'components/IngradientsHeader/IngradientsHeader';
 import { useEffect, useState } from 'react';
