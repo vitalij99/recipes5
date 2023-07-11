@@ -138,6 +138,8 @@ export const Time = styled.div`
 `;
 
 export const TrashSvg = styled(Trash)`
+  stroke:black;
+  
   @media (max-width: 767px) {
     width: 10px;
     height: 11px;
@@ -166,6 +168,12 @@ export const DeleteBtn = styled.button`
   line-height: 24px;
   right: 0;
   top:0;
+  &:hover ${TrashSvg} {
+    stroke:white;
+  }
+  &:hover{
+    background:#8BAA36;
+  }
   @media (min-width: 768px) {
     width: 38px;
     height: 38px;
