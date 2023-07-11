@@ -36,6 +36,7 @@ const AddRecipeForm = () => {
   };
 
   return (
+
     <Container>
       <MainPageTitle title={'Add Recipe'} />
       <ContainerAddRecipe>
@@ -66,6 +67,7 @@ const AddRecipeForm = () => {
         {/* <PopularRecipe /> */}
       </ContainerAddRecipe>
     </Container>
+
   );
 };
 

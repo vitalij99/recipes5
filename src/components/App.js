@@ -3,9 +3,10 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from 'styles/theme';
 import { lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { currentThunk } from 'redux/auth/authOperation';
 import { WelcomePage, AuthPage } from 'page';
+import { selectToken } from 'redux/auth/authSelector';
 
 const CategoriesPage = lazy(() => import('page/CategoriesPage/CategoriesPage'));
 const MainPage = lazy(() => import('page/MainPage/MainPage'));
@@ -19,11 +20,13 @@ const ShoppingListPage = lazy(() =>
 );
 
 function App() {
+  const token = useSelector(selectToken);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (!token) return;
     dispatch(currentThunk());
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return (
     <>
