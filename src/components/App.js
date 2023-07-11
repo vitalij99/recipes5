@@ -20,6 +20,7 @@ const SearchPage = lazy(() => import('page/SearchPage/SearchPage'));
 const ShoppingListPage = lazy(() =>
   import('page/ShoppingListPage/ShoppingListPage')
 );
+const NotFoundPage = lazy(() => import('page/NotFoundPage/NotFoundPage'));
 
 function App() {
   const token = useSelector(selectToken);
@@ -59,6 +60,7 @@ function App() {
             <Route path="/my" element={<MyRecipesPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/shopping-list" element={<ShoppingListPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </ThemeProvider>
