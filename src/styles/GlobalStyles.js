@@ -222,7 +222,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   
-  div {
+  /* div {
     &:hover {
       transition: 0.6s;
       animation:  easeIn;
@@ -231,7 +231,7 @@ const GlobalStyles = createGlobalStyle`
       transition: 0.6s;
       animation:  easeOut;
     }
-  }
+  } */
 
   svg {
     &:hover {
