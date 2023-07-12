@@ -21,6 +21,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const [searchTerm] = useState('');
   const [ingredientOptions, setIngredientOptions] = useState([]);
   const [count, setCount] = useState(ingredients.length);
+  const [backendIngredients, setBackendIngredients] = useState([]);
 
   const handleIngredientChange = (index, field, value) => {
     const updatedIngredients = [...ingredients];
@@ -33,22 +34,6 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     updatedIngredients[index].name = selectedOption.value;
     setIngredients(updatedIngredients);
   };
-
-  useEffect(() => {
-    // Backend request
-    const backendIngredients = [
-      { id: 1, name: 'Cucumber' },
-      { id: 2, name: 'Apple' },
-      { id: 3, name: 'Lime' },
-    ];
-
-    // Filter ingredients
-    const filteredIngredients = backendIngredients.filter(ingredient =>
-      ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setIngredientOptions(filteredIngredients);
-  }, [searchTerm]);
 
   const addIngredientField = () => {
     setIngredients([...ingredients, { name: '', amount: '', unit: '' }]);
@@ -63,6 +48,29 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
       setCount(count - 1);
     }
   };
+
+  useEffect(() => {
+    const fetchIngredients = async () => {
+      try {
+        const response = await fetch('https://yummy-service.onrender.com/ingredients/list');
+        const data = await response.json();
+        setBackendIngredients(data);
+      } catch (error) {
+        console.log('Error fetching ingredients:', error);
+      }
+    };
+
+    fetchIngredients();
+  }, []);
+
+  useEffect(() => {
+    // Filter ingredients
+    const filteredIngredients = backendIngredients.filter(ingredient =>
+      ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setIngredientOptions(filteredIngredients);
+  }, [searchTerm, backendIngredients]);
 
   useEffect(() => {
     setCount(ingredients.length);

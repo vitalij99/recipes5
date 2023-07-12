@@ -2,7 +2,7 @@
 // import { Link } from 'react-router-dom';
 
 // const PopularRecipe = () => {
-//   const [recipes, setRecipes] = useState([]);
+//   const [popularRecipes, setPopularRecipes] = useState([]);
 //   const [loading, setLoading] = useState(true);
 //   const [error, setError] = useState(false);
 

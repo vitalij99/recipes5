@@ -4,8 +4,7 @@ import Select from 'react-select';
 export const Form = styled.div`
   margin-top: 44px;
   margin-bottom: 44px;
-  outline: 1px solid red;
-  /* REMOVE */
+ 
 
   display: flex;
   flex-direction: column;
