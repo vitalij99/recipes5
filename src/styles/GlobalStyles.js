@@ -190,13 +190,13 @@ const GlobalStyles = createGlobalStyle`
   /* Animation */
   .ease-in {
     animation-name: easeIn;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-timing-function: cubic-bezier(.17,.67,.83,.67)
   }
 
   .ease-out {
     animation-name: easeOut;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-timing-function: cubic-bezier(.17,.67,.83,.67)
   }
 
@@ -222,7 +222,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   
-  div {
+  /* div {
     &:hover {
       transition: 0.6s;
       animation:  easeIn;
@@ -231,7 +231,7 @@ const GlobalStyles = createGlobalStyle`
       transition: 0.6s;
       animation:  easeOut;
     }
-  }
+  } */
 
   svg {
     &:hover {
