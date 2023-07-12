@@ -40,7 +40,6 @@ export const Section = styled.div`
 
 export const Container = styled.div`
   padding-top: 87px;
-  padding-bottom: 50px;
   max-width: var(--small-screen);
   margin: 0 auto;
 
