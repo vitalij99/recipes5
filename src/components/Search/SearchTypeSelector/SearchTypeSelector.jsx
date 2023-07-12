@@ -29,6 +29,7 @@ export const SearchTypeSelector = () => {
           id={'selectSearchType'}
           data={searchTypes}
         />
+        {console.log(searchType)}
       </Wrapper>
     </>
   );
