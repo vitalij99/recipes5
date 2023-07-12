@@ -91,7 +91,6 @@ export const UserName = styled.p`
   cursor: pointer;
   color: ${props => {
     if (props.pathname === '/my') {
-      console.log('🚀 ~ props.pathname:', props.pathname);
       return props.theme.mainPage.header.user.textRecipePage;
     }
     return props.theme.mainPage.header.user.text;
@@ -107,29 +106,39 @@ export const UserName = styled.p`
   }
 `;
 export const SiteNav = styled.nav`
+  display: ${props => {
+    if (props.toggle === 'true') {
+      return 'flex';
+    }
+    return 'none';
+  }};
+
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  height: 85vh;
-  display: flex;
+  height: 100vh;
+
   padding-top: 124px;
+
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(${bgImg});
+  /* background-image: url(${bgImg});
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right bottom;
-  z-index: 99;
-  background-color: ${props =>
+  background-position: right bottom; */
+  z-index: 100;
+  background-color: transparent;
+  /* background-color: ${props =>
     props.toggle === 'true'
       ? props.theme.mainPage.menuMobileModal.background
       : props.theme.mainPage.background};
   @media screen and (min-width: 768px) {
     background-image: url(${bgImgTablet});
-  }
+  } */
   @media screen and (min-width: 1440px) {
+    display: flex;
     position: static;
     height: 100%;
     padding-top: 0px;
@@ -142,7 +151,6 @@ export const NavListList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @media screen and (min-width: 1440px) {
     flex-direction: row;
     align-items: center;
@@ -227,4 +235,33 @@ export const SwitchStyled = styled.div`
 
   cursor: pointer;
   position: absolute;
+`;
+
+export const BackgroundContainer = styled.div`
+  z-index: 99;
+  background-image: url(${bgImg});
+  background-image: ${props => {
+    if (props.toggle !== 'true') {
+      return 'none';
+    }
+    return;
+  }};
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: ${props => {
+    if (props.toggle === 'true') {
+      return '100vh';
+    }
+    return;
+  }};
+  background-color: ${props => {
+    if (props.toggle === 'true') {
+      return props.theme.mainPage.menuMobileModal.background;
+    }
+    return 'transparent';
+  }};
+  @media screen and (min-width: 1440px) {
+    background: none;
+  }
 `;
