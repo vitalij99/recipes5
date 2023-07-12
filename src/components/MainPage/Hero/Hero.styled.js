@@ -27,12 +27,14 @@ export const WrapperStyled = styled.div`
   background-size: auto, auto;
 
   @media screen and (min-width: 768px) {
+    height: 640px;
     padding-left: 38px;
     background-image: url(${bannerT}), url(${banner3T}), url(${banner4T}),
       url(${banner2T});
     background-position: top left, 80% 30%, center right, top right;
   }
   @media screen and (min-width: 1440px) {
+    height: 800px;
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
     background-position: top left, center, center, center 100px top;
@@ -92,5 +94,20 @@ export const InformFieldStyled = styled.div`
   width: 100%;
   top: -1297px;
   left: -20px;
-  z-index: 5;
+  z-index: 3;
+`;
+export const WraooerSearchStyled = styled.div`
+  width: 295px;
+  top: 578px;
+  z-index: 2;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 20px;
+    width: 362px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 510px;
+  }
 `;
