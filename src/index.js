@@ -10,16 +10,20 @@ import App from 'components/App';
 
 import { PersistGate } from 'redux-persist/integration/react';
 import Loader from 'components/Loader/Loader';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme } from 'styles/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GlobalStyles />
-    <Provider store={store}>
-      <PersistGate persistor={persistor} loading={<Loader />}>
-        <BrowserRouter basename="/recipes5">
-          <App />
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+    <ThemeProvider theme={lightTheme}>
+      <GlobalStyles />
+      <Provider store={store}>
+        <PersistGate persistor={persistor} loading={<Loader />}>
+          <BrowserRouter basename="/recipes5">
+            <App />
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
