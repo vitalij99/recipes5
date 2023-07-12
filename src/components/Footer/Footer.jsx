@@ -23,22 +23,27 @@ import {
   SubscribeContainer,
   SubscribeTitle,
   SubscribeText,
-  MainContainer
+  MainContainer,
+  HeadContainer,
+  InputBox
 
 } from './Footer.styled';
 
 import {
   FooterLogo,
-  FooterEmailLogo,
   FooterYoutubeLogo,
   FooterTwitterLogo,
   FooterInstagramLogo,
+  FooterEmailLogo
 } from './FooterIcon';
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterInfo>
+        <MainContainer>
+          <TextContainer>
+          <HeadContainer>
         <FooterLogoContainer>
           <LogoWrapper>
             <FooterLogo />
@@ -48,14 +53,15 @@ const Footer = () => {
         </FooterLogoContainer>
 
         
-  <MainContainer>
-   <TextContainer>
+ 
+  
         <OptionsList>
             <OptionsItem>Database of recipes that can be replenished </OptionsItem>
             <OptionsItem>Flexible search for desired and unwanted ingredients</OptionsItem>
             <OptionsItem>Ability to add your own recipes with photos</OptionsItem>
             <OptionsItem>Convenient and easy to use</OptionsItem>
-         </OptionsList>
+              </OptionsList>
+          </HeadContainer>
 
         <NavLinkList>
           <NavLinkItem>
@@ -75,8 +81,8 @@ const Footer = () => {
           </NavLinkItem>
         </NavLinkList>
 
-        </TextContainer>
-
+      </TextContainer>
+ 
         <SubscribeContainer>
           <SubscribeTitle>Subscribe to our Newsletter</SubscribeTitle>
            <SubscribeText>
@@ -86,15 +92,17 @@ const Footer = () => {
 
 
 
-          <Form action="subscribe">
-            <ContainerSvg>
-                <FooterEmailLogo/> </ContainerSvg>
+            <Form action="subscribe">
+              <InputBox>
+              <ContainerSvg>
+                  <FooterEmailLogo />
+                </ContainerSvg>
                 <Input type="email" placeholder="Enter your email address" />
-            
+            </InputBox>
             <FooterButton type="submit">Subscribe</FooterButton>
           </Form>
           </SubscribeContainer>
-        </MainContainer>
+       </MainContainer>
         <IconContainer>
           <LinkSocial href="https://www.facebook.com/">
             <FooterFacebookLogoStyled />
