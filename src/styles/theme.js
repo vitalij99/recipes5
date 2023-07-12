@@ -379,6 +379,10 @@ export const lightTheme = {
       opacity: '0.5',
     },
   },
+  loaderPage: {
+    background: '#FAFAFA',
+    icon: '#8BAA36',
+  },
   userProfile: {
     background: '#FAFAFA',
     closeIcon: '#333333',
@@ -789,6 +793,10 @@ export const darkTheme = {
       color: '#FAFAFA',
       opacity: '0.5',
     },
+  },
+  loaderPage: {
+    background: '#1E1F28',
+    icon: '#FAFAFA',
   },
   userProfile: {
     background: '#2A2C36',
