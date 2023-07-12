@@ -40,15 +40,14 @@ function RecipeHero({ time, title, description, id }) {
       <Container>
         <HeroTitle>{title}</HeroTitle>
         <HeroDescr>{description}</HeroDescr>
-        <HeroBtn
-          onClick={() => {
-            handleFavoriteBtn();
-          }}
-        >
-          {recipeOnFavorite
-            ? 'Add to favorite recipes'
-            : 'Remove from favorite recipes'}
-        </HeroBtn>
+        {recipeOnFavorite && (
+          <HeroBtn onClick={handleFavoriteBtn}>Add to favorite recipes</HeroBtn>
+        )}
+        {!recipeOnFavorite && (
+          <HeroBtn onClick={handleFavoriteBtn}>
+            Remove from favorite recipes
+          </HeroBtn>
+        )}
         <HeroTimeBlock>
           <HeroSvg />
           <HeroTime>{time} min</HeroTime>
