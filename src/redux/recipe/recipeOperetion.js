@@ -18,6 +18,26 @@ export const fetchIngradients = createAsyncThunk(
   }
 );
 
+export const addIngredientToShoppingList = createAsyncThunk(
+  'user/shopping',
+  async ({ id }, thunkAPI) => {
+    try {
+      const res = await axios.patch(`user/shopping`, {
+        id,
+      });
+      if (res) {
+        Notify.failure('Ingredient added on shoppingList');
+      }
+      return res;
+    } catch (err) {
+      if (err) {
+        Notify.failure('Not found');
+      }
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
 export const addRecipeToFavorite = createAsyncThunk(
   'user/favorites',
   async ({ id }, thunkAPI) => {
