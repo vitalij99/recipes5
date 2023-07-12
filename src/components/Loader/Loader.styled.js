@@ -1,26 +1,12 @@
 import styled, { keyframes } from 'styled-components';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import { IoRestaurantSharp } from 'react-icons/io5';
 
 const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
-  background-color: ${props => props.theme.loaderPage.background};
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-`;
-
-const StyledLoaderIcon = styled(LocalDiningIcon)`
-  color: ${props => props.theme.loaderPage.icon};
-
-  &.css-i4bv87-MuiSvgIcon-root {
-    font-size: 7rem;
-  }
+  background-color: ${props => props.theme.loader.background};
 `;
 
 const pulsateAnimation = keyframes`
@@ -33,8 +19,8 @@ const pulsateAnimation = keyframes`
   50% {
     transform: scale(1);
   }
-  75% {
-    transform: scale(0.7);
+  80% {
+    transform: scale(0.8);
   }
   100% {
     transform: scale(1);
@@ -42,7 +28,21 @@ const pulsateAnimation = keyframes`
 `;
 
 const PulsatingAnimation = styled.div`
-  animation: ${pulsateAnimation} 6s linear infinite;
+  animation: ${pulsateAnimation} 4s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export { LoaderContainer, StyledLoaderIcon, PulsatingAnimation };
+const Icon = styled(IoRestaurantSharp)`
+  width: 100px;
+  height: 100px;
+  fill: ${props => props.theme.loader.icon};
+
+  @media screen and (min-width: 1440px) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
+export { LoaderContainer, PulsatingAnimation, Icon };

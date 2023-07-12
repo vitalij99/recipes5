@@ -379,7 +379,7 @@ export const lightTheme = {
       opacity: '0.5',
     },
   },
-  loaderPage: {
+  loader: {
     background: '#FAFAFA',
     icon: '#8BAA36',
   },
