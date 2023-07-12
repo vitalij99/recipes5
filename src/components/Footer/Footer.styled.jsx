@@ -8,6 +8,13 @@ import {
   
 } from './FooterIcon';
 
+
+export const InputBox = styled.div`
+ position: relative;
+     display: inline-block;
+`;
+
+
 export const BottomFooter = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -20,15 +27,21 @@ export const BottomFooter = styled.div`
   background-position: bottom right;
   background-repeat: no-repeat;
 
+ @media (min-width: 1440px) {
+     padding-top: 27px;
+     }
   
 `;
 
 export const MainContainer = styled.div`
- @media (min-width: 1440px) {
-    display: flex;
-     
-  }
+  @media (min-width: 1440px) {
+      display: flex;
+      justify-content: space-between;
+     }
 `;
+
+export const HeadContainer = styled.div`
+  `;
 
 export const Copyright = styled.p`
   color: ${props => props.theme.mainPage.footer.bottomText.text};
@@ -113,7 +126,7 @@ export const LinkSocial = styled.a`
   }
   }
 `;
-export const IconContainer = styled.span`
+export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,18 +169,18 @@ export const FooterButton = styled.button`
 
 export const ContainerSvg = styled.div`
   position: absolute;
-  top: 16%;
-  left: 84px;
+  top: 45%;
+  left: 16px;
   transform: translateY(-50%);
 
   @media (min-width: 768px) {
-    top: 26%;
-    left: 177px;
+        top: 42%;
+    left: 15px;
   }
 
     @media (min-width: 1440px) {
-    top: 17%;
-    left: 12px;
+    top: 37%;
+    left: 17px;
   }
 `;
 
@@ -177,7 +190,8 @@ export const SubscribeContainer = styled.div`
 @media (min-width: 1440px) {
     display: block;
     width: 339px;
-    margin-top: -60px;}
+    margin-right: 100px;
+   }
 `;
 
 export const SubscribeTitle = styled.h2`
@@ -210,10 +224,23 @@ export const SubscribeText = styled.p`
   }
 `;
 
+// export const IconStyled = styled(FooterEmailLogo)`
+//   position: absolute;
+//   top: 50%;
+//   left: 14px;
+//   transform: translateY(-50%);
+//   width: 16px;
+//   height: 12px;
+
+ 
+// `;
+
 
 export const Input = styled.input`
   width: 204px;
   height: 38px;
+  padding-left: 45px;
+  color: ${props => props.theme.mainPage.footer.text};
   border: 1px solid #fafafa;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -227,7 +254,6 @@ export const Input = styled.input`
     font-size: 10px;
     color: ${props => props.theme.mainPage.footer.text};
     line-height: 15px;
-    padding: 0 42px;
   }
 
 
@@ -262,7 +288,7 @@ export const Input = styled.input`
 
 
 export const Form = styled.form`
-  position: relative;
+  v
  
   display: flex;
   flex-direction: column;
@@ -295,11 +321,12 @@ export const TextContainer = styled.div`
 
     @media (min-width: 768px) {
       display: flex;
+      justify-content: space-between;
     }
-  @media (min-width: 1440px) {
-     
-     justify-content: center;
-  }
+   @media (min-width: 1440px) {
+         display: flex;
+      justify-content: center;
+   }
  
 `;
 
@@ -367,11 +394,12 @@ export const NavLinkList = styled.ul`
 
   @media (min-width: 768px) {
   text-align: initial;
-  margin-top: -60px;
+  padding-right: 94px;
+ 
 }
 
  @media (min-width: 1440px) {
-      margin-right: 235px;
+      // margin-right: 226px;
 }
 `;
 

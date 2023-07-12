@@ -5,8 +5,5 @@ const ContainerAddRecipe = styled.div`
   background-color: ${props => props.theme.addRecipePage.background};
 `;
 
-const AddRecipeTitle = styled.h2`
-  color: ${props => props.theme.addRecipePage.title};
-`;
 
-export { ContainerAddRecipe, AddRecipeTitle };
+export { ContainerAddRecipe };

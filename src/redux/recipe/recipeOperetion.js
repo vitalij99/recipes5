@@ -18,55 +18,92 @@ export const fetchIngradients = createAsyncThunk(
   }
 );
 
-export const addRecipeToFavorite = createAsyncThunk(
-  'user/favorites',
-  async ({ id }, thunkAPI) => {
+export const addShoppingList = createAsyncThunk(
+  'user/shopping',
+  async (ingredient, thunkAPI) => {
     try {
-      const res = await axios.patch(`user/favorites`, {
-        id,
-      });
+      const { res } = await axios.patch(`user/shopping`, ingredient);
       if (res) {
-        Notify.failure('Recipe added on favorites');
+        Notify.failure('Ingredient added on shoppingList');
       }
       return res;
     } catch (err) {
       if (err) {
-        Notify.failure('');
+        Notify.failure('Not found');
       }
       return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
 
-export const getFavoriteRecipes = createAsyncThunk(
-  'recipes/getFavoriteRecipes',
-  async (_, thunkAPI) => {
+export const removeShoppingList = createAsyncThunk(
+  'user/shopping',
+  async (ingredient, thunkAPI) => {
     try {
-      const res = await axios.get(`user/favorites`);
+      const { res } = await axios.patch(`user/shopping`, ingredient);
       if (res) {
-        Notify.failure('Favorite list uploaded successfully!');
+        Notify.failure('Ingredient added on shoppingList');
       }
+      return res;
     } catch (err) {
       if (err) {
-        Notify.failure(err.message);
+        Notify.failure('Not found');
       }
       return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
-export const removeRecipeFromFavorit = createAsyncThunk(
-  'recipes/removeRecipeFromFavorit',
-  async ({ id }, thunkAPI) => {
-    try {
-      const res = await axios.patch(`user/favorites`, { id });
-      if (res) {
-        Notify.failure('Recipe remove success!');
-      }
-    } catch (err) {
-      if (err) {
-        Notify.failure(err.message);
-      }
-      return thunkAPI.rejectWithValue(err.message);
-    }
-  }
-);
+
+// export const addRecipeToFavorite = createAsyncThunk(
+//   'user/favorites',
+//   async ({ id }, thunkAPI) => {
+//     try {
+//       const res = await axios.patch(`user/favorites`, {
+//         id,
+//       });
+//       if (res) {
+//         Notify.failure('Recipe added on favorites');
+//       }
+//       return res;
+//     } catch (err) {
+//       if (err) {
+//         Notify.failure('');
+//       }
+//       return thunkAPI.rejectWithValue(err.message);
+//     }
+//   }
+// );
+
+// export const getFavoriteRecipes = createAsyncThunk(
+//   'recipes/getFavoriteRecipes',
+//   async (_, thunkAPI) => {
+//     try {
+//       const res = await axios.get(`user/favorites`);
+//       if (res) {
+//         Notify.failure('Favorite list uploaded successfully!');
+//       }
+//     } catch (err) {
+//       if (err) {
+//         Notify.failure(err.message);
+//       }
+//       return thunkAPI.rejectWithValue(err.message);
+//     }
+//   }
+// );
+
+// export const removeRecipeFromFavorit = createAsyncThunk(
+//   'recipes/removeRecipeFromFavorit',
+//   async ({ id }, thunkAPI) => {
+//     try {
+//       const res = await axios.patch(`user/favorites`, { id });
+//       if (res) {
+//         Notify.failure('Recipe remove success!');
+//       }
+//     } catch (err) {
+//       if (err) {
+//         Notify.failure(err.message);
+//       }
+//       return thunkAPI.rejectWithValue(err.message);
+//     }
+//   }
+// );
