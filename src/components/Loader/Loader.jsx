@@ -1,15 +1,11 @@
 import React from 'react';
-import {
-  LoaderContainer,
-  StyledLoaderIcon,
-  PulsatingAnimation,
-} from './Loader.styled';
+import { LoaderContainer, PulsatingAnimation, Icon } from './Loader.styled';
 
 const Loader = () => {
   return (
     <LoaderContainer>
       <PulsatingAnimation>
-        <StyledLoaderIcon />
+        <Icon />
       </PulsatingAnimation>
     </LoaderContainer>
   );
