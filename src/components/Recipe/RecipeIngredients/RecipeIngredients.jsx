@@ -14,7 +14,7 @@ import {
 
 } from './RecipeIngredients.styled';
 
-import IngradientsHeader from 'components/IngradientsHeader/IngradientsHeader';
+import IngradientsHeader from 'components/IngredientsHeader/IngredientsHeader';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchIngradients } from 'redux/recipe/recipeOperetion';
