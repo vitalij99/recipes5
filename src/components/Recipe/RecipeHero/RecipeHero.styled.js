@@ -30,7 +30,7 @@ export const RecipeHeroWrapper = styled.div`
     background-image: url(${mob_ratio_2});
   }
 
-  @media (min-width: 375.1px) {
+  @media (min-width: 768px) {
     background-image: url(${tab_ratio_1});
 
     @media (min-device-pixel-ratio: 2),
@@ -40,7 +40,7 @@ export const RecipeHeroWrapper = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1440px) {
     padding-top: 136px;
     padding-bottom: 32px;
     background-image: url(${desc_ratio_1});
@@ -56,7 +56,7 @@ export const RecipeHeroWrapper = styled.div`
     padding-top: 164px;
   }
 
-  /* @media (min-width: 1440px) {
+  @media (min-width: 1600px) {
     background-image: url(${full_desc_ratio_1});
 
     @media (min-device-pixel-ratio: 2),
@@ -64,7 +64,7 @@ export const RecipeHeroWrapper = styled.div`
       (min-resolution: 2dppx) {
       background-image: url(${full_desc_ratio_2});
     }
-  } */
+  }
 `;
 
 export const HeroTitle = styled.h1`

@@ -11,11 +11,8 @@ import {
     ProductNameWrap,
 } from './Categories.styled';
 
-
 export const Categories = () => {
-
-
-    return (  
+return (  
         <CategoriesSection>
         <CategoriesNavList>
         {data.map(
