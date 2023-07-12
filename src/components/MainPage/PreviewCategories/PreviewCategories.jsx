@@ -1,7 +1,13 @@
-import React from 'react';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 
-const PreviewCategories = () => {
-  return <div>PreviewCategories</div>;
-};
+// const PreviewCategories = () => {
+//   const [list, setList] = useState([]);
+//   useEffect(() => {
 
-export default PreviewCategories;
+//   }, []);
+
+//   return <div>PreviewCategories</div>;
+// };
+
+// export default PreviewCategories;

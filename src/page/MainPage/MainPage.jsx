@@ -7,8 +7,8 @@ const MainPage = () => {
   return (
     <>
       <Hero />
-      <СhooseYourBreakfast />
       <PreviewCategories />
+      <СhooseYourBreakfast />
     </>
   );
 };

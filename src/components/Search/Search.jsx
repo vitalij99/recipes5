@@ -6,8 +6,9 @@ const Search = () => {
   const [imutValue, setImutValue] = useState('');
 
   const handleChange = ({ target }) => {
-    setsearchValue(target.value);
-    setImutValue('/search?' + target.value);
+    const trimmedValue = target.value.trimLeft();
+    setsearchValue(trimmedValue);
+    setImutValue('/search?' + trimmedValue);
   };
 
   return (
@@ -16,7 +17,7 @@ const Search = () => {
         value={searchValue}
         onChange={handleChange}
       ></InputSearchStyled>
-      <Button to={imutValue}>Search</Button>
+      <Button to={searchValue ? imutValue : '/search'}>Search</Button>
     </DivStyled>
   );
 };

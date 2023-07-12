@@ -1,7 +1,7 @@
-import React from 'react';
+import { BtnStyled } from './СhooseYourBreakfast.styled';
 
 const СhooseYourBreakfast = () => {
-  return <div>СhooseYourBreakfast</div>;
+  return <BtnStyled to="/categories/Breakfast">Other categories</BtnStyled>;
 };
 
 export default СhooseYourBreakfast;
