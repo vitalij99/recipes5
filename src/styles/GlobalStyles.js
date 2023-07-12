@@ -112,6 +112,24 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
   }
+
+  #root{
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+  }
+
+  main{
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    background-color: ${props => props.theme.mainPageTitle.background}; 
+  }
+
+  section {
+    flex: 1;
+    height: 100%;
+  }
   
   /* Reset CSS */
 
