@@ -29,8 +29,6 @@ export const CategoriesListStyled = styled.ul`
     justify-content: flex-start;
     gap: 14px;
     row-gap: 100px;
-    padding-left: 99px;
-    padding-right: 99px;
   }
 `;
 
