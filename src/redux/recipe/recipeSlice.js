@@ -26,12 +26,12 @@ const ownerRecipeSlice = createSlice({
       },
     },
     addRecipeToFavorite: {
-      reducer: (state, { payload }) => {
+      reducer: (state, payload) => {
         state.favorite.push(payload);
       },
     },
     removeRecipeFromFavorit: {
-      reducer: (state, { payload }) => {
+      reducer: (state, payload) => {
         const index = state.favorite.findIndex(vel => vel.id === payload.id);
         state.favorite.splice(index, 1);
       },

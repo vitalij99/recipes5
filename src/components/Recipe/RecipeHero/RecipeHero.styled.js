@@ -32,6 +32,9 @@ export const RecipeHeroWrapper = styled.div`
 
   @media (min-width: 768px) {
     background-image: url(${tab_ratio_1});
+    padding-top: 136px;
+    padding-bottom: 32px;
+    height: 495px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
