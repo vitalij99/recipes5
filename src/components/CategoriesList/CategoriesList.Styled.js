@@ -5,25 +5,24 @@ export const CategoriesSection = styled.div`
   }
 `;
 
-export const CategoriesNavList = styled.div`
+export const CategoriesNavListStyled = styled.div`
   display:flex;
       // border-bottom: 1px solid ${props =>
         props.theme.addRecipePage.listOfItems.underline};
   }
+  
 `;
 
-export const CategoriesList = styled.ul`
+export const CategoriesListStyled = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 32px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 60px;
   gap: 28px;
   width: 100%;
 
   @media (min-width: 768px) {
-    margin-top: 50px;
-    margin-bottom: 200px;
     gap: 32px;
   }
   @media (min-width: 1440px) {
