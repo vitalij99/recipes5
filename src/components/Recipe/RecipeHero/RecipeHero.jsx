@@ -25,7 +25,7 @@ function RecipeHero({ time, title, description, id }) {
   const dispatch = useDispatch();
 
   const handleFavoriteBtn = () => {
-    const recipeId = id;
+    const recipeId = { id };
     if (!recipeOnFavorite) {
       dispatch(addRecipeToFavorite(recipeId));
       setRecipeOnFavorite(!recipeOnFavorite);
