@@ -11,18 +11,23 @@ import {
   IngredientName,
   IngredientsWrapper,
   WrapperContent,
-
 } from './RecipeIngredients.styled';
 
 import IngradientsHeader from 'components/IngredientsHeader/IngredientsHeader';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchIngradients } from 'redux/recipe/recipeOperetion';
-import { selectIngredients } from 'redux/recipe/recipeSelector';
+import {
+  selectIngredients,
+  selectShoppingList,
+} from 'redux/recipe/recipeSelector';
+import { addShoppingList, removeShoppingList } from 'redux/recipe/recipeSlice';
 
 function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
+
   const allIngradientsList = useSelector(selectIngredients);
+  const shoppingList = useSelector(selectShoppingList);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -40,13 +45,26 @@ function RecipeIngredients({ ingredients }) {
     setIngredientsList(ingradientsWithSameId);
   }, [ingredients, allIngradientsList]);
 
+  const handleInputChange = e => {
+    const { id } = e.target;
+    const currentIngredient = ingredientsList.find(val => val._id === id);
+
+    const { _id, name, img, measure } = currentIngredient;
+    const ingredientOnShoppingList = shoppingList.some(val => val.id === id);
+    const ingredientForBuy = { measure, id: _id, name, img };
+    if (!ingredientOnShoppingList) {
+      dispatch(addShoppingList(ingredientForBuy));
+    } else {
+      dispatch(removeShoppingList(ingredientForBuy));
+    }
+  };
+
   return (
     <ContainerRecipes>
       <Container>
-
         <IngradientsHeader info="Ingredients" actions="Add to list" />
         <IngredientsWrapper>
-          {ingredientsList?.map(({ _id, name, descr, img, measure }) => {
+          {ingredientsList?.map(({ _id, name, img, measure }) => {
             return (
               <Ingredient key={_id}>
                 <WrapperContent>
@@ -58,7 +76,13 @@ function RecipeIngredients({ ingredients }) {
                   <IngedientsMeasure>{measure}</IngedientsMeasure>
 
                   <IngredientLabel htmlFor={_id}>
-                    <IngedientsInput type="checkbox" id={_id} />
+                    <IngedientsInput
+                      type="checkbox"
+                      id={_id}
+                      checked={shoppingList.some(item => item.id === _id)}
+                      value={_id}
+                      onChange={handleInputChange}
+                    />
 
                     <CheckContainer>
                       <CheckIcon />
