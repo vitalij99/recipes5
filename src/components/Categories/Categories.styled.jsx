@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const CategoriesSection = styled.div`
-   background-color: ${props => props.theme.categoriesPage.background};
+  //  background-color: ${props => props.theme.categoriesPage.background};
   }
 `;
 
-export const CategoriesNavList = styled.div`
-  display:flex;
-      // border-bottom: 1px solid ${props => props.theme.addRecipePage.listOfItems.underline};
+export const CategoriesNavList = styled.ul`
+ display: flex;
+ gap: 55px;
   }
 `;
 
