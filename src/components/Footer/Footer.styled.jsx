@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import bgImg from '../../images/Header/spinachFooter.png';
 
-import {
-  FooterFacebookLogo,
-} from './FooterIcon';
+// import {
+//   FooterFacebookLogo,
+// } from './FooterIcon';
 
 
 export const InputBox = styled.div`
@@ -15,7 +15,7 @@ export const InputBox = styled.div`
 
 
 export const BottomFooter = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -89,14 +89,11 @@ export const TermsofService = styled.p`
   }
 `;
 export const FooterContainer = styled.div`
-  // height: 435px;
+ 
   width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
 
-   @media (min-width: 768px) {
-    //  height: 423px;
-    
-  }
+ 
 
 `;
 export const FooterInfo = styled.div`
@@ -113,29 +110,29 @@ export const FooterInfo = styled.div`
     padding-bottom: 24px;
   }
 `;
-export const FooterFacebookLogoStyled = styled(FooterFacebookLogo)`
-  fill: #fff;
-  color: #fff;
-  background-color: #fafafa;
-      width: 30px;
-`;
-export const LinkSocial = styled.a`
-  &:not(:last-child) {
-    margin-right: 14px;
-  }
+// export const FooterFacebookLogoStyled = styled(FooterFacebookLogo)`
+//   fill: #fff;
+//   color: #fff;
+//   background-color: #fafafa;
+//       width: 30px;
+// `;
+// export const LinkSocial = styled.a`
+//   &:not(:last-child) {
+//     margin-right: 14px;
+//   }
 
-   @media (min-width: 768px) {
-     &:not(:last-child) {
-    margin-right: 18px;
-  }
-  }
-`;
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+//    @media (min-width: 768px) {
+//      &:not(:last-child) {
+//     margin-right: 18px;
+//   }
+//   }
+// `;
+// export const IconContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-`;
+// `;
 
 export const FooterButton = styled.button`
   cursor: pointer;
