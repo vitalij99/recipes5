@@ -98,14 +98,11 @@ export const InformFieldStyled = styled.div`
 `;
 export const WraooerSearchStyled = styled.div`
   position: absolute;
-  width: 295px;
-  top: 643px;
-  left: 50%;
-  transform: translateX(-50%);
 
   @media screen and (max-width: 767px) {
-    left: 0;
-    transform: translateX(0);
+    top: 643px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   @media screen and (min-width: 768px) {
     margin-top: 20px;
