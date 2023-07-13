@@ -1,10 +1,14 @@
 import Container from 'components/Container/Container';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ContainerAddRecipe } from './AddRecipe.styled';
 import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
+
+const checkScreenWidth = () => {
+  return window.innerWidth >= 768;
+};
 
 const AddRecipeForm = () => {
   const initialRecipeData = {
@@ -34,15 +38,29 @@ const AddRecipeForm = () => {
     setRecipeData(initialRecipeData);
   };
 
-  return (
+  const [screenWidth, setScreenWidth] = useState(checkScreenWidth());
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(checkScreenWidth());
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
     <Container>
       <ContainerAddRecipe>
-       <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit}>
           <RecipeDescriptionFields
             recipeData={recipeData}
             handleInputChange={handleInputChange}
           />
+          {screenWidth && <PopularRecipe />}
           <RecipeIngredientsFields
             ingredients={recipeData.ingredients}
             setIngredients={updatedIngredients =>
@@ -62,10 +80,8 @@ const AddRecipeForm = () => {
             }
           />
         </form>
-        <PopularRecipe />
       </ContainerAddRecipe>
     </Container>
-
   );
 };
 

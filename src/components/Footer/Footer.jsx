@@ -2,11 +2,7 @@ import {
   BottomFooter,
   Copyright,
   TermsofService,
-  FooterContainer,
   FooterInfo,
-  FooterFacebookLogoStyled,
-  LinkSocial,
-  IconContainer,
   FooterButton,
   Form,
   ContainerSvg,
@@ -25,21 +21,25 @@ import {
   SubscribeText,
   MainContainer,
   HeadContainer,
-  InputBox
+  InputBox,
+  NavLinkDiv,
+  BackContainer
 
 } from './Footer.styled';
 
 import {
   FooterLogo,
-  FooterYoutubeLogo,
-  FooterTwitterLogo,
-  FooterInstagramLogo,
   FooterEmailLogo
 } from './FooterIcon';
 
+import Container from 'components/Container/Container';
+ import SocialIcons from './SocialIcons/SocialIcons';
+
 const Footer = () => {
   return (
-    <FooterContainer>
+  <BackContainer>
+    <Container>
+   
       <FooterInfo>
         <MainContainer>
           <TextContainer>
@@ -62,7 +62,7 @@ const Footer = () => {
             <OptionsItem>Convenient and easy to use</OptionsItem>
               </OptionsList>
           </HeadContainer>
-
+      <NavLinkDiv>
         <NavLinkList>
           <NavLinkItem>
             <LinkStyle to={'/categories/:categoryName'}>Ingredients</LinkStyle>
@@ -80,7 +80,7 @@ const Footer = () => {
             <LinkStyle to={'/shopping-list'}>Shopping list</LinkStyle>
           </NavLinkItem>
         </NavLinkList>
-
+      </NavLinkDiv>
       </TextContainer>
  
         <SubscribeContainer>
@@ -102,28 +102,17 @@ const Footer = () => {
             <FooterButton type="submit">Subscribe</FooterButton>
           </Form>
           </SubscribeContainer>
-       </MainContainer>
-        <IconContainer>
-          <LinkSocial href="https://www.facebook.com/">
-            <FooterFacebookLogoStyled />
-          </LinkSocial>
-          <LinkSocial href="https://www.youtube.com/">
-            <FooterYoutubeLogo />
-          </LinkSocial>
-          <LinkSocial href="https://twitter.com/">
-            <FooterTwitterLogo />
-          </LinkSocial>
-          <LinkSocial href="https://www.instagram.com/">
-            <FooterInstagramLogo />
-          </LinkSocial>
-          </IconContainer>
+        </MainContainer>
+        <SocialIcons/>
        
       </FooterInfo>
       <BottomFooter>
         <Copyright>© 2023 All Rights Reserved.</Copyright>
         <TermsofService>Terms of Service</TermsofService>
       </BottomFooter>
-    </FooterContainer>
+    
+      </Container>
+    </BackContainer>
   );
 };
 

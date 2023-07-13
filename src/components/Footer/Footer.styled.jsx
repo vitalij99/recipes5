@@ -3,19 +3,25 @@ import { Link } from 'react-router-dom';
 
 import bgImg from '../../images/Header/spinachFooter.png';
 
-import {
-  FooterFacebookLogo,
-} from './FooterIcon';
 
+
+export const BackContainer = styled.div`
+ color: ${props => props.theme.mainPage.footer.bottomText.text};
+`;
 
 export const InputBox = styled.div`
  position: relative;
      display: inline-block;
 `;
 
+export const NavLinkDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 
 export const BottomFooter = styled.div`
-  width: 100%;
+  // width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -54,7 +60,7 @@ export const HeadContainer = styled.div`
 `;
 
 export const Copyright = styled.p`
-  color: ${props => props.theme.mainPage.footer.bottomText.text};
+  // color: ${props => props.theme.mainPage.footer.bottomText.text};
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
   font-weight: 500;
@@ -89,53 +95,28 @@ export const TermsofService = styled.p`
   }
 `;
 export const FooterContainer = styled.div`
-  // height: 435px;
+ 
   width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
 
-   @media (min-width: 768px) {
-    //  height: 423px;
-    
-  }
+ 
 
 `;
 export const FooterInfo = styled.div`
-  width: 100vw;
+  // width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
   padding-top: 28px;
   padding-bottom: 18px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  // justify-content: center;
+  // text-align: center;
+  // align-items: center;
 
    @media (min-width: 768px) {
      padding-top: 50px;
     padding-bottom: 24px;
   }
 `;
-export const FooterFacebookLogoStyled = styled(FooterFacebookLogo)`
-  fill: #fff;
-  color: #fff;
-  background-color: #fafafa;
-      width: 30px;
-`;
-export const LinkSocial = styled.a`
-  &:not(:last-child) {
-    margin-right: 14px;
-  }
 
-   @media (min-width: 768px) {
-     &:not(:last-child) {
-    margin-right: 18px;
-  }
-  }
-`;
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-`;
 
 export const FooterButton = styled.button`
   cursor: pointer;
@@ -383,16 +364,15 @@ export const NavLinkItem = styled.li`
 
 export const NavLinkList = styled.ul`
   margin-bottom: 32px;
+  text-align: center;
 
   @media (min-width: 768px) {
   text-align: initial;
-  padding-right: 94px;
+  padding-right: 78px;
  
 }
 
- @media (min-width: 1440px) {
-      // margin-right: 226px;
-}
+
 `;
 
 export const FooterLogoText = styled.p`
