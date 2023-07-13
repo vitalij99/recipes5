@@ -21,13 +21,11 @@ const ShoppingListPage = lazy(() =>
 const NotFoundPage = lazy(() => import('page/NotFoundPage/NotFoundPage'));
 
 function App() {
-  const token = useSelector(selectToken);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!token) return;
     dispatch(currentThunk());
-  }, [dispatch, token]);
+  }, [dispatch]);
 
   return (
     <>
@@ -42,7 +40,6 @@ function App() {
         />
 
         <Route path="/" element={<PrivateRoute component={<SharedLayout />} />}>
-          <Route path="/main" element={MainPage} />
           <Route
             path="/categories/:categoryName"
             element={<CategoriesPage />}

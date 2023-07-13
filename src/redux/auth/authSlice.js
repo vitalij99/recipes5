@@ -21,7 +21,6 @@ const initialState = {
     avatar: null,
     favorite: null,
     shoppingList: null,
-    subscriptionToken: null,
   },
   token: null,
   isRefreshing: false,
@@ -42,13 +41,15 @@ const fn = type => arrThunks.map(el => el[type]);
 
 const handleIsLoggedIn = (state, { payload }) => {
   state.user = payload.user;
-  state.token = payload.user.subscriptionToken;
+  state.token = payload.token;
 };
 const handleLogout = state => {
   state.user = initialState.user;
   state.token = initialState.token;
 };
-
+const handleIsCurrent = (state, { payload }) => {
+  state.user = payload.user;
+};
 const handlePending = state => {
   state.isLoading = true;
 };
@@ -75,7 +76,7 @@ export const authSlice = createSlice({
     builder
       .addCase(registerThunk.fulfilled, handleIsLoggedIn)
       .addCase(signinThunk.fulfilled, handleIsLoggedIn)
-      .addCase(currentThunk.fulfilled, handleIsLoggedIn)
+      .addCase(currentThunk.fulfilled, handleIsCurrent)
       .addCase(logoutThunk.pending, handleLogout)
       .addCase(updateNameThunk.fulfilled, handleUpdateName)
       .addCase(updateAvatarThunk.fulfilled, handleUpdateAvatar)
