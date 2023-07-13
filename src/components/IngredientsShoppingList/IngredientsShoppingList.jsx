@@ -1,5 +1,5 @@
 import Container from 'components/Container/Container';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Section } from './IngredientsShoppingList.styled';
 import { ListSection } from './ListSection';
 
@@ -9,9 +9,17 @@ import { selectShoppingList } from 'redux/recipe/recipeSelector';
 import { removeShoppingList } from 'redux/recipe/recipeSlice';
 
 export const IngredientsShoppingList = () => {
+  const [clientHeight, setClientHeight] = useState('');
   const dispatch = useDispatch();
-
   const shoppingList = useSelector(selectShoppingList);
+  const componentRef = useRef(null);
+
+  useEffect(() => {
+    if (componentRef.current) {
+      const height = componentRef.current.clientHeight;
+      setClientHeight(height);
+    }
+  }, []);
 
   const handleRemoveShoppingList = id => {
     // console.log(id);
@@ -20,7 +28,7 @@ export const IngredientsShoppingList = () => {
 
   return (
     <>
-      <Section>
+      <Section ref={componentRef} style={{ minHeight: `${clientHeight}px` }}>
         <Container>
           <TitlesSection />
           <ListSection data={shoppingList} onClick={handleRemoveShoppingList} />
