@@ -12,8 +12,8 @@ export const InformWrapperStyled = styled.div`
   background-color: ${({ theme }) => theme.mainPageTitle.background};
   border-radius: 8px;
   top: 428px;
-  right: 20%;
-  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
 
   @media screen and (min-width: 768px) {
     &::after {
@@ -27,12 +27,19 @@ export const InformWrapperStyled = styled.div`
       background-repeat: no-repeat;
     }
   }
-
+  @media screen and (min-width: 768px) {
+    top: 410px;
+    left: 70%;
+  }
   @media screen and (min-width: 1440px) {
     width: 251px;
     padding: 16px;
-    top: 510px;
-    right: 200px;
+    top: 600px;
+    left: 70%;
+  }
+  @media screen and (min-width: 2240px) {
+    top: 620px;
+    left: 63%;
   }
 `;
 export const TextfStyled = styled.p`

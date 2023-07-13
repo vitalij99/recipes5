@@ -23,21 +23,29 @@ export const WrapperStyled = styled.div`
   background-image: url(${banner}), url(${banner3}), url(${banner4}),
     url(${banner2});
   background-repeat: no-repeat;
-  background-position: top left, 80% 55%, center right, top right;
+  background-position: top left, 55% 55%, center right, top right;
   background-size: auto, auto;
 
   @media screen and (min-width: 768px) {
     height: 640px;
     padding-left: 38px;
+    padding-top: 140px;
     background-image: url(${bannerT}), url(${banner3T}), url(${banner4T}),
       url(${banner2T});
-    background-position: top left, 80% 30%, center right, top right;
+    background-position: top left, 90% 30%, center right, top right;
   }
   @media screen and (min-width: 1440px) {
     height: 800px;
+
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
-    background-position: top left, center, center, center 100px top;
+    background-position: top left, 63% 200px, 66%, right top;
+    background-size: auto, auto, auto, 50% 689px;
+  }
+  @media screen and (min-width: 2240px) {
+    background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
+      url(${banner2D});
+    background-position: top left, 55% 200px, 55%, right top;
   }
 `;
 export const BoxStyled = styled.div``;
@@ -97,11 +105,12 @@ export const InformFieldStyled = styled.div`
   z-index: 3;
 `;
 export const WraooerSearchStyled = styled.div`
-  width: 295px;
-  top: 578px;
-  z-index: 2;
+  position: absolute;
+
   @media screen and (max-width: 767px) {
-    position: absolute;
+    top: 643px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   @media screen and (min-width: 768px) {
     margin-top: 20px;
