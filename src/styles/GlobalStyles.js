@@ -11,6 +11,13 @@ import PoppinsRegular from './fonts/Poppins-Regular.ttf';
 import PoppinsSemiBold from './fonts/Poppins-SemiBold.ttf';
 import PoppinsThin from './fonts/Poppins-Thin.ttf';
 
+import bgm1x from 'images/main/bgm@1x.png';
+import bgm2x from 'images/main/bgm@2x.png';
+import bgt1x from 'images/main/bgt@1x.png';
+import bgt2x from 'images/main/bgt@2x.png';
+import bgd1x from 'images/main/bgd@1x.png';
+import bgd2x from 'images/main/bgd@2x.png';
+
 //NOTE - Fonts use case
 // const Paragraph = styled.p`
 //   font-family: 'Poppins', sans-serif;
@@ -124,6 +131,35 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column; 
     background-color: ${props => props.theme.mainPageTitle.background}; 
+
+    background-position: bottom -230px left;
+    background-repeat: no-repeat;
+
+    background-image: image-set(
+    url(${bgm1x}) 1x,
+    url(${bgm2x}) 2x
+  );
+
+
+
+    @media (min-width: 768px) {
+      background-position: bottom -380px left;
+    background-image: image-set(
+      
+    url(${bgt1x}) 1x,
+    url(${bgt2x}) 2x
+  );
+  }
+
+  @media (min-width: 1440px) {
+    background-position: bottom -480px left;
+      background-image: image-set(
+        
+    url(${bgd1x}) 1x,
+    url(${bgd2x}) 2x
+  );
+  }
+      
   }
 
   section {
