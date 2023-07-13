@@ -22,6 +22,7 @@ function RecipeHero({ time, title, description, id }) {
   const [recipeOnFavorite, setRecipeOnFavorite] = useState(() =>
     favorites.some(val => val.id === id)
   );
+
   const dispatch = useDispatch();
 
   const handleFavoriteBtn = () => {
