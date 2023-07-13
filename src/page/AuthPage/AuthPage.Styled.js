@@ -18,19 +18,20 @@ export const Section = styled.div`
   background-position: center 350px;
   background-size: auto auto;
   background-image: url(${bgBlack});
-  min-height: 100vh;
-  height: 100%;
-  padding: 87px 20px 118px;
+  flex: 1;
+  /* min-height: 100vh; */
+  /* height: 100%; */
+  /* padding: 87px 20px 118px; */
 
   @media (min-width: 768px) {
     background-image: url(${bgBlackTab}),
       linear-gradient(to bottom, transparent 50%, #1e1f28 50%);
     background-position: center 410px;
-    padding: 96px 20px 120px;
+    /* padding: 96px 20px 120px; */
   }
 
   @media (min-width: 1440px) {
-    padding: 122px;
+    /* padding: 122px; */
     background-image: url(${bgBlackDes}),
       linear-gradient(to bottom, transparent 20%, #1e1f28 20%);
     background-position: center 400px;
@@ -38,16 +39,19 @@ export const Section = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  padding-top: 87px;
+  padding-bottom: 50px;
   max-width: var(--small-screen);
   margin: 0 auto;
 
   @media (min-width: 768px) {
+    padding-top: 96px;
     max-width: var(--medium-screen);
   }
 
   @media (min-width: 1440px) {
     display: flex;
+    padding-top: 130px;
     gap: 164px;
     justify-content: center;
 
@@ -64,7 +68,7 @@ export const ImgWrapper = styled.div`
     url(${bgMobile3x}) 3x
   );
   background-size: contain;
-  background-position: center 33px;
+  background-position: center 9px;
 
   @media (min-width: 768px) {
     background-image: image-set(
@@ -73,6 +77,7 @@ export const ImgWrapper = styled.div`
       url(${bgTablet3x}) 3x
     );
     height: 359px;
+    background-position: center 12px;
   }
 
   @media (min-width: 1440px) {

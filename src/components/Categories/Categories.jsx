@@ -1,34 +1,17 @@
-import data from "./data";
-import Container from 'components/Container/Container';
-import { Link } from "react-router-dom";
-
 import {
-    CategoriesImg,
-    CategoriesList,
-    ProductName,
-    Title,
+    CategoriesSection,
 } from './Categories.styled';
-
+import { CardItem } from "./CardItem";
+import { CategoriesNavigate } from "./CategoriesNavigate";
 
 export const Categories = () => {
-    const CategoriesCard = data.map(
-        ({ _id, title, thumb }) => (
-            <li key={_id}>
-                <Link
-                    to={`/recipe/${_id}`}>
-                    <CategoriesImg src={thumb} alt="img" />
-                    <ProductName>{title}</ProductName> 
-                </Link>
-            </li>
-)
-    )
+return (  
+        <CategoriesSection>
+<CategoriesNavigate/>
+                    
+            
+        <CardItem/>
+        </CategoriesSection>
 
-    return (
-        <Container>
-            <Title>Categories</Title>
-            <CategoriesList>
-                {CategoriesCard}
-            </CategoriesList>
-      </Container>  
     )
 }

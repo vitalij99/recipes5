@@ -5,12 +5,17 @@ import bgImg from '../../images/Header/spinachFooter.png';
 
 import {
   FooterFacebookLogo,
-  
 } from './FooterIcon';
 
+
+export const InputBox = styled.div`
+ position: relative;
+     display: inline-block;
+`;
+
+
 export const BottomFooter = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -19,22 +24,39 @@ export const BottomFooter = styled.div`
   background-image: url(${bgImg});
   background-position: bottom right;
   background-repeat: no-repeat;
+  background-color: ${props => props.theme.mainPage.footer.button.text};;
+  
+   padding-top: 28px;
+  padding-bottom: 28px;
+  overflow: hidden;
 
+   @media (min-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    
+  }
+
+ @media (min-width: 1440px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+     }
   
 `;
 
 export const MainContainer = styled.div`
- @media (min-width: 1440px) {
-    display: flex;
-     
-  }
+  @media (min-width: 1440px) {
+      display: flex;
+      justify-content: space-between;
+     }
+`;
+
+export const HeadContainer = styled.div`
 `;
 
 export const Copyright = styled.p`
   color: ${props => props.theme.mainPage.footer.bottomText.text};
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
-  padding: 28px 0px;
   font-weight: 500;
   line-height: 10px;
   letter-spacing: -0.1px;
@@ -46,11 +68,6 @@ export const Copyright = styled.p`
 
    @media (min-width: 768px) {
     font-size: 14px;
-     padding: 32px 0px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 50px 0px;
   }
 `;
 
@@ -72,18 +89,18 @@ export const TermsofService = styled.p`
   }
 `;
 export const FooterContainer = styled.div`
-  height: 435px;
-  width: 100%;
+  // height: 435px;
+  width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
 
    @media (min-width: 768px) {
-     height: 423px;
+    //  height: 423px;
     
   }
 
 `;
 export const FooterInfo = styled.div`
-  width: 100%;
+  width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
   padding-top: 28px;
   padding-bottom: 18px;
@@ -113,7 +130,7 @@ export const LinkSocial = styled.a`
   }
   }
 `;
-export const IconContainer = styled.span`
+export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,18 +173,18 @@ export const FooterButton = styled.button`
 
 export const ContainerSvg = styled.div`
   position: absolute;
-  top: 16%;
-  left: 84px;
+  top: 45%;
+  left: 16px;
   transform: translateY(-50%);
 
   @media (min-width: 768px) {
-    top: 26%;
-    left: 177px;
+        top: 42%;
+    left: 15px;
   }
 
     @media (min-width: 1440px) {
-    top: 17%;
-    left: 12px;
+    top: 37%;
+    left: 17px;
   }
 `;
 
@@ -177,7 +194,8 @@ export const SubscribeContainer = styled.div`
 @media (min-width: 1440px) {
     display: block;
     width: 339px;
-    margin-top: -60px;}
+    margin-right: 100px;
+   }
 `;
 
 export const SubscribeTitle = styled.h2`
@@ -211,9 +229,12 @@ export const SubscribeText = styled.p`
 `;
 
 
+
 export const Input = styled.input`
   width: 204px;
   height: 38px;
+  padding-left: 45px;
+  color: ${props => props.theme.mainPage.footer.text};
   border: 1px solid #fafafa;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -227,7 +248,6 @@ export const Input = styled.input`
     font-size: 10px;
     color: ${props => props.theme.mainPage.footer.text};
     line-height: 15px;
-    padding: 0 42px;
   }
 
 
@@ -262,8 +282,6 @@ export const Input = styled.input`
 
 
 export const Form = styled.form`
-  position: relative;
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -295,11 +313,12 @@ export const TextContainer = styled.div`
 
     @media (min-width: 768px) {
       display: flex;
+      justify-content: space-between;
     }
-  @media (min-width: 1440px) {
-     
-     justify-content: center;
-  }
+   @media (min-width: 1440px) {
+         display: flex;
+      justify-content: center;
+   }
  
 `;
 
@@ -367,11 +386,12 @@ export const NavLinkList = styled.ul`
 
   @media (min-width: 768px) {
   text-align: initial;
-  margin-top: -60px;
+  padding-right: 94px;
+ 
 }
 
  @media (min-width: 1440px) {
-      margin-right: 235px;
+      // margin-right: 226px;
 }
 `;
 

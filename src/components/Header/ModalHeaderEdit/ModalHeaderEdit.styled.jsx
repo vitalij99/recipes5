@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const ModalOverlay = styled.div`
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Modal = styled.div`
   z-index: 900;
   position: absolute;
@@ -15,6 +27,16 @@ export const Modal = styled.div`
   display: flex;
   flex-direction: column;
   padding: 18px;
+  @media screen and (min-width: 768px) {
+    width: 177px;
+    height: 134px;
+    right: 128px;
+    top: 78px;
+    border: none;
+  }
+  @media screen and (min-width: 1440px) {
+    right: 211px;
+  }
 `;
 
 export const EditProfileContainer = styled.div`

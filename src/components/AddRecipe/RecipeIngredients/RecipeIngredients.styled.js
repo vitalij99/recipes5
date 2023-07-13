@@ -4,8 +4,7 @@ import Select from 'react-select';
 export const Form = styled.div`
   margin-top: 44px;
   margin-bottom: 44px;
-  outline: 1px solid red;
-  /* REMOVE */
+ 
 
   display: flex;
   flex-direction: column;
@@ -156,3 +155,8 @@ export const SelectAdd = styled.select`
     props.theme.addRecipePage.listOfIngredients.selectionBackground};
   color: ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
 `;
+export const BtnDelete = styled.button`
+border:none;
+background-color:transparent;
+cursor:pointer;
+`

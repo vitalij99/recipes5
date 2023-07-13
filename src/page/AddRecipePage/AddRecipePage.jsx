@@ -13,14 +13,20 @@ const AddRecipePage = () => {
 
 export default AddRecipePage;
 
-// import React from 'react';
+// import React, { useState } from 'react';
 // import AddRecipeForm from 'components/AddRecipe/AddRecipeForm';
-// import Error from 'components/Error/Error';
+// import MainPageTitle from 'components/MainPageTitle/MainPageTitle';
+// import Loader from 'components/Loader/Loader';
 
 // const AddRecipePage = () => {
-//   const showError = true;
+//   const [isLoading, setIsLoading] = useState(true);
 
-//   return <div>{showError ? <Error /> : <AddRecipeForm />}</div>;
+//   return (
+//     <div>
+//       <MainPageTitle title={'Add recipe'} />
+//       {isLoading ? <Loader /> : <AddRecipeForm />}
+//     </div>
+//   );
 // };
 
 // export default AddRecipePage;

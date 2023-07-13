@@ -2,6 +2,8 @@ import { styled } from 'styled-components';
 
 export const Section = styled.div`
   background-color: ${props => props.theme.shoppingListPage.background};
+  flex: 1;
+  height: 100%;
 `;
 
 export const Titles = styled.div`
@@ -56,7 +58,6 @@ export const TitlesContainer = styled.div`
 
 export const List = styled.ul`
   margin-top: 32px;
-  margin-bottom: 100px;
   padding: 0 16px;
 
   @media screen and (min-width: 768px) {

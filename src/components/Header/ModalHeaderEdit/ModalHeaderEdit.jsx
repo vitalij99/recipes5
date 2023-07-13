@@ -9,23 +9,28 @@ import {
   EditProfileText,
   EditProfileIcon,
   EditProfileButton,
+  ModalOverlay,
   EditProfileButtonText,
 } from './ModalHeaderEdit.styled';
 
-const ModalHeaderEdit = () => {
+const ModalHeaderEdit = ({ setToggleModalEdit, handleToggleModalLogOut }) => {
   return (
-    <Modal>
-      <EditProfileContainer>
-        <EditProfileText>Edit profile</EditProfileText>
-        <EditProfileIcon>
-          <HeaderModalEdit />
-        </EditProfileIcon>
-      </EditProfileContainer>
-      <EditProfileButton type="button">
-        <EditProfileButtonText>Log out </EditProfileButtonText>
-        <HeaderModalEditButton />
-      </EditProfileButton>
-    </Modal>
+    <ModalOverlay
+      onClick={e => e.currentTarget === e.target && setToggleModalEdit(false)}
+    >
+      <Modal>
+        <EditProfileContainer>
+          <EditProfileText>Edit profile</EditProfileText>
+          <EditProfileIcon>
+            <HeaderModalEdit />
+          </EditProfileIcon>
+        </EditProfileContainer>
+        <EditProfileButton type="button" onClick={handleToggleModalLogOut}>
+          <EditProfileButtonText>Log out </EditProfileButtonText>
+          <HeaderModalEditButton />
+        </EditProfileButton>
+      </Modal>
+    </ModalOverlay>
   );
 };
 

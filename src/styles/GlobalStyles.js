@@ -112,6 +112,24 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
   }
+
+  #root{
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+  }
+
+  main{
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    background-color: ${props => props.theme.mainPageTitle.background}; 
+  }
+
+  section {
+    flex: 1;
+    height: 100%;
+  }
   
   /* Reset CSS */
 
@@ -190,13 +208,13 @@ const GlobalStyles = createGlobalStyle`
   /* Animation */
   .ease-in {
     animation-name: easeIn;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-timing-function: cubic-bezier(.17,.67,.83,.67)
   }
 
   .ease-out {
     animation-name: easeOut;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-timing-function: cubic-bezier(.17,.67,.83,.67)
   }
 
@@ -222,7 +240,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   
-  div {
+  /* div {
     &:hover {
       transition: 0.6s;
       animation:  easeIn;
@@ -231,7 +249,7 @@ const GlobalStyles = createGlobalStyle`
       transition: 0.6s;
       animation:  easeOut;
     }
-  }
+  } */
 
   svg {
     &:hover {
