@@ -19,19 +19,14 @@ export const Section = styled.div`
   background-size: auto auto;
   background-image: url(${bgBlack});
   flex: 1;
-  /* min-height: 100vh; */
-  /* height: 100%; */
-  /* padding: 87px 20px 118px; */
 
   @media (min-width: 768px) {
     background-image: url(${bgBlackTab}),
       linear-gradient(to bottom, transparent 50%, #1e1f28 50%);
     background-position: center 410px;
-    /* padding: 96px 20px 120px; */
   }
 
   @media (min-width: 1440px) {
-    /* padding: 122px; */
     background-image: url(${bgBlackDes}),
       linear-gradient(to bottom, transparent 20%, #1e1f28 20%);
     background-position: center 400px;

@@ -144,8 +144,7 @@ const GlobalStyles = createGlobalStyle`
 
     @media (min-width: 768px) {
       background-position: bottom -380px left;
-    background-image: image-set(
-      
+    background-image: image-set(      
     url(${bgt1x}) 1x,
     url(${bgt2x}) 2x
   );
@@ -153,8 +152,7 @@ const GlobalStyles = createGlobalStyle`
 
   @media (min-width: 1440px) {
     background-position: bottom -480px left;
-      background-image: image-set(
-        
+      background-image: image-set(        
     url(${bgd1x}) 1x,
     url(${bgd2x}) 2x
   );
