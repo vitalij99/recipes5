@@ -3,9 +3,6 @@ import {
   Copyright,
   TermsofService,
   FooterInfo,
-  // FooterFacebookLogoStyled,
-  // LinkSocial,
-  // IconContainer,
   FooterButton,
   Form,
   ContainerSvg,
@@ -24,15 +21,13 @@ import {
   SubscribeText,
   MainContainer,
   HeadContainer,
-  InputBox
+  InputBox,
+  NavLinkDiv
 
 } from './Footer.styled';
 
 import {
   FooterLogo,
-  // FooterYoutubeLogo,
-  // FooterTwitterLogo,
-  // FooterInstagramLogo,
   FooterEmailLogo
 } from './FooterIcon';
 
@@ -65,7 +60,7 @@ const Footer = () => {
             <OptionsItem>Convenient and easy to use</OptionsItem>
               </OptionsList>
           </HeadContainer>
-
+      <NavLinkDiv>
         <NavLinkList>
           <NavLinkItem>
             <LinkStyle to={'/categories/:categoryName'}>Ingredients</LinkStyle>
@@ -83,7 +78,7 @@ const Footer = () => {
             <LinkStyle to={'/shopping-list'}>Shopping list</LinkStyle>
           </NavLinkItem>
         </NavLinkList>
-
+      </NavLinkDiv>
       </TextContainer>
  
         <SubscribeContainer>
@@ -107,20 +102,6 @@ const Footer = () => {
           </SubscribeContainer>
         </MainContainer>
         <SocialIcons/>
-        {/* <IconContainer>
-          <LinkSocial href="https://www.facebook.com/">
-            <FooterFacebookLogoStyled />
-          </LinkSocial>
-          <LinkSocial href="https://www.youtube.com/">
-            <FooterYoutubeLogo />
-          </LinkSocial>
-          <LinkSocial href="https://twitter.com/">
-            <FooterTwitterLogo />
-          </LinkSocial>
-          <LinkSocial href="https://www.instagram.com/">
-            <FooterInstagramLogo />
-          </LinkSocial>
-          </IconContainer> */}
        
       </FooterInfo>
       <BottomFooter>

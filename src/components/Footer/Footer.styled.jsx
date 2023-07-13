@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 import bgImg from '../../images/Header/spinachFooter.png';
 
-// import {
-//   FooterFacebookLogo,
-// } from './FooterIcon';
 
 
 export const InputBox = styled.div`
@@ -13,9 +10,14 @@ export const InputBox = styled.div`
      display: inline-block;
 `;
 
+export const NavLinkDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 
 export const BottomFooter = styled.div`
-  width: 100vw;
+  // width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -97,13 +99,13 @@ export const FooterContainer = styled.div`
 
 `;
 export const FooterInfo = styled.div`
-  width: 100vw;
+  // width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
   padding-top: 28px;
   padding-bottom: 18px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  // justify-content: center;
+  // text-align: center;
+  // align-items: center;
 
    @media (min-width: 768px) {
      padding-top: 50px;
@@ -380,6 +382,7 @@ export const NavLinkItem = styled.li`
 
 export const NavLinkList = styled.ul`
   margin-bottom: 32px;
+  text-align: center;
 
   @media (min-width: 768px) {
   text-align: initial;
