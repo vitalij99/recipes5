@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const Section = styled.div`
   /* background-color: ${props => props.theme.shoppingListPage.background}; */
   flex: 1;
-  min-height: 310px;
+  /* min-height: 310px; */
   height: 100%;
 `;
 
