@@ -35,9 +35,16 @@ export const WrapperStyled = styled.div`
   }
   @media screen and (min-width: 1440px) {
     height: 800px;
+
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
-    background-position: top left, center, center, center 100px top;
+    background-position: top left, 63% 200px, 66%, right top;
+    background-size: auto, auto, auto, 50% 689px;
+  }
+  @media screen and (min-width: 2240px) {
+    background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
+      url(${banner2D});
+    background-position: top left, 55% 200px, 55%, right top;
   }
 `;
 export const BoxStyled = styled.div``;
