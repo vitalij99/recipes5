@@ -22,7 +22,8 @@ import {
   MainContainer,
   HeadContainer,
   InputBox,
-  NavLinkDiv
+  NavLinkDiv,
+  BackContainer
 
 } from './Footer.styled';
 
@@ -36,6 +37,7 @@ import Container from 'components/Container/Container';
 
 const Footer = () => {
   return (
+  <BackContainer>
     <Container>
    
       <FooterInfo>
@@ -110,6 +112,7 @@ const Footer = () => {
       </BottomFooter>
     
       </Container>
+    </BackContainer>
   );
 };
 
