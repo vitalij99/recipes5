@@ -27,23 +27,23 @@ export const HeaderLogo = () => {
       <path
         d="M10 10.1025V15.5561V15.6661V15.5561C10 17.1132 10.6794 18.4919 11.7328 19.3841C12.2479 19.8205 12.5882 20.4096 12.5882 21.0635V30.1667C12.5882 31.1787 13.4579 32.0001 14.5294 32.0001C15.6009 32.0001 16.4706 31.1787 16.4706 30.1667V21.0635C16.4706 20.4096 16.8109 19.8205 17.326 19.3841C18.3794 18.4919 19.0588 17.1132 19.0588 15.5561V10.1025V15.5561"
         stroke="#FAFAFA"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M14.5293 16.1112V10"
         stroke="#FAFAFA"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M31.9999 11.2854C31.9999 10.6107 31.4201 10.0632 30.7058 10.0632H29.4116C27.2673 10.0632 25.5293 11.7046 25.5293 13.7299V21.0633C25.5293 22.6571 26.6125 24.0003 28.1175 24.5051V30.1665C28.1175 31.1785 28.9872 31.9999 30.0587 31.9999C31.1302 31.9999 31.9999 31.1785 31.9999 30.1665V24.73V11.2854Z"
         stroke="#FAFAFA"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -60,9 +60,9 @@ export const MenuIcon = () => {
       >
         <path
           d="M3.5 14H24.5M3.5 7H24.5M3.5 21H17.5"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </IconWrapper>
@@ -81,9 +81,9 @@ export const CloseIcon = () => {
       >
         <path
           d="M22.6673 9.33334L9.33398 22.6667M9.33398 9.33334L22.6673 22.6667"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </IconWrapper>
@@ -102,15 +102,15 @@ export const SearchIcon = () => {
       >
         <path
           d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M21.0004 21L16.6504 16.65"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </IconWrapper>
@@ -137,7 +137,7 @@ export const SwitchBody = () => {
           width="61"
           height="33"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feBlend
@@ -203,7 +203,7 @@ export const Switch = () => {
           width="33.3496"
           height="33"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feColorMatrix
@@ -257,9 +257,9 @@ export const HeaderModalEdit = () => {
       >
         <path
           d="M1.62669 11.5323C1.67264 11.1188 1.69561 10.9121 1.75816 10.7188C1.81367 10.5474 1.89208 10.3842 1.99129 10.2338C2.10311 10.0642 2.2502 9.91713 2.54438 9.62295L9.91733 2.25001C10.5617 1.60568 11.6063 1.60568 12.2507 2.25001V2.25001C12.895 2.89434 12.895 3.93901 12.2507 4.58334L4.87771 11.9563C4.58353 12.2505 4.43644 12.3976 4.26687 12.5094C4.11643 12.6086 3.95327 12.687 3.78183 12.7425C3.58859 12.8051 3.38184 12.828 2.96835 12.874L1.45898 13.0417L1.62669 11.5323Z"
-          stroke-width="1.3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </IconEditWrapper>
@@ -278,15 +278,15 @@ export const HeaderModalEditButton = () => {
       >
         <path
           d="M2.75 9.5H12.75"
-          stroke-width="1.3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M9 4.25L14.25 9.5L9 14.75"
-          stroke-width="1.3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </IconEditButtonWrapper>
