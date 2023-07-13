@@ -13,6 +13,7 @@ export const DescriptionBox = styled.div`
 
   @media screen and (min-width: 1440px) {
     justify-content: flex-start;
+    margin-right: 121px;
   }
 `;
 
