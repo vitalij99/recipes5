@@ -50,6 +50,9 @@ const handleLogout = state => {
 const handleIsCurrent = (state, { payload }) => {
   state.user = payload.user;
 };
+const handleIsRejected = (state, { payload }) => {
+  state.token = initialState.token;
+};
 const handlePending = state => {
   state.isLoading = true;
 };
@@ -77,6 +80,7 @@ export const authSlice = createSlice({
       .addCase(registerThunk.fulfilled, handleIsLoggedIn)
       .addCase(signinThunk.fulfilled, handleIsLoggedIn)
       .addCase(currentThunk.fulfilled, handleIsCurrent)
+      .addCase(currentThunk.rejected, handleIsRejected)
       .addCase(logoutThunk.pending, handleLogout)
       .addCase(updateNameThunk.fulfilled, handleUpdateName)
       .addCase(updateAvatarThunk.fulfilled, handleUpdateAvatar)

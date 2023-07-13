@@ -2,13 +2,16 @@ import PreviewCategories from 'components/MainPage/PreviewCategories/PreviewCate
 
 import СhooseYourBreakfast from 'components/MainPage/СhooseYourBreakfast/СhooseYourBreakfast';
 import Hero from 'components/MainPage/Hero/Hero';
+import { MainWrapper } from './MainPage.Styled';
 
 const MainPage = () => {
   return (
     <>
-      <Hero />
-      <PreviewCategories />
-      <СhooseYourBreakfast />
+      <MainWrapper>
+        <Hero />
+        <PreviewCategories />
+        <СhooseYourBreakfast />
+      </MainWrapper>
     </>
   );
 };
