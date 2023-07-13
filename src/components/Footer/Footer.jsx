@@ -2,11 +2,10 @@ import {
   BottomFooter,
   Copyright,
   TermsofService,
-  FooterContainer,
   FooterInfo,
-  FooterFacebookLogoStyled,
-  LinkSocial,
-  IconContainer,
+  // FooterFacebookLogoStyled,
+  // LinkSocial,
+  // IconContainer,
   FooterButton,
   Form,
   ContainerSvg,
@@ -31,15 +30,19 @@ import {
 
 import {
   FooterLogo,
-  FooterYoutubeLogo,
-  FooterTwitterLogo,
-  FooterInstagramLogo,
+  // FooterYoutubeLogo,
+  // FooterTwitterLogo,
+  // FooterInstagramLogo,
   FooterEmailLogo
 } from './FooterIcon';
 
+import Container from 'components/Container/Container';
+ import SocialIcons from './SocialIcons/SocialIcons';
+
 const Footer = () => {
   return (
-    <FooterContainer>
+    <Container>
+   
       <FooterInfo>
         <MainContainer>
           <TextContainer>
@@ -102,8 +105,9 @@ const Footer = () => {
             <FooterButton type="submit">Subscribe</FooterButton>
           </Form>
           </SubscribeContainer>
-       </MainContainer>
-        <IconContainer>
+        </MainContainer>
+        <SocialIcons/>
+        {/* <IconContainer>
           <LinkSocial href="https://www.facebook.com/">
             <FooterFacebookLogoStyled />
           </LinkSocial>
@@ -116,14 +120,15 @@ const Footer = () => {
           <LinkSocial href="https://www.instagram.com/">
             <FooterInstagramLogo />
           </LinkSocial>
-          </IconContainer>
+          </IconContainer> */}
        
       </FooterInfo>
       <BottomFooter>
         <Copyright>© 2023 All Rights Reserved.</Copyright>
         <TermsofService>Terms of Service</TermsofService>
       </BottomFooter>
-    </FooterContainer>
+    
+      </Container>
   );
 };
 
