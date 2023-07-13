@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { BtnDeleteIcon } from './BtnDeleteIcon';
+
 
 import {
   Form,
@@ -15,6 +17,7 @@ import {
   SelectAdd,
   SelectStyled,
   Title,
+  BtnDelete
 } from './RecipeIngredients.styled';
 
 const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
@@ -64,7 +67,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   }, []);
 
   useEffect(() => {
-    // Filter ingredients
+   
     const filteredIngredients = backendIngredients.filter(ingredient =>
       ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -140,6 +143,12 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                     <option value="g">g</option>
                   </SelectAdd>
                 </InputBox>
+                <BtnDelete
+                  type="button"
+                  onClick={() => removeIngredientField(index)}
+                >
+                  <BtnDeleteIcon />
+                </BtnDelete>
               </ItemIngredient>
             ))}
           </ListIngredients>
