@@ -53,7 +53,7 @@ export const lightTheme = {
         hover: '#8BAA36',
       },
       userMenuEditProfile: {
-        outline: '#23262A',
+        outline: '#8BAA36',
         text: '#22252A',
         icon: '#23262A',
         hover: '#8BAA36',
@@ -379,7 +379,7 @@ export const lightTheme = {
       opacity: '0.5',
     },
   },
-  loaderPage: {
+  loader: {
     background: '#FAFAFA',
     icon: '#8BAA36',
   },

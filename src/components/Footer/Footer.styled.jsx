@@ -5,7 +5,6 @@ import bgImg from '../../images/Header/spinachFooter.png';
 
 import {
   FooterFacebookLogo,
-  
 } from './FooterIcon';
 
 
@@ -16,8 +15,7 @@ export const InputBox = styled.div`
 
 
 export const BottomFooter = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -26,9 +24,21 @@ export const BottomFooter = styled.div`
   background-image: url(${bgImg});
   background-position: bottom right;
   background-repeat: no-repeat;
+  background-color: ${props => props.theme.mainPage.footer.button.text};;
+  
+   padding-top: 28px;
+  padding-bottom: 28px;
+  overflow: hidden;
+
+   @media (min-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    
+  }
 
  @media (min-width: 1440px) {
-     padding-top: 27px;
+    padding-top: 50px;
+    padding-bottom: 50px;
      }
   
 `;
@@ -41,13 +51,12 @@ export const MainContainer = styled.div`
 `;
 
 export const HeadContainer = styled.div`
-  `;
+`;
 
 export const Copyright = styled.p`
   color: ${props => props.theme.mainPage.footer.bottomText.text};
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
-  padding: 28px 0px;
   font-weight: 500;
   line-height: 10px;
   letter-spacing: -0.1px;
@@ -59,11 +68,6 @@ export const Copyright = styled.p`
 
    @media (min-width: 768px) {
     font-size: 14px;
-     padding: 32px 0px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 50px 0px;
   }
 `;
 
@@ -85,18 +89,18 @@ export const TermsofService = styled.p`
   }
 `;
 export const FooterContainer = styled.div`
-  height: 435px;
-  width: 100%;
+  // height: 435px;
+  width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
 
    @media (min-width: 768px) {
-     height: 423px;
+    //  height: 423px;
     
   }
 
 `;
 export const FooterInfo = styled.div`
-  width: 100%;
+  width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
   padding-top: 28px;
   padding-bottom: 18px;
@@ -224,16 +228,6 @@ export const SubscribeText = styled.p`
   }
 `;
 
-// export const IconStyled = styled(FooterEmailLogo)`
-//   position: absolute;
-//   top: 50%;
-//   left: 14px;
-//   transform: translateY(-50%);
-//   width: 16px;
-//   height: 12px;
-
- 
-// `;
 
 
 export const Input = styled.input`
@@ -288,8 +282,6 @@ export const Input = styled.input`
 
 
 export const Form = styled.form`
-  v
- 
   display: flex;
   flex-direction: column;
   justify-content: center;

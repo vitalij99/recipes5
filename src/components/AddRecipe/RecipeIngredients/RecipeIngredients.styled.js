@@ -155,3 +155,8 @@ export const SelectAdd = styled.select`
     props.theme.addRecipePage.listOfIngredients.selectionBackground};
   color: ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
 `;
+export const BtnDelete = styled.button`
+border:none;
+background-color:transparent;
+cursor:pointer;
+`

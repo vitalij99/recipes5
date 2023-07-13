@@ -1,46 +1,56 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import React from 'react';
+import { AboutBox, ContainerRecipe, ImgRecipe, PopularBox, PopularContainer, TextRecipe, Title, TitleRecipe } from './PopularRecipe.styled';
 
-// const PopularRecipe = () => {
-//   const [popularRecipes, setPopularRecipes] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(false);
+const PopularRecipe = () => {
+ 
+  const recipes = [
+    {
+      id: 1,
+      photo: 'recipe1.jpg',
+      title: 'Title',
+      about: 'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+    {
+      id: 2,
+      photo: 'recipe2.jpg',
+      title: 'Title',
+      about: 'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+    {
+      id: 3,
+      photo: 'recipe3.jpg',
+      title: 'Title',
+      about: 'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+    {
+      id: 4,
+      photo: 'recipe4.jpg',
+      title: 'Title',
+      about: 'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+  ];
 
-//   useEffect(() => {
-//     const fetchPopularRecipes = async () => {
-//       try {
-//         const response = await backendAPI.get('/popular-recipes');
-//         const popularRecipes = response.data;
+  const handleClick = (recipeId) => {
+    
+    console.log(`Переход на страницу рецепта с ID ${recipeId}`);
+  };
 
-//         setRecipes(popularRecipes);
-//         setLoading(false);
-//       } catch (error) {
-//         setError(true);
-//         setLoading(false);
-//       }
-//     };
+  return (
+    <PopularContainer>
+      <Title>Popular recipe</Title>
+      <PopularBox>
+        {recipes.map((recipe) => (
+          <ContainerRecipe key={recipe.id} onClick={() => handleClick(recipe.id)}>
+            <ImgRecipe src={recipe.photo} alt={recipe.title} />
+           <AboutBox>
+            <TitleRecipe>{recipe.title}</TitleRecipe>
+            <TextRecipe>{recipe.about}</TextRecipe>
+            </AboutBox> 
+          </ContainerRecipe>
+        ))}
+      </PopularBox>
+    </PopularContainer>
+  );
+};
 
-//     fetchPopularRecipes();
-//   }, []);
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   if (error) {
-//     return <div>No popular recipes available at the moment.</div>;
-//   }
-
-//   return (
-//     <div>
-//       <h2>Popular Recipes</h2>
-//       {recipes.map(recipe => (
-//         <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
-//           {recipe.title}
-//         </Link>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default PopularRecipe;
+export default PopularRecipe;
