@@ -1,10 +1,9 @@
 import { Route, Routes } from 'react-router';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { lazy, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { currentThunk } from 'redux/auth/authOperation';
 import { WelcomePage, AuthPage } from 'page';
-import { selectToken } from 'redux/auth/authSelector';
 import { PrivateRoute } from 'route/PrivateRoute';
 import RestrictedRoute from 'route/RestrictedRoute';
 
