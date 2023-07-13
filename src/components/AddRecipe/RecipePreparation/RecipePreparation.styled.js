@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const Box = styled.div`
+  /* grid-column: 1;
+  grid-row: 3; */
+`;
+
 export const Title = styled.h3`
   color: ${props => props.theme.addRecipePage.popularRecipe.title};
   font-size: 24px;
@@ -49,7 +54,6 @@ export const TextArea = styled.textarea`
 
   @media screen and (min-width: 1440px) {
     width: 505px;
-     
   }
 `;
 

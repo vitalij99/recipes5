@@ -3,6 +3,8 @@ import Select from 'react-select';
 
 export const DescriptionBox = styled.div`
   display: block;
+  /* grid-column: 1;
+  grid-row: 1 / span 3; */
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -11,6 +13,7 @@ export const DescriptionBox = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -52,7 +55,6 @@ export const Form = styled.div`
   flex-direction: column;
   width: 343px;
   gap: 24px;
- 
 
   @media screen and (min-width: 768px) {
     width: 394px;
@@ -150,4 +152,3 @@ export const StyledSelect = styled(Select)`
     }
   }
 `;
-

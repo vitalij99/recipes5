@@ -1,6 +1,6 @@
 import Container from 'components/Container/Container';
 import React, { useState, useEffect } from 'react';
-import { ContainerAddRecipe } from './AddRecipe.styled';
+import { ContainerAddRecipe, Form } from './AddRecipe.styled';
 import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
@@ -55,12 +55,13 @@ const AddRecipeForm = () => {
   return (
     <Container>
       <ContainerAddRecipe>
-        <form onSubmit={handleFormSubmit}>
+        <Form onSubmit={handleFormSubmit}>
           <RecipeDescriptionFields
             recipeData={recipeData}
             handleInputChange={handleInputChange}
           />
           {screenWidth && <PopularRecipe />}
+
           <RecipeIngredientsFields
             ingredients={recipeData.ingredients}
             setIngredients={updatedIngredients =>
@@ -79,7 +80,7 @@ const AddRecipeForm = () => {
               }))
             }
           />
-        </form>
+        </Form>
       </ContainerAddRecipe>
     </Container>
   );

@@ -5,5 +5,11 @@ const ContainerAddRecipe = styled.div`
   background-color: ${props => props.theme.addRecipePage.background};
 `;
 
+const Form = styled.form`
+  /* display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 10px; */
+`;
 
-export { ContainerAddRecipe };
+export { ContainerAddRecipe, Form };
