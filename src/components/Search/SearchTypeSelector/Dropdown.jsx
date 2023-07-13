@@ -17,7 +17,7 @@ export const Dropdown = ({ onChange, id, data }) => {
       return;
     }
 
-    menu.style.opacity = '0.7s';
+    menu.style.opacity = '1';
     menu.style.transition = 'all 1s ease';
     menu.style.transform = 'translateY(0)';
   };
