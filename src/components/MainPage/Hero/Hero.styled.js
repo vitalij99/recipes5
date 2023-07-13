@@ -29,9 +29,10 @@ export const WrapperStyled = styled.div`
   @media screen and (min-width: 768px) {
     height: 640px;
     padding-left: 38px;
+    padding-top: 140px;
     background-image: url(${bannerT}), url(${banner3T}), url(${banner4T}),
       url(${banner2T});
-    background-position: top left, 80% 30%, center right, top right;
+    background-position: top left, 90% 30%, center right, top right;
   }
   @media screen and (min-width: 1440px) {
     height: 800px;
