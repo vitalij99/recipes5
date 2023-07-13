@@ -24,7 +24,6 @@ export const CategoriesListStyled = styled.ul`
     gap: 32px;
   }
   @media (min-width: 1440px) {
-    justify-content: flex-start;
     gap: 14px;
     row-gap: 100px;
   }
