@@ -117,13 +117,15 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
     display: flex;
     flex-direction: column; 
+    background-color: ${props => props.theme.mainPage.background}; 
   }
 
   main{
+    /* height: 100%; */
     flex: 1;
     display: flex;
     flex-direction: column; 
-    background-color: ${props => props.theme.mainPageTitle.background}; 
+    background-color: ${props => props.theme.mainPage.background}; 
   }
 
   section {
