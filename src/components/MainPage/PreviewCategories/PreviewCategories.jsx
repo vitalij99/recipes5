@@ -14,7 +14,7 @@ import Container from 'components/Container/Container';
 const PreviewCategories = () => {
   const list = useSelector(selectMainResipes);
   const isLoad = useSelector(selectMainLoad);
-  const [view, setView] = useState(475);
+  const [view, setView] = useState(() => window.innerWidth);
 
   const dispath = useDispatch();
 
@@ -62,15 +62,13 @@ const PreviewCategories = () => {
         {list &&
           !isLoad &&
           Object.keys(list).map(key => (
-            <div key={key}>
+            <WrapperStyled key={key}>
               <TitleStyled>{toCamelCase(key)}</TitleStyled>
-              <WrapperStyled>
-                <CategoriesList list={handleSlice(list[key])} />
-                <LinkStyled to={`/categories/${toCamelCase(key)}`}>
-                  See all
-                </LinkStyled>
-              </WrapperStyled>
-            </div>
+              <CategoriesList list={handleSlice(list[key])} />
+              <LinkStyled to={`/categories/${toCamelCase(key)}`}>
+                See all
+              </LinkStyled>
+            </WrapperStyled>
           ))}
       </Container>
     </>

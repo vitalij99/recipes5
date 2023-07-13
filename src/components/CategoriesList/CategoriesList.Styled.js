@@ -17,8 +17,6 @@ export const CategoriesListStyled = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 60px;
   gap: 28px;
   width: 100%;
 
