@@ -3,8 +3,7 @@ import Select from 'react-select';
 
 export const DescriptionBox = styled.div`
   display: block;
-  /* grid-column: 1;
-  grid-row: 1 / span 3; */
+  grid-column: 1;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -27,6 +26,13 @@ export const AddPhotoContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 357px;
+    height: 344px;
+    margin-right: 50px;
   }
 `;
 

@@ -5,8 +5,7 @@ export const Form = styled.div`
   margin-top: 44px;
   margin-bottom: 44px;
 
-  /* grid-column: 1;
-  grid-row: 2; */
+  grid-column: 1;
 
   display: flex;
   flex-direction: column;

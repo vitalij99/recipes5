@@ -7,7 +7,7 @@ import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
 
 const checkScreenWidth = () => {
-  return window.innerWidth >= 768;
+  return window.innerWidth;
 };
 
 const AddRecipeForm = () => {
@@ -60,8 +60,7 @@ const AddRecipeForm = () => {
             recipeData={recipeData}
             handleInputChange={handleInputChange}
           />
-          {screenWidth && <PopularRecipe />}
-
+          {screenWidth >= 1440 ? <PopularRecipe /> : null}
           <RecipeIngredientsFields
             ingredients={recipeData.ingredients}
             setIngredients={updatedIngredients =>
@@ -80,6 +79,7 @@ const AddRecipeForm = () => {
               }))
             }
           />
+          {screenWidth < 1440 ? <PopularRecipe /> : null}
         </Form>
       </ContainerAddRecipe>
     </Container>
