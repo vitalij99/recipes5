@@ -132,7 +132,7 @@ const GlobalStyles = createGlobalStyle`
     flex: 1;
     display: flex;
     flex-direction: column; 
-    background-color: ${props => props.theme.mainPageTitle.background}; 
+    background-color: ${props => props.theme.mainPage.background}; 
 
     background-position: bottom -230px left;
     background-repeat: no-repeat;
