@@ -1,32 +1,53 @@
 import RecipeHero from 'components/Recipe/RecipeHero/RecipeHero';
 import RecipeIngredients from 'components/Recipe/RecipeIngredients/RecipeIngredients';
-import { recipeOne } from 'components/Recipe/RecipeIngredients/RecipeIngredients.styled';
+
 import RecipeInstruction from 'components/Recipe/RecipeInstruction/RecipeInstruction';
-// import React, { useEffect, useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { useParams } from 'react-router';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getRecipeById } from 'redux/recipe/api';
+import { Notify } from 'notiflix';
+import Loader from 'components/Loader/Loader';
 
 const RecipePage = () => {
-  // const dispatch = useDispatch();
-  // const { _id } = useParams();
-  // getFindRecipeById();
+  const [recipe, setRecipe] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const recipe = recipeOne;
+  const { recipeId } = useParams();
+
+  useEffect(() => {
+    async function fetchRecipe() {
+      try {
+        setIsLoading(true);
+        const recipe = await getRecipeById(recipeId);
+        if (!recipe) {
+          return;
+        }
+        setRecipe(recipe);
+        setIsLoading(false);
+      } catch (err) {
+        Notify.failure('Ingredient added on shoppingList');
+        console.log(err.message);
+      }
+    }
+    fetchRecipe();
+  }, [recipeId]);
 
   const { _id, title, description, time, instructions, thumb, ingredients } =
     recipe;
 
   return (
-    <div>
+    <>
+      s{isLoading && <Loader />}
       <RecipeHero
         time={time}
         title={title}
         description={description}
         id={_id}
+        recipe={recipe}
       />
       <RecipeIngredients ingredients={ingredients} />
       <RecipeInstruction instructions={instructions} thumb={thumb} />
-    </div>
+    </>
   );
 };
 

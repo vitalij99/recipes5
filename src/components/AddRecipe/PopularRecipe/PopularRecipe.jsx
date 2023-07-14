@@ -1,46 +1,91 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
-// const PopularRecipe = () => {
-//   const [recipes, setRecipes] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(false);
+import {
+  AboutBox,
+  ContainerRecipe,
+  ImgRecipe,
+  PopularBox,
+  PopularContainer,
+  TextRecipe,
+  Title,
+  TitleRecipe,
+} from './PopularRecipe.styled';
+import { StyledSocialIcons } from './SocialIcons.styled';
 
-//   useEffect(() => {
-//     const fetchPopularRecipes = async () => {
-//       try {
-//         const response = await backendAPI.get('/popular-recipes');
-//         const popularRecipes = response.data;
+const PopularRecipe = () => {
+  const recipes = [
+    {
+      id: 1,
+      photo: 'recipe1.jpg',
+      title: 'Title',
+      about:
+        'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+    {
+      id: 2,
+      photo: 'recipe2.jpg',
+      title: 'Title',
+      about:
+        'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+    {
+      id: 3,
+      photo: 'recipe3.jpg',
+      title: 'Title',
+      about:
+        'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+    {
+      id: 4,
+      photo: 'recipe4.jpg',
+      title: 'Title',
+      about:
+        'In a bowl, mash the banana with a fork until it resembles a thick purée...',
+    },
+  ];
 
-//         setRecipes(popularRecipes);
-//         setLoading(false);
-//       } catch (error) {
-//         setError(true);
-//         setLoading(false);
-//       }
-//     };
+  const handleClick = recipeId => {
+    console.log(`Переход на страницу рецепта с ID ${recipeId}`);
+  };
 
-//     fetchPopularRecipes();
-//   }, []);
+  const checkScreenWidth = () => {
+    return window.screen.width;
+  };
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
+  const [screenWidth, setScreenWidth] = useState(checkScreenWidth());
 
-//   if (error) {
-//     return <div>No popular recipes available at the moment.</div>;
-//   }
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(checkScreenWidth());
+    };
 
-//   return (
-//     <div>
-//       <h2>Popular Recipes</h2>
-//       {recipes.map(recipe => (
-//         <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
-//           {recipe.title}
-//         </Link>
-//       ))}
-//     </div>
-//   );
-// };
+    window.addEventListener('resize', handleResize);
 
-// export default PopularRecipe;
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <PopularContainer>
+      {screenWidth >= 1440 ? <StyledSocialIcons title={'Follow us'} /> : null}
+      <Title>Popular recipe</Title>
+      <PopularBox>
+        {recipes.map(recipe => (
+          <ContainerRecipe
+            key={recipe.id}
+            onClick={() => handleClick(recipe.id)}
+          >
+            <ImgRecipe src={recipe.photo} alt={recipe.title} />
+            <AboutBox>
+              <TitleRecipe>{recipe.title}</TitleRecipe>
+              <TextRecipe>{recipe.about}</TextRecipe>
+            </AboutBox>
+          </ContainerRecipe>
+        ))}
+      </PopularBox>
+    </PopularContainer>
+  );
+};
+
+export default PopularRecipe;

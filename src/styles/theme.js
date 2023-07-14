@@ -53,7 +53,7 @@ export const lightTheme = {
         hover: '#8BAA36',
       },
       userMenuEditProfile: {
-        outline: '#23262A',
+        outline: '#8BAA36',
         text: '#22252A',
         icon: '#23262A',
         hover: '#8BAA36',
@@ -204,7 +204,7 @@ export const lightTheme = {
       underline: '#707070',
     },
     followUs: {
-      title: '#001833',
+      title: '#3E4462',
       icon: '#8BAA36',
       hoverIcon: '#1E1F28',
     },
@@ -311,8 +311,8 @@ export const lightTheme = {
     },
     searchBar: {
       background: '#FFFFFF',
-      outline: '#F0F0F0',
-      hoverOutline: '#23262A33',
+      outline: '#23262A33',
+      hoverOutline: '#8BAA36',
       text: '#BDBDBD',
       hoverText: '#23262A',
       button: {
@@ -328,13 +328,16 @@ export const lightTheme = {
         opacity: '0.5',
       },
       dropDownMenu: {
-        background: '#FFFFFF',
+        background1: '#D9D9D9',
+        background2: '#FFFFFF',
+        outline: '#D9D9D9',
         text1: {
           color: '#000000',
           opacity: '0.5',
         },
         text2: {
           color: '#000000',
+          hover: 'rgb(139, 170, 54)',
         },
       },
       icon: '#8BAA36',
@@ -375,6 +378,10 @@ export const lightTheme = {
       color: '#000000',
       opacity: '0.5',
     },
+  },
+  loader: {
+    background: '#FAFAFA',
+    icon: '#8BAA36',
   },
   userProfile: {
     background: '#FAFAFA',
@@ -737,13 +744,16 @@ export const darkTheme = {
         opacity: '0.5',
       },
       dropDownMenu: {
-        background: '#8BAA36',
+        background1: '#1E1F28',
+        background2: '#8BAA36',
+        outline: '#8BAA36',
         text1: {
           color: '#FAFAFA',
           opacity: '0.5',
         },
         text2: {
           color: '#FAFAFA',
+          hover: '#FAFAFA',
         },
       },
       icon: '#8BAA36',
@@ -783,6 +793,10 @@ export const darkTheme = {
       color: '#FAFAFA',
       opacity: '0.5',
     },
+  },
+  loaderPage: {
+    background: '#1E1F28',
+    icon: '#FAFAFA',
   },
   userProfile: {
     background: '#2A2C36',

@@ -1,7 +1,19 @@
-import React from 'react';
+import PreviewCategories from 'components/MainPage/PreviewCategories/PreviewCategories';
+
+import СhooseYourBreakfast from 'components/MainPage/СhooseYourBreakfast/СhooseYourBreakfast';
+import Hero from 'components/MainPage/Hero/Hero';
+import { MainWrapper } from './MainPage.Styled';
 
 const MainPage = () => {
-  return <div>MainPage</div>;
+  return (
+    <>
+      <MainWrapper>
+        <Hero />
+        <PreviewCategories />
+        <СhooseYourBreakfast />
+      </MainWrapper>
+    </>
+  );
 };
 
 export default MainPage;

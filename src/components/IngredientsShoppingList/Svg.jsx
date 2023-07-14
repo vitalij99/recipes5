@@ -14,16 +14,16 @@ export const Svg = () => {
           <path
             id="Vector"
             d="M10.9375 3.0625L3.0625 10.9375"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Vector_2"
             d="M10.9375 10.9375L3.0625 3.0625"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>

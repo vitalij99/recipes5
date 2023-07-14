@@ -3,16 +3,17 @@ import Select from 'react-select';
 
 export const DescriptionBox = styled.div`
   display: block;
-  margin-top: 62px;
+  grid-column: 1;
 
   @media screen and (min-width: 768px) {
-    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   @media screen and (min-width: 1440px) {
+    justify-content: flex-start;
+    margin-right: 121px;
   }
 `;
 
@@ -26,6 +27,13 @@ export const AddPhotoContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 357px;
+    height: 344px;
+    margin-right: 50px;
   }
 `;
 
@@ -33,6 +41,7 @@ export const InputPhoto = styled.input`
   opacity: 0;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 `;
 
 export const BoxIcon = styled.div`
@@ -53,8 +62,6 @@ export const Form = styled.div`
   flex-direction: column;
   width: 343px;
   gap: 24px;
-  outline: 1px solid green;
-  /* REMOVE */
 
   @media screen and (min-width: 768px) {
     width: 394px;
@@ -137,6 +144,7 @@ export const StyledSelect = styled(Select)`
     & .css-1dimb5e-singleValue {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
     }
+ 
   }
 
   & .css-1xc3v61-indicatorContainer {

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
+import { BtnDeleteIcon } from './BtnDeleteIcon';
+import Api from './Api';
 
 import {
   Form,
@@ -15,12 +17,14 @@ import {
   SelectAdd,
   SelectStyled,
   Title,
+  BtnDelete
 } from './RecipeIngredients.styled';
 
 const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const [searchTerm] = useState('');
   const [ingredientOptions, setIngredientOptions] = useState([]);
   const [count, setCount] = useState(ingredients.length);
+  const [backendIngredients, setBackendIngredients] = useState([]);
 
   const handleIngredientChange = (index, field, value) => {
     const updatedIngredients = [...ingredients];
@@ -33,22 +37,6 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
     updatedIngredients[index].name = selectedOption.value;
     setIngredients(updatedIngredients);
   };
-
-  useEffect(() => {
-    // Backend request
-    const backendIngredients = [
-      { id: 1, name: 'Cucumber' },
-      { id: 2, name: 'Apple' },
-      { id: 3, name: 'Lime' },
-    ];
-
-    // Filter ingredients
-    const filteredIngredients = backendIngredients.filter(ingredient =>
-      ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setIngredientOptions(filteredIngredients);
-  }, [searchTerm]);
 
   const addIngredientField = () => {
     setIngredients([...ingredients, { name: '', amount: '', unit: '' }]);
@@ -63,6 +51,14 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
       setCount(count - 1);
     }
   };
+
+  useEffect(() => {
+    const filteredIngredients = backendIngredients.filter(ingredient =>
+      ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setIngredientOptions(filteredIngredients);
+  }, [searchTerm, backendIngredients]);
 
   useEffect(() => {
     setCount(ingredients.length);
@@ -106,6 +102,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                       label: option.name,
                     })),
                   ]}
+                  maxMenuHeight={240}
                   onChange={selectedOption =>
                     handleSelectIngredient(index, selectedOption)
                   }
@@ -132,11 +129,18 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                     <option value="g">g</option>
                   </SelectAdd>
                 </InputBox>
+                <BtnDelete
+                  type="button"
+                  onClick={() => removeIngredientField(index)}
+                >
+                  <BtnDeleteIcon />
+                </BtnDelete>
               </ItemIngredient>
             ))}
           </ListIngredients>
         </IngredietsContainer>
       </Form>
+      <Api setBackendIngredients={setBackendIngredients} />
     </>
   );
 };
