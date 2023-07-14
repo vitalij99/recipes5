@@ -29,12 +29,12 @@ export const InformWrapperStyled = styled.div`
   }
   @media screen and (min-width: 768px) {
     top: 300px;
-    left: 75%;
+    left: 80%;
   }
   @media screen and (min-width: 1440px) {
     width: 251px;
     padding: 16px;
-    top: 600px;
+    top: 500px;
     left: 70%;
   }
   @media screen and (min-width: 2240px) {
