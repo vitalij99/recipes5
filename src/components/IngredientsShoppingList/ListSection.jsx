@@ -10,12 +10,13 @@ import {
 } from './IngredientsShoppingList.styled';
 import { Svg } from './Svg';
 
-export const ListSection = ({ data }) => {
+export const ListSection = ({ data, onClick }) => {
+  // console.log(data);
   return (
     <>
       <List>
         {data.map(item => (
-          <Item key={item._id.$oid}>
+          <Item key={item.id}>
             <ImageSection>
               <ImageContainer>
                 <img src={item.img} alt={item.name} />
@@ -27,7 +28,7 @@ export const ListSection = ({ data }) => {
               <Number>
                 <p>300</p>
               </Number>
-              <CloseIcon>
+              <CloseIcon onClick={() => onClick(item.id)}>
                 <Svg />
               </CloseIcon>
             </DataSection>
