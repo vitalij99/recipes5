@@ -61,11 +61,13 @@ const Header = () => {
     if (screenWidth) {
       return;
     }
-    if (!toggle) {
+    if (toggle) {
       body.style.overflow = 'visible';
+      setToggleMenu(!toggle);
+    } else {
+      body.style.overflow = 'hidden';
+      setToggleMenu(!toggle);
     }
-    body.style.overflow = 'hidden';
-    setToggleMenu(!toggle);
   };
 
   const handleToggleModalLogOut = () => {
