@@ -28,8 +28,8 @@ export const InformWrapperStyled = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    top: 410px;
-    left: 70%;
+    top: 300px;
+    left: 75%;
   }
   @media screen and (min-width: 1440px) {
     width: 251px;
