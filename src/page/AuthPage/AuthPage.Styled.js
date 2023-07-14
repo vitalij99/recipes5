@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import bgMobile1x from '../../images/authPage/bg_mobile@1x.jpg';
-import bgMobile2x from '../../images/authPage/bg_mobile@2x.jpg';
-import bgMobile3x from '../../images/authPage/bg_mobile@3x.jpg';
-import bgTablet1x from '../../images/authPage/bg_tablet@1x.jpg';
-import bgTablet2x from '../../images/authPage/bg_tablet@2x.jpg';
-import bgTablet3x from '../../images/authPage/bg_tablet@3x.jpg';
-import bgDesktop1x from '../../images/authPage/bg_desktop@1x.png';
-import bgDesktop2x from '../../images/authPage/bg_desktop@2x.png';
-import bgDesktop3x from '../../images/authPage/bg_desktop@3x.png';
-import bgBlack from '../../images/authPage/bg_black_mobile.svg';
-import bgBlackTab from '../../images/authPage/bg_black_tablet.svg';
-import bgBlackDes from '../../images/authPage/bg_black_desktop.svg';
+import bgMobile1x from 'images/authPage/bg_mobile@1x.jpg';
+import bgMobile2x from 'images/authPage/bg_mobile@2x.jpg';
+import bgMobile3x from 'images/authPage/bg_mobile@3x.jpg';
+import bgTablet1x from 'images/authPage/bg_tablet@1x.jpg';
+import bgTablet2x from 'images/authPage/bg_tablet@2x.jpg';
+import bgTablet3x from 'images/authPage/bg_tablet@3x.jpg';
+import bgDesktop1x from 'images/authPage/bg_desktop@1x.png';
+import bgDesktop2x from 'images/authPage/bg_desktop@2x.png';
+import bgDesktop3x from 'images/authPage/bg_desktop@3x.png';
+import bgBlack from 'images/authPage/bg_black_mobile.svg';
+import bgBlackTab from 'images/authPage/bg_black_tablet.svg';
+import bgBlackDes from 'images/authPage/bg_black_desktop.svg';
 
 export const Section = styled.div`
   width: 100%;
