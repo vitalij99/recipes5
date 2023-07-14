@@ -85,7 +85,9 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
             value={categoryOptions.find(
               option => option.value === recipeData.category
             )}
+            
             maxMenuHeight={220}
+           
             onChange={selectedOption =>
               handleInputChange('category', selectedOption.value)
             }
