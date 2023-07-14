@@ -94,6 +94,11 @@ function PresentModal({ onClose, event }) {
   const handleCoseModal = () => {
     setIsOpenModal(false);
   };
+  const handleBackdropClick = e => {
+    if (e.target === e.currentTarget) {
+      setIsOpenModal(false);
+    }
+  };
 
   if (!isOpenModal) {
     return null;
@@ -101,7 +106,7 @@ function PresentModal({ onClose, event }) {
   return (
     <>
       {createPortal(
-        <OverlayModal>
+        <OverlayModal onClick={handleBackdropClick}>
           <WrapperModal type={event}>
             <ContainerTitle>
               <>{titleDescr.text}</>
