@@ -37,9 +37,10 @@ import Container from 'components/Container/Container';
 
 const Footer = () => {
   return (
-  <BackContainer>
+    <BackContainer>
+      
     <Container>
-   
+        
       <FooterInfo>
         <MainContainer>
           <TextContainer>
@@ -52,16 +53,14 @@ const Footer = () => {
           <FooterLogoText>So Yummy</FooterLogoText>
         </FooterLogoContainer>
 
-        
- 
-  
         <OptionsList>
             <OptionsItem>Database of recipes that can be replenished </OptionsItem>
             <OptionsItem>Flexible search for desired and unwanted ingredients</OptionsItem>
             <OptionsItem>Ability to add your own recipes with photos</OptionsItem>
             <OptionsItem>Convenient and easy to use</OptionsItem>
-              </OptionsList>
-          </HeadContainer>
+        </OptionsList>
+      </HeadContainer>
+              
       <NavLinkDiv>
         <NavLinkList>
           <NavLinkItem>
@@ -80,7 +79,8 @@ const Footer = () => {
             <LinkStyle to={'/shopping-list'}>Shopping list</LinkStyle>
           </NavLinkItem>
         </NavLinkList>
-      </NavLinkDiv>
+     </NavLinkDiv>
+              
       </TextContainer>
  
         <SubscribeContainer>
@@ -105,13 +105,14 @@ const Footer = () => {
         </MainContainer>
         <SocialIcons/>
        
-      </FooterInfo>
+        </FooterInfo>
+    
+      </Container>
+      
       <BottomFooter>
         <Copyright>© 2023 All Rights Reserved.</Copyright>
         <TermsofService>Terms of Service</TermsofService>
       </BottomFooter>
-    
-      </Container>
     </BackContainer>
   );
 };
