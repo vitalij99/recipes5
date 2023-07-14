@@ -1,4 +1,3 @@
-import data from './data';
 import { Link } from 'react-router-dom';
 
 import {
@@ -9,7 +8,7 @@ import {
   ProductNameWrap,
 } from './Categories.styled';
 
-export const CardItem = () => {
+export const CardItem = ({ data }) => {
   return (
     <CategoriesList>
       {data.map(({ _id, title, thumb }) => (

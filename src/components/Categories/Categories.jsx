@@ -1,17 +1,13 @@
-import {
-    CategoriesSection,
-} from './Categories.styled';
-import { CardItem } from "./CardItem";
-import { CategoriesNavigate } from "./CategoriesNavigate";
+import { CategoriesSection } from './Categories.styled';
+import { CardItem } from './CardItem';
+import { CategoriesNavigate } from './CategoriesNavigate';
+import data from './data';
 
 export const Categories = () => {
-return (  
-        <CategoriesSection>
-<CategoriesNavigate/>
-                    
-            
-        <CardItem/>
-        </CategoriesSection>
-
-    )
-}
+  return (
+    <CategoriesSection>
+      <CategoriesNavigate />
+      <CardItem list={data} />
+    </CategoriesSection>
+  );
+};
