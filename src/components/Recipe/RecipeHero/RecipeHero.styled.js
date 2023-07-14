@@ -12,10 +12,10 @@ import full_desc_ratio_2 from '../../../images/Recipe/BG_image/full_desc_ratio_2
 
 export const RecipeHeroWrapper = styled.div`
   width: 100%;
-  height: 455px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
   padding-top: 144px;
   padding-bottom: 90px;
   text-align: center;
