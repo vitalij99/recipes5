@@ -1,5 +1,3 @@
-import SwitchImg from '../../images/Header/Switch.png';
-import SwitchBodyImg from '../../images/Header/switch-body.png';
 import UserProfile from './UserProfile/UserProfile';
 
 import { HeaderLogo } from './HeaderIcon/HeaderIcon';
@@ -19,8 +17,6 @@ import {
   NavLinkStyle,
   NavListList,
   LinkStyle,
-  ThemeToggle,
-  SwitchStyled,
   BackgroundContainer,
   SearchText,
 } from './Header.styled';
@@ -28,6 +24,8 @@ import { useLocation } from 'react-router-dom';
 import LogOutModal from './LogOutModal/LogOutModal';
 import { useSelector } from 'react-redux';
 import { selectAuthUser } from 'redux/auth/authSelector';
+
+import ThemeToggle from './ThemeToggle/ThemeToggle';
 
 const Header = () => {
   const onScreenWidth = () => {
@@ -120,13 +118,7 @@ const Header = () => {
                 </NavLinkStyle>
               </NavListItem>
             </NavListList>
-            <ThemeToggle>
-              <img src={SwitchBodyImg} alt="Switch Body" />
-
-              <SwitchStyled>
-                <img src={SwitchImg} alt="Switch" />
-              </SwitchStyled>
-            </ThemeToggle>
+            <ThemeToggle />
           </SiteNav>
 
           <MobileHeaderBlock>
