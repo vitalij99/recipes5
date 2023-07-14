@@ -19,6 +19,7 @@ export const Section = styled.div`
   background-size: auto auto;
   background-image: url(${bgBlack});
   flex: 1;
+  min-height: 100vh;
 
   @media (min-width: 768px) {
     background-image: url(${bgBlackTab}),
