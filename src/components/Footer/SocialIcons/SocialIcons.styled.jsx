@@ -1,24 +1,19 @@
 import styled from 'styled-components';
-import {
-  FooterFacebookLogo,
-} from '../FooterIcon';
-
-export const FooterFacebookLogoStyled = styled(FooterFacebookLogo)`
-  fill: #fff;
-  color: #fff;
-  background-color: #fafafa;
-      width: 30px;
-`;
 
 
 export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 
 `;
 
 export const LinkSocial = styled.a`
+    &:hover svg path {
+        fill: ${props => props.theme.mainPage.footer.iconsList.hoverColor};
+  }
+
   &:not(:last-child) {
     margin-right: 14px;
   }
@@ -26,6 +21,6 @@ export const LinkSocial = styled.a`
    @media (min-width: 768px) {
      &:not(:last-child) {
     margin-right: 18px;
-  }
+    }
   }
 `;

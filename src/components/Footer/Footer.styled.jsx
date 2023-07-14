@@ -6,7 +6,7 @@ import bgImg from '../../images/Header/spinachFooter.png';
 
 
 export const BackContainer = styled.div`
- color: ${props => props.theme.mainPage.footer.bottomText.text};
+ background-color: ${props => props.theme.mainPage.footer.bottomText.text};
 `;
 
 export const InputBox = styled.div`
@@ -21,7 +21,6 @@ export const NavLinkDiv = styled.div`
 
 
 export const BottomFooter = styled.div`
-  // width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -60,7 +59,6 @@ export const HeadContainer = styled.div`
 `;
 
 export const Copyright = styled.p`
-  // color: ${props => props.theme.mainPage.footer.bottomText.text};
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
   font-weight: 500;
@@ -103,13 +101,10 @@ export const FooterContainer = styled.div`
 
 `;
 export const FooterInfo = styled.div`
-  // width: 100vw;
   background-color:  ${props => props.theme.mainPage.footer.background} ;
   padding-top: 28px;
   padding-bottom: 18px;
-  // justify-content: center;
-  // text-align: center;
-  // align-items: center;
+
 
    @media (min-width: 768px) {
      padding-top: 50px;
@@ -134,8 +129,10 @@ export const FooterButton = styled.button`
   line-height: 16px;
   margin-bottom: 44px;
   border: none;
+
   &:hover {
     background-color: ${props => props.theme.mainPage.footer.button.hoverFill};
+    color: ${props => props.theme.mainPage.footer.button.hoverText};
   }
 
 
@@ -148,6 +145,7 @@ export const FooterButton = styled.button`
 
     @media (min-width: 1440px) {
       padding: 21px 126px;
+      width: 339px;
     
     }
 `;
@@ -215,6 +213,7 @@ export const Input = styled.input`
   width: 204px;
   height: 38px;
   padding-left: 45px;
+  font-size: 10px;
   color: ${props => props.theme.mainPage.footer.text};
   border: 1px solid #fafafa;
   border-radius: 8px;
@@ -226,7 +225,6 @@ export const Input = styled.input`
   &::placeholder {
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
     color: ${props => props.theme.mainPage.footer.text};
     line-height: 15px;
   }
@@ -238,20 +236,20 @@ export const Input = styled.input`
            width: 259px;
             height: 50px;
             margin-right: 12px;
+            font-size: 14px;
 
               &::placeholder {
-                font-size: 14px;
                 line-height: 21px;
           }
 
              @media (min-width: 1440px) {
-                width: 338px;
+                width: 339px;
                 height: 59px;
                 margin-bottom: 16px;
+                font-size: 18px;
            
 
               &::placeholder {
-                font-size: 18px;
                 line-height: 27px;
           }
 
@@ -287,6 +285,11 @@ export const LinkStyle = styled(Link)`
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.28px;
+
+ 
+&:hover  {
+  color: ${props => props.theme.mainPage.footer.hoverText};
+}
 `;
 
 export const TextContainer = styled.div`
@@ -371,8 +374,6 @@ export const NavLinkList = styled.ul`
   padding-right: 78px;
  
 }
-
-
 `;
 
 export const FooterLogoText = styled.p`
