@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Box,
   Title,
   TextAreaBox,
   TextArea,
@@ -14,7 +15,7 @@ const RecipePreparationFields = ({ preparation, setPreparation }) => {
   };
 
   return (
-    <>
+    <Box>
       <Title>Recipe Preparation</Title>
       <TextAreaBox>
         <TextArea
@@ -24,7 +25,7 @@ const RecipePreparationFields = ({ preparation, setPreparation }) => {
         />
         <Button type="submit">Add</Button>
       </TextAreaBox>
-    </>
+    </Box>
   );
 };
 

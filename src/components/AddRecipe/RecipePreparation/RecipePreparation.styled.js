@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const Box = styled.div`
+  grid-column: 1;
+  margin-bottom: 72px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 200px;
+  }
+`;
+
 export const Title = styled.h3`
   color: ${props => props.theme.addRecipePage.popularRecipe.title};
   font-size: 24px;
@@ -15,6 +28,7 @@ export const Title = styled.h3`
 
 export const TextAreaBox = styled.div`
   display: block;
+
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -49,7 +63,6 @@ export const TextArea = styled.textarea`
 
   @media screen and (min-width: 1440px) {
     width: 505px;
-     
   }
 `;
 

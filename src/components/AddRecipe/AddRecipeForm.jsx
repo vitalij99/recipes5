@@ -1,13 +1,13 @@
 import Container from 'components/Container/Container';
 import React, { useState, useEffect } from 'react';
-import { ContainerAddRecipe } from './AddRecipe.styled';
+import { ContainerAddRecipe, Form } from './AddRecipe.styled';
 import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
 
 const checkScreenWidth = () => {
-  return window.innerWidth >= 768;
+  return window.innerWidth;
 };
 
 const AddRecipeForm = () => {
@@ -55,12 +55,12 @@ const AddRecipeForm = () => {
   return (
     <Container>
       <ContainerAddRecipe>
-        <form onSubmit={handleFormSubmit}>
+        <Form onSubmit={handleFormSubmit}>
           <RecipeDescriptionFields
             recipeData={recipeData}
             handleInputChange={handleInputChange}
           />
-          {screenWidth && <PopularRecipe />}
+          {screenWidth >= 1440 ? <PopularRecipe /> : null}
           <RecipeIngredientsFields
             ingredients={recipeData.ingredients}
             setIngredients={updatedIngredients =>
@@ -79,7 +79,8 @@ const AddRecipeForm = () => {
               }))
             }
           />
-        </form>
+          {screenWidth < 1440 ? <PopularRecipe /> : null}
+        </Form>
       </ContainerAddRecipe>
     </Container>
   );
