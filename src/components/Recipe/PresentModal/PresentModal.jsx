@@ -36,6 +36,14 @@ function PresentModal({ onClose, event }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (isOpenModal) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [isOpenModal]);
+
   switch (event) {
     case 'firstShopping':
       titleDescr = {
@@ -96,7 +104,7 @@ function PresentModal({ onClose, event }) {
         <OverlayModal>
           <WrapperModal type={event}>
             <ContainerTitle>
-              <div>{titleDescr.text}</div>
+              <>{titleDescr.text}</>
               <BtnModal type="button" onClick={handleCoseModal}>
                 <BtnIcon />
               </BtnModal>

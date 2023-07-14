@@ -15,6 +15,7 @@ export const OverlayModal = styled.div`
 `;
 
 export const BtnModal = styled.button`
+  margin-top: 10px;
   width: 40px;
   height: 40px;
   padding: 0;
@@ -33,6 +34,7 @@ export const BtnModal = styled.button`
   @media (min-width: 768px) {
     width: 48px;
     height: 48px;
+    margin-top: 28px;
   }
 `;
 
@@ -40,19 +42,21 @@ export const BtnIcon = styled(BsFillXCircleFill)`
   width: 40px;
   height: 40px;
   fill: #8baa36;
-`;
-export const ImgModal = styled.img`
-  display: block;
+
+  @media (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const ContainerTitle = styled.div`
   width: 100%;
+  height: 180px;
   padding: 102px 62px 18px 62px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+
   background-color: transparent;
 
   @media (min-width: 768px) {
@@ -66,14 +70,16 @@ export const ContainerTitle = styled.div`
 `;
 export const ModalTitle = styled.h4`
   font-family: 'Poppins', sans-serif;
+  min-height: 96px;
   margin-top: 27px;
-  margin-bottom: 28px;
+
   font-size: 20px;
   font-weight: 500;
 
   color: #fff;
 
   @media (min-width: 768px) {
+    min-height: 120px;
     margin-top: 32px;
     font-size: 28px;
     line-height: 1.1;
