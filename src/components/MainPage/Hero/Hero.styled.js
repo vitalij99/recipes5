@@ -66,12 +66,7 @@ export const TitleStyled = styled.h1`
   }
 `;
 export const SpanTitle = styled.span`
-  color: #8baa36;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  @media screen and (min-width: 768px) {
-    text-shadow: none;
-  }
+  color: #8baa36; 
 `;
 export const ParagrafStyled = styled.div`
   font-size: 14px;
