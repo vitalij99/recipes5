@@ -37,7 +37,7 @@ const RecipePage = () => {
 
   return (
     <>
-      s{isLoading && <Loader />}
+      {isLoading && <Loader />}
       <RecipeHero
         time={time}
         title={title}

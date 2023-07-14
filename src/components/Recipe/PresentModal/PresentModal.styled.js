@@ -12,6 +12,7 @@ export const OverlayModal = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 777;
 `;
 
 export const BtnModal = styled.button`

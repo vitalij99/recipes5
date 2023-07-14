@@ -22,7 +22,7 @@ export const RecipeHeroWrapper = styled.div`
   background-image: url(${mob_ratio_1});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
