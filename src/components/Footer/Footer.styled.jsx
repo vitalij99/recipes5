@@ -6,11 +6,11 @@ import bgImg from '../../images/Header/spinachFooter.png';
 
 
 export const BackContainer = styled.div`
- background-color: ${props => props.theme.mainPage.footer.bottomText.text};
+    background-color: ${props => props.theme.mainPage.footer.bottomText.text};
 `;
 
 export const InputBox = styled.div`
- position: relative;
+    position: relative;
      display: inline-block;
 `;
 
@@ -31,7 +31,7 @@ export const BottomFooter = styled.div`
   background-repeat: no-repeat;
   background-color: ${props => props.theme.mainPage.footer.button.text};;
   
-   padding-top: 28px;
+  padding-top: 28px;
   padding-bottom: 28px;
   overflow: hidden;
 
@@ -41,7 +41,7 @@ export const BottomFooter = styled.div`
     
   }
 
- @media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     padding-top: 50px;
     padding-bottom: 50px;
      }
@@ -170,7 +170,7 @@ export const ContainerSvg = styled.div`
 
 
 export const SubscribeContainer = styled.div`
-@media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     display: block;
     width: 339px;
     margin-right: 100px;
@@ -179,21 +179,23 @@ export const SubscribeContainer = styled.div`
 
 export const SubscribeTitle = styled.h2`
   display: none;
-   @media (min-width: 1440px) {
-    display: block;
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
-    color: ${props => props.theme.mainPage.footer.text};
-    margin-bottom: 14px;
-    text-align: initial;
+
+    @media (min-width: 1440px) {
+        display: block;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+        color: ${props => props.theme.mainPage.footer.text};
+        margin-bottom: 14px;
+        text-align: initial;
   }
 `;
 
 
 export const SubscribeText = styled.p`
   display: none;
+
    @media (min-width: 1440px) {
     display: block;
     font-family: 'Poppins';
@@ -241,8 +243,9 @@ export const Input = styled.input`
               &::placeholder {
                 line-height: 21px;
           }
+        }
 
-             @media (min-width: 1440px) {
+       @media (min-width: 1440px) {
                 width: 339px;
                 height: 59px;
                 margin-bottom: 16px;
@@ -251,9 +254,9 @@ export const Input = styled.input`
 
               &::placeholder {
                 line-height: 27px;
-          }
-
-  }
+      }
+    }
+  
 `;
 
 
@@ -299,6 +302,7 @@ export const TextContainer = styled.div`
       display: flex;
       justify-content: space-between;
     }
+
    @media (min-width: 1440px) {
          display: flex;
       justify-content: center;
@@ -312,18 +316,19 @@ export const OptionsList = styled.ul`
 display: none;
 
   @media (min-width: 768px) {
-   display: block;
-   padding-left: 32px;
-   margin-right: 175px;
-  width: 424px;
-  list-style: inside;
-  text-align: initial;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  color: ${props => props.theme.mainPage.footer.title};
-  margin-bottom: 72px;
+      display: block;
+      padding-left: 32px;
+      margin-right: 175px;
+        width: 424px;
+        list-style: inside;
+        text-align: initial;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        color: ${props => props.theme.mainPage.footer.title};
+        margin-bottom: 72px;
+  }
 
   @media (min-width: 1440px) {
     padding-left: 100px;
@@ -333,8 +338,6 @@ display: none;
     margin-right: 159px;
 }
 
- 
-}
 `;
 
 export const OptionsItem = styled.li`
@@ -355,13 +358,13 @@ export const NavLinkItem = styled.li`
    @media (min-width: 768px) {
      &:not(:last-child) {
     margin-bottom: 20px;
-  }
+    }
    }
 
     @media (min-width: 1440px) {
      &:not(:last-child) {
     margin-bottom: 24px;
-  }
+      }
    }
 `;
 
@@ -388,7 +391,7 @@ export const FooterLogoText = styled.p`
    @media (min-width: 768px) {
       margin-left: 12px;
       font-size: 28px;
-}
+  }
 `;
 
 export const FooterLogoContainer = styled.div`
@@ -403,16 +406,16 @@ export const FooterLogoContainer = styled.div`
     justify-content: start;
     margin-left: 32px;
     
-}
+  }
 
   @media (min-width: 1440px) {
     justify-content: start;
     margin-left: 100px;
     margin-bottom: 40px;
-}
+  }
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(Link)`
   display: flex;
   width: 32px;
   height: 32px;

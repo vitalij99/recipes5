@@ -46,7 +46,7 @@ const Footer = () => {
           <TextContainer>
           <HeadContainer>
         <FooterLogoContainer>
-          <LogoWrapper>
+          <LogoWrapper to="/">
             <FooterLogo />
           </LogoWrapper>
 
@@ -108,7 +108,7 @@ const Footer = () => {
         </FooterInfo>
     
       </Container>
-      
+
       <BottomFooter>
         <Copyright>© 2023 All Rights Reserved.</Copyright>
         <TermsofService>Terms of Service</TermsofService>
