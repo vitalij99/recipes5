@@ -1,4 +1,6 @@
+import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+
 import {
   AkcentTitle,
   BtnIcon,
@@ -8,8 +10,6 @@ import {
   OverlayModal,
   WrapperModal,
 } from './PresentModal.styled';
-
-import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 

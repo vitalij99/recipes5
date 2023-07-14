@@ -1,4 +1,6 @@
 import Container from 'components/Container/Container';
+import InstructionList from '../InstructionList/InstructionList';
+import defaultRecipeImage from '../../../images/Recipe/defaultRecipeImage.webp';
 import {
   InstructionDescrContainer,
   InstructionImg,
@@ -6,8 +8,6 @@ import {
   InstructionTitle,
   Wrapper,
 } from './RecipeInstruction.styled';
-import InstructionList from '../InstructionList/InstructionList';
-import defaultRecipeImage from '../../../images/Recipe/defaultRecipeImage.webp';
 
 function RecipeInstruction({ instructions, thumb }) {
   return (

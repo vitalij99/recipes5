@@ -1,12 +1,12 @@
-import RecipeHero from 'components/Recipe/RecipeHero/RecipeHero';
-import RecipeIngredients from 'components/Recipe/RecipeIngredients/RecipeIngredients';
-
-import RecipeInstruction from 'components/Recipe/RecipeInstruction/RecipeInstruction';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getRecipeById } from 'redux/recipe/api';
 import { Notify } from 'notiflix';
+
 import Loader from 'components/Loader/Loader';
+import RecipeHero from 'components/Recipe/RecipeHero/RecipeHero';
+import RecipeIngredients from 'components/Recipe/RecipeIngredients/RecipeIngredients';
+import RecipeInstruction from 'components/Recipe/RecipeInstruction/RecipeInstruction';
+import { getRecipeById } from 'redux/recipe/api';
 
 const RecipePage = () => {
   const [recipe, setRecipe] = useState([]);
@@ -45,7 +45,7 @@ const RecipePage = () => {
         id={_id}
         recipe={recipe}
       />
-      <RecipeIngredients ingredients={ingredients} />
+      <RecipeIngredients ingredients={ingredients} recipeId={recipeId} />
       <RecipeInstruction instructions={instructions} thumb={thumb} />
     </>
   );
