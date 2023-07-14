@@ -311,8 +311,8 @@ export const lightTheme = {
     },
     searchBar: {
       background: '#FFFFFF',
-      outline: '#F0F0F0',
-      hoverOutline: '#23262A33',
+      outline: '#23262A33',
+      hoverOutline: '#8BAA36',
       text: '#BDBDBD',
       hoverText: '#23262A',
       button: {

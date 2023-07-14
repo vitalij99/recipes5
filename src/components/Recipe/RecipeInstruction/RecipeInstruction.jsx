@@ -7,6 +7,7 @@ import {
   Wrapper,
 } from './RecipeInstruction.styled';
 import InstructionList from '../InstructionList/InstructionList';
+import defaultRecipeImage from '../../../images/Recipe/defaultRecipeImage.webp';
 
 function RecipeInstruction({ instructions, thumb }) {
   return (
@@ -17,7 +18,10 @@ function RecipeInstruction({ instructions, thumb }) {
           <InstructionList instructions={instructions} />
         </InstructionDescrContainer>
         <InstructionImgContainer>
-          <InstructionImg src={thumb} alt="Recipe foto" />
+          <InstructionImg
+            src={thumb ? thumb : defaultRecipeImage}
+            alt="Recipe foto"
+          />
         </InstructionImgContainer>
       </Wrapper>
     </Container>

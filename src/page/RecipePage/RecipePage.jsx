@@ -5,21 +5,27 @@ import RecipeInstruction from 'components/Recipe/RecipeInstruction/RecipeInstruc
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getRecipeById } from 'redux/recipe/api';
+import { Notify } from 'notiflix';
+import Loader from 'components/Loader/Loader';
 
 const RecipePage = () => {
   const [recipe, setRecipe] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { recipeId } = useParams();
 
   useEffect(() => {
     async function fetchRecipe() {
       try {
+        setIsLoading(true);
         const recipe = await getRecipeById(recipeId);
         if (!recipe) {
           return;
         }
         setRecipe(recipe);
+        setIsLoading(false);
       } catch (err) {
+        Notify.failure('Ingredient added on shoppingList');
         console.log(err.message);
       }
     }
@@ -30,7 +36,8 @@ const RecipePage = () => {
     recipe;
 
   return (
-    <div>
+    <>
+      s{isLoading && <Loader />}
       <RecipeHero
         time={time}
         title={title}
@@ -40,7 +47,7 @@ const RecipePage = () => {
       />
       <RecipeIngredients ingredients={ingredients} />
       <RecipeInstruction instructions={instructions} thumb={thumb} />
-    </div>
+    </>
   );
 };
 

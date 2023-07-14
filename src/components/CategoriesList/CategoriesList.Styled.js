@@ -17,8 +17,6 @@ export const CategoriesListStyled = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 60px;
   gap: 28px;
   width: 100%;
 
@@ -26,11 +24,8 @@ export const CategoriesListStyled = styled.ul`
     gap: 32px;
   }
   @media (min-width: 1440px) {
-    justify-content: flex-start;
     gap: 14px;
     row-gap: 100px;
-    padding-left: 99px;
-    padding-right: 99px;
   }
 `;
 

@@ -8,6 +8,14 @@ export const TitleStyled = styled.h1`
   font-weight: 600;
   line-height: 44px;
   letter-spacing: -0.88px;
+  margin-bottom: 32px;
+  text-align: start;
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: 1440px) {
+    margin-bottom: 50px;
+  }
 `;
 export const LinkStyled = styled(NavLink)`
   color: #fafafa;
@@ -21,22 +29,27 @@ export const LinkStyled = styled(NavLink)`
   border-radius: 6px;
   background: #8aa936;
   padding: 10px 24px;
-  text-align: end;
+
+  margin-top: 24px;
+  @media (min-width: 768px) {
+    margin-top: 40px;
+  }
+  @media (min-width: 1440px) {
+    margin-top: 50px;
+  }
 `;
 export const WrapperStyled = styled.div`
   text-align: end;
-  margin-top: 32px;
-  margin-bottom: 100px;
+
+  padding: 21px 0;
   @media (min-width: 768px) {
-    margin-top: 50px;
-    margin-bottom: 200px;
+    padding: 25px 0;
     gap: 32px;
   }
   @media (min-width: 1440px) {
     justify-content: flex-start;
     gap: 14px;
     row-gap: 100px;
-    padding-left: 99px;
-    padding-right: 99px;
+    padding: 50px 0;
   }
 `;
