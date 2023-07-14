@@ -8,8 +8,8 @@ export const Dropdown = ({ onChange, id, data }) => {
 
   const theme = useTheme();
 
-  const openMenuHandler = async () => {
-    await setIsMenuOpen(true);
+  const openMenuHandler = () => {
+    setIsMenuOpen(true);
 
     const menu = document.querySelector(`#${id} #react-select-3-listbox`);
 
@@ -40,12 +40,8 @@ export const Dropdown = ({ onChange, id, data }) => {
       <Select
         id={id}
         menuIsOpen={isMenuOpen}
-        onMenuOpen={() => {
-          openMenuHandler();
-        }}
-        onMenuClose={() => {
-          closeMenuHandler();
-        }}
+        onMenuOpen={openMenuHandler}
+        onMenuClose={closeMenuHandler}
         options={data}
         onChange={onChange}
         defaultValue={data[0]}
