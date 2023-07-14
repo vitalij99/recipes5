@@ -8,8 +8,12 @@ import {
   ModaButtonContainer,
   CloseIconContainer,
 } from './LogOutModal.styled';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from 'redux/auth/authOperation';
 
 const LogOutModal = ({ handleToggleModalLogOut }) => {
+  const dispatch = useDispatch();
+
   return (
     <ModalOverlay
       onClick={e => e.currentTarget === e.target && handleToggleModalLogOut()}
@@ -20,7 +24,12 @@ const LogOutModal = ({ handleToggleModalLogOut }) => {
         </CloseIconContainer>
         <ModalLogOutText>Are you sure you want to log out?</ModalLogOutText>
         <ModaButtonContainer>
-          <ModalLogOutButton type="button">Log out</ModalLogOutButton>
+          <ModalLogOutButton
+            type="button"
+            onClick={() => dispatch(logoutThunk())}
+          >
+            Log out
+          </ModalLogOutButton>
           <ModalCancelButton type="button" onClick={handleToggleModalLogOut}>
             Cancel
           </ModalCancelButton>

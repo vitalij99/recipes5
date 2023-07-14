@@ -215,8 +215,8 @@ export const LinkStyle = styled(Link)`
 `;
 export const ThemeToggle = styled.div`
   position: absolute;
-  left: 16px;
-  bottom: 18px;
+  left: 0;
+  bottom: 90px;
   display: flex;
   justify-content: start;
 
@@ -263,5 +263,10 @@ export const BackgroundContainer = styled.div`
   }};
   @media screen and (min-width: 1440px) {
     background: none;
+  }
+`;
+export const SearchText = styled.span`
+  @media screen and (min-width: 1440px) {
+    display: none;
   }
 `;
