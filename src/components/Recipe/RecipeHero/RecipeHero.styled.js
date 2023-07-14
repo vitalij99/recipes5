@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { BsClock } from 'react-icons/bs';
 
-import mob_ratio_1 from '../../../images/Recipe/BG_image/mob_ratio_1.webp';
-import mob_ratio_2 from '../../../images/Recipe/BG_image/mob_ratio_2.webp';
-import tab_ratio_1 from '../../../images/Recipe/BG_image/tab_ratio_1.webp';
-import tab_ratio_2 from '../../../images/Recipe/BG_image/tab_ratio_2.webp';
-import desc_ratio_1 from '../../../images/Recipe/BG_image/desc_ratio_1.webp';
-import desc_ratio_2 from '../../../images/Recipe/BG_image/desc_ratio_2.webp';
-import full_desc_ratio_1 from '../../../images/Recipe/BG_image/full_desc_ratio_1.webp';
-import full_desc_ratio_2 from '../../../images/Recipe/BG_image/full_desc_ratio_2.webp';
+import mob_ratio_1 from 'images/Recipe/BG_image/mob_ratio_1.webp';
+import mob_ratio_2 from 'images/Recipe/BG_image/mob_ratio_2.webp';
+import tab_ratio_1 from 'images/Recipe/BG_image/tab_ratio_1.webp';
+import tab_ratio_2 from 'images/Recipe/BG_image/tab_ratio_2.webp';
+import desc_ratio_1 from 'images/Recipe/BG_image/desc_ratio_1.webp';
+import desc_ratio_2 from 'images/Recipe/BG_image/desc_ratio_2.webp';
+import full_desc_ratio_1 from 'images/Recipe/BG_image/full_desc_ratio_1.webp';
+import full_desc_ratio_2 from 'images/Recipe/BG_image/full_desc_ratio_2.webp';
 
 export const RecipeHeroWrapper = styled.div`
   width: 100%;
@@ -59,7 +59,7 @@ export const RecipeHeroWrapper = styled.div`
     padding-top: 164px;
   }
 
-  @media (min-width: 1600px) {
+  /* @media (min-width: 1600px) {
     background-image: url(${full_desc_ratio_1});
 
     @media (min-device-pixel-ratio: 2),
@@ -67,7 +67,7 @@ export const RecipeHeroWrapper = styled.div`
       (min-resolution: 2dppx) {
       background-image: url(${full_desc_ratio_2});
     }
-  }
+  } */
 `;
 
 export const HeroTitle = styled.h1`
