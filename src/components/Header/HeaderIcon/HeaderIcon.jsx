@@ -292,3 +292,53 @@ export const HeaderModalEditButton = () => {
     </IconEditButtonWrapper>
   );
 };
+
+export const AddImage = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="12" fill="#8BAA36" />
+      <path
+        d="M12 6.75V17.25"
+        stroke="#FAFAFA"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.75 12H17.25"
+        stroke="#FAFAFA"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const UserIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      fill="none"
+    >
+      <g opacity="0.8">
+        <path
+          d="M15.5 16.5355C15.5 15.4888 15.5 14.9655 15.3708 14.5397C15.08 13.5809 14.3297 12.8305 13.3709 12.5397C12.945 12.4105 12.4217 12.4105 11.375 12.4105H7.625C6.57833 12.4105 6.05499 12.4105 5.62914 12.5397C4.67034 12.8305 3.92003 13.5809 3.62918 14.5397C3.5 14.9655 3.5 15.4888 3.5 16.5355M12.875 6.41052C12.875 8.27448 11.364 9.78552 9.5 9.78552C7.63604 9.78552 6.125 8.27448 6.125 6.41052C6.125 4.54656 7.63604 3.03552 9.5 3.03552C11.364 3.03552 12.875 4.54656 12.875 6.41052Z"
+          stroke="#23262A"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+  );
+};

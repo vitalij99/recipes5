@@ -1,11 +1,11 @@
 import SwitchImg from '../../images/Header/Switch.png';
 import SwitchBodyImg from '../../images/Header/switch-body.png';
+import UserProfile from './UserProfile/UserProfile';
 
 import { HeaderLogo } from './HeaderIcon/HeaderIcon';
 import { MenuIcon } from './HeaderIcon/HeaderIcon';
 import { CloseIcon } from './HeaderIcon/HeaderIcon';
 import { SearchIcon } from './HeaderIcon/HeaderIcon';
-// import { SwitchBody, Switch } from './HeaderIcon/HeaderIcon';
 import ModalHeaderEdit from './ModalHeaderEdit/ModalHeaderEdit';
 import { useState } from 'react';
 import {
@@ -22,9 +22,12 @@ import {
   ThemeToggle,
   SwitchStyled,
   BackgroundContainer,
+  SearchText,
 } from './Header.styled';
 import { useLocation } from 'react-router-dom';
 import LogOutModal from './LogOutModal/LogOutModal';
+import { useSelector } from 'react-redux';
+import { selectAuthUser } from 'redux/auth/authSelector';
 
 const Header = () => {
   const onScreenWidth = () => {
@@ -34,22 +37,34 @@ const Header = () => {
       return false;
     }
   };
+
   const { pathname } = useLocation();
-
+  const user = useSelector(selectAuthUser);
   const screenWidth = onScreenWidth();
-
   const [toggle, setToggleMenu] = useState(false);
-
+  const [toggleEditUser, setToggleEditUser] = useState(false);
   const [toggleModalEdit, setToggleModalEdit] = useState(false);
   const [toggleModalLogOut, setToggleModalLogOut] = useState(false);
+  const body = document.querySelector('body');
 
-  const imgSrc =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png';
+  // const onHidden = () => {
+  //   if (toggle) {
+
+  //   }
+  // };
+  const handleToggleModalUserProfile = () => {
+    setToggleModalEdit(false);
+    setToggleEditUser(!toggleEditUser);
+  };
 
   const handleToggleMenu = () => {
     if (screenWidth) {
       return;
     }
+    if (!toggle) {
+      body.style.overflow = 'visible';
+    }
+    body.style.overflow = 'hidden';
     setToggleMenu(!toggle);
   };
 
@@ -99,7 +114,7 @@ const Header = () => {
               <NavListItem>
                 <NavLinkStyle onClick={handleToggleMenu} to={'/search'}>
                   <SearchIcon />
-                  {!screenWidth && 'Search'}
+                  {!screenWidth && <SearchText>Search</SearchText>}
                 </NavLinkStyle>
               </NavListItem>
             </NavListList>
@@ -115,14 +130,14 @@ const Header = () => {
           <MobileHeaderBlock>
             {!toggle || screenWidth ? (
               <>
-                <UserAvatar src={imgSrc} alt="User avatar" />
+                <UserAvatar src={user.avatarUrl} alt="User avatar" />
                 <UserName
                   pathname={pathname}
                   onClick={() => {
                     setToggleModalEdit(!toggleModalEdit);
                   }}
                 >
-                  UserName
+                  {user.name}
                 </UserName>
               </>
             ) : null}
@@ -136,10 +151,18 @@ const Header = () => {
         <ModalHeaderEdit
           setToggleModalEdit={setToggleModalEdit}
           handleToggleModalLogOut={handleToggleModalLogOut}
+          handleToggleModalUserProfile={handleToggleModalUserProfile}
         />
       )}
       {toggleModalLogOut && (
         <LogOutModal handleToggleModalLogOut={handleToggleModalLogOut} />
+      )}
+      {toggleEditUser && (
+        <UserProfile
+          handleToggleModalUserProfile={handleToggleModalUserProfile}
+          toggleEditUser={toggleEditUser}
+          setToggleEditUser={setToggleEditUser}
+        />
       )}
     </>
   );
