@@ -1,30 +1,30 @@
-import firstShop_1x from '../../../images/Recipe/PresentImg/mob/firstShop_1x.webp';
-import firstShop_2x from '../../../images/Recipe/PresentImg/mob/firstShop_2x.webp';
-import tab_firstShop_1x from '../../../images/Recipe/PresentImg/tablet/firstShop_1x.webp';
-import tab_firstShop_2x from '../../../images/Recipe/PresentImg/tablet/firstShop_2x.webp';
-import desct_firstShop_1x from '../../../images/Recipe/PresentImg/desctop/firstShop_1x.webp';
-import desct_firstShop_2x from '../../../images/Recipe/PresentImg/desctop/firstShop_2x.webp';
+import firstShop_1x from 'images/Recipe/PresentImg/mob/firstShop_1x.webp';
+import firstShop_2x from 'images/Recipe/PresentImg/mob/firstShop_2x.webp';
+import tab_firstShop_1x from 'images/Recipe/PresentImg/tablet/firstShop_1x.webp';
+import tab_firstShop_2x from 'images/Recipe/PresentImg/tablet/firstShop_2x.webp';
+import desct_firstShop_1x from 'images/Recipe/PresentImg/desctop/firstShop_1x.webp';
+import desct_firstShop_2x from 'images/Recipe/PresentImg/desctop/firstShop_2x.webp';
 
-import tenRecipe_1x from '../../../images/Recipe/PresentImg/mob/10recipe_1x.webp';
-import tenRecipe_2x from '../../../images/Recipe/PresentImg/mob/10recipe_2x.webp';
-import tab_tenRecipe_1x from '../../../images/Recipe/PresentImg/tablet/10recipe_1x.webp';
-import tab_tenRecipe_2x from '../../../images/Recipe/PresentImg/tablet/10recipe_2x.webp';
-import desct_tenRecipe_1x from '../../../images/Recipe/PresentImg/desctop/10recipe_1x.webp';
-import desct_tenRecipe_2x from '../../../images/Recipe/PresentImg/desctop/10recipe_2x.webp';
+import tenRecipe_1x from 'images/Recipe/PresentImg/mob/10recipe_1x.webp';
+import tenRecipe_2x from 'images/Recipe/PresentImg/mob/10recipe_2x.webp';
+import tab_tenRecipe_1x from 'images/Recipe/PresentImg/tablet/10recipe_1x.webp';
+import tab_tenRecipe_2x from 'images/Recipe/PresentImg/tablet/10recipe_2x.webp';
+import desct_tenRecipe_1x from 'images/Recipe/PresentImg/desctop/10recipe_1x.webp';
+import desct_tenRecipe_2x from 'images/Recipe/PresentImg/desctop/10recipe_2x.webp';
 
-import firstRecipe_1x from '../../../images/Recipe/PresentImg/mob/favorite_1x.webp';
-import firstRecipe_2x from '../../../images/Recipe/PresentImg/mob/favorite_2x.webp';
-import tab_firstRecipe_1x from '../../../images/Recipe/PresentImg/tablet/favorite_1x.webp';
-import tab_firstRecipe_2x from '../../../images/Recipe/PresentImg/tablet/favorite_2x.webp';
-import desct_firstRecipe_1x from '../../../images/Recipe/PresentImg/desctop/favorite_1x.webp';
-import desct_firstRecipe_2x from '../../../images/Recipe/PresentImg/desctop/favorite_2x.webp';
+import firstRecipe_1x from 'images/Recipe/PresentImg/mob/favorite_1x.webp';
+import firstRecipe_2x from 'images/Recipe/PresentImg/mob/favorite_2x.webp';
+import tab_firstRecipe_1x from 'images/Recipe/PresentImg/tablet/favorite_1x.webp';
+import tab_firstRecipe_2x from 'images/Recipe/PresentImg/tablet/favorite_2x.webp';
+import desct_firstRecipe_1x from 'images/Recipe/PresentImg/desctop/favorite_1x.webp';
+import desct_firstRecipe_2x from 'images/Recipe/PresentImg/desctop/favorite_2x.webp';
 
-import oneHundredDay_1x from '../../../images/Recipe/PresentImg/mob/100day_1x.webp';
-import oneHundredDay_2x from '../../../images/Recipe/PresentImg/mob/100day_2x.webp';
-import tab_oneHundredDay_1x from '../../../images/Recipe/PresentImg/tablet/100day_1x.webp';
-import tab_oneHundredDay_2x from '../../../images/Recipe/PresentImg/tablet/100day_2x.webp';
-import desct_oneHundredDay_1x from '../../../images/Recipe/PresentImg/desctop/100day_1x.webp';
-import desct_oneHundredDay_2x from '../../../images/Recipe/PresentImg/desctop/100day_2x.webp';
+import oneHundredDay_1x from 'images/Recipe/PresentImg/mob/100day_1x.webp';
+import oneHundredDay_2x from 'images/Recipe/PresentImg/mob/100day_2x.webp';
+import tab_oneHundredDay_1x from 'images/Recipe/PresentImg/tablet/100day_1x.webp';
+import tab_oneHundredDay_2x from 'images/Recipe/PresentImg/tablet/100day_2x.webp';
+import desct_oneHundredDay_1x from 'images/Recipe/PresentImg/desctop/100day_1x.webp';
+import desct_oneHundredDay_2x from 'images/Recipe/PresentImg/desctop/100day_2x.webp';
 
 export const imgModal = {
   firstShopping: {

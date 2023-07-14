@@ -1,3 +1,16 @@
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchIngradients } from 'redux/recipe/recipeOperetion';
+import {
+  selectIngredients,
+  selectShoppingList,
+} from 'redux/recipe/recipeSelector';
+import { addShoppingList, removeShoppingList } from 'redux/recipe/recipeSlice';
+
+import IngradientsHeader from 'components/IngredientsHeader/IngredientsHeader';
+import defaultFotoIngredient from '../../../images/Recipe/defaultFotoIngredient.png';
+import PresentModal from '../PresentModal/PresentModal';
 import Container from 'components/Container/Container';
 import {
   CheckContainer,
@@ -13,19 +26,7 @@ import {
   WrapperContent,
 } from './RecipeIngredients.styled';
 
-import IngradientsHeader from 'components/IngredientsHeader/IngredientsHeader';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchIngradients } from 'redux/recipe/recipeOperetion';
-import {
-  selectIngredients,
-  selectShoppingList,
-} from 'redux/recipe/recipeSelector';
-import { addShoppingList, removeShoppingList } from 'redux/recipe/recipeSlice';
-import defaultFotoIngredient from '../../../images/Recipe/defaultFotoIngredient.png';
-import PresentModal from '../PresentModal/PresentModal';
-
-function RecipeIngredients({ ingredients }) {
+function RecipeIngredients({ ingredients, recipeId }) {
   const [ingredientsList, setIngredientsList] = useState([]);
   const [event, setEvent] = useState(null);
 
@@ -58,7 +59,7 @@ function RecipeIngredients({ ingredients }) {
 
     const { _id, name, img, measure } = currentIngredient;
     const ingredientOnShoppingList = shoppingList.some(val => val.id === id);
-    const ingredientForBuy = { measure, id: _id, name, img };
+    const ingredientForBuy = { measure, id: _id, name, img, recipeId };
 
     if (!ingredientOnShoppingList) {
       dispatch(addShoppingList(ingredientForBuy));

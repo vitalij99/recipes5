@@ -1,3 +1,13 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+
+import { selectFavoriteList } from 'redux/recipe/recipeSelector';
+import {
+  addRecipeToFavorite,
+  removeRecipeFromFavorit,
+} from 'redux/recipe/recipeSlice';
+
+import PresentModal from '../PresentModal/PresentModal';
 import Container from 'components/Container/Container';
 import {
   HeroBtn,
@@ -8,14 +18,6 @@ import {
   HeroTitle,
   RecipeHeroWrapper,
 } from './RecipeHero.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFavoriteList } from 'redux/recipe/recipeSelector';
-import { useState } from 'react';
-import {
-  addRecipeToFavorite,
-  removeRecipeFromFavorit,
-} from 'redux/recipe/recipeSlice';
-import PresentModal from '../PresentModal/PresentModal';
 
 function RecipeHero({ time, title, description, id }) {
   const [event, setEvent] = useState(null);
