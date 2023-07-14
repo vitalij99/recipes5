@@ -144,12 +144,15 @@ export const StyledSelect = styled(Select)`
     & .css-1dimb5e-singleValue {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
     }
+
   }
 
   & .css-1xc3v61-indicatorContainer {
     color: ${props => props.theme.addRecipePage.listOfItems.icon};
   }
-
+& .css-1fdsijx-ValueContainer {
+  width:85px
+}
   & .css-1nmdiq5-menu {
     background-color: #fff;
     padding: 1px;

@@ -8,22 +8,22 @@ import {
   LinkSocial,
 } from './SocialIcons.styled';
 
-const SocialIcons = ({ className, title, container, link, logo }) => {
+const SocialIcons = ({ className, title }) => {
   return (
     <div className={className}>
       {title ? <Title>{title}</Title> : null}
-      <IconContainer className={container}>
-        <LinkSocial href="https://www.facebook.com/" className={link}>
-          <FacebookLogo className={logo} />
+      <IconContainer>
+        <LinkSocial href="https://www.facebook.com/" target="_blank">
+          <FacebookLogo />
         </LinkSocial>
-        <LinkSocial href="https://www.youtube.com/" className={link}>
-          <YoutubeLogo className={logo} />
+        <LinkSocial href="https://www.youtube.com/" target="_blank">
+          <YoutubeLogo />
         </LinkSocial>
-        <LinkSocial href="https://twitter.com/" className={link}>
-          <TwitterLogo className={logo} />
+        <LinkSocial href="https://twitter.com/" target="_blank">
+          <TwitterLogo />
         </LinkSocial>
-        <LinkSocial href="https://www.instagram.com/" className={link}>
-          <InstagramLogo className={logo} />
+        <LinkSocial href="https://www.instagram.com/" target="_blank">
+          <InstagramLogo />
         </LinkSocial>
       </IconContainer>
     </div>

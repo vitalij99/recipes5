@@ -204,7 +204,7 @@ export const lightTheme = {
       underline: '#707070',
     },
     followUs: {
-      title: '#001833',
+      title: '#3E4462',
       icon: '#8BAA36',
       hoverIcon: '#1E1F28',
     },

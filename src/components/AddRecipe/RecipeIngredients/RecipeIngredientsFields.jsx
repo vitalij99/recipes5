@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { BtnDeleteIcon } from './BtnDeleteIcon';
-
+import Api from './Api';
 
 import {
   Form,
@@ -53,21 +53,6 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   };
 
   useEffect(() => {
-    const fetchIngredients = async () => {
-      try {
-        const response = await fetch('https://yummy-service.onrender.com/ingredients/list');
-        const data = await response.json();
-        setBackendIngredients(data);
-      } catch (error) {
-        console.log('Error fetching ingredients:', error);
-      }
-    };
-
-    fetchIngredients();
-  }, []);
-
-  useEffect(() => {
-   
     const filteredIngredients = backendIngredients.filter(ingredient =>
       ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -117,6 +102,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                       label: option.name,
                     })),
                   ]}
+                  maxMenuHeight={240}
                   onChange={selectedOption =>
                     handleSelectIngredient(index, selectedOption)
                   }
@@ -154,6 +140,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
           </ListIngredients>
         </IngredietsContainer>
       </Form>
+      <Api setBackendIngredients={setBackendIngredients} />
     </>
   );
 };

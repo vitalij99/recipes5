@@ -1,6 +1,7 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { AddPhotoIcon } from './AddPhotoIcon';
+import Api from './Api';
+
 import {
   AddPhotoContainer,
   BoxIcon,
@@ -14,6 +15,8 @@ import {
 } from './RecipeDescription.styled';
 
 const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
+  const [categories, setCategories] = useState([]);
+
   const handleFileInputChange = event => {
     const file = event.target.files[0];
     handleInputChange('photo', file);
@@ -24,17 +27,10 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
     handleInputChange(name, value);
   };
 
-  const categoryOptions = [
-    { value: 1, label: 'Category 1' },
-    { value: 2, label: 'Category 2' },
-    { value: 3, label: 'Category 3' },
-    { value: 4, label: 'Category 4' },
-    { value: 5, label: 'Category 5' },
-    { value: 6, label: 'Category 6' },
-    { value: 7, label: 'Category 7' },
-    { value: 8, label: 'Category 8' },
-    { value: 9, label: 'Category 9' },
-  ];
+  const categoryOptions = categories.map(category => ({
+    value: category,
+    label: category,
+  }));
 
   const cookingTimeOptions = [];
   for (let i = 5; i <= 120; i += 5) {
@@ -81,7 +77,6 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
           ></InputForm>
         </LabelForm>
         <LabelSelect htmlFor="category">
-          {' '}
           Category
           <StyledSelect
             id="category"
@@ -90,13 +85,15 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
             value={categoryOptions.find(
               option => option.value === recipeData.category
             )}
+            
+            maxMenuHeight={220}
+           
             onChange={selectedOption =>
               handleInputChange('category', selectedOption.value)
             }
           />
         </LabelSelect>
         <LabelSelect htmlFor="cookingTime">
-          {' '}
           Cooking time
           <StyledSelect
             id="cookingTime"
@@ -105,12 +102,14 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
             value={cookingTimeOptions.find(
               option => option.value === recipeData.cookingTime
             )}
+            maxMenuHeight={220}
             onChange={selectedOption =>
               handleInputChange('cookingTime', selectedOption.value)
             }
           />
         </LabelSelect>
       </Form>
+      <Api setCategories={setCategories} />
     </DescriptionBox>
   );
 };

@@ -2,40 +2,74 @@ import styled from 'styled-components';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Title = styled.h3`
-  color: ${props => props.theme.addRecipePage.popularRecipe.title};
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px;
-  letter-spacing: -0.48px;
-  margin-bottom: 32px;
+  letter-spacing: -0.24px;
+  margin-bottom: 40px;
+  color: ${props => props.theme.addRecipePage.followUs.title};
 `;
 
 const IconContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  @media screen and (min-width: 768px) {
+    gap: 18px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 20px;
+  }
 `;
 
 const LinkSocial = styled.a`
-  &:not(:last-child) {
-    margin-right: 14px;
-  }
+  display: block;
+  width: 26px;
+  height: 26px;
+`;
 
-  @media (min-width: 768px) {
-    &:not(:last-child) {
-      margin-right: 18px;
-    }
+const FacebookLogo = styled(FaFacebook)`
+  width: 100%;
+  height: 100%;
+  fill: ${props => props.theme.mainPage.footer.iconsList.color};
+
+  &:hover {
+    fill: ${props => props.theme.mainPage.footer.iconsList.hoverColor};
   }
 `;
 
-const FacebookLogo = styled(FaFacebook)``;
+const InstagramLogo = styled(FaInstagram)`
+  width: 100%;
+  height: 100%;
+  fill: ${props => props.theme.mainPage.footer.iconsList.color};
 
-const InstagramLogo = styled(FaInstagram)``;
+  &:hover {
+    fill: ${props => props.theme.mainPage.footer.iconsList.hoverColor};
+  }
+`;
 
-const TwitterLogo = styled(FaTwitter)``;
+const TwitterLogo = styled(FaTwitter)`
+  width: 100%;
+  height: 100%;
+  fill: ${props => props.theme.mainPage.footer.iconsList.color};
 
-const YoutubeLogo = styled(FaYoutube)``;
+  &:hover {
+    fill: ${props => props.theme.mainPage.footer.iconsList.hoverColor};
+  }
+`;
+
+const YoutubeLogo = styled(FaYoutube)`
+  width: 100%;
+  height: 100%;
+  fill: ${props => props.theme.mainPage.footer.iconsList.color};
+
+  &:hover {
+    fill: ${props => props.theme.mainPage.footer.iconsList.hoverColor};
+  }
+`;
 
 export {
   Title,
