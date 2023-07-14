@@ -794,7 +794,7 @@ export const darkTheme = {
       opacity: '0.5',
     },
   },
-  loaderPage: {
+  loader: {
     background: '#1E1F28',
     icon: '#FAFAFA',
   },
