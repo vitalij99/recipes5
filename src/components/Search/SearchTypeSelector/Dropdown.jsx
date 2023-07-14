@@ -8,31 +8,12 @@ export const Dropdown = ({ onChange, id, data }) => {
 
   const theme = useTheme();
 
-  const openMenuHandler = async () => {
-    await setIsMenuOpen(true);
-
-    const menu = document.querySelector(`#${id} #react-select-3-listbox`);
-
-    if (!menu) {
-      return;
-    }
-
-    menu.style.opacity = '1';
-    menu.style.transition = 'all 1s ease';
-    menu.style.transform = 'translateY(0)';
+  const openMenuHandler = () => {
+    setIsMenuOpen(true);
   };
 
   const closeMenuHandler = () => {
-    const menu = document.querySelector(`#${id} #react-select-3-listbox`);
-
-    if (!menu) {
-      return;
-    }
-
-    menu.style.opacity = '0';
-    setTimeout(() => {
-      setIsMenuOpen(false);
-    }, 300);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -40,12 +21,8 @@ export const Dropdown = ({ onChange, id, data }) => {
       <Select
         id={id}
         menuIsOpen={isMenuOpen}
-        onMenuOpen={() => {
-          openMenuHandler();
-        }}
-        onMenuClose={() => {
-          closeMenuHandler();
-        }}
+        onMenuOpen={openMenuHandler}
+        onMenuClose={closeMenuHandler}
         options={data}
         onChange={onChange}
         defaultValue={data[0]}
