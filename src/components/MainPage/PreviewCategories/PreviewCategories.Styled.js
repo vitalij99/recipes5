@@ -40,14 +40,17 @@ export const LinkStyled = styled(NavLink)`
 `;
 export const WrapperStyled = styled.div`
   text-align: end;
+  width: 343px;
+  margin: 0 auto;
 
   padding: 21px 0;
   @media (min-width: 768px) {
+    width: 704px;
     padding: 25px 0;
     gap: 32px;
   }
   @media (min-width: 1440px) {
-    justify-content: flex-start;
+    width: 1250px;
     gap: 14px;
     row-gap: 100px;
     padding: 50px 0;
