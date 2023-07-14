@@ -27,7 +27,7 @@ import PresentModal from '../PresentModal/PresentModal';
 
 function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
-  const [firstPurchase, setFirstPurchase] = useState(false);
+  const [event, setEvent] = useState(null);
 
   const allIngradientsList = useSelector(selectIngredients);
   const shoppingList = useSelector(selectShoppingList);
@@ -50,8 +50,9 @@ function RecipeIngredients({ ingredients }) {
 
   const handleInputChange = e => {
     if (shoppingList.length === 0) {
-      setFirstPurchase(true);
+      setEvent('firstShopping');
     }
+
     const { id } = e.target;
     const currentIngredient = ingredientsList.find(val => val._id === id);
 
@@ -68,7 +69,9 @@ function RecipeIngredients({ ingredients }) {
 
   return (
     <>
-      {firstPurchase && <PresentModal onClose={true} />}
+      {event === 'firstShopping' && (
+        <PresentModal event={event} onClose={true} />
+      )}
       <ContainerRecipes>
         <Container>
           <IngradientsHeader info="Ingredients" actions="Add to list" />
