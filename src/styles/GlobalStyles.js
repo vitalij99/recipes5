@@ -120,6 +120,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
   }
 
+  body.modal-open{
+    overflow: hidden;
+  }
+
   #root{
     height: 100vh;
     /* display: flex; */
