@@ -9,7 +9,8 @@ import {
   WrapperStyled,
 } from './Hero.styled';
 import { InformMenu } from './InformMenu/InformMenu';
-import Search from 'components/Search/Search';
+// import Search from 'components/Search/Search';
+import { SearchForm } from 'components/Search/SearchForm/SearchFrom';
 
 const Hero = () => {
   return (
@@ -27,7 +28,7 @@ const Hero = () => {
         <InformFieldStyled />
         <InformMenu />
         <WraooerSearchStyled>
-          <Search />
+          <SearchForm mainPage={true} />
         </WraooerSearchStyled>
       </Container>
     </WrapperStyled>
