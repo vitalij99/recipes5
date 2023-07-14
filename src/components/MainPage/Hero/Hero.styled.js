@@ -51,12 +51,11 @@ export const WrapperStyled = styled.div`
 export const BoxStyled = styled.div``;
 export const TitleStyled = styled.h1`
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
 
   color: ${({ theme }) => theme.mainPageTitle.particle};
   @media screen and (min-width: 768px) {
-    font-weight: 400;
     font-size: 72px;
     line-height: 72px;
     width: min-content;
