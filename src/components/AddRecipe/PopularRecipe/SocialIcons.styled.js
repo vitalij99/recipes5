@@ -14,6 +14,7 @@ const StyledSocialIcons = styled(SocialIcons)`
   ${IconContainer} {
     display: flex;
     justify-content: flex-start;
+    gap: 20px;
     margin-bottom: 100px;
   }
 

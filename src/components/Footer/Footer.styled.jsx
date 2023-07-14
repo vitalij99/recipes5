@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 
 import bgImg from '../../images/Header/spinachFooter.png';
 
-import {
-  FooterFacebookLogo,
-} from './FooterIcon';
-
-
-export const InputBox = styled.div`
- position: relative;
-     display: inline-block;
+export const BackContainer = styled.div`
+  color: ${props => props.theme.mainPage.footer.bottomText.text};
 `;
 
+export const InputBox = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const NavLinkDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export const BottomFooter = styled.div`
   width: 100%;
@@ -24,34 +27,31 @@ export const BottomFooter = styled.div`
   background-image: url(${bgImg});
   background-position: bottom right;
   background-repeat: no-repeat;
-  background-color: ${props => props.theme.mainPage.footer.button.text};;
-  
-   padding-top: 28px;
+  background-color: ${props => props.theme.mainPage.footer.button.text};
+
+  padding-top: 28px;
   padding-bottom: 28px;
   overflow: hidden;
 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     padding-top: 32px;
     padding-bottom: 32px;
-    
   }
 
- @media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     padding-top: 50px;
     padding-bottom: 50px;
-     }
-  
+  }
 `;
 
 export const MainContainer = styled.div`
   @media (min-width: 1440px) {
-      display: flex;
-      justify-content: space-between;
-     }
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
-export const HeadContainer = styled.div`
-`;
+export const HeadContainer = styled.div``;
 
 export const Copyright = styled.p`
   color: ${props => props.theme.mainPage.footer.bottomText.text};
@@ -66,7 +66,7 @@ export const Copyright = styled.p`
     color: ${props => props.theme.mainPage.footer.bottomText.hoverText};
   }
 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 14px;
   }
 `;
@@ -82,59 +82,29 @@ export const TermsofService = styled.p`
     color: ${props => props.theme.mainPage.footer.bottomText.hoverText};
   }
 
-
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 14px;
-     
   }
 `;
+
 export const FooterContainer = styled.div`
-  // height: 435px;
   width: 100vw;
-  background-color:  ${props => props.theme.mainPage.footer.background} ;
-
-   @media (min-width: 768px) {
-    //  height: 423px;
-    
-  }
-
+  background-color: ${props => props.theme.mainPage.footer.background};
 `;
+
 export const FooterInfo = styled.div`
-  width: 100vw;
-  background-color:  ${props => props.theme.mainPage.footer.background} ;
+  // width: 100vw;
+  background-color: ${props => props.theme.mainPage.footer.background};
   padding-top: 28px;
   padding-bottom: 18px;
   justify-content: center;
   text-align: center;
   align-items: center;
 
-   @media (min-width: 768px) {
-     padding-top: 50px;
+  @media (min-width: 768px) {
+    padding-top: 50px;
     padding-bottom: 24px;
   }
-`;
-export const FooterFacebookLogoStyled = styled(FooterFacebookLogo)`
-  fill: #fff;
-  color: #fff;
-  background-color: #fafafa;
-      width: 30px;
-`;
-export const LinkSocial = styled.a`
-  &:not(:last-child) {
-    margin-right: 14px;
-  }
-
-   @media (min-width: 768px) {
-     &:not(:last-child) {
-    margin-right: 18px;
-  }
-  }
-`;
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
 `;
 
 export const FooterButton = styled.button`
@@ -144,7 +114,7 @@ export const FooterButton = styled.button`
   align-items: center;
   gap: 8px;
   border-radius: 6px;
-  background-color:${props => props.theme.mainPage.footer.button.fill} ;
+  background-color: ${props => props.theme.mainPage.footer.button.fill};
   color: ${props => props.theme.mainPage.footer.button.text};
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -157,18 +127,15 @@ export const FooterButton = styled.button`
     background-color: ${props => props.theme.mainPage.footer.button.hoverFill};
   }
 
+  @media (min-width: 768px) {
+    padding: 16px 50px;
+    font-size: 16px;
+    line-height: 18px;
+  }
 
-
-    @media (min-width: 768px) {
-      padding: 16px 50px;
-      font-size: 16px;
-      line-height: 18px;
-    }
-
-    @media (min-width: 1440px) {
-      padding: 21px 126px;
-    
-    }
+  @media (min-width: 1440px) {
+    padding: 21px 126px;
+  }
 `;
 
 export const ContainerSvg = styled.div`
@@ -178,29 +145,28 @@ export const ContainerSvg = styled.div`
   transform: translateY(-50%);
 
   @media (min-width: 768px) {
-        top: 42%;
+    top: 42%;
     left: 15px;
   }
 
-    @media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     top: 37%;
     left: 17px;
   }
 `;
 
-
-
 export const SubscribeContainer = styled.div`
-@media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     display: block;
     width: 339px;
     margin-right: 100px;
-   }
+  }
 `;
 
 export const SubscribeTitle = styled.h2`
   display: none;
-   @media (min-width: 1440px) {
+
+  @media (min-width: 1440px) {
     display: block;
     font-family: 'Poppins';
     font-weight: 700;
@@ -212,10 +178,10 @@ export const SubscribeTitle = styled.h2`
   }
 `;
 
-
 export const SubscribeText = styled.p`
   display: none;
-   @media (min-width: 1440px) {
+
+  @media (min-width: 1440px) {
     display: block;
     font-family: 'Poppins';
     font-weight: 400;
@@ -228,8 +194,6 @@ export const SubscribeText = styled.p`
   }
 `;
 
-
-
 export const Input = styled.input`
   width: 204px;
   height: 38px;
@@ -240,8 +204,6 @@ export const Input = styled.input`
   margin-bottom: 8px;
   background-color: ${props => props.theme.mainPage.footer.background};
 
-   
-   
   &::placeholder {
     font-style: normal;
     font-weight: 400;
@@ -250,36 +212,28 @@ export const Input = styled.input`
     line-height: 15px;
   }
 
+  @media (min-width: 768px) {
+    width: 259px;
+    height: 50px;
+    margin-right: 12px;
 
+    &::placeholder {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
 
+  @media (min-width: 1440px) {
+    width: 338px;
+    height: 59px;
+    margin-bottom: 16px;
 
-         @media (min-width: 768px) {
-           width: 259px;
-            height: 50px;
-            margin-right: 12px;
-
-              &::placeholder {
-                font-size: 14px;
-                line-height: 21px;
-          }
-
-             @media (min-width: 1440px) {
-                width: 338px;
-                height: 59px;
-                margin-bottom: 16px;
-           
-
-              &::placeholder {
-                font-size: 18px;
-                line-height: 27px;
-          }
-
+    &::placeholder {
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 `;
-
-
-
-
 
 export const Form = styled.form`
   display: flex;
@@ -287,17 +241,15 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-     @media (min-width: 768px) {
+  @media (min-width: 768px) {
     flex-direction: initial;
     align-items: baseline;
   }
 
   @media (min-width: 1440px) {
     display: block;
-   
   }
 `;
-
 
 export const LinkStyle = styled(Link)`
   color: ${props => props.theme.mainPage.footer.text};
@@ -309,37 +261,33 @@ export const LinkStyle = styled(Link)`
 `;
 
 export const TextContainer = styled.div`
-  
-
-    @media (min-width: 768px) {
-      display: flex;
-      justify-content: space-between;
-    }
-   @media (min-width: 1440px) {
-         display: flex;
-      justify-content: center;
-   }
- 
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
-
-
 export const OptionsList = styled.ul`
-display: none;
+  display: none;
 
   @media (min-width: 768px) {
-   display: block;
-   padding-left: 32px;
-   margin-right: 175px;
-  width: 424px;
-  list-style: inside;
-  text-align: initial;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  color: ${props => props.theme.mainPage.footer.title};
-  margin-bottom: 72px;
+    display: block;
+    padding-left: 32px;
+    margin-right: 175px;
+    width: 424px;
+    list-style: inside;
+    text-align: initial;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: ${props => props.theme.mainPage.footer.title};
+    margin-bottom: 72px;
+  }
 
   @media (min-width: 1440px) {
     padding-left: 100px;
@@ -347,19 +295,14 @@ display: none;
     line-height: 24px;
     width: 527px;
     margin-right: 159px;
-}
-
- 
-}
-`;
-
-export const OptionsItem = styled.li`
-   &:not(:last-child) {
-    margin-bottom: 10px;
   }
 `;
 
-
+export const OptionsItem = styled.li`
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
 
 export const NavLinkItem = styled.li`
   cursor: pointer;
@@ -368,31 +311,26 @@ export const NavLinkItem = styled.li`
     margin-bottom: 14px;
   }
 
-   @media (min-width: 768px) {
-     &:not(:last-child) {
-    margin-bottom: 20px;
+  @media (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
-   }
 
-    @media (min-width: 1440px) {
-     &:not(:last-child) {
-    margin-bottom: 24px;
+  @media (min-width: 1440px) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
   }
-   }
 `;
 
 export const NavLinkList = styled.ul`
   margin-bottom: 32px;
 
   @media (min-width: 768px) {
-  text-align: initial;
-  padding-right: 94px;
- 
-}
-
- @media (min-width: 1440px) {
-      // margin-right: 226px;
-}
+    text-align: initial;
+    padding-right: 78px;
+  }
 `;
 
 export const FooterLogoText = styled.p`
@@ -404,10 +342,10 @@ export const FooterLogoText = styled.p`
   letter-spacing: 0.27px;
   margin-left: 8px;
 
-   @media (min-width: 768px) {
-      margin-left: 12px;
-      font-size: 28px;
-}
+  @media (min-width: 768px) {
+    margin-left: 12px;
+    font-size: 28px;
+  }
 `;
 
 export const FooterLogoContainer = styled.div`
@@ -417,18 +355,16 @@ export const FooterLogoContainer = styled.div`
   justify-content: center;
   margin-bottom: 32px;
 
-
   @media (min-width: 768px) {
     justify-content: start;
     margin-left: 32px;
-    
-}
+  }
 
   @media (min-width: 1440px) {
     justify-content: start;
     margin-left: 100px;
     margin-bottom: 40px;
-}
+  }
 `;
 
 export const LogoWrapper = styled.div`
