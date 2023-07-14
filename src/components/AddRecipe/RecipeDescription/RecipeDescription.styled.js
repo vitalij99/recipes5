@@ -144,6 +144,7 @@ export const StyledSelect = styled(Select)`
     & .css-1dimb5e-singleValue {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
     }
+ 
   }
 
   & .css-1xc3v61-indicatorContainer {
