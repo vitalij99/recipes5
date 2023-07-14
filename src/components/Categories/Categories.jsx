@@ -7,7 +7,7 @@ export const Categories = () => {
   return (
     <CategoriesSection>
       <CategoriesNavigate />
-      <CardItem list={data} />
+      <CardItem data={data} />
     </CategoriesSection>
   );
 };
