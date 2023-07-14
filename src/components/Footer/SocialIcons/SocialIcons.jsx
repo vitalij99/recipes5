@@ -1,30 +1,27 @@
 import {
-LinkSocial,
-IconContainer,
-} from './SocialIcons.styled';
-
-import {
-  FooterYoutubeLogo,
-  FooterTwitterLogo,
-    FooterInstagramLogo,
-  FooterFacebookLogo
-} from '../FooterIcon';
+  IconContainer,
+  LinkSocial,
+  FacebookLogo,
+  YoutubeLogo,
+  TwitterLogo,
+  InstagramLogo,
+} from 'components/SocialIcons/SocialIcons.styled';
 
 export const SocialIcons = () => {
   return (
-      <IconContainer>
-          <LinkSocial href="https://www.facebook.com/">
-            <FooterFacebookLogo />
-          </LinkSocial>
-          <LinkSocial href="https://www.youtube.com/">
-            <FooterYoutubeLogo />
-          </LinkSocial>
-          <LinkSocial href="https://twitter.com/">
-            <FooterTwitterLogo />
-          </LinkSocial>
-          <LinkSocial href="https://www.instagram.com/">
-            <FooterInstagramLogo />
-          </LinkSocial>
+    <IconContainer>
+      <LinkSocial href="https://www.facebook.com/">
+        <FacebookLogo />
+      </LinkSocial>
+      <LinkSocial href="https://www.youtube.com/">
+        <YoutubeLogo />
+      </LinkSocial>
+      <LinkSocial href="https://twitter.com/">
+        <TwitterLogo />
+      </LinkSocial>
+      <LinkSocial href="https://www.instagram.com/">
+        <InstagramLogo />
+      </LinkSocial>
     </IconContainer>
   );
 };
