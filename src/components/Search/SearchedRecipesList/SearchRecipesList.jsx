@@ -1,4 +1,4 @@
-import { Categories } from 'components/Categories/Categories';
+import { CardItem } from 'components/Categories/CardItem';
 import Container from 'components/Container/Container';
 import { Section } from 'components/Search/SearchedRecipesList/SearchRecipesList.styled';
 import React from 'react';
@@ -8,7 +8,7 @@ export const SearchRecipesList = () => {
     <>
       <Section>
         <Container>
-          <Categories />
+          <CardItem />
         </Container>
       </Section>
     </>
