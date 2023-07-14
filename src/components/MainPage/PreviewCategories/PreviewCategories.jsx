@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CategoriesList from 'components/CategoriesList/CategoriesList';
 import {
   LinkStyled,
   TitleStyled,
@@ -10,6 +9,7 @@ import {
 import { mainThunk } from 'redux/main/mainOperation';
 import { selectMainLoad, selectMainResipes } from 'redux/main/mainSelector';
 import Container from 'components/Container/Container';
+import { CardItem } from 'components/Categories/CardItem';
 
 const PreviewCategories = () => {
   const list = useSelector(selectMainResipes);
@@ -64,7 +64,7 @@ const PreviewCategories = () => {
           Object.keys(list).map(key => (
             <WrapperStyled key={key}>
               <TitleStyled>{toCamelCase(key)}</TitleStyled>
-              <CategoriesList list={handleSlice(list[key])} />
+              <CardItem data={handleSlice(list[key])} />
               <LinkStyled to={`/categories/${toCamelCase(key)}`}>
                 See all
               </LinkStyled>
