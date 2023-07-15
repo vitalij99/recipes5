@@ -423,8 +423,8 @@ export const lightTheme = {
 
 export const darkTheme = {
   mainPageTitle: {
-    background: '#FAFAFA',
-    particle: '#22252A',
+    background: '#1E1F28',
+    particle: '#FAFAFA',
   },
   mainPage: {
     background: '#1E1F28',

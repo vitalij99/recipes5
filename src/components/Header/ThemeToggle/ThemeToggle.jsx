@@ -1,15 +1,28 @@
 import { ThemeToggleStyled, SwitchStyled } from './ThemeToggle.styled';
-import SwitchImg from '../../../images/Header/Switch.png';
-import SwitchBodyImg from '../../../images/Header/switch-body.png';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUserTheme } from 'redux/theme/themeSelector';
+import { toggleTheme } from 'redux/theme/themeSlice';
+import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const theme = useSelector(selectUserTheme);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setIsChecked(theme === 'dark');
+  }, [theme]);
+
+  const handleThemeToggle = () => {
+    dispatch(toggleTheme());
+  };
+
   return (
     <ThemeToggleStyled>
-      <img src={SwitchBodyImg} alt="Switch Body" />
+      <input type="checkbox" checked={isChecked} onChange={handleThemeToggle} />
 
-      <SwitchStyled>
-        <img src={SwitchImg} alt="Switch" />
-      </SwitchStyled>
+      <SwitchStyled />
     </ThemeToggleStyled>
   );
 };

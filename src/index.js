@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import { persistor, store } from 'redux/store';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -11,19 +11,30 @@ import App from 'components/App';
 import { PersistGate } from 'redux-persist/integration/react';
 import Loader from 'components/Loader/Loader';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from 'styles/theme';
+import { darkTheme, lightTheme } from 'styles/theme';
+import { selectUserTheme } from 'redux/theme/themeSelector';
+
+const AppWrapper = () => {
+  const theme = useSelector(selectUserTheme);
+
+  const selectedTheme = theme === 'dark' ? darkTheme : lightTheme;
+
+  return (
+    <ThemeProvider theme={selectedTheme}>
+      <GlobalStyles />
+      <PersistGate persistor={persistor} loading={<Loader />}>
+        <App />
+      </PersistGate>
+    </ThemeProvider>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={lightTheme}>
-      <GlobalStyles />
-      <Provider store={store}>
-        <PersistGate persistor={persistor} loading={<Loader />}>
-          <BrowserRouter basename="/recipes5">
-            <App />
-          </BrowserRouter>
-        </PersistGate>
-      </Provider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <BrowserRouter basename="/recipes5">
+        <AppWrapper />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
