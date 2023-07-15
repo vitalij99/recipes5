@@ -25,6 +25,7 @@ export const customStyles = theme => ({
     minHeight: 35,
     border: 0,
     boxShadow: 'none',
+    outline: `${theme.searchPage.searchBy.dropDownMenu.outline} solid 1px`,
     backgroundColor: theme.searchPage.searchBy.dropDownMenu.background1,
     borderTopLeftRadius: '6px',
     borderTopRightRadius: '6px',
@@ -98,7 +99,7 @@ export const customStyles = theme => ({
     lineHeight: 'normal',
     letterSpacing: '-0.24px',
     maxHeight: '200px',
-    outline: `${theme.searchPage.searchBy.dropDownMenu.background1} solid 1px`,
+    outline: `${theme.searchPage.searchBy.dropDownMenu.outline} solid 1px`,
 
     '&:focus': {
       backgroundColor: 'white',
