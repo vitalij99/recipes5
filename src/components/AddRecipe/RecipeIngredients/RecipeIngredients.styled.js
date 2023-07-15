@@ -113,6 +113,7 @@ export const ItemIngredient = styled.li`
 
 export const SelectStyled = styled(Select)`
   & .css-13cymwt-control {
+    
     border: 1px solid
       ${props => props.theme.addRecipePage.recipePreparation.outline};
     background-color: ${props =>
@@ -130,7 +131,7 @@ export const SelectStyled = styled(Select)`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 617px;
+    width: 398px;
   }
 `;
 

@@ -22,6 +22,7 @@ export const AddPhotoContainer = styled.div`
   width: 279px;
   height: 268px;
   border-radius: 8px;
+  overflow:hidden;
   background: ${props => props.theme.addRecipePage.listOfItems.icon};
   margin-bottom: 32px;
 
@@ -125,6 +126,7 @@ export const StyledSelect = styled(Select)`
   outline: none;
   border: none;
   background-color: transparent;
+  width: 140px;
 
   & .css-t3ipsp-control {
     box-shadow: none;
