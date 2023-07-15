@@ -81,7 +81,7 @@ export const FormButton1 = styled.button`
   @media screen and (min-width: 768px) {
     width: 161px;
 
-    padding: 16px 52px;
+    padding: 15.5px 52px;
 
     font-size: 16px;
   }
@@ -119,7 +119,7 @@ export const FormButton2 = styled.button`
   @media screen and (min-width: 768px) {
     width: 161px;
 
-    padding: 16px 52px;
+    padding: 15.5px 52px;
 
     font-size: 16px;
   }
