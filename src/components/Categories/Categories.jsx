@@ -1,13 +1,21 @@
-import { CategoriesSection } from './Categories.styled';
+import { CategoriesNavigateWrap } from './Categories.styled';
 import { CardItem } from './CardItem';
 import { CategoriesNavigate } from './CategoriesNavigate';
 import data from './data';
 
+// const data = useSelector(selectCategories);
+// const dispatch = useDispatch();
+// useEffect(() => {
+//   dispatch(categoriesThunk());
+// }, [dispatch]);
+
 export const Categories = () => {
   return (
-    <CategoriesSection>
-      <CategoriesNavigate />
+    <>
+      <CategoriesNavigateWrap>
+        <CategoriesNavigate />
+      </CategoriesNavigateWrap>
       <CardItem data={data} />
-    </CategoriesSection>
+    </>
   );
 };
