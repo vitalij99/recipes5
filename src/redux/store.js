@@ -13,15 +13,17 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import { ownerRecipeReducer } from './recipe/recipeSlice';
 import { mainReducer } from './main/mainSlice';
+import { themeReducer } from './theme/themeSlice';
 
 const persistConfig = {
-  key: 'auth',
+  key: 'root',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'userTheme'],
 };
 
 export const store = configureStore({
   reducer: {
+    theme: persistReducer(persistConfig, themeReducer),
     auth: persistReducer(persistConfig, authReducer),
     recipes: ownerRecipeReducer,
     main: mainReducer,
