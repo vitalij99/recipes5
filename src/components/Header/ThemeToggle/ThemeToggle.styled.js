@@ -30,7 +30,7 @@ export const ThemeToggleStyled = styled.label`
     &:checked + span {
       background-image: url(${SwitchBodyImgDark});
       &::before {
-        transform: translateX(28px);
+        transform: translateX(30px);
       }
     }
   }
@@ -44,7 +44,7 @@ export const SwitchStyled = styled.span`
   right: 0;
   background-image: url(${SwitchBodyImg});
 
-  border-radius: 20px;
+  /* border-radius: 20px; */
   cursor: pointer;
 
   &:before {
@@ -52,9 +52,9 @@ export const SwitchStyled = styled.span`
     content: '';
     height: 27px;
     width: 27px;
-    left: 3px;
+    left: 1px;
     right: 4px;
-    top: -2px;
+    top: -1.7px;
     background-image: url(${SwitchImg});
     border-radius: 30px;
     transition: 0.6s;
