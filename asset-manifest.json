@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/recipes5/static/css/main.58462fbc.css",
-    "main.js": "/recipes5/static/js/main.effc6780.js",
+    "main.js": "/recipes5/static/js/main.6ea4faf5.js",
     "static/js/560.6f392785.chunk.js": "/recipes5/static/js/560.6f392785.chunk.js",
     "static/media/full_desc_ratio_2.webp": "/recipes5/static/media/full_desc_ratio_2.cf22bbb2c8cfd520f63e.webp",
     "static/media/bg_desktop@2x.jpg": "/recipes5/static/media/bg_desktop@2x.4f06b67eab8a7224f77b.jpg",
     "static/media/bg_tablet@2x.jpg": "/recipes5/static/media/bg_tablet@2x.491b38c7fe25969d4cd8.jpg",
     "static/media/img-3.png": "/recipes5/static/media/img-3.61f8b1adc1eb346ba604.png",
+    "static/media/basket@2x.png": "/recipes5/static/media/basket@2x.7f02eca71ddf396f17e0.png",
     "static/media/full_desc_ratio_1.webp": "/recipes5/static/media/full_desc_ratio_1.341cfa020013100cc7e5.webp",
     "static/media/img-2.png": "/recipes5/static/media/img-2.18e4fc266b9c8c82bc76.png",
     "static/media/bgd@2x.png": "/recipes5/static/media/bgd@2x.d99952d9f832b6c1573f.png",
@@ -25,6 +26,7 @@
     "static/media/Poppins-Black.ttf": "/recipes5/static/media/Poppins-Black.d8b850b920a5ef49d752.ttf",
     "static/media/bg-2.png": "/recipes5/static/media/bg-2.2dc44f6b8a06d4fb8285.png",
     "static/media/spinach@2x.png": "/recipes5/static/media/spinach@2x.0f72911d54873ffaf0f0.png",
+    "static/media/basket.png": "/recipes5/static/media/basket.b0fc1e91a69ce0259cf3.png",
     "static/media/bg_tablet@1x.jpg": "/recipes5/static/media/bg_tablet@1x.06b38f50cffbd9c7158e.jpg",
     "static/media/bgt@2x.png": "/recipes5/static/media/bgt@2x.c04bad7c401423421e4b.png",
     "static/media/10recipe_2x.webp": "/recipes5/static/media/10recipe_2x.fdd4638b992096193fc2.webp",
@@ -68,11 +70,11 @@
     "static/media/bg1.svg": "/recipes5/static/media/bg1.b0045b65bb6661749f8cc0a99bdd492c.svg",
     "static/media/bg_black_desktop.svg": "/recipes5/static/media/bg_black_desktop.32fce8664a1d8050776c7fd298d54f19.svg",
     "main.58462fbc.css.map": "/recipes5/static/css/main.58462fbc.css.map",
-    "main.effc6780.js.map": "/recipes5/static/js/main.effc6780.js.map",
+    "main.6ea4faf5.js.map": "/recipes5/static/js/main.6ea4faf5.js.map",
     "560.6f392785.chunk.js.map": "/recipes5/static/js/560.6f392785.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.effc6780.js"
+    "static/js/main.6ea4faf5.js"
   ]
 }
