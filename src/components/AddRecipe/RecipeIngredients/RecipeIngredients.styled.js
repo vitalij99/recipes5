@@ -62,6 +62,18 @@ export const BtnBox = styled.div`
   width: 92px;
   height: 28px;
   flex-shrink: 0;
+
+  &:hover,
+  &:focus {
+    border: 1px solid ${props => props.theme.addRecipePage.listOfItems.icon};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 `;
 
 export const BtnCountMinus = styled.button`
@@ -69,14 +81,37 @@ export const BtnCountMinus = styled.button`
   background-color: transparent;
   margin: auto;
   color: ${props => props.theme.addRecipePage.listOfIngredients.button.text};
+
+  &:hover,
+  &:focus {
+    color: ${props => props.theme.addRecipePage.popularRecipe.hoverUndertitle};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 `;
 
 export const BtnCountPlus = styled.button`
   border: none;
   background-color: transparent;
   margin: auto;
-  color: ${props =>
-    props.theme.addRecipePage.recipePreparation.button.hoverFill};
+  color: ${props => props.theme.addRecipePage.listOfIngredients.button.text};
+
+  &:hover,
+  &:focus {
+    color: ${props => props.theme.addRecipePage.popularRecipe.hoverUndertitle};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 `;
 
 export const Count = styled.span`
@@ -112,8 +147,16 @@ export const ItemIngredient = styled.li`
 `;
 
 export const SelectStyled = styled(Select)`
+  & .css-1fdsijx-ValueContainer {
+    & .css-1dimb5e-singleValue {
+      color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    }
+    & .css-1jqq78o-placeholder {
+      color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    }
+  }
+
   & .css-13cymwt-control {
-    
     border: 1px solid
       ${props => props.theme.addRecipePage.recipePreparation.outline};
     background-color: ${props =>
@@ -122,6 +165,14 @@ export const SelectStyled = styled(Select)`
 
   & .css-1xc3v61-indicatorContainer {
     color: ${props => props.theme.addRecipePage.listOfItems.icon};
+  }
+
+  & .css-1nmdiq5-menu {
+    background-color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.background};
+    padding: 1px;
+    color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
   }
 
   width: 194px;
@@ -137,11 +188,12 @@ export const SelectStyled = styled(Select)`
 
 export const InputAmount = styled.input`
   display: flex;
-  width: 40px;
+  width: 50px;
   height: 38px;
   border: none;
   background-color: ${props =>
     props.theme.addRecipePage.listOfIngredients.selectionBackground};
+  color: ${props => props.theme.addRecipePage.listOfItems.text2};
 `;
 
 export const InputBox = styled.div`
@@ -149,6 +201,20 @@ export const InputBox = styled.div`
   border: 1px solid
     ${props => props.theme.addRecipePage.recipePreparation.outline};
   border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    transition: 0.6s;
+    animation: easeIn;
+    border: 1px solid
+      ${props => props.theme.addRecipePage.recipePreparation.textareafocus};
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 `;
 
 export const SelectAdd = styled.select`
@@ -156,9 +222,44 @@ export const SelectAdd = styled.select`
   background-color: ${props =>
     props.theme.addRecipePage.listOfIngredients.selectionBackground};
   color: ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+
+  option {
+    color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    background-color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.background};
+    border: none;
+    &:hover {
+      color: red;
+    }
+  }
 `;
+
 export const BtnDelete = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+
+  svg {
+    path {
+      stroke: ${props =>
+        props.theme.addRecipePage.listOfIngredients.deleteButton};
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transition: 0.6s;
+    animation: easeIn;
+    svg {
+      path {
+        stroke: ${props =>
+          props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+      }
+    }
+  }
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 `;

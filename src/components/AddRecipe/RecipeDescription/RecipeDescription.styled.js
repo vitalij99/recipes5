@@ -22,9 +22,24 @@ export const AddPhotoContainer = styled.div`
   width: 279px;
   height: 268px;
   border-radius: 8px;
-  overflow:hidden;
+  overflow: hidden;
   background: ${props => props.theme.addRecipePage.listOfItems.icon};
   margin-bottom: 32px;
+  cursor: pointer;
+  border: 1px solid ${props => props.theme.addRecipePage.listOfItems.icon};
+
+  &:hover,
+  &:focus {
+    border: 1px solid ${props => props.theme.addRecipePage.title};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
@@ -76,9 +91,18 @@ export const LabelForm = styled.label`
     ${props => props.theme.addRecipePage.listOfItems.underline};
   height: 40px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-bottom: 1px solid
       ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
   }
 `;
 
@@ -92,7 +116,6 @@ export const InputForm = styled.input`
   border: none;
   background-color: transparent;
   color: ${props => props.theme.addRecipePage.listOfItems.text2};
-  opacity: ${props => props.theme.addRecipePage.listOfItems.opacity};
 
   &::placeholder {
     color: ${props => props.theme.addRecipePage.listOfItems.text2};
@@ -111,12 +134,25 @@ export const LabelSelect = styled.label`
   letter-spacing: -0.02em;
   border-bottom: 1px solid
     ${props => props.theme.addRecipePage.listOfItems.underline};
-  color: rgba(0, 0, 0, 0.2);
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-bottom: 1px solid
       ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+    transition: 0.6s;
+    animation: easeIn;
   }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
+`;
+
+export const Span = styled.span`
+  opacity: 0.5;
+  color: ${props => props.theme.addRecipePage.listOfItems.text2};
 `;
 
 export const StyledSelect = styled(Select)`
@@ -146,21 +182,24 @@ export const StyledSelect = styled(Select)`
     & .css-1dimb5e-singleValue {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
     }
-
   }
 
   & .css-1xc3v61-indicatorContainer {
     color: ${props => props.theme.addRecipePage.listOfItems.icon};
   }
-& .css-1fdsijx-ValueContainer {
-  width:85px
-}
+  & .css-1fdsijx-ValueContainer {
+    width: 85px;
+  }
+
+  & .css-1jqq78o-placeholder {
+    color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    opacity: ${props => props.theme.addRecipePage.listOfItems.opacity};
+  }
+
   & .css-1nmdiq5-menu {
-    background-color: #fff;
+    background-color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.background};
     padding: 1px;
-    color: ${props =>
-      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
-    &:hover {
-    }
+    color: ${props => props.theme.addRecipePage.listOfItems.text2};
   }
 `;

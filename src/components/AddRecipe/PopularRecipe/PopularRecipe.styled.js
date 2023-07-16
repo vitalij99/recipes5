@@ -45,6 +45,19 @@ export const ContainerRecipe = styled.div`
   padding-bottom: 13px;
   border-bottom: 1px solid rgba(112, 112, 112, 0.17);
   max-width: 320px;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid
+      ${props => props.theme.addRecipePage.popularRecipe.hoverUndertitle};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 `;
 
 export const ImgRecipe = styled.img`

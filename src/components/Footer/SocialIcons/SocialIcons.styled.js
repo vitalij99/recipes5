@@ -9,7 +9,7 @@ import {
   LinkSocial,
 } from 'components/SocialIcons/SocialIcons.styled';
 import SocialIcons from 'components/SocialIcons/SocialIcons';
-// if you need to change syles for icons in footer componont
+// if you need to change syles for icons in footer component
 const StyledSocialIcons = styled(SocialIcons)`
   ${IconContainer} {
     justify-content: center;

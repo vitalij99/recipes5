@@ -146,8 +146,6 @@ const GlobalStyles = createGlobalStyle`
     url(${bgm2x}) 2x
   );
 
-
-
     @media (min-width: 768px) {
       background-position: bottom -380px left;
     background-image: image-set(      
@@ -259,22 +257,22 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    &:hover {
+    &:hover, &:focus {
       transition: 0.6s;
       animation:  easeIn;
     }
-    &:not(:hover){
+    &:not(:hover), &:not(:focus){
       transition: 0.6s;
       animation:  easeOut;
     }
   }
 
   a {
-    &:hover {
+    &:hover, &:focus {
       transition: 0.6s;
       animation:  easeIn;
     }
-    &:not(:hover){
+    &:not(:hover), &:not(:focus){
       transition: 0.6s;
       animation:  easeOut;
     }
@@ -292,11 +290,11 @@ const GlobalStyles = createGlobalStyle`
   } */
 
   svg {
-    &:hover {
+    &:hover, &:focus {
       transition: 0.6s;
       animation:  easeIn;
     }
-    &:not(:hover){
+    &:not(:hover), &:not(:focus){
       transition: 0.6s;
       animation:  easeOut;
     }
