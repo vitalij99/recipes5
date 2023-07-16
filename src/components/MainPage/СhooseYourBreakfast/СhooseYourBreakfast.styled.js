@@ -15,11 +15,11 @@ export const BtnStyled = styled(NavLink)`
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  border: 2px solid #8baa36;
-  color: #22252a;
-  background: #fafafa;
+  border: 2px solid ${props => props.theme.mainPage.list.buttonOther.hoverFill};
+  color: ${props => props.theme.mainPage.list.buttonOther.text};
+  background: transparent;
   &:hover {
     background: #8baa36;
-    color: #fafafa;
+    color: ${props => props.theme.mainPage.list.buttonOther.fill};
   }
 `;
