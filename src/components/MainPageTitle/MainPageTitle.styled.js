@@ -1,7 +1,14 @@
 import { styled } from 'styled-components';
 
 export const Background = styled.div`
+  margin-top: 76px;
   background-color: ${props => props.theme.mainPageTitle.background};
+  @media screen and (min-width: 768px) {
+    margin-top: 86px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 80px;
+  }
 `;
 
 export const Title = styled.h1`
