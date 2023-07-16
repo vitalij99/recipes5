@@ -27,6 +27,9 @@ export const HeaderContainer = styled.header`
   @media screen and (min-width: 1440px) {
     width: var(--large-screen);
     padding: 18px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `;
 
@@ -83,7 +86,7 @@ export const UserName = styled.p`
 
   @media screen and (min-width: 1440px) {
     font-size: 14px;
-    margin-right: 111px;
+    margin-right: 158px;
   }
 `;
 export const SiteNav = styled.nav`
@@ -211,7 +214,10 @@ export const BackgroundContainer = styled.div`
   }};
   @media screen and (min-width: 1440px) {
     background: none;
-    height: 70px;
+    height: 80px;
+    width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 export const SearchText = styled.span`

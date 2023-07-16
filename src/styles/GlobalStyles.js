@@ -118,11 +118,9 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
+    position: relative;
   }
 
-  body.modal-open{
-    overflow: hidden;
-  }
 
   #root{
     height: 100vh;
@@ -163,7 +161,7 @@ const GlobalStyles = createGlobalStyle`
     url(${bgd2x}) 2x
   );
   }
-      
+  
   }
 
   section {
@@ -178,9 +176,13 @@ const GlobalStyles = createGlobalStyle`
   *::after {
     box-sizing: border-box;
   }
-  body {
-    position: relative;
+
+  .isOpen {
+  overflow: hidden;
+  @media screen and (min-width: 1440px) {
+    overflow: auto;
   }
+}
 
   body,
   h1,

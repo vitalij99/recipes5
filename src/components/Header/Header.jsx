@@ -50,7 +50,6 @@ const Header = () => {
     return result;
   };
   const path = onSplitPathname(pathname);
-  console.log('🚀 ~ path:', path);
 
   const handleToggleModalUserProfile = () => {
     setToggleModalEdit(false);
@@ -58,19 +57,23 @@ const Header = () => {
   };
 
   const handleToggleMenu = () => {
-    // if (screenWidth) {
-    //   setToggleMenu(false);
-    //   return;
-    // }
     if (toggle) {
+      body.classList.remove('isOpen');
       setToggleMenu(!toggle);
-      body.style.overflow = 'visible';
     } else {
       setToggleMenu(!toggle);
-      body.style.overflow = 'hidden';
+      body.classList.add('isOpen');
     }
   };
-
+  // if (!toggle) {
+  //   body.style.overflow = 'auto';
+  //   setToggleMenu(!toggle);
+  // } else {
+  //   setToggleMenu(!toggle);
+  //   if (!screenWidth) {
+  //     body.style.overflow = 'hidden';
+  //   }
+  // }
   const handleToggleModalLogOut = () => {
     setToggleModalEdit(false);
     setToggleModalLogOut(!toggleModalLogOut);

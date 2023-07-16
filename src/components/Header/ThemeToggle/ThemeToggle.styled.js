@@ -19,7 +19,7 @@ export const ThemeToggleStyled = styled.label`
     bottom: 100px;
   }
   @media screen and (min-width: 1440px) {
-    left: 1340px;
+    left: 1270px;
     top: 24px;
   }
 
