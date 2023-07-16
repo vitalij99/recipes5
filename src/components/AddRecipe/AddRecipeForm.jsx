@@ -1,10 +1,13 @@
 import Container from 'components/Container/Container';
 import React, { useState, useEffect } from 'react';
+import { Notify } from 'notiflix';
 import { ContainerAddRecipe, Form } from './AddRecipe.styled';
 import PopularRecipe from './PopularRecipe/PopularRecipe';
 import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields';
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
+import onValidationForm from './validationForm';
+import { Link } from 'react-router-dom';
 
 const checkScreenWidth = () => {
   return window.innerWidth;
@@ -30,12 +33,18 @@ const AddRecipeForm = () => {
     }));
   };
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = async event => {
     event.preventDefault();
-    console.log(recipeData);
-    // отправка на бекенд
-
-    setRecipeData(initialRecipeData);
+    const validatedData = onValidationForm(recipeData);
+    if (validatedData) {
+      console.log(validatedData);
+      try {
+        Notify.success('Recipe Added');
+        setRecipeData(initialRecipeData);
+      } catch (error) {
+        console.error('Error while adding the recipe:', error);
+      }
+    }
   };
 
   const [screenWidth, setScreenWidth] = useState(checkScreenWidth());
@@ -80,6 +89,7 @@ const AddRecipeForm = () => {
             }
           />
           {screenWidth < 1440 ? <PopularRecipe /> : null}
+          <Link to={'/my'}></Link>
         </Form>
       </ContainerAddRecipe>
     </Container>
