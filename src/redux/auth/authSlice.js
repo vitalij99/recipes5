@@ -21,6 +21,7 @@ const initialState = {
     avatar: null,
     favorite: null,
     shoppingList: null,
+    createdAt: null,
   },
   token: null,
   isRefreshing: false,
