@@ -43,12 +43,28 @@ export const TextArea = styled.textarea`
   outline: none;
   background-color: ${props =>
     props.theme.addRecipePage.listOfIngredients.selectionBackground};
-  border: none;
+  border-color: ${props =>
+    props.theme.addRecipePage.recipePreparation.textarea};
   border-radius: 6px;
   margin-bottom: 18px;
   box-sizing: border-box;
   color: ${props => props.theme.addRecipePage.recipePreparation.text2};
-  opacity: ${props => props.theme.addRecipePage.listOfItems.opacity};
+
+  &:focus-within,
+  &:hover,
+  &:focus {
+    transition: 0.6s;
+    animation: easeIn;
+    border: 1px solid
+      ${props => props.theme.addRecipePage.recipePreparation.textareafocus};
+  }
+
+  &:not(:focus-within),
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
 
   &::placeholder {
     color: ${props => props.theme.addRecipePage.recipePreparation.text2};
@@ -67,12 +83,24 @@ export const TextArea = styled.textarea`
 `;
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.mainPage.menuMobileModal.text};
+  background-color: ${props =>
+    props.theme.addRecipePage.recipePreparation.button.fill};
   color: ${props => props.theme.addRecipePage.recipePreparation.button.text};
   border-radius: 24px 44px;
   border: none;
   padding: 12px 48px;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: ${props =>
+      props.theme.addRecipePage.recipePreparation.button.hoverFill};
+  }
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeIn;
+  }
 
   @media screen and (min-width: 768px) {
     max-width: 161px;

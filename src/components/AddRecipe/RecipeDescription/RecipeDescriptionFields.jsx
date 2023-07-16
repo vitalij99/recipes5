@@ -12,6 +12,7 @@ import {
   LabelForm,
   LabelSelect,
   StyledSelect,
+  Span,
 } from './RecipeDescription.styled';
 
 const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
@@ -77,7 +78,7 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
           ></InputForm>
         </LabelForm>
         <LabelSelect htmlFor="category">
-          Category
+          <Span>Category</Span>
           <StyledSelect
             id="category"
             name="category"
@@ -85,16 +86,14 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
             value={categoryOptions.find(
               option => option.value === recipeData.category
             )}
-            
             maxMenuHeight={220}
-           
             onChange={selectedOption =>
               handleInputChange('category', selectedOption.value)
             }
           />
         </LabelSelect>
         <LabelSelect htmlFor="cookingTime">
-          Cooking time
+          <Span>Cooking time</Span>
           <StyledSelect
             id="cookingTime"
             name="cookingTime"

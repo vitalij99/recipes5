@@ -175,6 +175,7 @@ export const lightTheme = {
       counter: 'rgba(51, 51, 51, 0.30)',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
       selectionBackground: '#f5f5f5',
+      deleteButton: '#333333',
       dropDownMenu: {
         background: '#FFF',
         text1: '#000',
@@ -191,6 +192,8 @@ export const lightTheme = {
     recipePreparation: {
       background: '#D9D9D9',
       outline: 'rgba(250, 250, 250, 0.20);',
+      textarea: '#f5f5f5;',
+      textareafocus: '#3E4462',
       text1: '#7E7E7E',
       text2: '#000000',
       button: {
@@ -203,6 +206,7 @@ export const lightTheme = {
       title: '#3E4462',
       hoverTitle: '#8BAA36',
       underline: '#707070',
+      hoverUndertitle: '#8BAA36',
     },
     followUs: {
       title: '#3E4462',
@@ -581,6 +585,7 @@ export const darkTheme = {
       text2: '#FAFAFA',
       icon: '#8BAA36',
       underline: 'rgba(250, 250, 250, 0.30);',
+      opacity: '0.5',
     },
     listOfIngredients: {
       text1: '#FAFAFA',
@@ -591,6 +596,7 @@ export const darkTheme = {
       counter: '#FAFAFA',
       hoverIcon2: 'rgba(250, 250, 250, 0.30)',
       selectionBackground: '#1E1F28',
+      deleteButton: '#fafafa',
       dropDownMenu: {
         background: '#8BAA36',
         text1: 'rgba(250, 250, 250, 0.30)',
@@ -607,6 +613,8 @@ export const darkTheme = {
     recipePreparation: {
       background: '#1E1F28',
       outline: 'rgba(250, 250, 250, 0.20);',
+      textarea: 'rgba(250, 250, 250, 0.20);',
+      textareafocus: '#fafafa',
       text1: '#7E7E7E',
       text2: '#FAFAFA',
       button: {
@@ -620,6 +628,7 @@ export const darkTheme = {
       hoverTitle: '#8BAA36',
       text: '#7E7E7E',
       underline: '#707070',
+      hoverUndertitle: '#8BAA36',
     },
     followUs: {
       title: '#FAFAFA',

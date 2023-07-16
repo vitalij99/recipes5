@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BtnDeleteIcon } from './BtnDeleteIcon';
 import Api from './Api';
 
@@ -17,7 +17,7 @@ import {
   SelectAdd,
   SelectStyled,
   Title,
-  BtnDelete
+  BtnDelete,
 } from './RecipeIngredients.styled';
 
 const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
@@ -27,6 +27,10 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const [backendIngredients, setBackendIngredients] = useState([]);
 
   const handleIngredientChange = (index, field, value) => {
+    if (field === 'amount') {
+      value = Math.max(0, value);
+    }
+
     const updatedIngredients = [...ingredients];
     updatedIngredients[index][field] = value;
     setIngredients(updatedIngredients);
@@ -122,7 +126,6 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                       handleIngredientChange(index, 'unit', e.target.value)
                     }
                   >
-                    <option value=""></option>
                     <option value="tbs">tbs</option>
                     <option value="tsp">tsp</option>
                     <option value="kg">kg</option>
