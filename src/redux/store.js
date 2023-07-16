@@ -18,7 +18,7 @@ import { themeReducer } from './theme/themeSlice';
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'userTheme', 'shoppingList', 'favorite'],
+  whitelist: ['token'],
 };
 const persistConfigUserTheme = {
   key: 'userTheme',
@@ -27,7 +27,7 @@ const persistConfigUserTheme = {
 };
 
 const persistConfigRecipes = {
-  key: 'Recipes',
+  key: 'recipes',
   storage,
   whitelist: ['shoppingList', 'favorite'],
 };
