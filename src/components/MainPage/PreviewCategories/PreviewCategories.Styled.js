@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const TitleStyled = styled.h1`
-  color: #001833;
+  color: ${props => props.theme.mainPage.list.title};
   font-size: 44px;
   font-style: normal;
   font-weight: 600;
