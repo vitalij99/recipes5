@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 import bgImg from '../../images/Header/spinach.png';
-import bgImgTablet from '../../images/Header/spinach@2x.png';
+// import bgImgTablet from '../../images/Header/spinach@2x.png';
 // import SwitchImg from '../../images/Header/Switch.png';
 // import SwitchBodyImg from '../../images/Header/switch-body.png';
 
@@ -19,32 +19,14 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 98;
+  z-index: 105;
   background-color: transparent;
-  /* background-color: ${props => {
-    if (props.pathname === '/my') {
-      if (props.toggle === 'true') {
-        return props.theme.mainPage.menuMobileModal.background;
-      }
-      return 'transparent';
-    }
-    if (props.toggle === 'true') {
-      return props.theme.mainPage.menuMobileModal.background;
-    }
-    return props.theme.mainPage.background;
-  }}; */
   @media screen and (min-width: 768px) {
     width: var(--medium-screen);
   }
   @media screen and (min-width: 1440px) {
     width: var(--large-screen);
     padding: 18px 100px;
-    /* background-color: ${props => {
-      if (props.pathname === '/my') {
-        return 'transparent';
-      }
-      return props.theme.mainPage.background;
-    }}; */
   }
 `;
 
@@ -89,7 +71,7 @@ export const UserName = styled.p`
   margin-left: 14px;
   cursor: pointer;
   color: ${props => {
-    if (props.pathname === '/my') {
+    if (props.pathname === 'recipe') {
       return props.theme.mainPage.header.user.textRecipePage;
     }
     return props.theme.mainPage.header.user.text;
@@ -123,25 +105,14 @@ export const SiteNav = styled.nav`
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  /* background-image: url(${bgImg});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right bottom; */
   z-index: 100;
   background-color: transparent;
-  /* background-color: ${props =>
-    props.toggle === 'true'
-      ? props.theme.mainPage.menuMobileModal.background
-      : props.theme.mainPage.background};
-  @media screen and (min-width: 768px) {
-    background-image: url(${bgImgTablet});
-  } */
+
   @media screen and (min-width: 1440px) {
     display: flex;
     position: static;
     height: 100%;
     padding-top: 0px;
-    /* background-color: ${props => props.theme.mainPage.background}; */
     background-image: none;
     flex-direction: row;
   }
@@ -175,6 +146,7 @@ export const NavListItem = styled.li`
   }
 `;
 export const NavLinkStyle = styled(NavLink)`
+  z-index: 110;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -239,6 +211,7 @@ export const BackgroundContainer = styled.div`
   }};
   @media screen and (min-width: 1440px) {
     background: none;
+    height: 70px;
   }
 `;
 export const SearchText = styled.span`

@@ -37,6 +37,7 @@ const Header = () => {
   };
 
   const { pathname } = useLocation();
+
   const user = useSelector(selectAuthUser);
   const screenWidth = onScreenWidth();
   const [toggle, setToggleMenu] = useState(false);
@@ -44,24 +45,29 @@ const Header = () => {
   const [toggleModalEdit, setToggleModalEdit] = useState(false);
   const [toggleModalLogOut, setToggleModalLogOut] = useState(false);
   const body = document.querySelector('body');
+  const onSplitPathname = pathname => {
+    const result = pathname.split('/')[1];
+    return result;
+  };
+  const path = onSplitPathname(pathname);
+  console.log('🚀 ~ path:', path);
 
-  // const onHidden = () => {
-  //   if (toggle) {
-
-  //   }
-  // };
   const handleToggleModalUserProfile = () => {
     setToggleModalEdit(false);
     setToggleEditUser(!toggleEditUser);
   };
 
   const handleToggleMenu = () => {
+    // if (screenWidth) {
+    //   setToggleMenu(false);
+    //   return;
+    // }
     if (toggle) {
+      setToggleMenu(!toggle);
       body.style.overflow = 'visible';
-      setToggleMenu(!toggle);
     } else {
-      body.style.overflow = 'hidden';
       setToggleMenu(!toggle);
+      body.style.overflow = 'hidden';
     }
   };
 
@@ -123,7 +129,7 @@ const Header = () => {
               <>
                 <UserAvatar src={user.avatarUrl} alt="User avatar" />
                 <UserName
-                  pathname={pathname}
+                  pathname={path}
                   onClick={() => {
                     setToggleModalEdit(!toggleModalEdit);
                   }}
@@ -133,7 +139,7 @@ const Header = () => {
               </>
             ) : null}
             <MenuButton onClick={handleToggleMenu}>
-              {toggle ? <CloseIcon /> : <MenuIcon />}
+              {toggle ? <CloseIcon /> : <MenuIcon pathname={path} />}
             </MenuButton>
           </MobileHeaderBlock>
         </HeaderContainer>
