@@ -72,4 +72,7 @@ export const BtnTextStyled = styled.p`
   line-height: 18px;
   letter-spacing: -0.24px;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;

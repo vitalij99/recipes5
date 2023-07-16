@@ -4,6 +4,7 @@ import {
   TextfStyled,
   BtnTextStyled,
 } from './InformMenu.styled';
+import { AiOutlineArrowRight } from 'react-icons/ai#AiOutlineArrowRight';
 
 export const InformMenu = () => {
   return (
@@ -13,7 +14,9 @@ export const InformMenu = () => {
         enjoy a variety of fresh ingredients in one satisfying meal
       </TextfStyled>
       <BtnWrapperStyled to="/categories/Breakfast">
-        <BtnTextStyled>See all recipes</BtnTextStyled>
+        <BtnTextStyled>
+          See all recipes <AiOutlineArrowRight />
+        </BtnTextStyled>
       </BtnWrapperStyled>
     </InformWrapperStyled>
   );
