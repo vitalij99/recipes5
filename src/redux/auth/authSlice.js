@@ -64,7 +64,6 @@ const handleRejected = (state, { payload }) => {
   state.error = payload;
 };
 const handleUpdateName = (state, { payload }) => {
-  console.log('🚀 ~ payload:', payload);
   state.user.name = payload.user.name;
   state.user.avatarURL = payload.user.avatarURL;
 };
