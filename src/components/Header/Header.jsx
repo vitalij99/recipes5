@@ -56,9 +56,6 @@ const Header = () => {
   };
 
   const handleToggleMenu = () => {
-    if (screenWidth) {
-      return;
-    }
     if (toggle) {
       body.style.overflow = 'visible';
       setToggleMenu(!toggle);

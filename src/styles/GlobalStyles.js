@@ -178,7 +178,9 @@ const GlobalStyles = createGlobalStyle`
   *::after {
     box-sizing: border-box;
   }
-  
+  body {
+    position: relative;
+  }
 
   body,
   h1,
