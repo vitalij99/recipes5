@@ -722,7 +722,7 @@ export const darkTheme = {
     background: '#1E1F28',
     title: '#FAFAFA',
     text: {
-      color: '#000000',
+      color: '#FAFAFA',
       opacity: '0.5',
     },
     searchBar: {

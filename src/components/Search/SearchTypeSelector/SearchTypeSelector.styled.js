@@ -9,10 +9,8 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 24px;
-  padding-bottom: 42px;
-  * {
-    /* outline: red solid 1px; */
-  }
+  /* padding-bottom: 42px; */
+
   p {
     font-size: 12px;
     font-style: normal;

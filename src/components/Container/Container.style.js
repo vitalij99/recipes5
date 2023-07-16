@@ -2,6 +2,7 @@ const { styled } = require('styled-components');
 
 const ContainerMedia = styled.div`
   /* outline: red 1px solid; */
+  background-color: transparent;
 
   margin: 0 auto;
   max-width: var(--small-screen);
