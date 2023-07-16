@@ -22,7 +22,9 @@ const ModalHeaderEdit = ({
   return (
     <>
       <ModalOverlay
-        onClick={e => e.currentTarget === e.target && setToggleModalEdit(false)}
+        onClick={e => {
+          e.currentTarget === e.target && setToggleModalEdit(false);
+        }}
       >
         <Modal>
           <EditProfileContainer

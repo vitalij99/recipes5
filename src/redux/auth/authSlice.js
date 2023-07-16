@@ -4,7 +4,6 @@ import {
   logoutThunk,
   registerThunk,
   currentThunk,
-  updateAvatarThunk,
   updateNameThunk,
 } from './authOperation';
 
@@ -18,7 +17,7 @@ const initialState = {
   user: {
     name: null,
     email: null,
-    avatar: null,
+    avatarURL: null,
     favorite: null,
     shoppingList: null,
   },
@@ -33,7 +32,6 @@ const arrThunks = [
   signinThunk,
   logoutThunk,
   currentThunk,
-  updateAvatarThunk,
   updateNameThunk,
 ];
 
@@ -65,11 +63,13 @@ const handleRejected = (state, { payload }) => {
   state.error = payload;
 };
 const handleUpdateName = (state, { payload }) => {
-  state.user.name = payload.name;
+  console.log('🚀 ~ payload:', payload);
+  state.user.name = payload.user.name;
+  state.user.avatarURL = payload.user.avatarURL;
 };
-const handleUpdateAvatar = (state, { payload }) => {
-  state.user.avatar = payload;
-};
+// const handleUpdateAvatar = (state, { payload }) => {
+//   state.user.avatar = payload;
+// };
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -83,7 +83,6 @@ export const authSlice = createSlice({
       .addCase(currentThunk.rejected, handleIsRejected)
       .addCase(logoutThunk.pending, handleLogout)
       .addCase(updateNameThunk.fulfilled, handleUpdateName)
-      .addCase(updateAvatarThunk.fulfilled, handleUpdateAvatar)
       .addMatcher(isAnyOf(...fn(PENDING)), handlePending)
       .addMatcher(isAnyOf(...fn(REJECTED)), handleRejected)
       .addMatcher(isAnyOf(...fn(FULFILLED)), handleFulfilled);

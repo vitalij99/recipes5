@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   AddImage,
   CloseIcon,
@@ -17,19 +17,46 @@ import {
   UserIconContainer,
   EditIconContainer,
   ModalSaveButton,
+  InputPhoto,
 } from './UserProfile.styled';
 import { selectAuthUser } from 'redux/auth/authSelector';
 import { useState } from 'react';
+import { updateNameThunk } from 'redux/auth/authOperation';
 
 const UserProfile = ({ handleToggleModalUserProfile }) => {
   const user = useSelector(selectAuthUser);
-  const [state, setState] = useState('');
-  console.log('🚀 ~ state:', state);
+
+  const dispatch = useDispatch();
+  const [state, setState] = useState(() => {
+    return {
+      name: user.name,
+      avatar: user.avatarUrl,
+    };
+  });
+
+  const handleInputChange = (name, value) => {
+    setState(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileInputChange = e => {
+    const file = e.target.files[0];
+    console.log('🚀 ~ file:', file);
+    handleInputChange('avatar', file);
+  };
 
   const handleChange = ({ target }) => {
-    const { value } = target;
+    const { name, value } = target;
+    setState(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-    setState(value);
+  const onSubmitEditUserProfileForm = () => {
+    dispatch(updateNameThunk(state));
   };
 
   return (
@@ -42,23 +69,42 @@ const UserProfile = ({ handleToggleModalUserProfile }) => {
         <CloseIconContainer onClick={() => handleToggleModalUserProfile()}>
           <CloseIcon />
         </CloseIconContainer>
-        <ImageContainer>
-          <Image src={user.avatarUrl} />
-          <AddIconContainer>
-            <AddImage />
-          </AddIconContainer>
-        </ImageContainer>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            onSubmitEditUserProfileForm();
+          }}
+        >
+          <ImageContainer>
+            {/* <AddIconContainer> */}
+            <Image
+              src={
+                typeof state.avatar === 'string'
+                  ? state.avatar
+                  : URL.createObjectURL(state.avatar)
+              }
+              alt="User Avatar"
+            />
+            <AddIconContainer htmlFor="photo">
+              <InputPhoto
+                type="file"
+                id="photo"
+                accept="image/*"
+                onChange={handleFileInputChange}
+              />
+              <AddImage style={{ position: 'absolute' }} />
+            </AddIconContainer>
+          </ImageContainer>
 
-        <form action="">
-          <Label htmlFor="userName">
+          <Label htmlFor="name">
             <UserIconContainer>
               <UserIcon />
             </UserIconContainer>
             <Input
               type="text"
-              name="userName"
-              id="userName"
-              value={state}
+              name="name"
+              id="name"
+              value={state.name}
               onChange={handleChange}
             />
             <EditIconContainer>
