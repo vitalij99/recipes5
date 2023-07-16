@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import banner from 'images/mainPage/bm.png';
-import banner2 from 'images/mainPage/bg1.png';
+import banner2 from 'images/mainPage/bg1m.svg';
 import banner3 from 'images/mainPage/img-1.png';
 import banner4 from 'images/mainPage/bg-2.png';
 
@@ -23,7 +23,7 @@ export const WrapperStyled = styled.div`
   background-image: url(${banner}), url(${banner3}), url(${banner4}),
     url(${banner2});
   background-repeat: no-repeat;
-  background-position: top left, 55% 55%, center right, top right;
+  background-position: top left, 55% 55%, center right, right 90%;
   background-size: auto, auto;
 
   @media screen and (min-width: 768px) {
@@ -32,20 +32,20 @@ export const WrapperStyled = styled.div`
     padding-top: 140px;
     background-image: url(${bannerT}), url(${banner3T}), url(${banner4T}),
       url(${banner2T});
-    background-position: top left, 90% 30%, center right, top right;
+    background-position: top left, 90% 30%, right, right 90%;
   }
   @media screen and (min-width: 1440px) {
     height: 800px;
-
+    padding-top: 230px;
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
-    background-position: top left, 63% 200px, 66%, right top;
+    background-position: top left, 63% 130px, 86%, right top;
     background-size: auto, auto, auto, 50% 689px;
   }
   @media screen and (min-width: 2240px) {
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
-    background-position: top left, 55% 200px, 55%, right top;
+    background-position: top left, 63% 130px, 86%, right top;
   }
 `;
 export const BoxStyled = styled.div``;
@@ -66,7 +66,7 @@ export const TitleStyled = styled.h1`
   }
 `;
 export const SpanTitle = styled.span`
-  color: #8baa36; 
+  color: #8baa36;
 `;
 export const ParagrafStyled = styled.div`
   font-size: 14px;

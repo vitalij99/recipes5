@@ -112,6 +112,7 @@ export const lightTheme = {
     },
     footer: {
       background: '#22252A',
+      backgroundBottom: '#FAFAFA',
       title: '#FAFAFA',
       text: '#FAFAFA',
       hoverText: '#8BAA36',
@@ -528,6 +529,7 @@ export const darkTheme = {
     },
     footer: {
       background: '#8BAA36',
+      backgroundBottom: '#1E1F28',
       title: '#FAFAFA',
       text: '#FAFAFA',
       hoverText: '#393c42',
