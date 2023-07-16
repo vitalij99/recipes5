@@ -14,6 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { ownerRecipeReducer } from './recipe/recipeSlice';
 import { mainReducer } from './main/mainSlice';
 import { themeReducer } from './theme/themeSlice';
+import { categoriesReducer } from './categories/categoriesSlice';
 
 const persistConfig = {
   key: 'auth',
@@ -38,6 +39,7 @@ export const store = configureStore({
     auth: persistReducer(persistConfig, authReducer),
     recipes: persistReducer(persistConfigRecipes, ownerRecipeReducer),
     main: mainReducer,
+    categories: categoriesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
