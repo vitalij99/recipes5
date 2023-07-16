@@ -33,8 +33,8 @@ export const Title = styled.h1`
     letter-spacing: -0.64px;
   }
   @media screen and (min-width: 1440px) {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     margin-left: 100px;
     font-size: 44px;
     letter-spacing: -0.88px;
@@ -46,12 +46,12 @@ export const ParticlesContainer = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  height: 128px;
+  /* height: 128px; */
   @media screen and (min-width: 768px) {
-    height: 176px;
+    /* height: 176px; */
   }
   @media screen and (min-width: 1440px) {
-    height: 216px;
+    /* height: 216px; */
   }
 `;
 
