@@ -25,7 +25,7 @@ export const store = configureStore({
   reducer: {
     theme: persistReducer(persistConfig, themeReducer),
     auth: persistReducer(persistConfig, authReducer),
-    recipes: ownerRecipeReducer,
+    recipes: persistReducer(persistConfig, ownerRecipeReducer),
     main: mainReducer,
   },
   middleware: getDefaultMiddleware =>
