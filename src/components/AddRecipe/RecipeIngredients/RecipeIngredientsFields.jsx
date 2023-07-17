@@ -39,11 +39,23 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const handleSelectIngredient = (index, selectedOption) => {
     const updatedIngredients = [...ingredients];
     updatedIngredients[index].name = selectedOption.value;
+    updatedIngredients[index].measure =
+      updatedIngredients[index].amount +
+      ' ' +
+      updatedIngredients[index].measureImput;
+    updatedIngredients[index].id = selectedOption.id;
     setIngredients(updatedIngredients);
+    console.log(
+      updatedIngredients[index].amount,
+      updatedIngredients[index].measureImput
+    );
   };
 
   const addIngredientField = () => {
-    setIngredients([...ingredients, { name: '', amount: '', measure: '' }]);
+    setIngredients([
+      ...ingredients,
+      { name: '', amount: '', measureImput: '' },
+    ]);
     setCount(count + 1);
   };
 
@@ -70,7 +82,9 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
 
   useEffect(() => {
     if (ingredients.length === 0) {
-      setIngredients([{ id: '', name: '', amount: '', measure: '' }]);
+
+      setIngredients([{ id: '', name: '', amount: '', measureImput: '' }]);
+
     }
   }, [ingredients.length, setIngredients]);
 
@@ -100,10 +114,16 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                       : null
                   }
                   options={[
-                    { value: '', label: 'Select ingredient', isDisabled: true },
+                    {
+                      value: '',
+                      label: 'Select ingredient',
+                      isDisabled: true,
+                      id: '',
+                    },
                     ...ingredientOptions.map(option => ({
                       value: option.name,
                       label: option.name,
+                      id: option._id,
                     })),
                   ]}
                   maxMenuHeight={240}
@@ -121,9 +141,13 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                     }
                   />
                   <SelectAdd
-                    value={ingredient.measure}
+                    value={ingredient.measureImput}
                     onChange={e =>
-                      handleIngredientChange(index, 'measure', e.target.value)
+                      handleIngredientChange(
+                        index,
+                        'measureImput',
+                        e.target.value
+                      )
                     }
                   >
                     <option value=""></option>
