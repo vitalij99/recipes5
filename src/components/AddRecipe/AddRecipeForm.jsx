@@ -8,41 +8,61 @@ import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
 import onValidationForm from './validationForm';
 import { Link } from 'react-router-dom';
+import sendRecipeData from './Api'
 
 const checkScreenWidth = () => {
   return window.innerWidth;
 };
 
+function arrayToString(arr) {
+  return arr.join('\r\n');
+}
+
 const AddRecipeForm = () => {
   const initialRecipeData = {
-    photo: null,
-    name: '',
+    thumb: null,
+    title: '',
     description: '',
     category: '',
-    cookingTime: '',
+    time: '',
+    tags: [],
     ingredients: [],
-    preparation: [],
+    instructions: [],
   };
 
   const [recipeData, setRecipeData] = useState(initialRecipeData);
 
   const handleInputChange = (name, value) => {
-    setRecipeData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setRecipeData(prevData => {
+      if (name === 'category') {
+        return {
+          ...prevData,
+          [name]: value,
+          tags: [value],
+        };
+      } else {
+        return {
+          ...prevData,
+          [name]: value,
+        };
+      }
+    });
   };
 
-  const handleFormSubmit = async event => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const validatedData = onValidationForm(recipeData);
     if (validatedData) {
-      console.log(validatedData);
       try {
+        const recipeDataToSend = {
+          ...recipeData,
+          instructions: arrayToString(recipeData.instructions),
+        };
+        await sendRecipeData(recipeDataToSend);
         Notify.success('Recipe Added');
         setRecipeData(initialRecipeData);
       } catch (error) {
-        console.error('Error while adding the recipe:', error);
+        console.log('Error while adding the recipe:', error.message);
       }
     }
   };
@@ -80,11 +100,11 @@ const AddRecipeForm = () => {
             }
           />
           <RecipePreparationFields
-            preparation={recipeData.preparation}
-            setPreparation={updatedPreparation =>
+            instructions={recipeData.instructions}
+            setInstructions={updatedInstructions =>
               setRecipeData(prevData => ({
                 ...prevData,
-                preparation: updatedPreparation,
+                instructions: updatedInstructions,
               }))
             }
           />
