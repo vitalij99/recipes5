@@ -20,6 +20,11 @@ const ownerRecipeSlice = createSlice({
   name: 'recipes',
   initialState,
   reducers: {
+    removeRecipeToFavorite: {
+      reducer: (state, { payload }) => {
+        const index = state.recipes.findIndex(vel => vel.id === payload.id);
+        state.recipes.splice(index, 1);
+      },},
     addShoppingList: {
       reducer: (state, { payload }) => {
         state.shoppingList.push(payload);
@@ -53,7 +58,7 @@ const ownerRecipeSlice = createSlice({
         state.operetion = 'addFavorite';
       })
       .addCase(addRecipeToFavorite.fulfilled, (state, { payload }) => {
-        console.log('add ', payload);
+        state.operetion = null;
         const id = payload;
         state.isLoading = false;
         state.error = null;

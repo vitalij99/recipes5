@@ -29,8 +29,10 @@ import {
   IngredientsWrapper,
   WrapperContent,
 } from './RecipeIngredients.styled';
+
 import { nanoid } from '@reduxjs/toolkit';
 import { removeShoppingList } from 'redux/recipe/recipeSlice';
+
 
 function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
