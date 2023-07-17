@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { shoppingListThunk } from './shoppingListOperations';
+import {
+  shoppingListThunk,
+  shoppingListRemoveItemThunk,
+} from './shoppingListOperations';
 
 const shoppingListSlice = createSlice({
   name: 'shopping',
@@ -19,6 +22,19 @@ const shoppingListSlice = createSlice({
         state.shoppingList = payload;
       })
       .addCase(shoppingListThunk.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+      .addCase(shoppingListRemoveItemThunk.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(shoppingListRemoveItemThunk.fulfilled, (state, { payload }) => {
+        const index = state.shoppingList.findIndex(item => item.id === payload);
+        state.shoppingList.splice(index, 1);
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(shoppingListRemoveItemThunk.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
       });

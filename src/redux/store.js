@@ -18,7 +18,6 @@ import { categoriesReducer } from './categories/categoriesSlice';
 
 import { shoppingListReducer } from './shopping/shoppingListSlice';
 
-
 import { myRecipeReducer } from './myrecipes/myRecipeSlice';
 
 const persistConfig = {
@@ -49,11 +48,12 @@ export const store = configureStore({
     theme: persistReducer(persistConfigUserTheme, themeReducer),
     auth: persistReducer(persistConfig, authReducer),
     recipes: persistReducer(persistConfigRecipes, ownerRecipeReducer),
+
     shopping: shoppingListReducer,
 
     main: mainReducer,
     categories: categoriesReducer,
-    myrecipes:myRecipeReducer,
+    myrecipes: myRecipeReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

@@ -15,7 +15,7 @@ export const ListSection = ({ data, onClick }) => {
     <>
       <List>
         {data.map(item => (
-          <Item key={item.id ? item.id : null}>
+          <Item key={item._id ? item._id : null}>
             <ImageSection>
               <ImageContainer>
                 <img
@@ -30,7 +30,7 @@ export const ListSection = ({ data, onClick }) => {
               <Number>
                 <p>{item.measure ? item.measure : 0}</p>
               </Number>
-              <CloseIcon onClick={() => onClick(item.id)}>
+              <CloseIcon onClick={() => onClick(item._id)}>
                 <Svg />
               </CloseIcon>
             </DataSection>
