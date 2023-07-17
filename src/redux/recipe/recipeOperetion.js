@@ -39,7 +39,6 @@ export const addRecipeToFavorite = createAsyncThunk(
 export const removeRecipeToFavorite = createAsyncThunk(
   'favorite/delete',
   async (id, thunkAPI) => {
-    console.log(id);
     try {
       const res = await axios.patch(`favorite/delete/${id}`);
       if (res) {
