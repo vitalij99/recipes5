@@ -7,7 +7,6 @@ export const getMyRecipes = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const {data} = await axios.get(`recipes/own-recipes`);
-        console.log(data)
         return data;
     } catch (err) {
       if (err) {

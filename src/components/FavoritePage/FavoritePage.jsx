@@ -21,8 +21,9 @@ import {
     getFavoriteRecipes,
     removeRecipeToFavorite,
   } from '../../redux/recipe/recipeOperetion';
+  import Error from "../Error/Error";
   export const FavoritePage = () => {
-   
+
     const favorite = useSelector(selectFavoriteList);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -61,9 +62,7 @@ import {
             <CardList>
             {FavoriteCards}
           </CardList>
-        ) : (<ErrorWrap>
-            <ErrorPhoto></ErrorPhoto>
-            </ErrorWrap>
+        ) : (<Error/>
             )}
         </>
     );
