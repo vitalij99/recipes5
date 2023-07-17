@@ -87,8 +87,6 @@ export const ProductNameWrap = styled.div`
 `;
 
 export const ProductName = styled.p`
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
