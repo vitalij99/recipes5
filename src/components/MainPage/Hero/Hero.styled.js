@@ -34,6 +34,7 @@ export const WrapperStyled = styled.div`
       url(${banner2T});
     background-position: top left, 90% 30%, center right, top right;
   }
+
   @media screen and (min-width: 1440px) {
     height: 800px;
 
@@ -42,13 +43,18 @@ export const WrapperStyled = styled.div`
     background-position: top left, 63% 200px, 66%, right top;
     background-size: auto, auto, auto, 50% 689px;
   }
+
   @media screen and (min-width: 2240px) {
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
     background-position: top left, 55% 200px, 55%, right top;
   }
 `;
-export const BoxStyled = styled.div``;
+export const BoxStyled = styled.div`
+  @media screen and (min-width: 1440px) {
+    padding-left: 70px;
+  }
+`;
 export const TitleStyled = styled.h1`
   font-size: 60px;
   font-weight: 400;
@@ -66,7 +72,7 @@ export const TitleStyled = styled.h1`
   }
 `;
 export const SpanTitle = styled.span`
-  color: #8baa36; 
+  color: #8baa36;
 `;
 export const ParagrafStyled = styled.div`
   font-size: 14px;
