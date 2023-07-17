@@ -60,8 +60,8 @@ const AddRecipeForm = () => {
           instructions: arrayToString(newRecipeData.instructions),
           time: cookingTime + '',
         };
-        console.log(recipeDataToSend);
-        // await sendRecipeData(recipeDataToSend);
+
+        await sendRecipeData(recipeDataToSend);
         Notify.success('Recipe Added');
         setRecipeData(initialRecipeData);
       } catch (error) {
