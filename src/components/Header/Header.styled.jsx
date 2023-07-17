@@ -5,7 +5,8 @@ import bgImg from '../../images/Header/spinach.png';
 // import SwitchImg from '../../images/Header/Switch.png';
 // import SwitchBodyImg from '../../images/Header/switch-body.png';
 
-export const HeaderContainer = styled.div`
+//NOTE - changed to .header max-width
+export const HeaderContainer = styled.header`
   max-width: var(--small-screen);
   display: flex;
   flex-direction: row;
@@ -188,7 +189,8 @@ export const LinkStyle = styled(Link)`
   }
 `;
 
-export const BackgroundContainer = styled.header`
+//NOTE - changed to .div
+export const BackgroundContainer = styled.div`
   z-index: 99;
   background-image: url(${bgImg});
   background-image: ${props => {
@@ -214,12 +216,14 @@ export const BackgroundContainer = styled.header`
   }};
   @media screen and (min-width: 1440px) {
     background: none;
+    //NOTE - changed commented out height width
     /* height: 80px;
     width: 1240px; */
     margin-left: auto;
     margin-right: auto;
   }
 `;
+
 export const SearchText = styled.span`
   @media screen and (min-width: 1440px) {
     display: none;
