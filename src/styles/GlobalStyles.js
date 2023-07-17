@@ -265,10 +265,6 @@ const GlobalStyles = createGlobalStyle`
       transition: 0.6s;
       animation:  easeIn;
     }
-    &:not(:hover), &:not(:focus){
-      transition: 0.6s;
-      animation:  easeOut;
-    }
   }
 
   a {
