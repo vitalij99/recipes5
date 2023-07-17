@@ -17,6 +17,11 @@ const ownerRecipeSlice = createSlice({
   name: 'recipes',
   initialState,
   reducers: {
+    removeRecipeToFavorite: {
+      reducer: (state, { payload }) => {
+        const index = state.recipes.findIndex(vel => vel.id === payload.id);
+        state.recipes.splice(index, 1);
+      },},
     addShoppingList: {
       reducer: (state, { payload }) => {
         state.shoppingList.push(payload);
