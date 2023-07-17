@@ -9,9 +9,7 @@ import {
   TrashSvg,
   Time,
   DeleteBtn,
-  SeeRecipeBtn,
-  ErrorPhoto,
-  ErrorWrap,
+  SeeRecipeBtn
 } from './MyRecipes.styled';
 import { Link } from "react-router-dom";
 import { selectMyRecipesList } from 'redux/myrecipes/myRecipeSelectors';
