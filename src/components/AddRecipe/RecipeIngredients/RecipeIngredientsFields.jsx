@@ -33,6 +33,10 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
 
     const updatedIngredients = [...ingredients];
     updatedIngredients[index][field] = value;
+    updatedIngredients[index].measure =
+      updatedIngredients[index].amount +
+      ' ' +
+      updatedIngredients[index].measureImput;
     setIngredients(updatedIngredients);
   };
 
@@ -45,10 +49,6 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
       updatedIngredients[index].measureImput;
     updatedIngredients[index].id = selectedOption.id;
     setIngredients(updatedIngredients);
-    console.log(
-      updatedIngredients[index].amount,
-      updatedIngredients[index].measureImput
-    );
   };
 
   const addIngredientField = () => {
@@ -82,9 +82,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
 
   useEffect(() => {
     if (ingredients.length === 0) {
-
       setIngredients([{ id: '', name: '', amount: '', measureImput: '' }]);
-
     }
   }, [ingredients.length, setIngredients]);
 
