@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchIngradients } from 'redux/recipe/recipeOperetion';
+import {
+  addShoppingList,
+  fetchIngradients,
+  fetchShoppingList,
+  // removeShoppingList,
+} from 'redux/recipe/recipeOperetion';
 import {
   selectIngredients,
   selectShoppingList,
 } from 'redux/recipe/recipeSelector';
-import { addShoppingList, removeShoppingList } from 'redux/recipe/recipeSlice';
 
 import IngradientsHeader from 'components/IngredientsHeader/IngredientsHeader';
 import defaultFotoIngredient from '../../../images/Recipe/defaultFotoIngredient.png';
@@ -25,17 +29,25 @@ import {
   IngredientsWrapper,
   WrapperContent,
 } from './RecipeIngredients.styled';
+import { nanoid } from '@reduxjs/toolkit';
+import { removeShoppingList } from 'redux/recipe/recipeSlice';
 
-function RecipeIngredients({ ingredients, recipeId }) {
+function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
   const [event, setEvent] = useState(null);
 
   const allIngradientsList = useSelector(selectIngredients);
   const shoppingList = useSelector(selectShoppingList);
 
+  const isIngredientInShoppingList = _id => {
+    return shoppingList.some(item => item.id === _id);
+  };
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchIngradients());
+    dispatch(fetchShoppingList());
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -59,7 +71,13 @@ function RecipeIngredients({ ingredients, recipeId }) {
 
     const { _id, name, img, measure } = currentIngredient;
     const ingredientOnShoppingList = shoppingList.some(val => val.id === id);
-    const ingredientForBuy = { measure, id: _id, name, img, recipeId };
+    const ingredientForBuy = {
+      measure,
+      id: _id,
+      name,
+      img,
+      shoppingListId: nanoid(),
+    };
 
     if (!ingredientOnShoppingList) {
       dispatch(addShoppingList(ingredientForBuy));
@@ -78,6 +96,8 @@ function RecipeIngredients({ ingredients, recipeId }) {
           <IngradientsHeader info="Ingredients" actions="Add to list" />
           <IngredientsWrapper>
             {ingredientsList?.map(({ _id, name, img, measure }) => {
+              const isChecked = isIngredientInShoppingList(_id);
+
               return (
                 <Ingredient key={_id}>
                   <WrapperContent>
@@ -95,7 +115,7 @@ function RecipeIngredients({ ingredients, recipeId }) {
                       <IngedientsInput
                         type="checkbox"
                         id={_id}
-                        checked={shoppingList.some(item => item.id === _id)}
+                        checked={isChecked}
                         value={_id}
                         onChange={handleInputChange}
                       />
