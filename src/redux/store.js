@@ -15,6 +15,7 @@ import { ownerRecipeReducer } from './recipe/recipeSlice';
 import { mainReducer } from './main/mainSlice';
 import { themeReducer } from './theme/themeSlice';
 import { categoriesReducer } from './categories/categoriesSlice';
+import { shoppingListReducer } from './shopping/shoppingListSlice';
 
 const persistConfig = {
   key: 'auth',
@@ -30,14 +31,22 @@ const persistConfigUserTheme = {
 const persistConfigRecipes = {
   key: 'recipes',
   storage,
-  whitelist: ['shoppingList', 'favorite'],
+  whitelist: ['favorite', 'shoppingList'],
 };
+
+// const persistConfigShoppingList = {
+//   key: 'shopping',
+//   storage,
+//   whitelist: ['shoppingList'],
+// };
 
 export const store = configureStore({
   reducer: {
     theme: persistReducer(persistConfigUserTheme, themeReducer),
     auth: persistReducer(persistConfig, authReducer),
     recipes: persistReducer(persistConfigRecipes, ownerRecipeReducer),
+    shopping: shoppingListReducer,
+
     main: mainReducer,
     categories: categoriesReducer,
   },
