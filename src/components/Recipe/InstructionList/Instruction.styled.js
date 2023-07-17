@@ -47,7 +47,7 @@ export const InstructionContainer = styled.ul`
     font-weight: 400;
     line-height: 1.16;
     margin-left: 14px;
-    color: ${props => props.theme.recipePage.recipePreparation.list.text};
+    color: ${props => props.theme.recipePage.ingredients.list.text};
 
     @media (min-width: 768px) {
       font-size: 14px;
