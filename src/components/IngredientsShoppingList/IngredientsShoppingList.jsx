@@ -18,7 +18,7 @@ export const IngredientsShoppingList = () => {
   const dispatch = useDispatch();
   const shoppingList = useSelector(shoppingListSelector);
 
-  console.log(shoppingList);
+  // console.log(shoppingList);
   const componentRef = useRef(null);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export const IngredientsShoppingList = () => {
   }, [dispatch]);
 
   const handleRemoveShoppingList = id => {
-    console.log('we are trying to remove shopping-list item');
+    // console.log('we are trying to remove shopping-list item');
     dispatch(shoppingListRemoveItemThunk(id));
   };
 
