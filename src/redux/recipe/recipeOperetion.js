@@ -59,10 +59,8 @@ export const getFavoriteRecipes = createAsyncThunk(
   'recipes/getFavoriteRecipes',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get(`/favorite`);
-      if (res) {
-        Notify.success('Favorite list uploaded successfully!');
-      }
+      const {data} = await axios.get(`/favorite`);
+      return data;
     } catch (err) {
       if (err) {
         Notify.failure(err.message);

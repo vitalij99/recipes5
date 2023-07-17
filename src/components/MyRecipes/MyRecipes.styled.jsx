@@ -138,7 +138,7 @@ export const Time = styled.div`
 `;
 
 export const TrashSvg = styled(Trash)`
-  stroke:black;
+  stroke:${props => props.theme.myRecipesPage.icon.color};;
   
   @media (max-width: 767px) {
     width: 10px;
@@ -159,7 +159,7 @@ export const DeleteBtn = styled.button`
   outline:none;
   width: 24px;
   height: 24px;
-  background-color: ${props => props.theme.favoritePage.icon.background};
+  background-color: ${props => props.theme.myRecipesPage.icon.background};
   border-radius: 4px;
   transition: 125ms 125ms linear;
   display:flex;
@@ -177,14 +177,14 @@ export const DeleteBtn = styled.button`
   @media (min-width: 768px) {
     width: 38px;
     height: 38px;
-    background: #8baa36;
+    background: ${props => props.theme.myRecipesPage.icon.background};;
     border-radius: 4px;
     line-height: 38px;
   }
   @media (min-width: 1440px) {
     width: 44px;
     height: 44px;
-    background: #ebf3d4;
+    background: ${props => props.theme.myRecipesPage.icon.background};;
     border-radius: 4px;
     line-height: 44px;
   }
