@@ -70,7 +70,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
 
   useEffect(() => {
     if (ingredients.length === 0) {
-      setIngredients([{ id: '', name: '', amount: '',  measure: '' }]);
+      setIngredients([{ id: '', name: '', amount: '', measure: '' }]);
     }
   }, [ingredients.length, setIngredients]);
 
@@ -126,6 +126,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                       handleIngredientChange(index, 'measure', e.target.value)
                     }
                   >
+                    <option value=""></option>
                     <option value="tbs">tbs</option>
                     <option value="tsp">tsp</option>
                     <option value="kg">kg</option>
