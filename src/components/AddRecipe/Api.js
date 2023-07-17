@@ -4,7 +4,14 @@ const BASE_URL = 'https://yummy-service.onrender.com';
 
 const sendRecipeData = async (recipeData) => {
   try {
-    const response = await axios.post(`${BASE_URL}/recipes/own-recipes`, recipeData);
+    const response = await axios.post(`${BASE_URL}/recipes/own-recipes`, recipeData,
+    {
+      headers: {
+        "Content-Type": 'multipart/form-data',
+      },
+    }
+    
+    );
     return response.data; 
   } catch (error) {
     throw new Error('Error while adding the recipe:', error.message);

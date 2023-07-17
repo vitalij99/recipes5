@@ -54,9 +54,11 @@ const AddRecipeForm = () => {
     const validatedData = onValidationForm(recipeData);
     if (validatedData) {
       try {
+        const {cookingTime, ingredients, ...newRecipeData} = recipeData;
         const recipeDataToSend = {
-          ...recipeData,
-          instructions: arrayToString(recipeData.instructions),
+          ...newRecipeData,
+          instructions: arrayToString(newRecipeData.instructions),
+          time: cookingTime + '',
         };
         await sendRecipeData(recipeDataToSend);
         Notify.success('Recipe Added');

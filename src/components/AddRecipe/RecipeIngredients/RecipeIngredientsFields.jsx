@@ -43,7 +43,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   };
 
   const addIngredientField = () => {
-    setIngredients([...ingredients, { name: '', amount: '', unit: '' }]);
+    setIngredients([...ingredients, { name: '', amount: '', measure: '' }]);
     setCount(count + 1);
   };
 
@@ -70,7 +70,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
 
   useEffect(() => {
     if (ingredients.length === 0) {
-      setIngredients([{ name: '', amount: '', unit: '' }]);
+      setIngredients([{ id: '', name: '', amount: '',  measure: '' }]);
     }
   }, [ingredients.length, setIngredients]);
 
@@ -121,9 +121,9 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                     }
                   />
                   <SelectAdd
-                    value={ingredient.unit}
+                    value={ingredient.measure}
                     onChange={e =>
-                      handleIngredientChange(index, 'unit', e.target.value)
+                      handleIngredientChange(index, 'measure', e.target.value)
                     }
                   >
                     <option value="tbs">tbs</option>
