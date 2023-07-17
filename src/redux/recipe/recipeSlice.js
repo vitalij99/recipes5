@@ -12,6 +12,7 @@ const initialState = {
   favorite: [],
   isLoading: false,
   error: null,
+  operetion: null,
 };
 const ownerRecipeSlice = createSlice({
   name: 'recipes',
@@ -47,9 +48,10 @@ const ownerRecipeSlice = createSlice({
       })
       .addCase(addRecipeToFavorite.pending, state => {
         state.isLoading = true;
+        state.operetion = 'addFavorite';
       })
       .addCase(addRecipeToFavorite.fulfilled, (state, { payload }) => {
-        console.log('add ', payload);
+        state.operetion = null;
         const id = payload;
         state.isLoading = false;
         state.error = null;
@@ -57,20 +59,23 @@ const ownerRecipeSlice = createSlice({
       })
       .addCase(addRecipeToFavorite.rejected, (state, { payload }) => {
         state.isLoading = false;
+        state.operetion = null;
         state.error = payload;
       })
       .addCase(removeRecipeToFavorite.pending, state => {
+        state.operetion = 'removeFavorite';
         state.isLoading = true;
       })
       .addCase(removeRecipeToFavorite.fulfilled, (state, { payload }) => {
-        console.log('delete ', payload);
         const id = payload;
+        state.operetion = null;
         state.isLoading = false;
         state.error = null;
         const index = state.favorite.findIndex(vel => vel.id === id);
         state.favorite.splice(index, 1);
       })
       .addCase(removeRecipeToFavorite.rejected, (state, { payload }) => {
+        state.operetion = null;
         state.isLoading = false;
         state.error = payload;
       })
@@ -80,7 +85,7 @@ const ownerRecipeSlice = createSlice({
       .addCase(getFavoriteRecipes.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.favorite = payload;
+        state.favorite = payload.map(item => ({ ...item, id: item._id }));
       })
       .addCase(getFavoriteRecipes.rejected, (state, { payload }) => {
         state.isLoading = false;

@@ -25,8 +25,9 @@ import {
   IngredientsWrapper,
   WrapperContent,
 } from './RecipeIngredients.styled';
+import { nanoid } from 'nanoid';
 
-function RecipeIngredients({ ingredients, recipeId }) {
+function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
   const [event, setEvent] = useState(null);
 
@@ -59,7 +60,13 @@ function RecipeIngredients({ ingredients, recipeId }) {
 
     const { _id, name, img, measure } = currentIngredient;
     const ingredientOnShoppingList = shoppingList.some(val => val.id === id);
-    const ingredientForBuy = { measure, id: _id, name, img, recipeId };
+    const ingredientForBuy = {
+      measure,
+      id: _id,
+      name,
+      img,
+      shoppingListId: nanoid(),
+    };
 
     if (!ingredientOnShoppingList) {
       dispatch(addShoppingList(ingredientForBuy));
