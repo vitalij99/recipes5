@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Trash } from "images/Favorite/trashBlack.svg"
-import errorPhoto from '../../images/error-404.svg';
+// import errorPhoto from '../../images/error-404.svg';
 
 
 export const PageTitle = styled.h2`
@@ -237,16 +237,16 @@ export const SeeRecipeBtn = styled.button`
   }
 `;
 
-export const ErrorWrap = styled.div`
-text-align: center;
-margin-top:100px;
-`
-export const ErrorPhoto = styled.div`
-  background-size: cover;
-  background-content: no-repeat;
-  display: inline-block;
-  height: 170px;
-  width: 259px;
-  background-repeat: no-repeat;
-  background-image: url(${errorPhoto});
-`;
+// export const ErrorWrap = styled.div`
+// text-align: center;
+// margin-top:100px;
+// `
+// export const ErrorPhoto = styled.div`
+//   background-size: cover;
+//   background-content: no-repeat;
+//   display: inline-block;
+//   height: 170px;
+//   width: 259px;
+//   background-repeat: no-repeat;
+//   background-image: url(${errorPhoto});
+// `;

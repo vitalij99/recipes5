@@ -9,9 +9,7 @@ import {
     TrashSvg,
     Time,
     DeleteBtn,
-    SeeRecipeBtn,
-    ErrorPhoto,
-    ErrorWrap,
+    SeeRecipeBtn
   } from './FavoritePage.styled';
   import { Link } from "react-router-dom";
   import { selectFavoriteList } from 'redux/recipe/recipeSelector';
@@ -29,9 +27,9 @@ import {
     useEffect(() => {
       dispatch(getFavoriteRecipes());
     }, [dispatch]);
-    // let data = favorite.length > 4 ? favorite.slice(0, 4) : favorite;
+    let data = favorite.length > 4 ? favorite.slice(0, 4) : favorite;
 
-    const FavoriteCards = favorite.map(
+    const FavoriteCards = data.map(
       ({ _id, title, description, preview, time }) => (
         <Card key={_id}>
           <CardImg src={preview} alt="dish" />
@@ -58,7 +56,7 @@ import {
   
     return (
         <>
-        {favorite.length !== 0 ? (
+        {data.length !== 0 ? (
             <CardList>
             {FavoriteCards}
           </CardList>
