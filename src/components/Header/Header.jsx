@@ -98,27 +98,42 @@ const Header = () => {
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/add'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/add'}
+                >
                   Add recipes
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/my'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/my'}
+                >
                   My recipes
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/favorite'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/favorite'}
+                >
                   Favorites
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/shopping-list'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/shopping-list'}
+                >
                   Shopping list
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/search'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/search'}
+                >
                   <SearchIcon />
                   {!screenWidth && <SearchText>Search</SearchText>}
                 </NavLinkStyle>

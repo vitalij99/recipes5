@@ -6,7 +6,7 @@ import bgImg from '../../images/Header/spinach.png';
 // import SwitchBodyImg from '../../images/Header/switch-body.png';
 
 export const HeaderContainer = styled.div`
-  width: var(--small-screen);
+  max-width: var(--small-screen);
   display: flex;
   flex-direction: row;
   margin-left: auto;
@@ -22,10 +22,10 @@ export const HeaderContainer = styled.div`
   z-index: 105;
   background-color: transparent;
   @media screen and (min-width: 768px) {
-    width: var(--medium-screen);
+    max-width: var(--medium-screen);
   }
   @media screen and (min-width: 1440px) {
-    width: var(--large-screen);
+    max-width: var(--large-screen);
     padding: 18px 100px;
     position: absolute;
     top: 0;
