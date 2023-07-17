@@ -57,7 +57,7 @@ export const BoxStyled = styled.div`
 `;
 export const TitleStyled = styled.h1`
   font-size: 60px;
-
+  font-weight: 400;
   text-align: center;
 
   color: ${({ theme }) => theme.mainPageTitle.particle};
