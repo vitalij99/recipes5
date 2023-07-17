@@ -21,16 +21,15 @@ import {
   getMyRecipes,
   removeMyRecipe,
 } from '../../redux/myrecipes/myRecipeOperations';
+import Error from "../Error/Error";
 export const MyRecipes = () => {
   
   const recipesList = useSelector(selectMyRecipesList);
-  console.log(recipesList);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMyRecipes());
   }, [dispatch]);
   
-  const handleDelete = () => dispatch(removeMyRecipe(data._id));
 
   let data = recipesList.length > 4 ? recipesList.slice(0, 4) : recipesList;
 
@@ -41,7 +40,7 @@ export const MyRecipes = () => {
         <CardTextWrap>
           <div>
             <CardTitle>{title}</CardTitle>
-            <DeleteBtn onClick={handleDelete}>
+            <DeleteBtn onClick={() => dispatch(removeMyRecipe(_id))}>
               <TrashSvg />
             </DeleteBtn>
           </div>
@@ -65,9 +64,7 @@ export const MyRecipes = () => {
           <CardList>
           {FavoriteCards}
         </CardList>
-      ) : (<ErrorWrap>
-          <ErrorPhoto></ErrorPhoto>
-          </ErrorWrap>
+      ) : (<Error/>
           )}
       </>
   );
