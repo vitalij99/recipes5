@@ -7,8 +7,8 @@ import RecipeDescriptionFields from './RecipeDescription/RecipeDescriptionFields
 import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields';
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
 import onValidationForm from './validationForm';
-import { Link } from 'react-router-dom';
 import sendRecipeData from './Api';
+import { useNavigate } from 'react-router-dom';
 
 const checkScreenWidth = () => {
   return window.innerWidth;
@@ -19,6 +19,7 @@ function arrayToString(arr) {
 }
 
 const AddRecipeForm = () => {
+
   const initialRecipeData = {
     thumb: null,
     title: '',
@@ -29,7 +30,7 @@ const AddRecipeForm = () => {
     ingredients: [],
     instructions: [],
   };
-
+  const navigate = useNavigate();
   const [recipeData, setRecipeData] = useState(initialRecipeData);
 
   const handleInputChange = (name, value) => {
@@ -64,6 +65,7 @@ const AddRecipeForm = () => {
         await sendRecipeData(recipeDataToSend);
         Notify.success('Recipe Added');
         setRecipeData(initialRecipeData);
+        navigate('/my');
       } catch (error) {
         console.log('Error while adding the recipe:', error.message);
       }
@@ -112,7 +114,6 @@ const AddRecipeForm = () => {
             }
           />
           {screenWidth < 1440 ? <PopularRecipe /> : null}
-          <Link to={'/my'}></Link>
         </Form>
       </ContainerAddRecipe>
     </Container>

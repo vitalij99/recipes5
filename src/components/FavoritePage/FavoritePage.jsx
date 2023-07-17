@@ -9,7 +9,8 @@ import {
     TrashSvg,
     Time,
     DeleteBtn,
-    SeeRecipeBtn
+    SeeRecipeBtn,
+    NotFoundText
   } from './FavoritePage.styled';
   import { Link } from "react-router-dom";
   import { selectFavoriteList } from 'redux/recipe/recipeSelector';
@@ -27,6 +28,7 @@ import {
     useEffect(() => {
       dispatch(getFavoriteRecipes());
     }, [dispatch]);
+
     let data = favorite.length > 4 ? favorite.slice(0, 4) : favorite;
 
     const FavoriteCards = data.map(
@@ -36,7 +38,10 @@ import {
           <CardTextWrap>
             <div>
               <CardTitle>{title}</CardTitle>
-              <DeleteBtn onClick={() => dispatch(removeRecipeToFavorite(_id))}>
+              <DeleteBtn onClick={() => { 
+                dispatch(removeRecipeToFavorite(_id))
+                console.log(_id)
+                return}}>
                 <TrashSvg />
               </DeleteBtn>
             </div>
@@ -60,7 +65,7 @@ import {
             <CardList>
             {FavoriteCards}
           </CardList>
-        ) : (<Error/>
+        ) : (<><NotFoundText>You don't have favorite recipes...</NotFoundText><Error/></>
             )}
         </>
     );
