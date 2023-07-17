@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getMyRecipes } from './myRecipeOperations';
+import { getMyRecipes,removeMyRecipe } from './myRecipeOperations';
 const initialState = {
   recipes: [],
   isLoading: false,
@@ -30,10 +30,21 @@ const myRecipeSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
+      .addCase(removeMyRecipe.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(removeMyRecipe.fulfilled, (state, { payload }) => {
+        const id = payload;
+        state.isLoading = false;
+        state.error = null;
+        const index = state.recipes.findIndex(vel => vel.id === id);
+        state.recipes.splice(index, 1);
+      })
+      .addCase(removeMyRecipe.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
   },
 });
 
 export const myRecipeReducer = myRecipeSlice.reducer;
-export const {
-    removeMyRecipe,
-} = myRecipeSlice.actions;
