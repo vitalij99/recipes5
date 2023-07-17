@@ -18,7 +18,6 @@ export const fetchIngradients = createAsyncThunk(
   }
 );
 
-
 export const addRecipeToFavorite = createAsyncThunk(
   'favorite/add',
   async (id, thunkAPI) => {
@@ -58,7 +57,7 @@ export const getFavoriteRecipes = createAsyncThunk(
   'recipes/getFavoriteRecipes',
   async (_, thunkAPI) => {
     try {
-      const {data} = await axios.get(`/favorite`);
+      const { data } = await axios.get(`/favorite`);
       return data;
     } catch (err) {
       if (err) {
