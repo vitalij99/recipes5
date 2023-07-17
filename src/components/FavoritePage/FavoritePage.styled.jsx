@@ -250,3 +250,16 @@ export const SeeRecipeBtn = styled.button`
 //   background-repeat: no-repeat;
 //   background-image: url(${errorPhoto});
 // `;
+export const NotFoundText = styled.p`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-align:center;
+  color: ${props => props.theme.favoritePage.title};
+  opacity: 0.4;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+`;

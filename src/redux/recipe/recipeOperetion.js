@@ -122,3 +122,21 @@ export const addShoppingList = createAsyncThunk(
 //     }
 //   }
 // );
+
+// export const removeShoppingList = createAsyncThunk(
+//   'user/shopping',
+//   async (ingredient, thunkAPI) => {
+//     try {
+//       const { res } = await axios.patch(`user/shopping`, ingredient);
+//       if (res) {
+//         Notify.failure('Ingredient added on shoppingList');
+//       }
+//       return res;
+//     } catch (err) {
+//       if (err) {
+//         Notify.failure('Not found');
+//       }
+//       return thunkAPI.rejectWithValue(err.message);
+//     }
+//   }
+// );

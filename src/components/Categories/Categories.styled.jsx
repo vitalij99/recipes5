@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const CategoriesNavigateWrap = styled.div`
   overflow: hidden;
@@ -21,10 +22,48 @@ export const CategoriesNavigateWrap = styled.div`
 export const CategoriesNavList = styled.ul`
   display: flex;
   gap: 28px;
+  margin-bottom: 32px;
+  font-size: 14px;
 
   @media (min-width: 768px) {
     gap: 55px;
-    color: rgb(189, 189, 189);
+    margin-bottom: 28px;
+    font-size: 18px;
+  }
+`;
+
+export const CategoriesNavItem = styled.li`
+  // &.active ::after {
+  //   position: absolute;
+  //   bottom: 0px;
+  //   display: block;
+  //   width: 100%;
+  //   height: 2px;
+  //   background-color: ${props => props.theme.categoriesPage.menu.selected};
+  }
+`;
+
+export const NavLinkStyle = styled(NavLink)`
+  color: ${props => props.theme.searchPage.searchBar.text};
+  &.active {
+    position: relative;
+    color: ${props => props.theme.categoriesPage.menu.selected};
+  }
+
+  &.active::after {
+    position: absolute;
+    bottom: -32px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: ${props => props.theme.categoriesPage.menu.selected};
+    @media (min-width: 768px) {
+      bottom: -28px;
+    }
+  }
+  &:hover {
+    color: ${props => props.theme.categoriesPage.menu.selected};
   }
 `;
 
@@ -43,7 +82,6 @@ export const CategoriesList = styled.ul`
     gap: 32px;
   }
   @media (min-width: 1440px) {
-    justify-content: flex-start;
     gap: 14px;
     row-gap: 100px;
     padding-left: 99px;

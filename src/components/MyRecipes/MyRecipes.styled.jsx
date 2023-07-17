@@ -192,7 +192,7 @@ export const DeleteBtn = styled.button`
 
 
 export const SeeRecipeBtn = styled.button`
-    font-style: normal;
+    font-style: 'Poppins';
     font-weight: 400;
     font-size: 10px;
     line-height: 1.5;
@@ -248,3 +248,16 @@ export const SeeRecipeBtn = styled.button`
 //   background-repeat: no-repeat;
 //   background-image: url(${errorPhoto});
 // `;
+export const NotFoundText = styled.p`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-align:center;
+  color: ${props => props.theme.favoritePage.title};
+  opacity: 0.4;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+`;
