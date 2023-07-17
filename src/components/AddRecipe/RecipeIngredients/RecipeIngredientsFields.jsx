@@ -39,6 +39,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
   const handleSelectIngredient = (index, selectedOption) => {
     const updatedIngredients = [...ingredients];
     updatedIngredients[index].name = selectedOption.value;
+    updatedIngredients[index].id = selectedOption.id;
     setIngredients(updatedIngredients);
   };
 
@@ -70,7 +71,7 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
 
   useEffect(() => {
     if (ingredients.length === 0) {
-      setIngredients([{ id: '', name: '', amount: '',  measure: '' }]);
+      setIngredients([{ id: '', name: '', amount: '', measure: '' }]);
     }
   }, [ingredients.length, setIngredients]);
 
@@ -100,10 +101,16 @@ const RecipeIngredientsFields = ({ ingredients, setIngredients }) => {
                       : null
                   }
                   options={[
-                    { value: '', label: 'Select ingredient', isDisabled: true },
+                    {
+                      value: '',
+                      label: 'Select ingredient',
+                      isDisabled: true,
+                      id: '',
+                    },
                     ...ingredientOptions.map(option => ({
                       value: option.name,
                       label: option.name,
+                      id: option._id,
                     })),
                   ]}
                   maxMenuHeight={240}
