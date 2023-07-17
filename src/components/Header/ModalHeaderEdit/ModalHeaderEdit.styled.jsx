@@ -35,7 +35,10 @@ export const Modal = styled.div`
     border: none;
   }
   @media screen and (min-width: 1440px) {
-    right: 211px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 950px;
+    right: 0;
   }
 `;
 

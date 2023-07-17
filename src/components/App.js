@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -20,11 +21,20 @@ const ShoppingListPage = lazy(() =>
 const NotFoundPage = lazy(() => import('page/NotFoundPage/NotFoundPage'));
 
 function App() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(currentThunk());
   }, [dispatch]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
+    };
+
+    handleRouteChange();
+  }, [navigate]);
 
   return (
     <>

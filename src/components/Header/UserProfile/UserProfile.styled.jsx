@@ -26,7 +26,6 @@ export const Modal = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 480px;
-    height: 215px;
     padding: 50px 40px;
   }
 
@@ -36,13 +35,15 @@ export const Modal = styled.div`
   }
 `;
 
-export const ModalSaveButton = styled.div`
+export const ModalSaveButton = styled.button`
   border-radius: 6px;
+  border: none;
   background: ${props =>
     props.theme.mainPage.header.userMenuEditProfile.button.fill};
   padding: 21px 18px;
   display: flex;
   justify-content: center;
+  font-size: 14px;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
@@ -53,6 +54,7 @@ export const ModalSaveButton = styled.div`
     props.theme.mainPage.header.userMenuEditProfile.button.text};
   @media screen and (min-width: 768px) {
     margin-right: 16px;
+    font-size: 16px;
   }
 `;
 
@@ -60,6 +62,10 @@ export const Image = styled.img`
   width: 88px;
   height: 88px;
   border-radius: 50%;
+  @media screen and (min-width: 768px) {
+    width: 103px;
+    height: 103px;
+  }
 `;
 export const ImageContainer = styled.div`
   width: 100%;
@@ -68,6 +74,10 @@ export const ImageContainer = styled.div`
   align-items: center;
   margin-bottom: 54px;
   position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 `;
 export const CloseIconContainer = styled.div`
   cursor: pointer;
@@ -81,17 +91,24 @@ export const CloseIconContainer = styled.div`
   }
 `;
 
-export const AddIconContainer = styled.div`
+export const AddIconContainer = styled.label`
   display: flex;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   bottom: -8px;
-  right: 108px;
+  left: 42px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const Input = styled.input`
   width: 100%;
-
+  font-size: 14px;
   padding: 10px 40px 10px 40px;
   color: #23262a;
   border: 1px solid #23262a;
@@ -101,28 +118,14 @@ export const Input = styled.input`
   opacity: 0.4;
   margin-bottom: 24px;
 
-  &::placeholder {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    color: #23262a;
-    line-height: 15px;
+  @media screen and (min-width: 768px) {
+    padding: 14px 40px 14px 40px;
+    font-size: 18px;
   }
 `;
 export const Label = styled.label`
   position: relative;
   z-index: 999;
-
-  /* &::before {
-    content: '';
-
-    width: 18px;
-    height: 18px;
-    background-image: url('../../../images/Header/user.svg');
-    position: absolute;
-    left: 14px;
-    top: 5px;
-  } */
 `;
 
 export const UserIconContainer = styled.div`
@@ -135,4 +138,11 @@ export const EditIconContainer = styled.div`
   right: 14px;
   top: 5px;
   stroke: ${props => props.theme.mainPage.header.userMenuEditProfile.text};
+`;
+export const InputPhoto = styled.input`
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 `;

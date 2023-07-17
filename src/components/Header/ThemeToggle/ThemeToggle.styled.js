@@ -15,11 +15,11 @@ export const ThemeToggleStyled = styled.label`
   justify-content: start;
 
   @media screen and (min-width: 768px) {
-    left: 32px;
-    bottom: 32px;
+    left: 0px;
+    bottom: 100px;
   }
   @media screen and (min-width: 1440px) {
-    left: 1340px;
+    left: 1270px;
     top: 24px;
   }
 

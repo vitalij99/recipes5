@@ -14,19 +14,32 @@ import storage from 'redux-persist/lib/storage';
 import { ownerRecipeReducer } from './recipe/recipeSlice';
 import { mainReducer } from './main/mainSlice';
 import { themeReducer } from './theme/themeSlice';
+import { categoriesReducer } from './categories/categoriesSlice';
 
 const persistConfig = {
-  key: 'root',
+  key: 'auth',
   storage,
-  whitelist: ['token', 'userTheme'],
+  whitelist: ['token'],
+};
+const persistConfigUserTheme = {
+  key: 'userTheme',
+  storage,
+  whitelist: ['userTheme'],
+};
+
+const persistConfigRecipes = {
+  key: 'recipes',
+  storage,
+  whitelist: ['shoppingList', 'favorite'],
 };
 
 export const store = configureStore({
   reducer: {
-    theme: persistReducer(persistConfig, themeReducer),
+    theme: persistReducer(persistConfigUserTheme, themeReducer),
     auth: persistReducer(persistConfig, authReducer),
-    recipes: ownerRecipeReducer,
+    recipes: persistReducer(persistConfigRecipes, ownerRecipeReducer),
     main: mainReducer,
+    categories: categoriesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

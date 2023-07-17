@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
 export const IconWrapper = styled.div`
-  stroke: ${props => props.theme.mainPage.header.user.iconBurger};
+  /* stroke: ${props => props.theme.mainPage.header.user.iconBurger}; */
+  stroke: ${props => {
+    if (props.pathname === 'recipe') {
+      console.log('🚀 ~ props.pathname:', props);
+      return props.theme.mainPage.header.user.iconBurgerRecipePage.mobile;
+    }
+    return props.theme.mainPage.header.user.iconBurger;
+  }};
   cursor: pointer;
   &:hover {
     stroke: ${props => props.theme.mainPage.menuMobileModal.hover};
@@ -49,9 +56,10 @@ export const HeaderLogo = () => {
   );
 };
 
-export const MenuIcon = () => {
+export const MenuIcon = ({ pathname }) => {
+  console.log('🚀 ~ pathnamssssse:', pathname);
   return (
-    <IconWrapper>
+    <IconWrapper pathname={pathname}>
       <svg
         width="28"
         height="28"

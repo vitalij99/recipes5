@@ -37,6 +37,7 @@ const Header = () => {
   };
 
   const { pathname } = useLocation();
+
   const user = useSelector(selectAuthUser);
   const screenWidth = onScreenWidth();
   const [toggle, setToggleMenu] = useState(false);
@@ -44,30 +45,35 @@ const Header = () => {
   const [toggleModalEdit, setToggleModalEdit] = useState(false);
   const [toggleModalLogOut, setToggleModalLogOut] = useState(false);
   const body = document.querySelector('body');
+  const onSplitPathname = pathname => {
+    const result = pathname.split('/')[1];
+    return result;
+  };
+  const path = onSplitPathname(pathname);
 
-  // const onHidden = () => {
-  //   if (toggle) {
-
-  //   }
-  // };
   const handleToggleModalUserProfile = () => {
     setToggleModalEdit(false);
     setToggleEditUser(!toggleEditUser);
   };
 
   const handleToggleMenu = () => {
-    if (screenWidth) {
-      return;
-    }
     if (toggle) {
-      body.style.overflow = 'visible';
+      body.classList.remove('isOpen');
       setToggleMenu(!toggle);
     } else {
-      body.style.overflow = 'hidden';
       setToggleMenu(!toggle);
+      body.classList.add('isOpen');
     }
   };
-
+  // if (!toggle) {
+  //   body.style.overflow = 'auto';
+  //   setToggleMenu(!toggle);
+  // } else {
+  //   setToggleMenu(!toggle);
+  //   if (!screenWidth) {
+  //     body.style.overflow = 'hidden';
+  //   }
+  // }
   const handleToggleModalLogOut = () => {
     setToggleModalEdit(false);
     setToggleModalLogOut(!toggleModalLogOut);
@@ -85,34 +91,49 @@ const Header = () => {
             <NavListList>
               <NavListItem>
                 <NavLinkStyle
-                  onClick={handleToggleMenu}
+                  onClick={toggle ? handleToggleMenu : null}
                   to={'/categories/:breakfast'}
                 >
                   Categories
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/add'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/add'}
+                >
                   Add recipes
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/my'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/my'}
+                >
                   My recipes
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/favorite'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/favorite'}
+                >
                   Favorites
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/shopping-list'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/shopping-list'}
+                >
                   Shopping list
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
-                <NavLinkStyle onClick={handleToggleMenu} to={'/search'}>
+                <NavLinkStyle
+                  onClick={toggle ? handleToggleMenu : null}
+                  to={'/search'}
+                >
                   <SearchIcon />
                   {!screenWidth && <SearchText>Search</SearchText>}
                 </NavLinkStyle>
@@ -126,7 +147,7 @@ const Header = () => {
               <>
                 <UserAvatar src={user.avatarUrl} alt="User avatar" />
                 <UserName
-                  pathname={pathname}
+                  pathname={path}
                   onClick={() => {
                     setToggleModalEdit(!toggleModalEdit);
                   }}
@@ -136,7 +157,7 @@ const Header = () => {
               </>
             ) : null}
             <MenuButton onClick={handleToggleMenu}>
-              {toggle ? <CloseIcon /> : <MenuIcon />}
+              {toggle ? <CloseIcon /> : <MenuIcon pathname={path} />}
             </MenuButton>
           </MobileHeaderBlock>
         </HeaderContainer>

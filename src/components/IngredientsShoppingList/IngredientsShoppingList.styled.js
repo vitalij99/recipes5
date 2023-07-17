@@ -60,14 +60,17 @@ export const TitlesContainer = styled.div`
 export const List = styled.ul`
   margin-top: 32px;
   padding: 0 16px;
+  padding-bottom: 100px;
 
   @media screen and (min-width: 768px) {
     margin-top: 50px;
     padding: 0 32px;
+    padding-bottom: 200px;
   }
 
   @media screen and (min-width: 1440px) {
     padding: 0 140px;
+    padding-bottom: 200px;
   }
 `;
 

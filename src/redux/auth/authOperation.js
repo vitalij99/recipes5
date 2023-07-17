@@ -4,8 +4,7 @@ import {
   logoutApi,
   registerApi,
   currentApi,
-  updateAvatar,
-  updateName,
+  updateNameAndAvatar,
 } from './api';
 
 export const registerThunk = createAsyncThunk('auth/singup', user => {
@@ -20,12 +19,15 @@ export const logoutThunk = createAsyncThunk('auth/logout', () => {
 export const currentThunk = createAsyncThunk('auth/current', (...arr) => {
   return currentApi(...arr);
 });
-export const updateNameThunk = createAsyncThunk('auth/setName', newName => {
-  return updateName(newName);
-});
-export const updateAvatarThunk = createAsyncThunk(
-  'auth/setAvatar',
-  formData => {
-    return updateAvatar(formData);
+export const updateNameThunk = createAsyncThunk(
+  'auth/setName',
+  ({ name, avatar }) => {
+    return updateNameAndAvatar({ name, avatar });
   }
 );
+// export const updateAvatarThunk = createAsyncThunk(
+//   'auth/setAvatar',
+//   formData => {
+//     return updateAvatar(formData);
+//   }
+// );

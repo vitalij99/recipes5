@@ -71,22 +71,25 @@ export const currentApi = async (_, thunkAPI) => {
   }
 };
 
-export const updateName = async (newName, thunkAPI) => {
+export const updateNameAndAvatar = async ({ name, avatar }, thunkAPI) => {
   try {
-    const { data } = await axios.patch('/users/name', { name: newName });
+    const { data } = await axios.put('/users/update', {
+      name,
+      avatar,
+    });
     return data;
   } catch (error) {
     Notify.info('Failed to update the name');
     return thunkAPI.rejectWithValue(error.message);
   }
 };
-export const updateAvatar = async (formData, thunkAPI) => {
-  try {
-    const { data } = await axios.post('/users/avatars', formData);
+// export const updateAvatar = async (formData, thunkAPI) => {
+//   try {
+//     const { data } = await axios.post('/users/avatars', formData);
 
-    return data;
-  } catch (error) {
-    Notify.info('failed to update the avatar');
-    return thunkAPI.rejectWithValue(error.message);
-  }
-};
+//     return data;
+//   } catch (error) {
+//     Notify.info('failed to update the avatar');
+//     return thunkAPI.rejectWithValue(error.message);
+//   }
+// };

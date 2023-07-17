@@ -20,12 +20,18 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
 
   const handleFileInputChange = event => {
     const file = event.target.files[0];
-    handleInputChange('photo', file);
+    handleInputChange('thumb', file);
   };
 
   const handleSelectChange = event => {
     const { name, value } = event.target;
-    handleInputChange(name, value);
+
+    if (name === 'category') {
+      handleInputChange('category', value);
+      handleInputChange('tags', [value]);
+    } else {
+      handleInputChange(name, value);
+    }
   };
 
   const categoryOptions = categories.map(category => ({
@@ -41,9 +47,9 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
   return (
     <DescriptionBox>
       <AddPhotoContainer>
-        <label htmlFor="photo">
-          {recipeData.photo ? (
-            <img src={URL.createObjectURL(recipeData.photo)} alt="Recipe" />
+        <label htmlFor="thumb">
+          {recipeData.thumb ? (
+            <img src={URL.createObjectURL(recipeData.thumb)} alt="Recipe" />
           ) : (
             <BoxIcon>
               <AddPhotoIcon />
@@ -51,19 +57,19 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
           )}
           <InputPhoto
             type="file"
-            id="photo"
+            id="thumb"
             accept="image/*"
             onChange={handleFileInputChange}
           />
         </label>
       </AddPhotoContainer>
       <Form>
-        <LabelForm htmlFor="name">
+        <LabelForm htmlFor="title">
           <InputForm
             type="text"
-            id="name"
-            name="name"
-            value={recipeData.name}
+            id="title"
+            name="title"
+            value={recipeData.title}
             onChange={handleSelectChange}
             placeholder="Enter item title"
           />
@@ -92,11 +98,11 @@ const RecipeDescriptionFields = ({ recipeData, handleInputChange }) => {
             }
           />
         </LabelSelect>
-        <LabelSelect htmlFor="cookingTime">
+        <LabelSelect htmlFor="time">
           <Span>Cooking time</Span>
           <StyledSelect
-            id="cookingTime"
-            name="cookingTime"
+            id="time"
+            name="time"
             options={cookingTimeOptions}
             value={cookingTimeOptions.find(
               option => option.value === recipeData.cookingTime

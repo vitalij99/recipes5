@@ -1,11 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { selectFavoriteList } from 'redux/recipe/recipeSelector';
-import {
-  addRecipeToFavorite,
-  removeRecipeFromFavorit,
-} from 'redux/recipe/recipeSlice';
 
 import PresentModal from '../PresentModal/PresentModal';
 import Container from 'components/Container/Container';
@@ -18,15 +14,21 @@ import {
   HeroTitle,
   RecipeHeroWrapper,
 } from './RecipeHero.styled';
+import {
+  addRecipeToFavorite,
+  removeRecipeToFavorite,
+} from 'redux/recipe/recipeOperetion';
 
 function RecipeHero({ time, title, description, id }) {
   const [event, setEvent] = useState(null);
+  const [recipeOnFavorite, setRecipeOnFavorite] = useState(false);
 
   const favorites = useSelector(selectFavoriteList);
 
-  const [recipeOnFavorite, setRecipeOnFavorite] = useState(() =>
-    favorites.some(val => val.id === id)
-  );
+  useEffect(() => {
+    const res = favorites.some(val => val.id === id);
+    setRecipeOnFavorite(res);
+  }, [id, favorites]);
 
   const dispatch = useDispatch();
 
@@ -37,12 +39,12 @@ function RecipeHero({ time, title, description, id }) {
     if (favorites.length === 9) {
       setEvent('tenRecipesOnFavorite');
     }
-    const recipeId = { id };
+
     if (!recipeOnFavorite) {
-      dispatch(addRecipeToFavorite(recipeId));
+      dispatch(addRecipeToFavorite(id));
       setRecipeOnFavorite(!recipeOnFavorite);
     } else {
-      dispatch(removeRecipeFromFavorit(recipeId));
+      dispatch(removeRecipeToFavorite(id));
       setRecipeOnFavorite(!recipeOnFavorite);
     }
   };
