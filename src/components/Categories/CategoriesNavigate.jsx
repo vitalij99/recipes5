@@ -1,20 +1,22 @@
-import data from './data';
 import { NavLink } from 'react-router-dom';
-
 import { CategoriesNavList } from './Categories.styled';
+import { useSelector } from 'react-redux';
+import { selectCategoriesList } from 'redux/categories/categoriesSelector';
 
 export const CategoriesNavigate = () => {
-  // const categoriesNavigate = useNavigate();
+  const categories = useSelector(selectCategoriesList);
 
   return (
     <CategoriesNavList>
-      {data.map(({ _id, category }) => (
-        <li key={_id}>
-          <NavLink to={`/categories/${category}`}>
-            <p>{category}</p>
-          </NavLink>
-        </li>
-      ))}
+      {categories.map(item => {
+        return (
+          <li key={item}>
+            <NavLink to={`/categories/${item}`}>
+              <p>{item}</p>
+            </NavLink>
+          </li>
+        );
+      })}
     </CategoriesNavList>
   );
 };
