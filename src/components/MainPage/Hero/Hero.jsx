@@ -5,7 +5,7 @@ import {
   ParagrafStyled,
   SpanTitle,
   TitleStyled,
-  WraooerSearchStyled,
+  WrapperSearchStyled,
   WrapperStyled,
 } from './Hero.styled';
 import { InformMenu } from './InformMenu/InformMenu';
@@ -27,9 +27,9 @@ const Hero = () => {
         </BoxStyled>
         <InformFieldStyled />
         <InformMenu />
-        <WraooerSearchStyled>
+        <WrapperSearchStyled>
           <SearchForm mainPage={true} />
-        </WraooerSearchStyled>
+        </WrapperSearchStyled>
       </Container>
     </WrapperStyled>
   );

@@ -48,7 +48,11 @@ export const WrapperStyled = styled.div`
     background-position: top left, 63% 130px, 86%, right top;
   }
 `;
-export const BoxStyled = styled.div``;
+export const BoxStyled = styled.div`
+  @media screen and (min-width: 1440px) {
+    padding: 0 50px;
+  }
+`;
 export const TitleStyled = styled.h1`
   font-size: 60px;
   font-weight: 400;
@@ -98,7 +102,7 @@ export const InformFieldStyled = styled.div`
   left: -20px;
   z-index: 3;
 `;
-export const WraooerSearchStyled = styled.div`
+export const WrapperSearchStyled = styled.div`
   position: absolute;
 
   @media screen and (max-width: 767px) {
@@ -111,6 +115,7 @@ export const WraooerSearchStyled = styled.div`
     width: 362px;
   }
   @media screen and (min-width: 1440px) {
+    margin-left: 50px;
     width: 510px;
   }
 `;
