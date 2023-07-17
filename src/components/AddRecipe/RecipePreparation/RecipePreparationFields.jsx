@@ -8,11 +8,11 @@ import {
   Button,
 } from './RecipePreparation.styled';
 
-const RecipePreparationFields = ({ preparation, setPreparation }) => {
-  const handlePreparationChange = event => {
+const RecipePreparationFields = ({ instructions, setInstructions }) => {
+  const handleInstructionsChange = event => {
     const inputText = event.target.value;
-    const preparationArray = inputText.split('\n');
-    setPreparation(preparationArray);
+    const instructionsArray = inputText.split('\n');
+    setInstructions(instructionsArray);
   };
 
   return (
@@ -20,8 +20,8 @@ const RecipePreparationFields = ({ preparation, setPreparation }) => {
       <Title>Recipe Preparation</Title>
       <TextAreaBox>
         <TextArea
-          value={preparation.join('\n')}
-          onChange={handlePreparationChange}
+          value={instructions.join('\n')}
+          onChange={handleInstructionsChange}
           placeholder="Enter recipe"
         />
         <Button type="submit">Add</Button>
