@@ -147,9 +147,16 @@ export const ItemIngredient = styled.li`
 `;
 
 export const SelectStyled = styled(Select)`
-  & .css-1fdsijx-ValueContainer {
+  & .css-t3ipsp-control {
+    background-color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.selectionBackground};
     & .css-1dimb5e-singleValue {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    }
+  }
+  & .css-1fdsijx-ValueContainer {
+    & .css-1dimb5e-singleValue {
+      color: ${props => props.theme.addRecipePage.listOfIngredients.text2};
     }
     & .css-1jqq78o-placeholder {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};

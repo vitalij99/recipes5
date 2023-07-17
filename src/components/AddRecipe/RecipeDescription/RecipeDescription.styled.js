@@ -166,11 +166,22 @@ export const StyledSelect = styled(Select)`
 
   & .css-t3ipsp-control {
     box-shadow: none;
+    background-color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.selectionBackground};
+
+    & .css-166bipr-Input {
+      color: ${props => props.theme.addRecipePage.listOfIngredients.text1};
+    }
+
     border: none;
     &:hover {
       border-color: ${props =>
         props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
       outline: none;
+    }
+
+    & .css-1dimb5e-singleValue {
+      color: ${props => props.theme.addRecipePage.listOfItems.text2};
     }
   }
 
