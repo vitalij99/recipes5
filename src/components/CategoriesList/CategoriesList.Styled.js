@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const CategoriesSection = styled.div`
-   background-color: ${props => props.theme.categoriesPage.background};
-  }
+  background-color: ${props => props.theme.categoriesPage.background};
 `;
 
 export const CategoriesNavListStyled = styled.div`
-  display:flex;
-      // border-bottom: 1px solid ${props =>
-        props.theme.addRecipePage.listOfItems.underline};
-  }
-  
+  display: flex;
+  /* border-bottom: 1px solid
+    ${props => props.theme.addRecipePage.listOfItems.underline}; */
 `;
 
 export const CategoriesListStyled = styled.ul`
@@ -47,13 +44,14 @@ export const CategoriesImg = styled.img`
 `;
 
 export const ProductNameWrap = styled.div`
+  display: flex;
   position: absolute;
   width: 307px;
   height: 52px;
   bottom: 24px;
   left: 18px;
   border-radius: 8px;
-  background: ${props =>
+  background-color: ${props =>
     props.theme.categoriesPage.list.recipePlate.background};
 
   @media (min-width: 768px) {
@@ -65,8 +63,6 @@ export const ProductNameWrap = styled.div`
 `;
 
 export const ProductName = styled.p`
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;

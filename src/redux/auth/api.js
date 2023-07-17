@@ -13,9 +13,8 @@ const tokenOperation = {
 };
 
 export const registerApi = async (user, thunkAPI) => {
-  const { data } = await axios.post('/users/register', user);
-
   try {
+    const { data } = await axios.post('/users/register', user);
     tokenOperation.setToken(data.token);
     Notify.success('Registrated succesfully!');
     return data;

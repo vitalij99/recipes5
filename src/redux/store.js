@@ -15,7 +15,11 @@ import { ownerRecipeReducer } from './recipe/recipeSlice';
 import { mainReducer } from './main/mainSlice';
 import { themeReducer } from './theme/themeSlice';
 import { categoriesReducer } from './categories/categoriesSlice';
+
 import { shoppingListReducer } from './shopping/shoppingListSlice';
+
+
+import { myRecipeReducer } from './myrecipes/myRecipeSlice';
 
 const persistConfig = {
   key: 'auth',
@@ -49,6 +53,7 @@ export const store = configureStore({
 
     main: mainReducer,
     categories: categoriesReducer,
+    myrecipes:myRecipeReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

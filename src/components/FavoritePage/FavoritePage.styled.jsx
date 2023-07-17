@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Trash } from "images/Favorite/trashBlack.svg"
-import errorPhoto from '../../images/error-404.svg';
+// import errorPhoto from '../../images/error-404.svg';
 
 
 export const PageTitle = styled.h2`
@@ -138,15 +138,17 @@ export const Time = styled.div`
 `;
 
 export const TrashSvg = styled(Trash)`
-  stroke:black;
+  stroke:${props => props.theme.favoritePage.icon.color};
   
   @media (max-width: 767px) {
     width: 10px;
     height: 11px;
+    stroke:${props => props.theme.favoritePage.icon.color};
   }
   @media (min-width: 1440px) {
     width: 18px;
     height: 20px;
+    stroke:${props => props.theme.favoritePage.icon.color};
   }
 `;
 
@@ -177,14 +179,14 @@ export const DeleteBtn = styled.button`
   @media (min-width: 768px) {
     width: 38px;
     height: 38px;
-    background: #8baa36;
+    background: #${props => props.theme.favoritePage.icon.background};
     border-radius: 4px;
     line-height: 38px;
   }
   @media (min-width: 1440px) {
     width: 44px;
     height: 44px;
-    background: #ebf3d4;
+    background: ${props => props.theme.favoritePage.icon.background};
     border-radius: 4px;
     line-height: 44px;
   }
@@ -235,16 +237,16 @@ export const SeeRecipeBtn = styled.button`
   }
 `;
 
-export const ErrorWrap = styled.div`
-text-align: center;
-margin-top:100px;
-`
-export const ErrorPhoto = styled.div`
-  background-size: cover;
-  background-content: no-repeat;
-  display: inline-block;
-  height: 170px;
-  width: 259px;
-  background-repeat: no-repeat;
-  background-image: url(${errorPhoto});
-`;
+// export const ErrorWrap = styled.div`
+// text-align: center;
+// margin-top:100px;
+// `
+// export const ErrorPhoto = styled.div`
+//   background-size: cover;
+//   background-content: no-repeat;
+//   display: inline-block;
+//   height: 170px;
+//   width: 259px;
+//   background-repeat: no-repeat;
+//   background-image: url(${errorPhoto});
+// `;

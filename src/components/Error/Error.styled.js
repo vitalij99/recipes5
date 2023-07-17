@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ErrorContainer = styled.div`
-  background-color: ${props => props.theme.errorPage.background};
+  background-color: transparent;
 `;
 
 const Img = styled.img`

@@ -91,7 +91,7 @@ const Header = () => {
             <NavListList>
               <NavListItem>
                 <NavLinkStyle
-                  onClick={handleToggleMenu}
+                  onClick={toggle ? handleToggleMenu : null}
                   to={'/categories/:breakfast'}
                 >
                   Categories

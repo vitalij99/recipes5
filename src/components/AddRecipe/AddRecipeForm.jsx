@@ -8,7 +8,7 @@ import RecipeIngredientsFields from './RecipeIngredients/RecipeIngredientsFields
 import RecipePreparationFields from './RecipePreparation/RecipePreparationFields';
 import onValidationForm from './validationForm';
 import { Link } from 'react-router-dom';
-import sendRecipeData from './Api'
+import sendRecipeData from './Api';
 
 const checkScreenWidth = () => {
   return window.innerWidth;
@@ -49,15 +49,18 @@ const AddRecipeForm = () => {
     });
   };
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = async event => {
     event.preventDefault();
     const validatedData = onValidationForm(recipeData);
     if (validatedData) {
       try {
+        const { cookingTime, ...newRecipeData } = recipeData;
         const recipeDataToSend = {
-          ...recipeData,
-          instructions: arrayToString(recipeData.instructions),
+          ...newRecipeData,
+          instructions: arrayToString(newRecipeData.instructions),
+          time: cookingTime + '',
         };
+
         await sendRecipeData(recipeDataToSend);
         Notify.success('Recipe Added');
         setRecipeData(initialRecipeData);
