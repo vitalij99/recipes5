@@ -1,5 +1,9 @@
-import { NavLink } from 'react-router-dom';
-import { CategoriesNavList } from './Categories.styled';
+// import { NavLink } from 'react-router-dom';
+import {
+  CategoriesNavItem,
+  CategoriesNavList,
+  NavLinkStyle,
+} from './Categories.styled';
 import { useSelector } from 'react-redux';
 import { selectCategoriesList } from 'redux/categories/categoriesSelector';
 
@@ -10,11 +14,11 @@ export const CategoriesNavigate = () => {
     <CategoriesNavList>
       {categories.map(item => {
         return (
-          <li key={item}>
-            <NavLink to={`/categories/${item}`}>
+          <CategoriesNavItem key={item}>
+            <NavLinkStyle to={`/categories/${item}`}>
               <p>{item}</p>
-            </NavLink>
-          </li>
+            </NavLinkStyle>
+          </CategoriesNavItem>
         );
       })}
     </CategoriesNavList>

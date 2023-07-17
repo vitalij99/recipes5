@@ -1,40 +1,33 @@
 import { CategoriesNavigateWrap } from './Categories.styled';
 import { CardItem } from './CardItem';
 import { CategoriesNavigate } from './CategoriesNavigate';
-import data from './data';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  categoriesListThunk,
+  categoriesThunk,
+} from 'redux/categories/categoriesOperation';
 
 export const Categories = () => {
-  // const [categories, setCategories] = useState([]);
+  const { categoryName } = useParams();
+  const dispatch = useDispatch();
+  console.log(categoryName);
+
+  useEffect(() => {
+    dispatch(categoriesThunk(categoryName));
+  }, [categoryName, dispatch]);
+
+  useEffect(() => {
+    dispatch(categoriesListThunk());
+  }, [dispatch]);
 
   return (
     <>
       <CategoriesNavigateWrap>
         <CategoriesNavigate />
       </CategoriesNavigateWrap>
-      <CardItem data={data} />
+      <CardItem />
     </>
   );
 };
-
-// import { CategoriesNavigateWrap } from './Categories.styled';
-// import { CardItem } from './CardItem';
-// import { CategoriesNavigate } from './CategoriesNavigate';
-// import { useSelector } from 'react-redux';
-
-// // const data = useSelector(selectCategories);
-// // const dispatch = useDispatch();
-// // useEffect(() => {
-// //   dispatch(categoriesThunk());
-// // }, [dispatch]);
-
-// export const Categories = () => {
-//   const data = useSelector()
-//   return (
-//     <>
-//       <CategoriesNavigateWrap>
-//         <CategoriesNavigate />
-//       </CategoriesNavigateWrap>
-//       <CardItem data={data} />
-//     </>
-//   );
-// };
