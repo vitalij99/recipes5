@@ -7,27 +7,24 @@ import { TitlesSection } from './TitlesSection';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  shoppingListIsLoading,
-  shoppingListSelector,
-} from 'redux/shopping/shoppingListSelectors';
-import {
-  shoppingListRemoveItemThunk,
-  shoppingListThunk,
-} from 'redux/shopping/shoppingListOperations';
+  fetchShoppingList,
+  removeShoppingList,
+} from 'redux/recipe/recipeOperetion';
+import { getIsLoading, selectShoppingList } from 'redux/recipe/recipeSelector';
 import Loader from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
   const [clientHeight, setClientHeight] = useState('');
 
   const dispatch = useDispatch();
-  const shoppingList = useSelector(shoppingListSelector);
-  const isLoading = useSelector(shoppingListIsLoading);
+  const shoppingList = useSelector(selectShoppingList);
 
-  // console.log(shoppingList);
+  const isLoading = useSelector(getIsLoading);
+
   const componentRef = useRef(null);
 
   useEffect(() => {
-    dispatch(shoppingListThunk());
+    dispatch(fetchShoppingList());
     if (componentRef.current) {
       const height = componentRef.current.clientHeight;
       setClientHeight(height);
@@ -35,8 +32,7 @@ export const IngredientsShoppingList = () => {
   }, [dispatch]);
 
   const handleRemoveShoppingList = id => {
-    // console.log('we are trying to remove shopping-list item');
-    dispatch(shoppingListRemoveItemThunk(id));
+    dispatch(removeShoppingList(id));
   };
 
   return (
