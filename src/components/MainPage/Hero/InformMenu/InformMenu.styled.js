@@ -37,10 +37,6 @@ export const InformWrapperStyled = styled.div`
     top: 500px;
     left: 70%;
   }
-  @media screen and (min-width: 2240px) {
-    top: 620px;
-    left: 63%;
-  }
 `;
 export const TextfStyled = styled.p`
   font-size: 12px;
