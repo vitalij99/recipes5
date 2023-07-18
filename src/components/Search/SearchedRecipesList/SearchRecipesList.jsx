@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 import { CardItem } from 'components/Categories/CardItem';
 import Container from 'components/Container/Container';
 import { Section } from 'components/Search/SearchedRecipesList/SearchRecipesList.styled';
 import React, { useEffect, useMemo, useState } from 'react';
-import data from '../../Categories/data.json';
+
 import { SearchNotFound } from '../SearchNotFound/SearchNotFound';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
@@ -40,7 +39,11 @@ export const SearchRecipesList = () => {
     <>
       <Section>
         <Container>
-          {listRes.length === 0 ? <SearchNotFound /> : <CardItem data={data} />}
+          {listRes.length === 0 ? (
+            <SearchNotFound />
+          ) : (
+            <CardItem data={listRes} />
+          )}
         </Container>
       </Section>
     </>
