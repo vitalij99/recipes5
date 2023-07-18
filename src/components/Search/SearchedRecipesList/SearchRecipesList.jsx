@@ -20,13 +20,14 @@ export const SearchRecipesList = () => {
     const fetchData = async () => {
       try {
         if (query) {
-          const response = await axios.get(`recipes/search?title=${query}`);
-          setListRes(response);
+          const { data } = await axios.get(`recipes/search?title=${query}`);
+
+          setListRes(data);
         } else if (ingredient) {
-          const response = await axios.get(
+          const { data } = await axios.get(
             `/recipes/ingredients?ingredients=${ingredient}`
           );
-          setListRes(response);
+          setListRes(data);
         }
       } catch (error) {
         console.error(error);
@@ -39,7 +40,7 @@ export const SearchRecipesList = () => {
     <>
       <Section>
         <Container>
-          {listRes ? <SearchNotFound /> : <CardItem data={listRes} />}
+          {!listRes ? <SearchNotFound /> : <CardItem data={listRes} />}
         </Container>
       </Section>
     </>
