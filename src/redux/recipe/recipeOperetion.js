@@ -109,7 +109,7 @@ export const removeShoppingList = createAsyncThunk(
   'shopping-list/removeShoppingList',
   async (id, thunkAPI) => {
     try {
-      const { res } = await axios.delete(`/shopping-list/${id}`);
+      const res = await axios.delete(`/shopping-list/${id}`);
       if (res) {
         Notify.success('Ingredient delete successful');
       }
