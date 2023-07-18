@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const IconWrapper = styled.div`
-  /* stroke: ${props => props.theme.mainPage.header.user.iconBurger}; */
   stroke: ${props => {
     if (props.pathname === 'recipe') {
       return props.theme.mainPage.header.user.iconBurgerRecipePage.mobile;
@@ -67,7 +66,6 @@ export const HeaderLogo = () => {
 };
 
 export const MenuIcon = ({ pathname }) => {
-  console.log('🚀 ~ pathname:', pathname);
   return (
     <IconWrapper pathname={pathname}>
       <svg
