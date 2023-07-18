@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 900;
 `;
 export const Modal = styled.div`
   width: 330px;
@@ -42,7 +43,7 @@ export const ModalLogOutText = styled.div`
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.28px;
-  color: ${props => props.theme.mainPage.header.nav.text};
+  color: ${props => props.theme.mainPage.header.userMenuEditProfile.text};
   margin-bottom: 24px;
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
@@ -84,7 +85,8 @@ export const ModalCancelButton = styled.div`
   width: 48%;
   margin-right: 8px;
   cursor: pointer;
-  color: ${props => props.theme.mainPage.header.userMenuEditProfile.text};
+  color: ${props =>
+    props.theme.mainPage.header.userMenuEditProfile.button.hoverFill};
 `;
 export const ModaButtonContainer = styled.div`
   display: flex;

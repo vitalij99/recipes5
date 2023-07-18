@@ -23,7 +23,7 @@ const ModalHeaderEdit = ({
     <>
       <ModalOverlay
         onClick={e => {
-          e.currentTarget === e.target && setToggleModalEdit(false);
+          return e.currentTarget === e.target && setToggleModalEdit(false);
         }}
       >
         <Modal>

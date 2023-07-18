@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 import bgImg from '../../images/Header/spinach.png';
-// import bgImgTablet from '../../images/Header/spinach@2x.png';
-// import SwitchImg from '../../images/Header/Switch.png';
-// import SwitchBodyImg from '../../images/Header/switch-body.png';
+import bgImgTablet from '../../images/Header/spinach@2x.png';
 
 //NOTE - changed to .header max-width
 export const HeaderContainer = styled.header`
@@ -12,14 +10,15 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 16px;
-  font-family: 'Poppins', sans-serif;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 16px;
+  font-family: 'Poppins', sans-serif;
+
   z-index: 105;
   background-color: transparent;
   @media screen and (min-width: 768px) {
@@ -76,7 +75,7 @@ export const UserName = styled.p`
   cursor: pointer;
   color: ${props => {
     if (props.pathname === 'recipe') {
-      return props.theme.mainPage.header.user.textRecipePage;
+      return props.theme.mainPage.header.user.textRecipePage.desktop;
     }
     return props.theme.mainPage.header.user.text;
   }};
@@ -88,6 +87,15 @@ export const UserName = styled.p`
   @media screen and (min-width: 1440px) {
     font-size: 14px;
     margin-right: 158px;
+    color: ${props => {
+      if (props.pathname === 'main') {
+        return props.theme.mainPage.header.user.textRecipePage.desktop;
+      }
+      if (props.pathname === 'recipe') {
+        return props.theme.mainPage.header.user.textRecipePage.desktop;
+      }
+      return props.theme.mainPage.header.user.text;
+    }};
   }
 `;
 export const SiteNav = styled.nav`
@@ -233,24 +241,18 @@ export const BackgroundContainer = styled.div`
     }
     return;
   }};
-  //NOTE - changed old
-  /* height: ${props => {
-    if (props.toggle === 'true') {
-      return '100vh';
-    }
-    return;
-  }}; */
+
   background-color: ${props => {
     if (props.toggle === 'true') {
       return props.theme.mainPage.menuMobileModal.background;
     }
     return 'transparent';
   }};
+  @media screen and (min-width: 768px) {
+    background-image: url(${bgImgTablet});
+  }
   @media screen and (min-width: 1440px) {
     background: none;
-    //NOTE - changed commented out height width
-    /* height: 80px;
-    width: 1240px; */
     margin-left: auto;
     margin-right: auto;
   }

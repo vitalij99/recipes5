@@ -9,7 +9,7 @@ export const ThemeToggleStyled = styled.label`
 
   width: 61px;
   height: 27px;
-  left: 0;
+  left: -40px;
   bottom: 90px;
   display: flex;
   justify-content: start;

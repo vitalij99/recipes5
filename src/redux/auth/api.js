@@ -72,10 +72,18 @@ export const currentApi = async (_, thunkAPI) => {
 
 export const updateNameAndAvatar = async ({ name, avatar }, thunkAPI) => {
   try {
-    const { data } = await axios.put('/users/update', {
-      name,
-      avatar,
-    });
+    const { data } = await axios.put(
+      '/users/update',
+      {
+        name,
+        avatar,
+      },
+      {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      }
+    );
+    Notify.success('User profile updated successfully!');
+
     return data;
   } catch (error) {
     Notify.info('Failed to update the name');

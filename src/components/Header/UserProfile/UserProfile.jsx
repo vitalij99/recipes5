@@ -43,7 +43,6 @@ const UserProfile = ({ handleToggleModalUserProfile }) => {
 
   const handleFileInputChange = e => {
     const file = e.target.files[0];
-    console.log('🚀 ~ file:', file);
     handleInputChange('avatar', file);
   };
 
