@@ -2,10 +2,15 @@ import styled, { keyframes } from 'styled-components';
 import { IoRestaurantSharp } from 'react-icons/io5';
 
 const LoaderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  z-index: 999;
   background-color: ${props => props.theme.loader.background};
 `;
 
