@@ -28,8 +28,8 @@ const shoppingListSlice = createSlice({
       .addCase(shoppingListRemoveItemThunk.pending, state => {
         state.isLoading = true;
       })
-      .addCase(shoppingListRemoveItemThunk.fulfilled, (state, { payload }) => {
-        const index = state.shoppingList.findIndex(item => item.id === payload);
+      .addCase(shoppingListRemoveItemThunk.fulfilled, (state, { id }) => {
+        const index = state.shoppingList.findIndex(item => item.id === id);
         state.shoppingList.splice(index, 1);
         state.isLoading = false;
         state.error = null;

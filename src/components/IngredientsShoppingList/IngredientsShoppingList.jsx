@@ -6,17 +6,22 @@ import { ListSection } from './ListSection';
 import { TitlesSection } from './TitlesSection';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { shoppingListSelector } from 'redux/shopping/shoppingListSelectors';
+import {
+  shoppingListIsLoading,
+  shoppingListSelector,
+} from 'redux/shopping/shoppingListSelectors';
 import {
   shoppingListRemoveItemThunk,
   shoppingListThunk,
 } from 'redux/shopping/shoppingListOperations';
+import Loader from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
   const [clientHeight, setClientHeight] = useState('');
 
   const dispatch = useDispatch();
   const shoppingList = useSelector(shoppingListSelector);
+  const isLoading = useSelector(shoppingListIsLoading);
 
   // console.log(shoppingList);
   const componentRef = useRef(null);
@@ -39,12 +44,18 @@ export const IngredientsShoppingList = () => {
       <Section ref={componentRef} style={{ minHeight: `${clientHeight}px` }}>
         <Container>
           <TitlesSection />
-          {shoppingList !== undefined ? (
-            <ListSection
-              data={shoppingList}
-              onClick={handleRemoveShoppingList}
-            />
-          ) : null}
+          {isLoading ? (
+            <Loader fullscreen={true} />
+          ) : (
+            <>
+              {shoppingList !== undefined ? (
+                <ListSection
+                  data={shoppingList}
+                  onClick={handleRemoveShoppingList}
+                />
+              ) : null}
+            </>
+          )}
         </Container>
       </Section>
     </>

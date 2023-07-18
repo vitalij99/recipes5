@@ -1,13 +1,28 @@
 import React from 'react';
-import { LoaderContainer, PulsatingAnimation, Icon } from './Loader.styled';
+import {
+  LoaderContainer,
+  PulsatingAnimation,
+  Icon,
+  LoaderContainer2,
+} from './Loader.styled';
 
-const Loader = () => {
+const Loader = ({ fullscreen }) => {
   return (
-    <LoaderContainer>
-      <PulsatingAnimation>
-        <Icon />
-      </PulsatingAnimation>
-    </LoaderContainer>
+    <>
+      {fullscreen ? (
+        <LoaderContainer2>
+          <PulsatingAnimation>
+            <Icon />
+          </PulsatingAnimation>
+        </LoaderContainer2>
+      ) : (
+        <LoaderContainer>
+          <PulsatingAnimation>
+            <Icon />
+          </PulsatingAnimation>
+        </LoaderContainer>
+      )}
+    </>
   );
 };
 

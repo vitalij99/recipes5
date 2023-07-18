@@ -29,6 +29,7 @@ export const shoppingListThunk = createAsyncThunk(
 
 export const shoppingListRemoveItemThunk = createAsyncThunk(
   '/recipes/shopping-list/',
+
   async (id, { getState, rejectWithValue }) => {
     // console.log('we are trying to remove shopping-list item');
     const state = getState();
@@ -36,8 +37,11 @@ export const shoppingListRemoveItemThunk = createAsyncThunk(
 
     try {
       setAuthHeader(token);
-      await axios.delete(`/shopping-list/${id}`);
-      return id;
+      const res = await axios.delete(`/shopping-list/${id}`);
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      return { res, id };
     } catch (err) {
       if (err) {
         Notify.failure('Cant remove shopping-list item!');
