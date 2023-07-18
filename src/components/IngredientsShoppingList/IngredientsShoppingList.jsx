@@ -41,7 +41,7 @@ export const IngredientsShoppingList = () => {
         <Container>
           <TitlesSection />
           {isLoading ? (
-            <Loader fullscreen={true} />
+            <Loader />
           ) : (
             <>
               {shoppingList !== undefined ? (
