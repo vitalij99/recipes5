@@ -41,7 +41,10 @@ export const IngredientsShoppingList = () => {
 
   return (
     <>
-      <Section ref={componentRef} style={{ minHeight: `${clientHeight}px` }}>
+      <Section
+        ref={componentRef}
+        // style={{ minHeight: `${clientHeight}px` }}
+      >
         <Container>
           <TitlesSection />
           {isLoading ? (
