@@ -26,7 +26,7 @@ export const SearchRecipesList = () => {
           });
           setListRes(response);
         } else if (ingredient) {
-          const response = await axios.post('recipes/search', {
+          const response = await axios.post('/recipes/ingredients', {
             ingredient,
           });
           setListRes(response);
