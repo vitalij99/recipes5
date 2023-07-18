@@ -124,7 +124,7 @@ const GlobalStyles = createGlobalStyle`
 
   #root{
     height: 100vh;
-    /* display: flex; */
+    display: flex;
     flex-direction: column; 
     background-color: ${props => props.theme.mainPage.background}; 
   }

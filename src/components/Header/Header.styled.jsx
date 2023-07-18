@@ -202,12 +202,44 @@ export const BackgroundContainer = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
+  //NOTE - new
+  position: ${props => {
+    if (props.toggle === 'true') {
+      return 'fixed';
+    }
+    return;
+  }};
+  top: ${props => {
+    if (props.toggle === 'true') {
+      return '0';
+    }
+    return;
+  }};
+  left: ${props => {
+    if (props.toggle === 'true') {
+      return '0';
+    }
+    return;
+  }};
+  width: ${props => {
+    if (props.toggle === 'true') {
+      return '100%';
+    }
+    return;
+  }};
   height: ${props => {
+    if (props.toggle === 'true') {
+      return '100%';
+    }
+    return;
+  }};
+  //NOTE - changed old
+  /* height: ${props => {
     if (props.toggle === 'true') {
       return '100vh';
     }
     return;
-  }};
+  }}; */
   background-color: ${props => {
     if (props.toggle === 'true') {
       return props.theme.mainPage.menuMobileModal.background;
