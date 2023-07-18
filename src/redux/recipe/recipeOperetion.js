@@ -105,20 +105,20 @@ export const addShoppingList = createAsyncThunk(
   }
 );
 
-// export const removeShoppingList = createAsyncThunk(
-//   'shopping-list/removeShoppingList',
-//   async (id, thunkAPI) => {
-//     try {
-//       const { res } = await axios.delete(`user/shopping/${id}`);
-//       if (res) {
-//         Notify.success('Ingredient delete successful');
-//       }
-//       return res;
-//     } catch (err) {
-//       if (err) {
-//         Notify.failure('Not found');
-//       }
-//       return thunkAPI.rejectWithValue(err.message);
-//     }
-//   }
-// );
+export const removeShoppingList = createAsyncThunk(
+  'shopping-list/removeShoppingList',
+  async (id, thunkAPI) => {
+    try {
+      const { res } = await axios.delete(`/shopping-list/${id}`);
+      if (res) {
+        Notify.success('Ingredient delete successful');
+      }
+      return id;
+    } catch (err) {
+      if (err) {
+        Notify.failure('Not found');
+      }
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
