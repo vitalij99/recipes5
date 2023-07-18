@@ -40,7 +40,7 @@ export const CategoriesNavItem = styled.li`
   //   width: 100%;
   //   height: 2px;
   //   background-color: ${props => props.theme.categoriesPage.menu.selected};
-  }
+  /* } */
 `;
 
 export const NavLinkStyle = styled(NavLink)`

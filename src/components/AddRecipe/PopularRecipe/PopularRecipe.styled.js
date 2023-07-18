@@ -27,10 +27,12 @@ export const Title = styled.h3`
 export const PopularBox = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 24px;
 
   @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 32px;
   }
 
@@ -44,7 +46,8 @@ export const ContainerRecipe = styled.div`
   display: flex;
   padding-bottom: 13px;
   border-bottom: 1px solid rgba(112, 112, 112, 0.17);
-  max-width: 320px;
+  width: 343px;
+  height: 98px;
 
   &:hover,
   &:focus {
@@ -57,6 +60,14 @@ export const ContainerRecipe = styled.div`
   &:not(:focus) {
     transition: 0.6s;
     animation: easeOut;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 319px;
   }
 `;
 
