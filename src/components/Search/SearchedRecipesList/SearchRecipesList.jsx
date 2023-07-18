@@ -21,14 +21,12 @@ export const SearchRecipesList = () => {
     const fetchData = async () => {
       try {
         if (query) {
-          const response = await axios.post('recipes/search', {
-            title: query,
-          });
+          const response = await axios.get(`recipes/search?title=${query}`);
           setListRes(response);
         } else if (ingredient) {
-          const response = await axios.post('/recipes/ingredients', {
-            ingredient,
-          });
+          const response = await axios.get(
+            `/recipes/ingredients?ingredients=${ingredient}`
+          );
           setListRes(response);
         }
       } catch (error) {
