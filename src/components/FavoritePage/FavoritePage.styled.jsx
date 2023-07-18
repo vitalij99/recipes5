@@ -1,41 +1,38 @@
 import styled from 'styled-components';
-import { ReactComponent as Trash } from "images/Favorite/trashBlack.svg"
+import { ReactComponent as Trash } from 'images/Favorite/trashBlack.svg';
 // import errorPhoto from '../../images/error-404.svg';
 
-
 export const PageTitle = styled.h2`
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 28px;
-line-height: 1;
-padding: 114px 16px 60px 16px;
-color: ${props => props.theme.favoritePage.title};
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  padding: 114px 16px 60px 16px;
+  color: ${props => props.theme.favoritePage.title};
 
-@media screen and (min-width: 768px) {
-   font-size: 32px;
-   padding: 136px 32px 60px 32px;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    padding: 136px 32px 60px 32px;
   }
   @media screen and (min-width: 1440px) {
     font-size: 44px;
     padding: 164px 100px 110px 100px;
   }
-
 `;
 export const CardList = styled.ul`
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 18px;
   margin-bottom: 40px;
 
   @media (min-width: 768px) {
-    gap:40px;
+    gap: 40px;
   }
   @media (min-width: 1440px) {
     gap: 50px;
   }
 `;
-
 
 export const Card = styled.li`
   height: 152px;
@@ -55,10 +52,10 @@ export const Card = styled.li`
 `;
 
 export const CardImg = styled.img`
-    margin-right: 14px;
-    border-radius: 8px;
-    width: 124px;
-    height: 124px;
+  margin-right: 14px;
+  border-radius: 8px;
+  width: 124px;
+  height: 124px;
 
   @media (min-width: 768px) {
     margin-right: 24px;
@@ -72,13 +69,13 @@ export const CardImg = styled.img`
 `;
 
 export const CardTitle = styled.p`
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
 
-margin-bottom: 14px;
-color: ${props => props.theme.favoritePage.list.title};
+  margin-bottom: 14px;
+  color: ${props => props.theme.favoritePage.list.title};
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -134,47 +131,44 @@ export const Time = styled.div`
     font-size: 14px;
     line-height: 1.5;
   }
-
 `;
 
 export const TrashSvg = styled(Trash)`
-  stroke:${props => props.theme.favoritePage.icon.color};
-  
+  stroke: ${props => props.theme.favoritePage.icon.color};
+
   @media (max-width: 767px) {
     width: 10px;
     height: 11px;
-    stroke:${props => props.theme.favoritePage.icon.color};
+    stroke: ${props => props.theme.favoritePage.icon.color};
   }
   @media (min-width: 1440px) {
     width: 18px;
     height: 20px;
-    stroke:${props => props.theme.favoritePage.icon.color};
+    stroke: ${props => props.theme.favoritePage.icon.color};
   }
 `;
 
-
 export const DeleteBtn = styled.button`
   position: absolute;
-  type:button;
   cursor: pointer;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
   width: 24px;
   height: 24px;
   background-color: ${props => props.theme.favoritePage.icon.background};
   border-radius: 4px;
   transition: 125ms 125ms linear;
-  display:flex;
+  display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   line-height: 24px;
   right: 0;
-  top:0;
+  top: 0;
   &:hover ${TrashSvg} {
-    stroke:white;
+    stroke: white;
   }
-  &:hover{
-    background:#8BAA36;
+  &:hover {
+    background: #8baa36;
   }
   @media (min-width: 768px) {
     width: 38px;
@@ -192,42 +186,41 @@ export const DeleteBtn = styled.button`
   }
 `;
 
-
 export const SeeRecipeBtn = styled.button`
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 1.5;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
 
-    cursor: pointer;
-    color: #ffffff;
-    background-color:${props => props.theme.favoritePage.button.hoverFill};
-    border: none;
-    font-family: 'Poppins';
-    border-radius: 24px 44px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: ${props => props.theme.favoritePage.button.hoverFill};
+  border: none;
+  font-family: 'Poppins';
+  border-radius: 24px 44px;
 
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 
-    height: 27px;
-    width: 87px;
-    transition: 125ms 125ms linear;
-    &:hover {
-        background-color: ${props => props.theme.favoritePage.button.fill};
-        color: ${props => props.theme.favoritePage.button.text};
-      }
+  height: 27px;
+  width: 87px;
+  transition: 125ms 125ms linear;
+  &:hover {
+    background-color: ${props => props.theme.favoritePage.button.fill};
+    color: ${props => props.theme.favoritePage.button.text};
+  }
   @media (min-width: 768px) {
-        font-size: 14px;
-        height:45px;
-        width:138px;
-      }
+    font-size: 14px;
+    height: 45px;
+    width: 138px;
+  }
   @media (min-width: 1440px) {
     font-size: 14px;
-    height:54px;
+    height: 54px;
     width: 160px;
 
-    background-color:${props => props.theme.favoritePage.button.fill};
+    background-color: ${props => props.theme.favoritePage.button.fill};
     color: ${props => props.theme.favoritePage.button.text};
 
     &:hover {
@@ -255,7 +248,7 @@ export const NotFoundText = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  text-align:center;
+  text-align: center;
   color: ${props => props.theme.favoritePage.title};
   opacity: 0.4;
 

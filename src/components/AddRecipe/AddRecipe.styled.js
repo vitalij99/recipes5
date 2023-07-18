@@ -17,7 +17,6 @@ const Form = styled.form`
   @media screen and (min-width: 1440px) {
     display: grid;
     grid-template-columns: auto auto;
-    grid-auto-rows: content;
     grid-gap: 10px;
   }
 `;
