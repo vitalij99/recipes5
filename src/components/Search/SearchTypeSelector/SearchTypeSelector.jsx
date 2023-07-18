@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Wrapper } from './SearchTypeSelector.styled';
 import { Dropdown } from './Dropdown';
 
-export const SearchTypeSelector = () => {
+export const SearchTypeSelector = ({ setTypeQuery }) => {
+  // eslint-disable-next-line no-unused-vars
   const [searchType, setSearchType] = useState('query');
 
   const handleSelectChange = selectedOption => {
     setSearchType(selectedOption.type);
+    setTypeQuery(selectedOption.type);
   };
 
   const searchTypes = [
@@ -29,7 +31,6 @@ export const SearchTypeSelector = () => {
           id={'selectSearchType'}
           data={searchTypes}
         />
-        {console.log(searchType)}
       </Wrapper>
     </>
   );

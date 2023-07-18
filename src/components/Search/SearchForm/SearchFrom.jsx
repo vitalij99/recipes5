@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import {
   Form,
@@ -6,11 +7,12 @@ import {
   FormInput,
   Wrapper,
 } from './SearchForm.styled';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
-export const SearchForm = ({ mainPage }) => {
+export const SearchForm = ({ mainPage, typeQuery }) => {
+  const [_, setSearchParams] = useSearchParams();
   const [userSearch, setUserSearch] = useState('');
-  const [query, setQuery] = useState('');
+
   const navigate = useNavigate();
   const location = useLocation();
   const currentRoute = location.pathname;
@@ -27,13 +29,14 @@ export const SearchForm = ({ mainPage }) => {
     e.preventDefault();
 
     const userQuery = userSearch.trim();
-    setQuery(userQuery);
-
-    console.log(query);
 
     if (currentRoute === '/main') {
-      navigate(`/search?q=${userQuery}`);
+      navigate(`/search?query=${userQuery}`);
     }
+
+    if (typeQuery === 'query') setSearchParams({ query: userQuery });
+    else if (typeQuery === 'ingredient')
+      setSearchParams({ ingredient: userQuery });
   };
 
   return (
