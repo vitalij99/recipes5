@@ -6,19 +6,24 @@ import { ListSection } from './ListSection';
 import { TitlesSection } from './TitlesSection';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { removeShoppingList } from 'redux/recipe/recipeSlice';
-import { shoppingListSelector } from 'redux/shopping/shoppingListSelectors';
-import { shoppingListThunk } from 'redux/shopping/shoppingListOperations';
+import {
+  shoppingListIsLoading,
+  shoppingListSelector,
+} from 'redux/shopping/shoppingListSelectors';
+import {
+  shoppingListRemoveItemThunk,
+  shoppingListThunk,
+} from 'redux/shopping/shoppingListOperations';
+import Loader from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
   const [clientHeight, setClientHeight] = useState('');
 
   const dispatch = useDispatch();
-  const shoppingList = useSelector(shoppingListSelector).filter(
-    item => item && item.id !== undefined
-  );
+  const shoppingList = useSelector(shoppingListSelector);
+  const isLoading = useSelector(shoppingListIsLoading);
 
-  console.log(shoppingList);
+  // console.log(shoppingList);
   const componentRef = useRef(null);
 
   useEffect(() => {
@@ -30,19 +35,27 @@ export const IngredientsShoppingList = () => {
   }, [dispatch]);
 
   const handleRemoveShoppingList = id => {
-    // console.log(id);
-    dispatch(removeShoppingList(id));
+    // console.log('we are trying to remove shopping-list item');
+    dispatch(shoppingListRemoveItemThunk(id));
   };
-
-  // { measure, id: _id, name, img, recipeId }
 
   return (
     <>
       <Section ref={componentRef} style={{ minHeight: `${clientHeight}px` }}>
         <Container>
           <TitlesSection />
-
-          <ListSection data={shoppingList} onClick={handleRemoveShoppingList} />
+          {isLoading ? (
+            <Loader fullscreen={true} />
+          ) : (
+            <>
+              {shoppingList !== undefined ? (
+                <ListSection
+                  data={shoppingList}
+                  onClick={handleRemoveShoppingList}
+                />
+              ) : null}
+            </>
+          )}
         </Container>
       </Section>
     </>

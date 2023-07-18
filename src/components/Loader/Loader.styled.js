@@ -9,6 +9,19 @@ const LoaderContainer = styled.div`
   background-color: ${props => props.theme.loader.background};
 `;
 
+const LoaderContainer2 = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: ${props => props.theme.loader.background};
+`;
+
 const pulsateAnimation = keyframes`
   0% {
     transform: scale(1);
@@ -45,4 +58,4 @@ const Icon = styled(IoRestaurantSharp)`
   }
 `;
 
-export { LoaderContainer, PulsatingAnimation, Icon };
+export { LoaderContainer, PulsatingAnimation, Icon, LoaderContainer2 };

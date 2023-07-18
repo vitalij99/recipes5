@@ -9,15 +9,15 @@ export const setAuthHeader = token => {
 export const shoppingListThunk = createAsyncThunk(
   '/recipes/shopping-list',
   async (_, { getState, rejectWithValue }) => {
-    console.log('we are trying to get shopping-list');
+    // console.log('we are trying to get shopping-list');
     const state = getState();
     const token = state.auth.token;
 
     try {
       setAuthHeader(token);
       const res = await axios.get('/shopping-list');
-      console.log(res.data.items);
-      return res.data.items;
+      // console.log(res);в
+      return res.data;
     } catch (err) {
       if (err) {
         Notify.failure('Shopping-list not found!');
@@ -27,48 +27,26 @@ export const shoppingListThunk = createAsyncThunk(
   }
 );
 
-// export const shoppingListAddThunk = createAsyncThunk(
-//   '/recipes/shopping-list',
+export const shoppingListRemoveItemThunk = createAsyncThunk(
+  '/recipes/shopping-list/',
 
-//   async ({ item }, { getState, rejectWithValue }) => {
-//     const state = getState();
-//     const token = state.auth.token;
+  async (id, { getState, rejectWithValue }) => {
+    // console.log('we are trying to remove shopping-list item');
+    const state = getState();
+    const token = state.auth.token;
 
-//     if (token === null) {
-//       return rejectWithValue('No token is available');
-//     }
+    try {
+      setAuthHeader(token);
+      const res = await axios.delete(`/shopping-list/${id}`);
 
-//     try {
-//       const { data } = await axios.post('/shopping-list');
-//       return data;
-//     } catch (err) {
-//       if (err) {
-//         Notify.failure('Sopping-list not found!');
-//       }
-//       return rejectWithValue(err.message);
-//     }
-//   }
-// );
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
-// export const shoppingListDeleteThunk = createAsyncThunk(
-//   '/recipes/shopping-list',
-
-//   async (item, { getState, rejectWithValue }) => {
-//     const state = getState();
-//     const token = state.auth.token;
-
-//     if (token === null) {
-//       return rejectWithValue('No token is available');
-//     }
-
-//     try {
-//       const { data } = await axios.post('/shopping-list', item);
-//       return data;
-//     } catch (err) {
-//       if (err) {
-//         Notify.failure('Sopping-list not found!');
-//       }
-//       return rejectWithValue(err.message);
-//     }
-//   }
-// );
+      return { res, id };
+    } catch (err) {
+      if (err) {
+        Notify.failure('Cant remove shopping-list item!');
+        return rejectWithValue(err.message);
+      }
+    }
+  }
+);
