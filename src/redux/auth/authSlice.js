@@ -17,7 +17,7 @@ const initialState = {
   user: {
     name: null,
     email: null,
-    avatarURL: null,
+    avatarUrl: null,
     favorite: null,
     shoppingList: null,
     createdAt: null,
@@ -65,7 +65,7 @@ const handleRejected = (state, { payload }) => {
 };
 const handleUpdateName = (state, { payload }) => {
   state.user.name = payload.user.name;
-  state.user.avatarURL = payload.user.avatarURL;
+  state.user.avatarUrl = payload.user.avatarUrl;
 };
 // const handleUpdateAvatar = (state, { payload }) => {
 //   state.user.avatar = payload;

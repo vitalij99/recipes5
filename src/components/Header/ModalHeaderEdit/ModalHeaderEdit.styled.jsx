@@ -32,7 +32,6 @@ export const Modal = styled.div`
     height: 134px;
     right: 128px;
     top: 78px;
-    border: none;
   }
   @media screen and (min-width: 1440px) {
     margin-left: auto;

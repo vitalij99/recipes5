@@ -110,12 +110,13 @@ export const Input = styled.input`
   width: 100%;
   font-size: 14px;
   padding: 10px 40px 10px 40px;
-  color: #23262a;
-  border: 1px solid #23262a;
+  color: ${props => props.theme.mainPage.header.userMenuEditProfile.text};
+  border: 1px solid
+    ${props => props.theme.mainPage.header.userMenuEditProfile.text};
   border-radius: 8px;
   margin-bottom: 8px;
   background-color: transparent;
-  opacity: 0.4;
+  opacity: 0.8;
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {

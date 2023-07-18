@@ -65,15 +65,7 @@ const Header = () => {
       body.classList.add('isOpen');
     }
   };
-  // if (!toggle) {
-  //   body.style.overflow = 'auto';
-  //   setToggleMenu(!toggle);
-  // } else {
-  //   setToggleMenu(!toggle);
-  //   if (!screenWidth) {
-  //     body.style.overflow = 'hidden';
-  //   }
-  // }
+
   const handleToggleModalLogOut = () => {
     setToggleModalEdit(false);
     setToggleModalLogOut(!toggleModalLogOut);
@@ -92,7 +84,7 @@ const Header = () => {
               <NavListItem>
                 <NavLinkStyle
                   onClick={toggle ? handleToggleMenu : null}
-                  to={'/categories/:breakfast'}
+                  to={'/categories/Breakfast'}
                 >
                   Categories
                 </NavLinkStyle>
@@ -157,7 +149,11 @@ const Header = () => {
               </>
             ) : null}
             <MenuButton onClick={handleToggleMenu}>
-              {toggle ? <CloseIcon /> : <MenuIcon pathname={path} />}
+              {toggle ? (
+                <CloseIcon />
+              ) : (
+                <MenuIcon pathname={path} screenWidth />
+              )}
             </MenuButton>
           </MobileHeaderBlock>
         </HeaderContainer>
