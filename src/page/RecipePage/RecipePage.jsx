@@ -26,7 +26,6 @@ const RecipePage = () => {
         setIsLoading(false);
       } catch (err) {
         Notify.failure('Ingredient added on shoppingList');
-        console.log(err.message);
       }
     }
     fetchRecipe();

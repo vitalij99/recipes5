@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   addRecipeToFavorite,
+  addShoppingList,
   fetchIngradients,
   getFavoriteRecipes,
   removeRecipeToFavorite,
+  // removeShoppingList,
 } from './recipeOperetion';
 
 const initialState = {
@@ -18,16 +20,11 @@ const ownerRecipeSlice = createSlice({
   name: 'recipes',
   initialState,
   reducers: {
-    removeRecipeToFavorite: {
-      reducer: (state, { payload }) => {
-        const index = state.recipes.findIndex(vel => vel.id === payload.id);
-        state.recipes.splice(index, 1);
-      },},
-    addShoppingList: {
-      reducer: (state, { payload }) => {
-        state.shoppingList.push(payload);
-      },
-    },
+    // addShoppingList: {
+    //   reducer: (state, { payload }) => {
+    //     state.shoppingList.push(payload);
+    //   },
+    // },
     removeShoppingList: {
       reducer: (state, { payload }) => {
         const index = state.shoppingList.findIndex(
@@ -95,9 +92,40 @@ const ownerRecipeSlice = createSlice({
       .addCase(getFavoriteRecipes.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
+      })
+      .addCase(addShoppingList.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(addShoppingList.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+        state.shoppingList.push(payload);
+      })
+      .addCase(addShoppingList.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
       });
+    // .addCase(removeShoppingList.pending, state => {
+    //   state.isLoading = true;
+    // })
+    // .addCase(removeShoppingList.fulfilled, (state, { payload }) => {
+    //   console.log(payload);
+    //   state.isLoading = false;
+    //   state.error = null;
+    //   const index = state.shoppingList.findIndex(
+    //     vel => vel.item === payload.item
+    //   );
+    //   state.shoppingList.splice(index, 1);
+    // })
+    // .addCase(removeShoppingList.rejected, (state, { payload }) => {
+    //   state.isLoading = false;
+    //   state.error = payload;
+    // });
   },
 });
 
 export const ownerRecipeReducer = ownerRecipeSlice.reducer;
-export const { addShoppingList, removeShoppingList } = ownerRecipeSlice.actions;
+export const {
+  // addShoppingList,
+  removeShoppingList,
+} = ownerRecipeSlice.actions;

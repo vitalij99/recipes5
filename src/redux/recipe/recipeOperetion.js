@@ -68,31 +68,50 @@ export const getFavoriteRecipes = createAsyncThunk(
   }
 );
 
-// export const addShoppingList = createAsyncThunk(
-//   'user/shopping',
-//   async (ingredient, thunkAPI) => {
-//     try {
-//       const { res } = await axios.patch(`user/shopping`, ingredient);
-//       if (res) {
-//         Notify.failure('Ingredient added on shoppingList');
-//       }
-//       return res;
-//     } catch (err) {
-//       if (err) {
-//         Notify.failure('Not found');
-//       }
-//       return thunkAPI.rejectWithValue(err.message);
-//     }
-//   }
-// );
+export const fetchShoppingList = createAsyncThunk(
+  'shopping-list/fetchShoppingList',
+
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await axios.get(`/shopping-list`);
+      const { items, _id } = data;
+      return { ...items, _id };
+    } catch (err) {
+      if (err) {
+        Notify.failure('Ingredients not find!');
+      }
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
+export const addShoppingList = createAsyncThunk(
+  'shopping-list/addShoppingList',
+  async (ingradient, thunkAPI) => {
+    try {
+      const { data } = await axios.post(`/shopping-list`, ingradient);
+      const { item } = data;
+      if (data) {
+        Notify.success('Ingredient added on shoppingList');
+      }
+      const val = { ...ingradient, item };
+      return val;
+    } catch (err) {
+      if (err) {
+        Notify.failure('Not found');
+      }
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
 
 // export const removeShoppingList = createAsyncThunk(
-//   'user/shopping',
-//   async (ingredient, thunkAPI) => {
+//   'shopping-list/removeShoppingList',
+//   async (id, thunkAPI) => {
 //     try {
-//       const { res } = await axios.patch(`user/shopping`, ingredient);
+//       const { res } = await axios.delete(`user/shopping/${id}`);
 //       if (res) {
-//         Notify.failure('Ingredient added on shoppingList');
+//         Notify.success('Ingredient delete successful');
 //       }
 //       return res;
 //     } catch (err) {
