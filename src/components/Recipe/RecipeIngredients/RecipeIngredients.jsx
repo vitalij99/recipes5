@@ -5,10 +5,11 @@ import {
   addShoppingList,
   fetchIngradients,
   fetchShoppingList,
-  // removeShoppingList,
+  removeShoppingList,
 } from 'redux/recipe/recipeOperetion';
 import {
   selectIngredients,
+  // selectOperetion,
   selectShoppingList,
 } from 'redux/recipe/recipeSelector';
 
@@ -31,20 +32,34 @@ import {
 } from './RecipeIngredients.styled';
 
 import { nanoid } from '@reduxjs/toolkit';
-import { removeShoppingList } from 'redux/recipe/recipeSlice';
 
 function RecipeIngredients({ ingredients }) {
   const [ingredientsList, setIngredientsList] = useState([]);
   const [event, setEvent] = useState(null);
+  const [shoppingListItem, setShoppingListItem] = useState(null);
 
   const allIngradientsList = useSelector(selectIngredients);
   const shoppingList = useSelector(selectShoppingList);
+  // const operetion = useSelector(selectOperetion);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (shoppingList.length > 0) {
+      setShoppingListItem(shoppingList[0].item);
+    } else {
+      setShoppingListItem(null);
+    }
+  }, [shoppingList]);
+
+  useEffect(() => {
+    dispatch(fetchShoppingList());
+  }, [dispatch, shoppingList]);
 
   const isIngredientInShoppingList = _id => {
     return shoppingList.some(item => item.id === _id);
   };
 
-  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchIngradients());
     dispatch(fetchShoppingList());
@@ -83,7 +98,7 @@ function RecipeIngredients({ ingredients }) {
     if (!ingredientOnShoppingList) {
       dispatch(addShoppingList(ingredientForBuy));
     } else {
-      dispatch(removeShoppingList(ingredientForBuy));
+      dispatch(removeShoppingList(shoppingListItem));
     }
   };
 

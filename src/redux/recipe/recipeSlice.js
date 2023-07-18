@@ -5,6 +5,7 @@ import {
   fetchIngradients,
   getFavoriteRecipes,
   removeRecipeToFavorite,
+  removeShoppingList,
   // removeShoppingList,
 } from './recipeOperetion';
 
@@ -19,21 +20,7 @@ const initialState = {
 const ownerRecipeSlice = createSlice({
   name: 'recipes',
   initialState,
-  reducers: {
-    // addShoppingList: {
-    //   reducer: (state, { payload }) => {
-    //     state.shoppingList.push(payload);
-    //   },
-    // },
-    removeShoppingList: {
-      reducer: (state, { payload }) => {
-        const index = state.shoppingList.findIndex(
-          vel => vel.id === payload.id
-        );
-        state.shoppingList.splice(index, 1);
-      },
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(fetchIngradients.pending, state => {
@@ -94,38 +81,37 @@ const ownerRecipeSlice = createSlice({
         state.error = payload;
       })
       .addCase(addShoppingList.pending, state => {
+        state.operetion = 'addShoppingList';
         state.isLoading = true;
       })
       .addCase(addShoppingList.fulfilled, (state, { payload }) => {
+        state.operetion = null;
         state.isLoading = false;
         state.error = null;
         state.shoppingList.push(payload);
       })
       .addCase(addShoppingList.rejected, (state, { payload }) => {
+        state.operetion = null;
+        state.isLoading = false;
+        state.error = payload;
+      })
+      .addCase(removeShoppingList.pending, state => {
+        state.operetion = 'removeShoppingList';
+        state.isLoading = true;
+      })
+      .addCase(removeShoppingList.fulfilled, (state, { payload }) => {
+        state.operetion = null;
+        state.isLoading = false;
+        state.error = null;
+        const index = state.shoppingList.findIndex(vel => vel.item === payload);
+        state.shoppingList.splice(index, 1);
+      })
+      .addCase(removeShoppingList.rejected, (state, { payload }) => {
+        state.operetion = null;
         state.isLoading = false;
         state.error = payload;
       });
-    // .addCase(removeShoppingList.pending, state => {
-    //   state.isLoading = true;
-    // })
-    // .addCase(removeShoppingList.fulfilled, (state, { payload }) => {
-    //   console.log(payload);
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   const index = state.shoppingList.findIndex(
-    //     vel => vel.item === payload.item
-    //   );
-    //   state.shoppingList.splice(index, 1);
-    // })
-    // .addCase(removeShoppingList.rejected, (state, { payload }) => {
-    //   state.isLoading = false;
-    //   state.error = payload;
-    // });
   },
 });
 
 export const ownerRecipeReducer = ownerRecipeSlice.reducer;
-export const {
-  // addShoppingList,
-  removeShoppingList,
-} = ownerRecipeSlice.actions;
