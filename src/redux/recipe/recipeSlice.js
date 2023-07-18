@@ -103,7 +103,10 @@ const ownerRecipeSlice = createSlice({
         state.operetion = null;
         state.isLoading = false;
         state.error = null;
-        const index = state.shoppingList.findIndex(vel => vel.item === payload);
+        const index = state.shoppingList.findIndex(vel => {
+          const id = vel.item;
+          return id === payload;
+        });
         state.shoppingList.splice(index, 1);
       })
       .addCase(removeShoppingList.rejected, (state, { payload }) => {
