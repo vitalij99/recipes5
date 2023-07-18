@@ -11,11 +11,12 @@ import {
 import { Svg } from './Svg';
 
 export const ListSection = ({ data, onClick }) => {
+  console.log(data);
   return (
     <>
       <List>
         {data.map(item => (
-          <Item key={item._id ? item._id : null}>
+          <Item key={item.id ? item.id : null}>
             <ImageSection>
               <ImageContainer>
                 <img
@@ -30,7 +31,7 @@ export const ListSection = ({ data, onClick }) => {
               <Number>
                 <p>{item.measure ? item.measure : 0}</p>
               </Number>
-              <CloseIcon onClick={() => onClick(item._id)}>
+              <CloseIcon onClick={() => onClick(item.id)}>
                 <Svg />
               </CloseIcon>
             </DataSection>
