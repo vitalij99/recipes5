@@ -39,11 +39,7 @@ export const SearchRecipesList = () => {
     <>
       <Section>
         <Container>
-          {listRes.length === 0 ? (
-            <SearchNotFound />
-          ) : (
-            <CardItem data={listRes} />
-          )}
+          {listRes ? <SearchNotFound /> : <CardItem data={listRes} />}
         </Container>
       </Section>
     </>
