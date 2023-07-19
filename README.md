@@ -39,6 +39,16 @@ their own recipes.
 8. You can view and manage your shopping list from the "My Shopping List" page.
    Mark items as purchased or remove them as needed.
 
+## Screenshots
+
+Here are some screenshots of the So Yummy app:
+
+![Main Page](screenshots/mainPage.png)
+![Categories Page](screenshots/categoriesPage.png)
+![Recipe Page](screenshots/recipePage.png)
+![Add Recipe Page](screenshots/addRecipePage.png)
+![Search Page](screenshots/searchPage.png)
+
 ## Project Tasks
 
 - Development Timeline: 2 weeks
@@ -91,8 +101,3 @@ The So Yummy project is maintained by the following team members:
 
 Feel free to reach out to any team member if you have questions or need
 assistance with the project.
-
-## License
-
-So Yummy is released under the MIT License. See [LICENSE](LICENSE) for more
-information.
