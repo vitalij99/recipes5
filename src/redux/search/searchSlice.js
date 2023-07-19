@@ -21,6 +21,8 @@ const searchSlice = createSlice({
       .addCase(searchTitleThunk.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
+
+        state.searchResults = [];
       })
       .addCase(searchIngredientsThunk.pending, state => {
         state.isLoading = true;
@@ -33,6 +35,7 @@ const searchSlice = createSlice({
       .addCase(searchIngredientsThunk.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
+        state.searchResults = [];
       });
   },
 });
