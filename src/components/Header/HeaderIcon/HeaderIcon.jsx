@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
 export const IconWrapper = styled.div`
+  cursor: pointer;
+  &:hover {
+    stroke: ${props => props.theme.mainPage.menuMobileModal.hover};
+  }
   stroke: ${props => {
     if (props.pathname === 'recipe') {
       return props.theme.mainPage.header.user.iconBurgerRecipePage.mobile;
     }
     return props.theme.mainPage.header.user.iconBurger;
   }};
+
   @media screen and (min-width: 768px) {
     stroke: ${props => {
       if (props.pathname === 'main') {
@@ -18,12 +23,31 @@ export const IconWrapper = styled.div`
       return props.theme.mainPage.header.user.iconBurger;
     }};
   }
+  @media screen and (min-width: 1440px) {
+    stroke: ${props => {
+      if (props.pathname === 'recipe') {
+        return props.theme.mainPage.header.user.iconBurgerRecipePage.mobile;
+      }
+      return props.theme.mainPage.header.user.iconBurger;
+    }};
+  }
+`;
+export const IconWrapperSearch = styled.div`
   cursor: pointer;
   &:hover {
     stroke: ${props => props.theme.mainPage.menuMobileModal.hover};
   }
-`;
+  stroke: ${props => props.theme.mainPage.header.searchIcon.fill};
 
+  @media screen and (min-width: 1440px) {
+    stroke: ${props => {
+      if (props.pathname === 'recipe') {
+        return props.theme.mainPage.header.user.iconBurgerRecipePage.mobile;
+      }
+      return props.theme.mainPage.header.user.iconBurger;
+    }};
+  }
+`;
 export const IconEditButtonWrapper = styled.div`
   stroke: ${props =>
     props.theme.mainPage.header.userMenuEditProfile.button.icon};
@@ -106,9 +130,9 @@ export const CloseIcon = () => {
   );
 };
 
-export const SearchIcon = () => {
+export const SearchIcon = ({ pathname }) => {
   return (
-    <IconWrapper>
+    <IconWrapperSearch pathname={pathname}>
       <svg
         width="24"
         height="24"
@@ -129,7 +153,7 @@ export const SearchIcon = () => {
           strokeLinejoin="round"
         />
       </svg>
-    </IconWrapper>
+    </IconWrapperSearch>
   );
 };
 

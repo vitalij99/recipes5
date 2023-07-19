@@ -133,6 +133,15 @@ export const NavListList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: ${props => props.theme.mainPage.header.nav.text};
+
+  &.active {
+    color: ${props => props.theme.mainPage.header.nav.hover};
+  }
+  &:hover {
+    color: ${props => props.theme.mainPage.header.nav.hover};
+  }
   @media screen and (min-width: 1440px) {
     flex-direction: row;
     align-items: center;
@@ -185,6 +194,12 @@ export const NavLinkStyle = styled(NavLink)`
     align-items: center;
     font-size: 14px;
     line-height: 22.4px;
+    color: ${props => {
+      if (props.pathname === 'recipe') {
+        return props.theme.mainPage.header.user.textMainPage.desktop;
+      }
+      return props.theme.mainPage.header.nav.text;
+    }};
   }
 `;
 
