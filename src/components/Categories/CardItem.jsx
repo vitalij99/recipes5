@@ -22,7 +22,6 @@ export const CardItem = ({ data }) => {
     }
   }, [data, list]);
 
-  console.log(data);
   return (
     <CategoriesList>
       {categories &&

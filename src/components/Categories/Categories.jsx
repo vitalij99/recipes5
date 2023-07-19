@@ -12,7 +12,6 @@ import {
 export const Categories = () => {
   const { categoryName } = useParams();
   const dispatch = useDispatch();
-  console.log(categoryName);
 
   useEffect(() => {
     dispatch(categoriesThunk(categoryName));
