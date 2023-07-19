@@ -4,9 +4,7 @@ const Api = ({ setCategories }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(
-          'https://yummy-service.onrender.com/recipes/category-list'
-        );
+        const response = await axios.get('/recipes/category-list');
         const data = await response.json();
         setCategories(data);
       } catch (error) {
