@@ -1,5 +1,5 @@
 import { useEffect} from 'react';
-impoty axios from "axios";
+import axios from "axios";
 
 const Api = ({ setBackendIngredients }) => {
   useEffect(() => {
