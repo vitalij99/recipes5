@@ -51,6 +51,7 @@ export const BtnRegister = styled.button`
   border-radius: 6px;
   border-color: transparent;
   white-space: nowrap;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -96,3 +97,4 @@ export const StyledNavLink = styled(NavLink)`
     animation: easeOut;
   }
 `;
+

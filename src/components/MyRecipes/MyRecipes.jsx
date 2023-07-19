@@ -20,7 +20,7 @@ import {
   getMyRecipes,
   removeMyRecipe,
 } from '../../redux/myrecipes/myRecipeOperations';
-import Error from "../Error/Error";
+
 export const MyRecipes = () => {
   
   const recipesList = useSelector(selectMyRecipesList);
@@ -30,9 +30,7 @@ export const MyRecipes = () => {
   }, [dispatch]);
   
 
-  let data = recipesList.length > 4 ? recipesList.slice(0, 4) : recipesList;
-
-  const FavoriteCards = data.map(
+  const FavoriteCards = recipesList.map(
     ({ _id, title, description, preview, time }) => (
       <Card key={_id}>
         <CardImg src={preview} alt="dish" />
@@ -59,11 +57,11 @@ export const MyRecipes = () => {
 
   return (
       <>
-      {data.length !== 0 ? (
+      {recipesList.length !== 0 ? (
           <CardList>
           {FavoriteCards}
         </CardList>
-      ) : (<><NotFoundText>You don't have your own recipes...</NotFoundText><Error/></>
+      ) : (<><NotFoundText>You don't have your own recipes...</NotFoundText></>
           )}
       </>
   );
