@@ -54,8 +54,11 @@ const UserProfile = ({ handleToggleModalUserProfile }) => {
     }));
   };
 
-  const onSubmitEditUserProfileForm = () => {
-    dispatch(updateNameThunk(state));
+  const onSubmitEditUserProfileForm = async () => {
+    dispatch(updateNameThunk(state)).then(res => {
+      handleToggleModalUserProfile();
+      return;
+    });
   };
 
   return (

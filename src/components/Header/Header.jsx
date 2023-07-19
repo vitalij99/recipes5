@@ -80,17 +80,19 @@ const Header = () => {
           </LinkStyle>
 
           <SiteNav toggle={toggle.toString()}>
-            <NavListList>
+            <NavListList pathname={path}>
               <NavListItem>
                 <NavLinkStyle
+                  pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
-                  to={'/categories/Breakfast'}
+                  to={'/categories/Beef'}
                 >
                   Categories
                 </NavLinkStyle>
               </NavListItem>
               <NavListItem>
                 <NavLinkStyle
+                  pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
                   to={'/add'}
                 >
@@ -99,6 +101,7 @@ const Header = () => {
               </NavListItem>
               <NavListItem>
                 <NavLinkStyle
+                  pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
                   to={'/my'}
                 >
@@ -107,6 +110,7 @@ const Header = () => {
               </NavListItem>
               <NavListItem>
                 <NavLinkStyle
+                  pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
                   to={'/favorite'}
                 >
@@ -115,6 +119,7 @@ const Header = () => {
               </NavListItem>
               <NavListItem>
                 <NavLinkStyle
+                  pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
                   to={'/shopping-list'}
                 >
@@ -123,10 +128,11 @@ const Header = () => {
               </NavListItem>
               <NavListItem>
                 <NavLinkStyle
+                  pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
                   to={'/search'}
                 >
-                  <SearchIcon />
+                  <SearchIcon pathname={path} />
                   {!screenWidth && <SearchText>Search</SearchText>}
                 </NavLinkStyle>
               </NavListItem>
