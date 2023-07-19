@@ -21,7 +21,7 @@ const PopularRecipe = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.screen.width);
+      setScreenWidth(window.innerWidth);
     };
 
     window.addEventListener('resize', handleResize);

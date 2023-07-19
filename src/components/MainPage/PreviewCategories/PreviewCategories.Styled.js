@@ -30,6 +30,20 @@ export const LinkStyled = styled(NavLink)`
   padding: 10px 24px;
   margin-top: 24px;
 
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.mainPage.footer.button.hoverFill};
+    color: ${props => props.theme.mainPage.menuMobileModal.hover};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
+
   @media (min-width: 768px) {
     margin-top: 40px;
   }

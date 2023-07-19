@@ -80,6 +80,19 @@ export const UserName = styled.p`
     return props.theme.mainPage.header.user.text;
   }};
 
+  &:hover,
+  &:focus {
+    color: ${props => props.theme.mainPage.menuMobileModal.hover};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }

@@ -43,6 +43,7 @@ export const Btnwrapper = styled.div`
   }
 `;
 export const BtnRegister = styled.button`
+  cursor: pointer;
   width: 100%;
   padding: 14px 110px;
   color: #fafafa;
@@ -51,8 +52,18 @@ export const BtnRegister = styled.button`
   border-color: transparent;
   white-space: nowrap;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #22252a;
+    background-color: ${props => props.theme.mainPage.header.logo.icon};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
   }
 `;
 
@@ -66,12 +77,22 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
   font-weight: 400;
   text-decoration: underline;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
 
-  &.active {
-    font-weight: bold;
+  &:hover,
+  &:focus {
+    color: ${props => props.theme.mainPage.menuMobileModal.hover};
+    transition: 0.6s;
+    animation: easeIn;
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    transition: 0.6s;
+    animation: easeOut;
   }
 `;
