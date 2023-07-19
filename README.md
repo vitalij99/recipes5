@@ -39,12 +39,24 @@ their own recipes.
 8. You can view and manage your shopping list from the "My Shopping List" page.
    Mark items as purchased or remove them as needed.
 
+## Screenshots
+
+Here are some screenshots of the So Yummy app:
+
+![Main Page](screenshots/mainPage.png)
+![Categories Page](screenshots/categoriesPage.png)
+![Recipe Page](screenshots/recipePage.png)
+![Add Recipe Page](screenshots/addRecipePage.png)
+![Search Page](screenshots/searchPage.png)
+
 ## Project Tasks
 
 - Development Timeline: 2 weeks
-- Design Mockup: [Figma](link-to-figma-design)
-- Backend Repository: [GitHub](link-to-backend-repo)
-- Swagger Documentation: [Swagger Docs](link-to-swagger-docs)
+- Design Mockup:
+  [Figma](https://www.figma.com/file/rj6kSC63HyaVsHXqMtt3Cv/So-Yummy?type=design&node-id=0-1&mode=design)
+- Backend Repository: [GitHub](https://github.com/natalynoele/yummy-backend)
+- Swagger Documentation:
+  [Swagger Docs](https://yummy-service.onrender.com/api-docs/#/)
 
 ## Technologies and Dependencies Used
 
@@ -73,24 +85,19 @@ their own recipes.
 
 The So Yummy project is maintained by the following team members:
 
-1. [GitHub](https://github.com/Anastasiia2302)
-2. [GitHub](https://github.com/AnastasiiaBakumenko)
-3. [GitHub](https://github.com/BaristaYaroslv)
-4. [GitHub](https://github.com/Dimar95)
-5. [GitHub](https://github.com/Kryzhanivskyi89)
-6. [GitHub](https://github.com/NVZ1994)
-7. [GitHub](https://github.com/Umberban)
-8. [GitHub](https://github.com/Vastasika)
-9. [GitHub](https://github.com/VladDyadenko)
-10. [GitHub](https://github.com/Yanna-Trofimova)
-11. [GitHub](https://github.com/natalynoele)
-12. [GitHub](https://github.com/vitalij99)
-13. [GitHub](https://github.com/webdevbiv)
+1. [Anastasiia2302](https://github.com/Anastasiia2302)
+2. [AnastasiiaBakumenko](https://github.com/AnastasiiaBakumenko)
+3. [BaristaYaroslv](https://github.com/BaristaYaroslv)
+4. [Dimar95](https://github.com/Dimar95)
+5. [Kryzhanivskyi89](https://github.com/Kryzhanivskyi89)
+6. [NVZ1994](https://github.com/NVZ1994)
+7. [Umberban](https://github.com/Umberban)
+8. [Vastasika](https://github.com/Vastasika)
+9. [VladDyadenko](https://github.com/VladDyadenko)
+10. [Yanna-Trofimova](https://github.com/Yanna-Trofimova)
+11. [natalynoele](https://github.com/natalynoele)
+12. [vitalij99](https://github.com/vitalij99)
+13. [webdevbiv](https://github.com/webdevbiv)
 
 Feel free to reach out to any team member if you have questions or need
 assistance with the project.
-
-## License
-
-So Yummy is released under the MIT License. See [LICENSE](LICENSE) for more
-information.
