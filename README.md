@@ -1,46 +1,96 @@
-# Getting Started with Create React App and Redux
+# So Yummy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Welcome to So Yummy! This web application provides a database of delicious
+recipes, allowing users to search for recipes, create a user profile, add
+recipes to the database, save favorite recipes, and generate a shopping list
+based on recipe ingredients.
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+So Yummy is designed to help users discover and prepare various dishes easily.
+It offers a vast collection of recipes across different cuisines, including
+appetizers, main courses, desserts, and more. Users can search for recipes by
+title or ingredients.
 
-### `npm start`
+By creating a user profile, users can save their favorite recipes and access
+them later. Additionally, users can contribute to the recipe database by adding
+their own recipes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Upon launching the app, you'll land on the welcome page of So Yummy, where
+   you can either register as a new user or sign in if you already have an
+   account.
+2. To register, click on the "Register" button and provide the required
+   information, such as username and password.
+3. If you already have an account, click on the "Sign In" button and enter your
+   credentials to access your user profile.
+4. Once signed in, you can search for recipes by using the search bar at the top
+   of the page. Enter the recipe title or ingredients you desire and click
+   "Search" to see the results.
+5. To add a recipe to the database, click on the "Add Recipe" button and provide
+   the necessary details such as title, ingredients, instructions, and any
+   additional information.
+6. To save a recipe to your favorites, click the "Save" button on the recipe
+   card.
+7. To generate a shopping list, go to the "My Favorites" page and select the
+   desired recipes. Then click on the "Generate Shopping List" button, which
+   will compile all the necessary ingredients for your selected recipes.
+8. You can view and manage your shopping list from the "My Shopping List" page.
+   Mark items as purchased or remove them as needed.
 
-### `npm test`
+## Project Tasks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Development Timeline: 2 weeks
+- Design Mockup: [Figma](link-to-figma-design)
+- Backend Repository: [GitHub](link-to-backend-repo)
+- Swagger Documentation: [Swagger Docs](link-to-swagger-docs)
 
-### `npm run build`
+## Technologies and Dependencies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React**: A JavaScript library for building user interfaces.
+- **Redux Toolkit**: A package for efficient Redux development.
+- **React Router DOM**: Library for routing in React applications.
+- **Axios**: A promise-based HTTP client for making API requests.
+- **Formik**: A form library for handling form validation and submission.
+- **Yup**: A JavaScript schema validation library.
+- **Styled Components**: A CSS-in-JS library for styling React components.
+- **React Icons**: A library for including popular icon sets in React projects.
+- **React Loader Spinner**: A library for displaying loading spinners in React
+  applications.
+- **React Select**: A library for creating custom select inputs in React.
+- **Redux Persist**: A library for persisting Redux state in local storage.
+- **Notiflix**: A library for displaying notifications and alerts in React
+  applications.
+- **Normalize.css**: A CSS file that makes browser styles consistent across
+  different browsers.
+- **React Scripts**: A package with scripts and configuration used by Create
+  React App.
+- **Babel Plugin Styled Components**: A Babel plugin for better styled
+  components performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Team
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The So Yummy project is maintained by the following team members:
 
-### `npm run eject`
+1. [GitHub](https://github.com/Anastasiia2302)
+2. [GitHub](https://github.com/AnastasiiaBakumenko)
+3. [GitHub](https://github.com/BaristaYaroslv)
+4. [GitHub](https://github.com/Dimar95)
+5. [GitHub](https://github.com/Kryzhanivskyi89)
+6. [GitHub](https://github.com/NVZ1994)
+7. [GitHub](https://github.com/Umberban)
+8. [GitHub](https://github.com/Vastasika)
+9. [GitHub](https://github.com/VladDyadenko)
+10. [GitHub](https://github.com/Yanna-Trofimova)
+11. [GitHub](https://github.com/natalynoele)
+12. [GitHub](https://github.com/vitalij99)
+13. [GitHub](https://github.com/webdevbiv)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Feel free to reach out to any team member if you have questions or need
+assistance with the project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+So Yummy is released under the MIT License. See [LICENSE](LICENSE) for more
+information.
