@@ -12,19 +12,20 @@ import {
 } from 'redux/recipe/recipeOperetion';
 import { getIsLoading, selectShoppingList } from 'redux/recipe/recipeSelector';
 import Loader from 'components/Loader/Loader';
+import { SearchNotFound } from 'components/Search/SearchNotFound/SearchNotFound';
+
+//!SECTION ShoppingList
 
 export const IngredientsShoppingList = () => {
   const [clientHeight, setClientHeight] = useState('');
-
   const dispatch = useDispatch();
   const shoppingList = useSelector(selectShoppingList);
-
   const isLoading = useSelector(getIsLoading);
-
   const componentRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchShoppingList());
+
     if (componentRef.current) {
       const height = componentRef.current.clientHeight;
       setClientHeight(height);
@@ -35,24 +36,24 @@ export const IngredientsShoppingList = () => {
     dispatch(removeShoppingList(id));
   };
 
+  const renderListSection = () => {
+    if (shoppingList !== undefined && shoppingList.length > 0) {
+      return (
+        <>
+          <TitlesSection />
+          <ListSection data={shoppingList} onClick={handleRemoveShoppingList} />
+        </>
+      );
+    }
+    return (
+      <SearchNotFound text={'You have no items in your shopping list yet.'} />
+    );
+  };
+
   return (
     <>
       <Section ref={componentRef} style={{ minHeight: `${clientHeight}px` }}>
-        <Container>
-          <TitlesSection />
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <>
-              {shoppingList !== undefined ? (
-                <ListSection
-                  data={shoppingList}
-                  onClick={handleRemoveShoppingList}
-                />
-              ) : null}
-            </>
-          )}
-        </Container>
+        <Container>{isLoading ? <Loader /> : renderListSection()}</Container>
       </Section>
     </>
   );

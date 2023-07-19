@@ -10,18 +10,18 @@ import axios from 'axios';
 export const SearchRecipesList = () => {
   const [searchParams] = useSearchParams();
   const [listRes, setListRes] = useState([]);
+
   const params = useMemo(
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
-  useEffect(() => {
-    const { query, ingredient } = params;
 
+  useEffect(() => {
     const fetchData = async () => {
       try {
+        const { query, ingredient } = params;
         if (query) {
           const { data } = await axios.get(`recipes/search?title=${query}`);
-
           setListRes(data);
         } else if (ingredient) {
           const { data } = await axios.get(
@@ -40,7 +40,11 @@ export const SearchRecipesList = () => {
     <>
       <Section>
         <Container>
-          {!listRes ? <SearchNotFound /> : <CardItem data={listRes} />}
+          {!listRes || listRes.length === 0 ? (
+            <SearchNotFound text={'Try looking for something else...'} />
+          ) : (
+            <CardItem data={listRes} />
+          )}
         </Container>
       </Section>
     </>
