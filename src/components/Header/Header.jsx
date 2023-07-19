@@ -130,7 +130,7 @@ const Header = () => {
                 <NavLinkStyle
                   pathname={path}
                   onClick={toggle ? handleToggleMenu : null}
-                  to={'/search'}
+                  to={'/search?query'}
                 >
                   <SearchIcon pathname={path} />
                   {!screenWidth && <SearchText>Search</SearchText>}
