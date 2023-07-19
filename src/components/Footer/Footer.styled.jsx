@@ -10,6 +10,49 @@ export const BackContainer = styled.div`
 export const InputBox = styled.div`
   position: relative;
   display: inline-block;
+  svg {
+    fill: ${props => props.theme.mainPage.footer.background};
+  }
+
+  &:hover,
+  &:focus {
+    input {
+      border: 1px solid ${props => props.theme.mainPage.footer.logo.icon};
+      transition: 0.6s;
+      animation: easeIn;
+
+      &::placeholder {
+        color: ${props => props.theme.mainPage.footer.logo.icon};
+        transition: 0.6s;
+        animation: easeIn;
+      }
+    }
+    svg {
+      path {
+        stroke: ${props => props.theme.mainPage.footer.logo.icon};
+        transition: 0.6s;
+        animation: easeIn;
+      }
+    }
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    input {
+      transition: 0.6s;
+      animation: easeOut;
+      &::placeholder {
+        transition: 0.6s;
+        animation: easeOut;
+      }
+    }
+    svg {
+      path {
+        transition: 0.6s;
+        animation: easeIn;
+      }
+    }
+  }
 `;
 
 export const NavLinkDiv = styled.div`
@@ -141,12 +184,12 @@ export const ContainerSvg = styled.div`
   transform: translateY(-50%);
 
   @media (min-width: 768px) {
-    top: 42%;
+    top: 44%;
     left: 15px;
   }
 
   @media (min-width: 1440px) {
-    top: 37%;
+    top: 43%;
     left: 17px;
   }
 `;

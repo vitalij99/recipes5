@@ -196,6 +196,7 @@ export const lightTheme = {
       textareafocus: '#3E4462',
       text1: '#7E7E7E',
       text2: '#000000',
+      border: '#D9D9D9',
       button: {
         fill: '#22252A',
         text: '#FAFAFA',
@@ -617,6 +618,7 @@ export const darkTheme = {
       textareafocus: '#fafafa',
       text1: '#7E7E7E',
       text2: '#FAFAFA',
+      border: '#D9D9D9',
       button: {
         fill: '#8BAA36',
         text: '#FAFAFA',
