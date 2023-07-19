@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import bgImg from '../../images/Header/spinach.png';
 import bgImgTablet from '../../images/Header/spinach@2x.png';
 
