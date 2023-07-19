@@ -50,8 +50,10 @@ export const BtnRegister = styled.button`
   border-radius: 6px;
   border-color: transparent;
   white-space: nowrap;
+  cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #22252a;
   }
 `;
@@ -70,7 +72,10 @@ export const StyledNavLink = styled(NavLink)`
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
-
+  &:hover,
+  &:focus {
+    color: #8baa36;
+  }
   &.active {
     font-weight: bold;
   }
