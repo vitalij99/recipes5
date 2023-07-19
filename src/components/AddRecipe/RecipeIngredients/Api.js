@@ -1,10 +1,11 @@
 import { useEffect} from 'react';
+impoty axios from "axios";
 
 const Api = ({ setBackendIngredients }) => {
   useEffect(() => {
     const fetchIngredients = async () => {
-      try {
-        const response = await fetch('https://yummy-service.onrender.com/ingredients/list');
+      try {        
+        const response = await axios.get('/ingredients/list');
         const data = await response.json();
         setBackendIngredients(data);
       } catch (error) {
