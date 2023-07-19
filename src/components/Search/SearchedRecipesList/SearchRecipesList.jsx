@@ -1,17 +1,24 @@
 import { CardItem } from 'components/Categories/CardItem';
 import Container from 'components/Container/Container';
 import { Section } from 'components/Search/SearchedRecipesList/SearchRecipesList.styled';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import { SearchNotFound } from '../SearchNotFound/SearchNotFound';
 import { useSearchParams } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import Loader from 'components/Loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchIsLoading, searchResults } from 'redux/search/searchSelectors';
+import {
+  searchIngredientsThunk,
+  searchTitleThunk,
+} from 'redux/search/searchOperations';
 
 export const SearchRecipesList = () => {
-  const [Loading, setLoading] = useState(false);
+  const searchResultsList = useSelector(searchResults);
+  const searchLoading = useSelector(searchIsLoading);
+  const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-  const [listRes, setListRes] = useState([]);
 
   const params = useMemo(
     () => Object.fromEntries([...searchParams]),
@@ -19,44 +26,26 @@ export const SearchRecipesList = () => {
   );
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const { query, ingredient } = params;
-        if (query) {
-          const { data } = await axios.get(`recipes/search?title=${query}`);
-          setListRes(data);
-          setLoading(false);
-        } else if (ingredient) {
-          const { data } = await axios.get(
-            `/recipes/ingredients?ingredients=${ingredient}`
-          );
-          setListRes(data);
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-
-        if (error.response.status === 404) {
-          setListRes([]);
-        }
-      }
-    };
-    fetchData();
-  }, [params]);
+    const { query, ingredient } = params;
+    if (query) {
+      dispatch(searchTitleThunk(query));
+    }
+    if (ingredient) {
+      dispatch(searchIngredientsThunk(ingredient));
+    }
+  }, [dispatch, params]);
 
   return (
     <>
-      {Loading ? (
+      {searchLoading ? (
         <Loader />
       ) : (
         <Section>
           <Container>
-            {!listRes || listRes.length === 0 ? (
+            {searchResultsList.length === 0 ? (
               <SearchNotFound text={'Try looking for something else...'} />
             ) : (
-              <CardItem data={listRes} />
+              <CardItem data={searchResultsList} />
             )}
           </Container>
         </Section>
@@ -64,3 +53,31 @@ export const SearchRecipesList = () => {
     </>
   );
 };
+
+// const [Loading, setLoading] = useState(false);
+// const [listRes, setListRes] = useState([]);
+// const fetchData = async () => {
+//   try {
+//     setLoading(true);
+//     const { query, ingredient } = params;
+//     if (query) {
+//       const { data } = await axios.get(`recipes/search?title=${query}`);
+//       setListRes(data);
+//       setLoading(false);
+//     } else if (ingredient) {
+//       const { data } = await axios.get(
+//         `/recipes/ingredients?ingredients=${ingredient}`
+//       );
+//       setListRes(data);
+//       setLoading(false);
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     setLoading(false);
+
+//     if (error.response.status === 404) {
+//       setListRes([]);
+//     }
+//   }
+// };
+// fetchData();
