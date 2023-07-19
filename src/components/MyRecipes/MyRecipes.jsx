@@ -10,9 +10,9 @@ import {
   Time,
   DeleteBtn,
   SeeRecipeBtn,
-  NotFoundText
+  NotFoundText,
 } from './MyRecipes.styled';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { selectMyRecipesList } from 'redux/myrecipes/myRecipeSelectors';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,15 +20,14 @@ import {
   getMyRecipes,
   removeMyRecipe,
 } from '../../redux/myrecipes/myRecipeOperations';
+import { SearchNotFound } from 'components/Search/SearchNotFound/SearchNotFound';
 
 export const MyRecipes = () => {
-  
   const recipesList = useSelector(selectMyRecipesList);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMyRecipes());
   }, [dispatch]);
-  
 
   const FavoriteCards = recipesList.map(
     ({ _id, title, description, preview, time }) => (
@@ -44,9 +43,7 @@ export const MyRecipes = () => {
           <CardDesc>{description}</CardDesc>
           <CardTimeWrap>
             <Time>{time} min</Time>
-            <Link
-              to={`/recipe/${_id}`}
-            >
+            <Link to={`/recipe/${_id}`}>
               <SeeRecipeBtn>See recipee</SeeRecipeBtn>
             </Link>
           </CardTimeWrap>
@@ -56,13 +53,14 @@ export const MyRecipes = () => {
   );
 
   return (
-      <>
+    <>
       {recipesList.length !== 0 ? (
-          <CardList>
-          {FavoriteCards}
-        </CardList>
-      ) : (<><NotFoundText>You don't have your own recipes...</NotFoundText></>
-          )}
-      </>
+        <CardList>{FavoriteCards}</CardList>
+      ) : (
+        <>
+          <SearchNotFound text={`You don't have your own recipes...`} />
+        </>
+      )}
+    </>
   );
 };
