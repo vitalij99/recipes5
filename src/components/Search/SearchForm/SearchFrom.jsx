@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Form,
   FormButton1,
@@ -20,6 +20,15 @@ export const SearchForm = ({ mainPage, typeQuery }) => {
   if (mainPage === undefined) {
     mainPage = false;
   }
+
+  // Update the input value when the user switches to the search page
+  useEffect(() => {
+    if (currentRoute === '/search') {
+      const params = new URLSearchParams(location.search);
+      const query = params.get('query');
+      setUserSearch(query || '');
+    }
+  }, [currentRoute, location.search]);
 
   const handleInputChange = e => {
     setUserSearch(e.target.value);
