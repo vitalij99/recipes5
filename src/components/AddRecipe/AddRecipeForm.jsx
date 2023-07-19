@@ -19,7 +19,6 @@ function arrayToString(arr) {
 }
 
 const AddRecipeForm = () => {
-
   const initialRecipeData = {
     thumb: null,
     title: '',
@@ -30,6 +29,7 @@ const AddRecipeForm = () => {
     ingredients: [],
     instructions: [],
   };
+
   const navigate = useNavigate();
   const [recipeData, setRecipeData] = useState(initialRecipeData);
 

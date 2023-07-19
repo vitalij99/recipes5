@@ -9,7 +9,7 @@ export const SharedLayout = () => {
     <>
       <Header />
       <main>
-        <Suspense fallback={<Loader fullscreen={true} />}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </main>
