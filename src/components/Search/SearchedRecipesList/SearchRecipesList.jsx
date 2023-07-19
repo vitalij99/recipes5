@@ -31,6 +31,9 @@ export const SearchRecipesList = () => {
         }
       } catch (error) {
         console.error(error);
+        if (error.response.status === 404) {
+          setListRes([]);
+        }
       }
     };
     fetchData();
