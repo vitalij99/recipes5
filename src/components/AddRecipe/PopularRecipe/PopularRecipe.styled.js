@@ -46,8 +46,7 @@ export const ContainerRecipe = styled.div`
   display: flex;
   padding-bottom: 13px;
   border-bottom: 1px solid rgba(112, 112, 112, 0.17);
-  width: 343px;
-  height: 98px;
+  max-width: 343px;
 
   &:hover,
   &:focus {
@@ -63,11 +62,11 @@ export const ContainerRecipe = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 336px;
+    max-width: 336px;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 319px;
+    max-width: 319px;
   }
 `;
 

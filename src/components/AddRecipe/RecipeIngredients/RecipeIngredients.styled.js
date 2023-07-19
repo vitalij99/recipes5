@@ -229,15 +229,15 @@ export const SelectAdd = styled.select`
   background-color: ${props =>
     props.theme.addRecipePage.listOfIngredients.selectionBackground};
   color: ${props => props.theme.addRecipePage.listOfIngredients.hoverIcon1};
+  border-left: 1px solid
+    ${props => props.theme.addRecipePage.recipePreparation.border};
 
   option {
-    color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
     background-color: ${props =>
       props.theme.addRecipePage.listOfIngredients.dropDownMenu.background};
     border: none;
-    &:hover {
-      color: red;
-    }
   }
 `;
 
