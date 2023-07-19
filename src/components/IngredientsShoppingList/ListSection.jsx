@@ -30,7 +30,7 @@ export const ListSection = ({ data, onClick }) => {
               <Number>
                 <p>{item.measure ? item.measure : 0}</p>
               </Number>
-              <CloseIcon onClick={() => onClick(item.item)}>
+              <CloseIcon onClick={() => onClick(item.id)}>
                 <Svg />
               </CloseIcon>
             </DataSection>

@@ -80,8 +80,8 @@ const ownerRecipeSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
-      .addCase(addShoppingList.pending, state => {
-        state.operetion = 'addShoppingList';
+      .addCase(addShoppingList.pending, (state, { meta }) => {
+        state.operetion = `${meta.arg.id}`;
         state.isLoading = true;
       })
       .addCase(addShoppingList.fulfilled, (state, { payload }) => {
@@ -95,8 +95,8 @@ const ownerRecipeSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
-      .addCase(removeShoppingList.pending, state => {
-        state.operetion = 'removeShoppingList';
+      .addCase(removeShoppingList.pending, (state, { meta }) => {
+        state.operetion = `${meta.arg}`;
         state.isLoading = true;
       })
       .addCase(removeShoppingList.fulfilled, (state, { payload }) => {
@@ -104,7 +104,7 @@ const ownerRecipeSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.shoppingList.findIndex(vel => {
-          const id = vel.item;
+          const id = vel.id;
           return id === payload;
         });
         state.shoppingList.splice(index, 1);
