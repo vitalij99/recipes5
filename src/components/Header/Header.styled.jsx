@@ -166,7 +166,7 @@ export const NavListItem = styled.li`
     }
   }
 `;
-export const NavLinkStyle = styled(NavLink)`
+export const NavLinkStyle = styled(Link)`
   z-index: 110;
   display: flex;
   flex-direction: row;

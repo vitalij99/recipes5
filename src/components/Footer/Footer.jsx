@@ -64,9 +64,7 @@ const Footer = () => {
               <NavLinkDiv>
                 <NavLinkList>
                   <NavLinkItem>
-                    <LinkStyle to={'/categories/:categoryName'}>
-                      Ingredients
-                    </LinkStyle>
+                    <LinkStyle to={'/search?ingredient'}>Ingredients</LinkStyle>
                   </NavLinkItem>
                   <NavLinkItem>
                     <LinkStyle to={'/add'}>Add recipes</LinkStyle>

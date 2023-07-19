@@ -55,9 +55,10 @@ export const SearchForm = ({ mainPage, typeQuery }) => {
           type="text"
           value={userSearch}
           onChange={handleInputChange}
-          placeholder="Enter recipe"
+          placeholder={
+            typeQuery === 'query' ? 'Enter recipe' : 'Enter ingredient'
+          }
         />
-
         {mainPage ? (
           <FormButton2 type="submit">Search</FormButton2>
         ) : (
