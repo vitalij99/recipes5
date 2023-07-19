@@ -33,6 +33,7 @@ export const CardList = styled.ul`
   }
   @media (min-width: 1440px) {
     gap: 50px;
+    align-items:center;
   }
 `;
 
@@ -40,6 +41,7 @@ export const CardList = styled.ul`
 export const Card = styled.li`
   height: 152px;
   display: flex;
+  max-width:1240px;
   background-color: ${props => props.theme.favoritePage.list.background};
   border-radius: 8px;
   padding: 14px;
@@ -51,6 +53,7 @@ export const Card = styled.li`
   @media (min-width: 1440px) {
     height: 404px;
     padding: 40px;
+    width:1240px;
   }
 `;
 
@@ -237,19 +240,7 @@ export const SeeRecipeBtn = styled.button`
   }
 `;
 
-// export const ErrorWrap = styled.div`
-// text-align: center;
-// margin-top:100px;
-// `
-// export const ErrorPhoto = styled.div`
-//   background-size: cover;
-//   background-content: no-repeat;
-//   display: inline-block;
-//   height: 170px;
-//   width: 259px;
-//   background-repeat: no-repeat;
-//   background-image: url(${errorPhoto});
-// `;
+
 export const NotFoundText = styled.p`
   font-family: 'Poppins';
   font-style: normal;

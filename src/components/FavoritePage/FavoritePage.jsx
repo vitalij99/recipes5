@@ -14,24 +14,23 @@ import {
   } from './FavoritePage.styled';
   import { Link } from "react-router-dom";
   import { selectFavoriteList } from 'redux/recipe/recipeSelector';
-  import { useEffect } from 'react';
+  import { useEffect} from 'react';
   import { useSelector, useDispatch } from 'react-redux';
   import {
     getFavoriteRecipes,
     removeRecipeToFavorite,
   } from '../../redux/recipe/recipeOperetion';
-  import Error from "../Error/Error";
+  
   export const FavoritePage = () => {
-
     const favorite = useSelector(selectFavoriteList);
     const dispatch = useDispatch();
     useEffect(() => {
       dispatch(getFavoriteRecipes());
     }, [dispatch]);
 
-    let data = favorite.length > 4 ? favorite.slice(0, 4) : favorite;
+  
 
-    const FavoriteCards = data.map(
+    const FavoriteCards = favorite.map(
       ({ _id, title, description, preview, time }) => (
         <Card key={_id}>
           <CardImg src={preview} alt="dish" />
@@ -61,11 +60,11 @@ import {
   
     return (
         <>
-        {data.length !== 0 ? (
+        {favorite.length !== 0 ? (
             <CardList>
             {FavoriteCards}
           </CardList>
-        ) : (<><NotFoundText>You don't have favorite recipes...</NotFoundText><Error/></>
+        ) : (<><NotFoundText>You don't have favorite recipes...</NotFoundText></>
             )}
         </>
     );
