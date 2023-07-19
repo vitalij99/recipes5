@@ -28,6 +28,15 @@ export const AddPhotoContainer = styled.div`
   cursor: pointer;
   border: 1px solid ${props => props.theme.addRecipePage.listOfItems.icon};
 
+  img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   &:hover,
   &:focus {
     border: 1px solid ${props => props.theme.addRecipePage.title};

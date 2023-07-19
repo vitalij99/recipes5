@@ -28,6 +28,23 @@ export const CategoriesListStyled = styled.ul`
 
 export const CategoriesImgWrap = styled.div`
   position: relative;
+
+  &:hover,
+  &:focus {
+    p {
+      color: ${props => props.theme.mainPage.menuMobileModal.hover};
+      transition: 0.6s;
+      animation: easeIn;
+    }
+  }
+
+  &:not(:hover),
+  &:not(:focus) {
+    p {
+      transition: 0.6s;
+      animation: easeOut;
+    }
+  }
 `;
 
 export const CategoriesImg = styled.img`
