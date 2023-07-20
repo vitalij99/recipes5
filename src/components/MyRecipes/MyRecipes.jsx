@@ -10,7 +10,6 @@ import {
   Time,
   DeleteBtn,
   SeeRecipeBtn,
-  NotFoundText,
 } from './MyRecipes.styled';
 import { Link } from 'react-router-dom';
 import { selectMyRecipesList } from 'redux/myrecipes/myRecipeSelectors';
