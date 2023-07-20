@@ -77,9 +77,6 @@ export const fetchShoppingList = createAsyncThunk(
       const { items, _id } = data;
       return { ...items, _id };
     } catch (err) {
-      if (err) {
-        Notify.failure('Ingredients not find!');
-      }
       return thunkAPI.rejectWithValue(err.message);
     }
   }
