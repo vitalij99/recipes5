@@ -220,6 +220,7 @@ export const StyledSelect = styled(Select)`
     background-color: ${props =>
       props.theme.addRecipePage.listOfIngredients.dropDownMenu.background};
     padding: 1px;
-    color: ${props => props.theme.addRecipePage.listOfItems.text2};
+    color: ${props =>
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text3};
   }
 `;

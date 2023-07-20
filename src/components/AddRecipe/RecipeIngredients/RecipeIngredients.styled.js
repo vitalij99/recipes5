@@ -160,6 +160,7 @@ export const SelectStyled = styled(Select)`
     }
     & .css-1jqq78o-placeholder {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
+      opacity: 0.5;
     }
   }
 
@@ -179,7 +180,7 @@ export const SelectStyled = styled(Select)`
       props.theme.addRecipePage.listOfIngredients.dropDownMenu.background};
     padding: 1px;
     color: ${props =>
-      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text2};
+      props.theme.addRecipePage.listOfIngredients.dropDownMenu.text3};
   }
 
   width: 194px;
