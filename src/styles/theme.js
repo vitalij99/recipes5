@@ -95,6 +95,7 @@ export const lightTheme = {
       title: '#001833',
       hoverTitle: '#8BAA36',
       recipePlate: {
+        hover: '#363a45',
         background: '#FFFFFF',
         text: '#3E4462',
       },
@@ -180,6 +181,7 @@ export const lightTheme = {
         background: '#FFF',
         text1: '#000',
         text2: '#8BAA36',
+        text3: '#8BAA36',
       },
       button: {
         fill: '#FAFAFA',
@@ -517,6 +519,7 @@ export const darkTheme = {
       title: '#FAFAFA',
       hoverTitle: '#8BAA36',
       recipePlate: {
+        hover: '#363a45',
         background: '#2A2C36',
         text: '#FAFAFA',
       },
@@ -602,6 +605,7 @@ export const darkTheme = {
         background: '#8BAA36',
         text1: 'rgba(250, 250, 250, 0.30)',
         text2: '#FAFAFA',
+        text3: '#000',
       },
       button: {
         fill: '#1E1F28',

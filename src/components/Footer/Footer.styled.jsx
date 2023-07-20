@@ -17,19 +17,19 @@ export const InputBox = styled.div`
   &:hover,
   &:focus {
     input {
-      border: 1px solid ${props => props.theme.mainPage.footer.logo.icon};
+      border: 1px solid ${props => props.theme.mainPage.footer.hoverText};
       transition: 0.6s;
       animation: easeIn;
 
       &::placeholder {
-        color: ${props => props.theme.mainPage.footer.logo.icon};
+        color: ${props => props.theme.mainPage.footer.hoverText};
         transition: 0.6s;
         animation: easeIn;
       }
     }
     svg {
       path {
-        stroke: ${props => props.theme.mainPage.footer.logo.icon};
+        stroke: ${props => props.theme.mainPage.footer.hoverText};
         transition: 0.6s;
         animation: easeIn;
       }

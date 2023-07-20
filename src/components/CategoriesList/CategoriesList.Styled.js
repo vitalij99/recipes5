@@ -31,6 +31,12 @@ export const CategoriesImgWrap = styled.div`
 
   &:hover,
   &:focus {
+    div {
+      background-color: ${props =>
+        props.theme.mainPage.footer.button.hoverFill};
+      transition: 0.6s;
+      animation: easeIn;
+    }
     p {
       color: ${props => props.theme.mainPage.menuMobileModal.hover};
       transition: 0.6s;
@@ -40,6 +46,10 @@ export const CategoriesImgWrap = styled.div`
 
   &:not(:hover),
   &:not(:focus) {
+    div {
+      transition: 0.6s;
+      animation: easeOut;
+    }
     p {
       transition: 0.6s;
       animation: easeOut;
