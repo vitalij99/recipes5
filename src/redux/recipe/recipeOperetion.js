@@ -10,9 +10,6 @@ export const fetchIngradients = createAsyncThunk(
       const res = await axios.get(`/ingredients/list`);
       return res.data;
     } catch (err) {
-      if (err) {
-        Notify.failure('Ingredients not find!');
-      }
       return thunkAPI.rejectWithValue(err.message);
     }
   }
