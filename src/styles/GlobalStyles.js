@@ -130,7 +130,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   main{
-    /* height: 100%; */
     flex: 1;
     display: flex;
     flex-direction: column; 
@@ -163,8 +162,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   section {
+  
     flex: 1;
-    height: 100%;
+    min-height: 90vh;
   }
   
   /* Reset CSS */
