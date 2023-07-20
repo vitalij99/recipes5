@@ -40,14 +40,14 @@ export const WrapperStyled = styled.div`
     padding-top: 230px;
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
-    background-position: top left, 63% 130px, 86%, right top;
+    background-position: top left, 68% 130px, 86%, right top;
     background-size: auto, auto, auto, 50% 689px;
   }
 
-  @media screen and (min-width: 2240px) {
+  @media screen and (min-width: 1800px) {
     background-image: url(${bannerD}), url(${banner3D}), url(${banner4D}),
       url(${banner2D});
-    background-position: top left, 63% 130px, 86%, right top;
+    background-position: top left, 63% 130px, 66%, right top;
   }
 `;
 export const BoxStyled = styled.div`
