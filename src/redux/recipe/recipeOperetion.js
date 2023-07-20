@@ -74,8 +74,7 @@ export const fetchShoppingList = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get(`/shopping-list`);
-      const { items, _id } = data;
-      return { ...items, _id };
+      return { data };
     } catch (err) {
       if (err) {
         Notify.failure('Ingredients not find!');
@@ -94,8 +93,7 @@ export const addShoppingList = createAsyncThunk(
       if (data) {
         Notify.success('Ingredient added on shoppingList');
       }
-      const val = { ...ingradient, item };
-      return val;
+      return item;
     } catch (err) {
       if (err) {
         Notify.failure('Not found');
@@ -107,13 +105,13 @@ export const addShoppingList = createAsyncThunk(
 
 export const removeShoppingList = createAsyncThunk(
   'shopping-list/removeShoppingList',
-  async (id, thunkAPI) => {
+  async ([_id, id], thunkAPI) => {
     try {
-      const res = await axios.delete(`/shopping-list/${id}`);
+      const res = await axios.delete(`/shopping-list/${_id}`);
       if (res) {
         Notify.success('Ingredient delete successful');
       }
-      return id;
+      return _id;
     } catch (err) {
       if (err) {
         Notify.failure('Not found');
