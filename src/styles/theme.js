@@ -6,6 +6,10 @@
 // `;
 
 export const lightTheme = {
+  toTop: {
+    background: '#8baa36',
+    icon: '#FAFAFA',
+  },
   mainPageTitle: {
     background: '#FAFAFA',
     particle: '#22252A',
@@ -430,6 +434,10 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
+  toTop: {
+    background: '#FAFAFA',
+    icon: '#22252A',
+  },
   mainPageTitle: {
     background: '#1E1F28',
     particle: '#FAFAFA',
