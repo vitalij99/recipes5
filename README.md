@@ -48,6 +48,27 @@ their own recipes.
 - Swagger Documentation:
   [Swagger Docs](https://yummy-service.onrender.com/api-docs/#/)
 
+## Project Team
+
+The So Yummy project is developed by the following team members:
+
+1. [Anastasiia2302](https://github.com/Anastasiia2302)
+2. [AnastasiiaBakumenko](https://github.com/AnastasiiaBakumenko)
+3. [BaristaYaroslv](https://github.com/BaristaYaroslv)
+4. [Dimar95](https://github.com/Dimar95)
+5. [Kryzhanivskyi89](https://github.com/Kryzhanivskyi89)
+6. [NVZ1994](https://github.com/NVZ1994)
+7. [Umberban](https://github.com/Umberban)
+8. [Vastasika](https://github.com/Vastasika)
+9. [VladDyadenko](https://github.com/VladDyadenko)
+10. [Yanna-Trofimova](https://github.com/Yanna-Trofimova)
+11. [natalynoele](https://github.com/natalynoele)
+12. [vitalij99](https://github.com/vitalij99)
+13. [webdevbiv](https://github.com/webdevbiv)
+
+Feel free to reach out to any team member if you have questions or need
+assistance with the project.
+
 ## Technologies and Dependencies Used
 
 - **React**: A JavaScript library for building user interfaces.
@@ -71,26 +92,7 @@ their own recipes.
 - **Babel Plugin Styled Components**: A Babel plugin for better styled
   components performance.
 
-## Project Team
 
-The So Yummy project is maintained by the following team members:
-
-1. [Anastasiia2302](https://github.com/Anastasiia2302)
-2. [AnastasiiaBakumenko](https://github.com/AnastasiiaBakumenko)
-3. [BaristaYaroslv](https://github.com/BaristaYaroslv)
-4. [Dimar95](https://github.com/Dimar95)
-5. [Kryzhanivskyi89](https://github.com/Kryzhanivskyi89)
-6. [NVZ1994](https://github.com/NVZ1994)
-7. [Umberban](https://github.com/Umberban)
-8. [Vastasika](https://github.com/Vastasika)
-9. [VladDyadenko](https://github.com/VladDyadenko)
-10. [Yanna-Trofimova](https://github.com/Yanna-Trofimova)
-11. [natalynoele](https://github.com/natalynoele)
-12. [vitalij99](https://github.com/vitalij99)
-13. [webdevbiv](https://github.com/webdevbiv)
-
-Feel free to reach out to any team member if you have questions or need
-assistance with the project.
 
 ## Screenshots
 
