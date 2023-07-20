@@ -73,9 +73,6 @@ export const fetchShoppingList = createAsyncThunk(
       const { data } = await axios.get(`/shopping-list`);
       return { data };
     } catch (err) {
-      if (err) {
-        Notify.failure('Ingredients not find!');
-      }
       return thunkAPI.rejectWithValue(err.message);
     }
   }
