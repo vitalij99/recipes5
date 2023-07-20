@@ -8,6 +8,11 @@ const searchSlice = createSlice({
     isLoading: false,
     error: null,
   },
+  reducers: {
+    clearSearchResults: state => {
+      state.searchResults = [];
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(searchTitleThunk.pending, state => {
@@ -39,5 +44,7 @@ const searchSlice = createSlice({
       });
   },
 });
+
+export const { clearSearchResults } = searchSlice.actions;
 
 export const searchReducer = searchSlice.reducer;

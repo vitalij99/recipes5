@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom';
 import Select from 'react-select';
 import { customStyles } from './SearchBar.styled';
 import { Wrapper } from './SearchBar.styled';
+import { useDispatch } from 'react-redux';
+import { clearSearchResults } from 'redux/search/searchSlice';
 
 const searchOptions = [
   {
@@ -22,11 +24,13 @@ export const SearchBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [defaultValue, setDefaultValue] = useState(searchOptions[0]);
   const [typeQuery, setTypeQuery] = useState('query');
+  const dispatch = useDispatch();
   const theme = useTheme();
   const location = useLocation();
   const currentSearch = location.search;
 
   useEffect(() => {
+    dispatch(clearSearchResults());
     if (currentSearch.includes('?ingredient')) {
       setTypeQuery('ingredient');
       setDefaultValue(searchOptions[1]);
@@ -34,7 +38,7 @@ export const SearchBar = () => {
       setTypeQuery('query');
       setDefaultValue(searchOptions[0]);
     }
-  }, [currentSearch]);
+  }, [currentSearch, dispatch]);
 
   const openMenuHandler = () => {
     setIsMenuOpen(true);
