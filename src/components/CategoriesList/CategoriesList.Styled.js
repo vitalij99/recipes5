@@ -62,6 +62,13 @@ export const CategoriesImg = styled.img`
   border-radius: 8px;
   max-width: 343px;
 
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    outline: 4px solid ${props => props.theme.mainPage.menuMobileModal.hover};
+    transition: 0.4s;
+  }
+
   @media (min-width: 768px) {
     max-width: 336px;
   }
