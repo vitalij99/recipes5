@@ -9,13 +9,14 @@ import {
   Number,
 } from './IngredientsShoppingList.styled';
 import { Svg } from './Svg';
+import { nanoid } from 'nanoid';
 
 export const ListSection = ({ data, onClick }) => {
   return (
     <>
       <List>
         {data.map(item => (
-          <Item key={item.id ? item.id : null}>
+          <Item key={nanoid()}>
             <ImageSection>
               <ImageContainer>
                 <img
