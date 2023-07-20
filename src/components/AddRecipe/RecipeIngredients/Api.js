@@ -5,8 +5,7 @@ const Api = ({ setBackendIngredients }) => {
   useEffect(() => {
     const fetchIngredients = async () => {
       try {        
-        const response = await axios.get('/ingredients/list');
-        const data = await response.json();
+        const {data} = await axios.get('/ingredients/list');
         setBackendIngredients(data);
       } catch (error) {
         console.log('Error fetching ingredients:', error);
