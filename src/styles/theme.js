@@ -193,7 +193,7 @@ export const lightTheme = {
     },
     recipePreparation: {
       background: '#D9D9D9',
-      outline: 'rgba(250, 250, 250, 0.20);',
+      outline: 'rgba(0, 0, 0, 0.1);',
       textarea: '#f5f5f5;',
       textareafocus: '#3E4462',
       text1: '#7E7E7E',
