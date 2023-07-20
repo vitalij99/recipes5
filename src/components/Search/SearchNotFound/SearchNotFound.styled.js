@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   padding-bottom: 100px;
   background-color: transparent;
   @media screen and (min-width: 768px) {
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
   }
 `;
 

@@ -163,8 +163,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   section {
-    flex: 1;
-    height: 100%;
+    min-height: 90vh;
+    /* flex: 1; */
   }
   
   /* Reset CSS */
