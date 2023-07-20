@@ -33,7 +33,7 @@ import {
 } from './RecipeIngredients.styled';
 import { Audio } from 'react-loader-spinner';
 
-function RecipeIngredients({ ingredients }) {
+function RecipeIngredients({ ingredients, recipeId }) {
   const [ingredientsList, setIngredientsList] = useState([]);
   const [event, setEvent] = useState(null);
 
@@ -60,9 +60,10 @@ function RecipeIngredients({ ingredients }) {
       .map(val => ({
         ...val,
         measure: ingredients?.find(item => item.id === val._id).measure,
+        recipeId,
       }));
     setIngredientsList(ingradientsWithSameId);
-  }, [ingredients, allIngradientsList]);
+  }, [ingredients, allIngradientsList, recipeId]);
 
   const handleInputChange = e => {
     if (shoppingList.length === 0) {
@@ -74,13 +75,16 @@ function RecipeIngredients({ ingredients }) {
 
     const { _id, name, img, measure } = currentIngredient;
 
-    const ingredientOnShoppingList = shoppingList.some(val => val.id === id);
+    const ingredientOnShoppingList = shoppingList.find(
+      val => val.id === _id && val.recipeId === recipeId
+    );
 
     const ingredientForBuy = {
       measure,
       id: _id,
       name,
       img,
+      recipeId,
     };
 
     if (!ingredientOnShoppingList) {
@@ -89,6 +93,13 @@ function RecipeIngredients({ ingredients }) {
       dispatch(removeShoppingList(id));
     }
   };
+
+  function hasIngredientsInShoppingList(recipeId, id) {
+    const hasIngredient = shoppingList.some(
+      item => item.recipeId === recipeId && item.id === id
+    );
+    return hasIngredient;
+  }
 
   return (
     <>
@@ -129,7 +140,10 @@ function RecipeIngredients({ ingredients }) {
                           <IngedientsInput
                             type="checkbox"
                             id={_id}
-                            checked={shoppingList.some(val => val.id === _id)}
+                            checked={hasIngredientsInShoppingList(
+                              recipeId,
+                              _id
+                            )}
                             value={_id}
                             onChange={handleInputChange}
                           />
