@@ -150,18 +150,13 @@ export const SelectStyled = styled(Select)`
   & .css-t3ipsp-control {
     background-color: ${props =>
       props.theme.addRecipePage.listOfIngredients.selectionBackground};
+
     & .css-1dimb5e-singleValue {
       color: ${props => props.theme.addRecipePage.listOfItems.text2};
     }
   }
+
   & .css-1fdsijx-ValueContainer {
-    & .css-1dimb5e-singleValue {
-      color: ${props => props.theme.addRecipePage.listOfIngredients.text2};
-    }
-    & .css-1jqq78o-placeholder {
-      color: ${props => props.theme.addRecipePage.listOfItems.text2};
-      opacity: 0.5;
-    }
   }
 
   & .css-13cymwt-control {
@@ -169,6 +164,14 @@ export const SelectStyled = styled(Select)`
       ${props => props.theme.addRecipePage.recipePreparation.outline};
     background-color: ${props =>
       props.theme.addRecipePage.listOfIngredients.selectionBackground};
+
+    & .css-1dimb5e-singleValue {
+      color: ${props => props.theme.addRecipePage.listOfIngredients.text2};
+    }
+    & .css-1jqq78o-placeholder {
+      color: ${props => props.theme.addRecipePage.listOfItems.text2};
+      opacity: 0.5;
+    }
   }
 
   & .css-1xc3v61-indicatorContainer {
