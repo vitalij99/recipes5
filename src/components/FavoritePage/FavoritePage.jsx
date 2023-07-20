@@ -10,7 +10,6 @@ import {
   Time,
   DeleteBtn,
   SeeRecipeBtn,
-  NotFoundText,
 } from './FavoritePage.styled';
 import { Link } from 'react-router-dom';
 import { selectFavoriteList } from 'redux/recipe/recipeSelector';
