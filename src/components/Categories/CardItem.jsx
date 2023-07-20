@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Error from 'components/Error/Error';
+import defaultCategoriesImage from 'images/categories/defaultCategoriesImage.webp';
 import {
   CategoriesImg,
   CategoriesImgWrap,
@@ -30,7 +31,10 @@ export const CardItem = ({ data }) => {
           <li key={_id}>
             <Link to={`/recipe/${_id}`}>
               <CategoriesImgWrap>
-                <CategoriesImg src={thumb} alt="img" />
+                <CategoriesImg
+                  src={thumb ? thumb : defaultCategoriesImage}
+                  alt={title}
+                />
                 <ProductNameWrap>
                   <ProductName>{title}</ProductName>
                 </ProductNameWrap>

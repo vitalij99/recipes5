@@ -124,7 +124,7 @@ export const CategoriesImgWrap = styled.div`
 export const CategoriesImg = styled.img`
   display: inline-block;
   border-radius: 8px;
-  max-width: 343px;
+  width: 343px;
 
   &:hover,
   &:focus {
@@ -134,10 +134,10 @@ export const CategoriesImg = styled.img`
   }
 
   @media (min-width: 768px) {
-    max-width: 336px;
+    width: 336px;
   }
   @media (min-width: 1440px) {
-    max-width: 300px;
+    width: 300px;
   }
 `;
 
