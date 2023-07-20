@@ -11,7 +11,7 @@ const LoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
-  background-color: ${props => props.theme.loader.background};
+  // background-color: ${props => props.theme.loader.background};
 `;
 
 const pulsateAnimation = keyframes`
