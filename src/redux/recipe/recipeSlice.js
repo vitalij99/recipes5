@@ -3,6 +3,7 @@ import {
   addRecipeToFavorite,
   addShoppingList,
   fetchIngradients,
+  fetchShoppingList,
   getFavoriteRecipes,
   removeRecipeToFavorite,
   removeShoppingList,
@@ -80,8 +81,20 @@ const ownerRecipeSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
+      .addCase(fetchShoppingList.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(fetchShoppingList.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+        state.shoppingList = payload.data;
+      })
+      .addCase(fetchShoppingList.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
       .addCase(addShoppingList.pending, (state, { meta }) => {
-        state.operetion = `${meta.arg.id}`;
+        state.operetion = `${meta.arg.ingredientId}`;
         state.isLoading = true;
       })
       .addCase(addShoppingList.fulfilled, (state, { payload }) => {
@@ -96,7 +109,7 @@ const ownerRecipeSlice = createSlice({
         state.error = payload;
       })
       .addCase(removeShoppingList.pending, (state, { meta }) => {
-        state.operetion = `${meta.arg}`;
+        state.operetion = `${meta.arg[1]}`;
         state.isLoading = true;
       })
       .addCase(removeShoppingList.fulfilled, (state, { payload }) => {
@@ -104,7 +117,7 @@ const ownerRecipeSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.shoppingList.findIndex(vel => {
-          const id = vel.id;
+          const id = vel._id;
           return id === payload;
         });
         state.shoppingList.splice(index, 1);

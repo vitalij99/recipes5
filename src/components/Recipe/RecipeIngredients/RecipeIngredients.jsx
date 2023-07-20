@@ -10,7 +10,6 @@ import {
 import {
   selectIngredients,
   selectOperetion,
-  // selectOperetion,
   selectShoppingList,
 } from 'redux/recipe/recipeSelector';
 
@@ -44,10 +43,6 @@ function RecipeIngredients({ ingredients, recipeId }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchShoppingList());
-  }, [dispatch, shoppingList]);
-
-  useEffect(() => {
     dispatch(fetchIngradients());
     dispatch(fetchShoppingList());
 
@@ -55,11 +50,16 @@ function RecipeIngredients({ ingredients, recipeId }) {
   }, []);
 
   useEffect(() => {
+    dispatch(fetchShoppingList());
+  }, [dispatch]);
+
+  useEffect(() => {
     const ingradientsWithSameId = allIngradientsList
       .filter(val => ingredients?.map(item => item.id).includes(val._id))
       .map(val => ({
         ...val,
         measure: ingredients?.find(item => item.id === val._id).measure,
+        ingredientId: val._id,
         recipeId,
       }));
     setIngredientsList(ingradientsWithSameId);
@@ -71,33 +71,40 @@ function RecipeIngredients({ ingredients, recipeId }) {
     }
 
     const { id } = e.target;
-    const currentIngredient = ingredientsList.find(val => val._id === id);
 
-    const { _id, name, img, measure } = currentIngredient;
-
-    const ingredientOnShoppingList = shoppingList.find(
-      val => val.id === _id && val.recipeId === recipeId
+    const currentIngredient = ingredientsList.find(
+      val => val.ingredientId === id
     );
+
+    const { ingredientId, name, img, measure } = currentIngredient;
+    const ingredientOnShoppingList = shoppingList.find(val => {
+      const res =
+        val.ingredientId === ingredientId && val.recipeId === recipeId;
+      return res;
+    });
 
     const ingredientForBuy = {
       measure,
-      id: _id,
       name,
       img,
+      ingredientId,
       recipeId,
     };
 
     if (!ingredientOnShoppingList) {
       dispatch(addShoppingList(ingredientForBuy));
     } else {
-      dispatch(removeShoppingList(id));
+      const { _id } = ingredientOnShoppingList;
+      dispatch(removeShoppingList([_id, id]));
     }
   };
 
-  function hasIngredientsInShoppingList(recipeId, id) {
-    const hasIngredient = shoppingList.some(
-      item => item.recipeId === recipeId && item.id === id
-    );
+  function hasIngredientsInShoppingList(recipeId, ingredientId) {
+    const hasIngredient = shoppingList.some(item => {
+      const res =
+        item.recipeId === recipeId && item.ingredientId === ingredientId;
+      return res;
+    });
     return hasIngredient;
   }
 
@@ -110,9 +117,9 @@ function RecipeIngredients({ ingredients, recipeId }) {
         <Container>
           <IngradientsHeader info="Ingredients" actions="Add to list" />
           <IngredientsWrapper>
-            {ingredientsList?.map(({ _id, name, img, measure }) => {
+            {ingredientsList?.map(({ ingredientId, name, img, measure }) => {
               return (
-                <Ingredient key={_id}>
+                <Ingredient key={ingredientId}>
                   <WrapperContent>
                     <ImageIngredient
                       src={img ? img : defaultFotoIngredient}
@@ -124,8 +131,8 @@ function RecipeIngredients({ ingredients, recipeId }) {
                   <WrapperContent>
                     <IngedientsMeasure>{measure}</IngedientsMeasure>
 
-                    <IngredientLabel htmlFor={_id}>
-                      {operetion === _id ? (
+                    <IngredientLabel htmlFor={ingredientId}>
+                      {operetion === ingredientId ? (
                         <Audio
                           height="35"
                           width="35"
@@ -139,12 +146,12 @@ function RecipeIngredients({ ingredients, recipeId }) {
                         <>
                           <IngedientsInput
                             type="checkbox"
-                            id={_id}
+                            id={ingredientId}
                             checked={hasIngredientsInShoppingList(
                               recipeId,
-                              _id
+                              ingredientId
                             )}
-                            value={_id}
+                            value={ingredientId}
                             onChange={handleInputChange}
                           />
 

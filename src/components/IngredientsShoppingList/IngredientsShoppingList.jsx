@@ -32,8 +32,8 @@ export const IngredientsShoppingList = () => {
     }
   }, [dispatch]);
 
-  const handleRemoveShoppingList = id => {
-    dispatch(removeShoppingList(id));
+  const handleRemoveShoppingList = ([_id, id]) => {
+    dispatch(removeShoppingList([_id, id]));
   };
 
   const renderListSection = () => {
