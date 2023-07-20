@@ -5,7 +5,8 @@ const Api = ({ setCategories }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const {data} = await axios.get('/recipes/category-list');
+        const { data } = await axios.get('/recipes/category-list');
+
         setCategories(data);
       } catch (error) {
         console.log('Error fetching categories:', error);
