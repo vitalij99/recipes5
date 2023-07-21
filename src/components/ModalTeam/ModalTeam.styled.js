@@ -21,7 +21,7 @@ export const WrapperModal = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 20px;
-  background-color: #fff;
+  background-color: ${props => props.theme.mainPage.background};
   overflow-y: auto;
 
   @media (min-width: 768px) {
@@ -41,8 +41,8 @@ export const BtnContainer = styled.div`
 `;
 export const BtnModal = styled.button`
   margin-top: 10px;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -58,8 +58,8 @@ export const BtnModal = styled.button`
 `;
 
 export const BtnIcon = styled(BsFillXCircleFill)`
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   fill: #8baa36;
 `;
 
@@ -77,8 +77,8 @@ export const Title = styled.h3`
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 500;
-  color: #8baa36;
-  background-color: #f5f5f5;
+  color: #fafafa;
+  background-color: #8baa36;
 `;
 
 export const TeamCardContainer = styled.ul`
@@ -129,7 +129,7 @@ export const CardInfoContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 5px 10px;
-  background-color: #fff;
+  background-color: #fafafa;
 `;
 export const CardNameContainer = styled.div`
   display: flex;
