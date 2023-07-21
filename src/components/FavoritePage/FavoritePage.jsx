@@ -38,7 +38,6 @@ export const FavoritePage = () => {
             <DeleteBtn
               onClick={() => {
                 dispatch(removeRecipeToFavorite(_id));
-                console.log(_id);
                 return;
               }}
             >

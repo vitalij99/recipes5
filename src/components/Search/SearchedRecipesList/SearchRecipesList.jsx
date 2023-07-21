@@ -53,31 +53,3 @@ export const SearchRecipesList = () => {
     </>
   );
 };
-
-// const [Loading, setLoading] = useState(false);
-// const [listRes, setListRes] = useState([]);
-// const fetchData = async () => {
-//   try {
-//     setLoading(true);
-//     const { query, ingredient } = params;
-//     if (query) {
-//       const { data } = await axios.get(`recipes/search?title=${query}`);
-//       setListRes(data);
-//       setLoading(false);
-//     } else if (ingredient) {
-//       const { data } = await axios.get(
-//         `/recipes/ingredients?ingredients=${ingredient}`
-//       );
-//       setListRes(data);
-//       setLoading(false);
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     setLoading(false);
-
-//     if (error.response.status === 404) {
-//       setListRes([]);
-//     }
-//   }
-// };
-// fetchData();
