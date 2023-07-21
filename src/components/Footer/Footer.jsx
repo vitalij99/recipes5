@@ -30,6 +30,9 @@ import { FooterLogo, FooterEmailLogo } from './FooterIcon';
 
 import Container from 'components/Container/Container';
 import { StyledSocialIcons } from './SocialIcons/SocialIcons.styled';
+import axios from 'axios';
+import { Notify } from 'notiflix';
+
 import { useState } from 'react';
 import ModalTeam from 'components/ModalTeam/ModalTeam';
 
@@ -39,6 +42,29 @@ const Footer = () => {
   function handleModalTeam(e) {
     setIsOpenModal(true);
   }
+
+
+
+
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const { imputEmail } = event.target.elements;
+
+    const fetsh = async () => {
+      await axios.patch('/users/subscribe', {
+        inputEmail: imputEmail.value,
+      });
+    };
+    if (imputEmail.value.length > 0) {
+      try {
+        fetsh();
+        Notify.success(`${imputEmail} subscribe`);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
 
   return (
     <>
@@ -101,23 +127,26 @@ const Footer = () => {
                   and special offers, etc.
                 </SubscribeText>
 
-                <Form action="subscribe">
-                  <InputBox>
-                    <ContainerSvg>
-                      <FooterEmailLogo />
-                    </ContainerSvg>
-                    <Input
-                      type="email"
-                      placeholder="Enter your email address"
-                    />
-                  </InputBox>
-                  <FooterButton type="submit">Subscribe</FooterButton>
-                </Form>
-              </SubscribeContainer>
-            </MainContainer>
-            <StyledSocialIcons />
-          </FooterInfo>
-        </Container>
+
+              <Form onSubmit={handleSubmit}>
+                <InputBox>
+                  <ContainerSvg>
+                    <FooterEmailLogo />
+                  </ContainerSvg>
+                  <Input
+                    name="imputEmail"
+                    type="email"
+                    placeholder="Enter your email address"
+                  />
+                </InputBox>
+                <FooterButton type="submit">Subscribe</FooterButton>
+              </Form>
+            </SubscribeContainer>
+          </MainContainer>
+          <StyledSocialIcons />
+        </FooterInfo>
+      </Container>
+
 
         <BottomFooter>
           <Copyright>© 2023 All Rights Reserved.</Copyright>

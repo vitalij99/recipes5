@@ -9,13 +9,13 @@ export const ThemeToggleStyled = styled.label`
 
   width: 61px;
   height: 27px;
-  left: -40px;
+  left: 16px;
   bottom: 90px;
   display: flex;
   justify-content: start;
 
   @media screen and (min-width: 768px) {
-    left: 0px;
+    left: 32px;
     bottom: 100px;
   }
   @media screen and (min-width: 1440px) {
@@ -43,8 +43,6 @@ export const SwitchStyled = styled.span`
   left: 0;
   right: 0;
   background-image: url(${SwitchBodyImg});
-
-  /* border-radius: 20px; */
   cursor: pointer;
 
   &:before {

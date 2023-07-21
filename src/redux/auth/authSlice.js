@@ -67,9 +67,6 @@ const handleUpdateName = (state, { payload }) => {
   state.user.name = payload.user.name;
   state.user.avatarUrl = payload.user.avatarUrl;
 };
-// const handleUpdateAvatar = (state, { payload }) => {
-//   state.user.avatar = payload;
-// };
 
 export const authSlice = createSlice({
   name: 'auth',

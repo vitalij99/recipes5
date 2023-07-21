@@ -7,7 +7,6 @@ import {
   getFavoriteRecipes,
   removeRecipeToFavorite,
   removeShoppingList,
-  // removeShoppingList,
 } from './recipeOperetion';
 
 const initialState = {

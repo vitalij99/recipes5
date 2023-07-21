@@ -5,7 +5,7 @@ import React, { useEffect, useMemo } from 'react';
 
 import { SearchNotFound } from '../SearchNotFound/SearchNotFound';
 import { useSearchParams } from 'react-router-dom';
-// import axios from 'axios';
+
 import Loader from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchIsLoading, searchResults } from 'redux/search/searchSelectors';
@@ -53,31 +53,3 @@ export const SearchRecipesList = () => {
     </>
   );
 };
-
-// const [Loading, setLoading] = useState(false);
-// const [listRes, setListRes] = useState([]);
-// const fetchData = async () => {
-//   try {
-//     setLoading(true);
-//     const { query, ingredient } = params;
-//     if (query) {
-//       const { data } = await axios.get(`recipes/search?title=${query}`);
-//       setListRes(data);
-//       setLoading(false);
-//     } else if (ingredient) {
-//       const { data } = await axios.get(
-//         `/recipes/ingredients?ingredients=${ingredient}`
-//       );
-//       setListRes(data);
-//       setLoading(false);
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     setLoading(false);
-
-//     if (error.response.status === 404) {
-//       setListRes([]);
-//     }
-//   }
-// };
-// fetchData();

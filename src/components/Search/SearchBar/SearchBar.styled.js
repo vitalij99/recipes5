@@ -118,7 +118,7 @@ export const customStyles = theme => ({
   menu: provided => ({
     ...provided,
     marginTop: 0,
-    // outline: 'solid red 1px ',
+
     backgroundColor: theme.searchPage.searchBy.dropDownMenu.background2,
     borderTopLeftRadius: '6px',
     borderTopRightRadius: '6px',
@@ -137,7 +137,7 @@ export const customStyles = theme => ({
 
     '&:focus': {
       backgroundColor: 'white',
-      // outline: 'none',
+
       outline: theme.searchPage.searchBy.dropDownMenu.outline,
       shadow: 'none',
       boxShadow: 'none',
