@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {
   BtnContainer,
   BtnIcon,
@@ -22,20 +22,16 @@ import { developers } from './TeamInfo';
 
 const modalRoot = document.querySelector('#modal-team-root');
 
-function ModalTeam({ onClose }) {
-  const [isOpenModal, setIsOpenModal] = useState(true);
-
+function ModalTeam({ onClose, setIsOpenModal }) {
   useEffect(() => {
     setIsOpenModal(onClose);
-  }, [onClose]);
+  }, [onClose, setIsOpenModal]);
 
   useEffect(() => {
-    if (isOpenModal) {
+    if (onClose) {
       document.body.classList.add('isOpen');
-    } else {
-      document.body.classList.remove('isOpen');
     }
-  }, [isOpenModal]);
+  }, [onClose]);
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -49,7 +45,7 @@ function ModalTeam({ onClose }) {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [setIsOpenModal]);
 
   const handleCoseModal = () => {
     setIsOpenModal(false);
@@ -61,7 +57,7 @@ function ModalTeam({ onClose }) {
     }
   };
 
-  if (!isOpenModal) {
+  if (!onClose) {
     return null;
   }
 

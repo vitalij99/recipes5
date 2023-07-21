@@ -33,19 +33,21 @@ import { StyledSocialIcons } from './SocialIcons/SocialIcons.styled';
 import axios from 'axios';
 import { Notify } from 'notiflix';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ModalTeam from 'components/ModalTeam/ModalTeam';
 
 const Footer = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
+  useEffect(() => {
+    if (!isOpenModal) {
+      document.body.classList.remove('isOpen');
+    }
+  }, [isOpenModal]);
+
   function handleModalTeam(e) {
     setIsOpenModal(true);
   }
-
-
-
-
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -68,7 +70,9 @@ const Footer = () => {
 
   return (
     <>
-      {isOpenModal && <ModalTeam onClose={isOpenModal} />}
+      {isOpenModal && (
+        <ModalTeam onClose={isOpenModal} setIsOpenModal={setIsOpenModal} />
+      )}
       <BackContainer>
         <Container>
           <FooterInfo>
@@ -127,26 +131,24 @@ const Footer = () => {
                   and special offers, etc.
                 </SubscribeText>
 
-
-              <Form onSubmit={handleSubmit}>
-                <InputBox>
-                  <ContainerSvg>
-                    <FooterEmailLogo />
-                  </ContainerSvg>
-                  <Input
-                    name="imputEmail"
-                    type="email"
-                    placeholder="Enter your email address"
-                  />
-                </InputBox>
-                <FooterButton type="submit">Subscribe</FooterButton>
-              </Form>
-            </SubscribeContainer>
-          </MainContainer>
-          <StyledSocialIcons />
-        </FooterInfo>
-      </Container>
-
+                <Form onSubmit={handleSubmit}>
+                  <InputBox>
+                    <ContainerSvg>
+                      <FooterEmailLogo />
+                    </ContainerSvg>
+                    <Input
+                      name="imputEmail"
+                      type="email"
+                      placeholder="Enter your email address"
+                    />
+                  </InputBox>
+                  <FooterButton type="submit">Subscribe</FooterButton>
+                </Form>
+              </SubscribeContainer>
+            </MainContainer>
+            <StyledSocialIcons />
+          </FooterInfo>
+        </Container>
 
         <BottomFooter>
           <Copyright>© 2023 All Rights Reserved.</Copyright>
