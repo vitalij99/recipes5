@@ -91,7 +91,18 @@ export const CategoriesList = styled.ul`
 `;
 
 export const CategoriesImgWrap = styled.div`
+  outline: solid 1.5px transparent;
   position: relative;
+  border-radius: 8px;
+  transition: 0.4s;
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    outline: 1.5px solid ${props => props.theme.mainPage.menuMobileModal.hover};
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    transition: 0.6s;
+  }
 
   &:hover,
   &:focus {
@@ -100,6 +111,9 @@ export const CategoriesImgWrap = styled.div`
         props.theme.mainPage.footer.button.hoverFill};
       transition: 0.6s;
       animation: easeIn;
+
+      outline: 1.5px solid
+        ${props => props.theme.mainPage.menuMobileModal.hover};
     }
     p {
       color: ${props => props.theme.mainPage.menuMobileModal.hover};
@@ -122,26 +136,18 @@ export const CategoriesImgWrap = styled.div`
 `;
 
 export const CategoriesImg = styled.img`
-  display: inline-block;
   border-radius: 8px;
-  width: 343px;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.05);
-    outline: 4px solid ${props => props.theme.mainPage.menuMobileModal.hover};
-    transition: 0.4s;
-  }
 
   @media (min-width: 768px) {
-    width: 336px;
+    max-width: 336px;
   }
   @media (min-width: 1440px) {
-    width: 300px;
+    max-width: 300px;
   }
 `;
 
 export const ProductNameWrap = styled.div`
+  outline: solid 1.5px transparent;
   position: absolute;
   width: 307px;
   height: 52px;
@@ -160,13 +166,16 @@ export const ProductNameWrap = styled.div`
 `;
 
 export const ProductName = styled.p`
+  border-radius: 8px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   padding: 16px;
   text-overflow: ellipsis;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
+  pointer-events: auto;
   color: ${props => props.theme.categoriesPage.list.recipePlate.text};
 
   @media (min-width: 768px) {
