@@ -8,13 +8,15 @@ import { getIsLoading } from '../../redux/myrecipes/myRecipeSelectors';
 import Loader from 'components/Loader/Loader';
 const MyRecipesPage = () => {
   const isLoading = useSelector(getIsLoading);
-  return <MyRecipesPageWrap>
-   <Container>
-  <MainPageTitle title={'My recipes'} />
-   {isLoading && <Loader />}
-   <MyRecipes/>
- </Container>;
-  </MyRecipesPageWrap>
+  return (
+    <MyRecipesPageWrap>
+      <Container>
+        <MainPageTitle title={'My recipes'} />
+        {isLoading && <Loader />}
+        <MyRecipes />
+      </Container>
+    </MyRecipesPageWrap>
+  );
 };
 
 export default MyRecipesPage;

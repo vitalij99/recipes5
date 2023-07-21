@@ -8,14 +8,16 @@ import { getIsLoading } from '../../redux/recipe/recipeSelector';
 import Loader from 'components/Loader/Loader';
 const FavoritePage = () => {
   const isLoading = useSelector(getIsLoading);
-  return <FavoritePageWrap>
-   <Container>
-   <MainPageTitle title={'Favorites'} />
-    
-    {isLoading && <Loader />}
-    <Favorite/>
-  </Container>;
-  </FavoritePageWrap>
+  return (
+    <FavoritePageWrap>
+      <Container>
+        <MainPageTitle title={'Favorites'} />
+
+        {isLoading && <Loader />}
+        <Favorite />
+      </Container>
+    </FavoritePageWrap>
+  );
 };
 
 export default FavoritePage;

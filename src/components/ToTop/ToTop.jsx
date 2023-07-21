@@ -5,7 +5,6 @@ export const ToTop = () => {
   return (
     <>
       <ToTopStyled smooth top="800" component={<BiArrowToTop size={28} />} />
-      <BiArrowToTop />
     </>
   );
 };
