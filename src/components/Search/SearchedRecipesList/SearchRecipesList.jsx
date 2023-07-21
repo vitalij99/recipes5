@@ -5,7 +5,7 @@ import React, { useEffect, useMemo } from 'react';
 
 import { SearchNotFound } from '../SearchNotFound/SearchNotFound';
 import { useSearchParams } from 'react-router-dom';
-// import axios from 'axios';
+
 import Loader from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchIsLoading, searchResults } from 'redux/search/searchSelectors';
