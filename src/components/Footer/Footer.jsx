@@ -59,7 +59,7 @@ const Footer = () => {
     if (imputEmail.value.length > 0) {
       try {
         fetsh();
-        Notify.success(`${imputEmail} subscribe`);
+        Notify.success(`${imputEmail.value} subscribe`);
       } catch (error) {
         console.log(error.message);
       }
