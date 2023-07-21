@@ -90,13 +90,3 @@ export const updateNameAndAvatar = async ({ name, avatar }, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 };
-// export const updateAvatar = async (formData, thunkAPI) => {
-//   try {
-//     const { data } = await axios.post('/users/avatars', formData);
-
-//     return data;
-//   } catch (error) {
-//     Notify.info('failed to update the avatar');
-//     return thunkAPI.rejectWithValue(error.message);
-//   }
-// };

@@ -9,14 +9,13 @@ export const setAuthHeader = token => {
 export const searchTitleThunk = createAsyncThunk(
   'title',
   async (query, { getState, rejectWithValue }) => {
-    // console.log('we are trying to get shopping-list');
     const state = getState();
     const token = state.auth.token;
 
     try {
       setAuthHeader(token);
       const res = await axios.get(`/recipes/search?title=${query}`);
-      // console.log(res);
+
       return res.data;
     } catch (err) {
       if (err) {
@@ -30,14 +29,13 @@ export const searchTitleThunk = createAsyncThunk(
 export const searchIngredientsThunk = createAsyncThunk(
   'ingredients',
   async (query, { getState, rejectWithValue }) => {
-    // console.log('we are trying to get shopping-list');
     const state = getState();
     const token = state.auth.token;
 
     try {
       setAuthHeader(token);
       const res = await axios.get(`/recipes/ingredients?ingredients=${query}`);
-      // console.log(res);
+
       return res.data;
     } catch (err) {
       if (err) {

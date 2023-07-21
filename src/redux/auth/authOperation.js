@@ -25,9 +25,3 @@ export const updateNameThunk = createAsyncThunk(
     return updateNameAndAvatar({ name, avatar });
   }
 );
-// export const updateAvatarThunk = createAsyncThunk(
-//   'auth/setAvatar',
-//   formData => {
-//     return updateAvatar(formData);
-//   }
-// );
