@@ -38,9 +38,9 @@ function PresentModal({ onClose, event }) {
 
   useEffect(() => {
     if (isOpenModal) {
-      document.body.classList.add('modal-open');
+      document.body.classList.add('isOpen');
     } else {
-      document.body.classList.remove('modal-open');
+      document.body.classList.remove('isOpen');
     }
   }, [isOpenModal]);
 

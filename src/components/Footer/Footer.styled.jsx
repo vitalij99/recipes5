@@ -120,6 +120,7 @@ export const TermsofService = styled.p`
   font-weight: 400;
   line-height: 10px;
   letter-spacing: -0.1px;
+  cursor: pointer;
   &:hover {
     color: ${props => props.theme.mainPage.footer.bottomText.hoverText};
   }
