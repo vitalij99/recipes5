@@ -152,12 +152,13 @@ export const ProductNameWrap = styled.div`
   width: 307px;
   height: 52px;
   bottom: 24px;
-  left: 18px;
+  left: 30px;
   border-radius: 8px;
   background: ${props =>
     props.theme.categoriesPage.list.recipePlate.background};
 
   @media (min-width: 768px) {
+    left: 18px;
     width: 300px;
   }
   @media (min-width: 1440px) {
