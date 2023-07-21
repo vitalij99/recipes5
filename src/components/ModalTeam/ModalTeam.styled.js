@@ -142,8 +142,8 @@ export const CardNameContainer = styled.div`
 export const NameInfo = styled.span`
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 13px;
   line-height: 1.33;
   color: #2a2a2a;
 `;
