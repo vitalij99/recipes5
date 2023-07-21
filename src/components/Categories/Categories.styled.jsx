@@ -99,7 +99,9 @@ export const CategoriesImgWrap = styled.div`
   &:focus {
     transform: scale(1.05);
     outline: 1.5px solid ${props => props.theme.mainPage.menuMobileModal.hover};
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     transition: 0.6s;
   }
@@ -107,8 +109,6 @@ export const CategoriesImgWrap = styled.div`
   &:hover,
   &:focus {
     div {
-      background-color: ${props =>
-        props.theme.mainPage.footer.button.hoverFill};
       transition: 0.6s;
       animation: easeIn;
 
