@@ -52,19 +52,19 @@ their own recipes.
 
 The So Yummy project is developed by the following team members:
 
-1. [Anastasiia2302](https://github.com/Anastasiia2302)
-2. [AnastasiiaBakumenko](https://github.com/AnastasiiaBakumenko)
-3. [BaristaYaroslv](https://github.com/BaristaYaroslv)
-4. [Dimar95](https://github.com/Dimar95)
-5. [Kryzhanivskyi89](https://github.com/Kryzhanivskyi89)
-6. [NVZ1994](https://github.com/NVZ1994)
-7. [Umberban](https://github.com/Umberban)
-8. [Vastasika](https://github.com/Vastasika)
-9. [VladDyadenko](https://github.com/VladDyadenko)
-10. [Yanna-Trofimova](https://github.com/Yanna-Trofimova)
-11. [natalynoele](https://github.com/natalynoele)
-12. [vitalij99](https://github.com/vitalij99)
-13. [webdevbiv](https://github.com/webdevbiv)
+- Anastasiia Bakumenko (AnastasiiaBakumenko) - [GitHub](https://github.com/AnastasiiaBakumenko)
+- Anastasiia Herusova (Anastasiia2302) - [GitHub](https://github.com/Anastasiia2302)
+- Anastasiia Vakarchuk (Vastasika) - [GitHub](https://github.com/Vastasika)
+- Andrii Kryzhanivskyi (Kryzhanivskyi89) - [GitHub](https://github.com/Kryzhanivskyi89)
+- Borys Romanov (Umberban) - [GitHub](https://github.com/Umberban)
+- Dmytro Kornilov (Dimar95) - [GitHub](https://github.com/Dimar95)
+- Igor Berezhnoy (webdevbiv) - [GitHub](https://github.com/webdevbiv)
+- Nataliia Malakova (natalynoele) - [GitHub](https://github.com/natalynoele)
+- Nikita Zhuk (NVZ1994) - [GitHub](https://github.com/NVZ1994)
+- Vitalij Kymko (vitalij99) - [GitHub](https://github.com/vitalij99)
+- Vladimir Diadenko (VladDyadenko) - [GitHub](https://github.com/VladDyadenko)
+- Yanna Trofimova (Yanna-Trofimova) - [GitHub](https://github.com/Yanna-Trofimova)
+- Yaroslav Velichko (BaristaYaroslv) - [GitHub](https://github.com/BaristaYaroslv)
 
 Feel free to reach out to any team member if you have questions or need
 assistance with the project.
